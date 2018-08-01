@@ -1,0 +1,10 @@
+﻿using System;
+namespace DataCollection.Data.CleaningAndDisinfectionProducts
+{
+    public static class CDP
+    {
+        public static string FormData = "{'CleaningAndDisinfectionProducts':{'D1':{'cdProceduresSwitch':true,'cdProceduresComments':'default comments'}}}";
+        public static string FormModel = "{ 'title':'CleaningAndDisinfectionProducts', 'formgroups':[{'text':'D1','displayorder':'1','components':[{'id':'cdProceduresSwitch','path':'CleaningAndDisinfectionProducts.D1.cdProceduresSwitch','type':'YesNoSwitchView','text':'Were the proper cleaning and disinfection procedures followed  before new laying hens are added to the house or if environment or egg test was positive at any point during the life of a flock?'},{'id':'cdProceduresComments','path':'CleaningAndDisinfectionProducts.D1.cdProceduresComments','type':'LabelEditorView','text':'Comments'},{'id':'cdCamera','path':'CleaningAndDisinfectionProducts.D1.cdCamera','type':'CameraView','text':'Take Photo'}]}]}";
+            public static string ValidationSchema = "{'$id':'http://example.com/example.json','type':'object','definitions':{},'$schema':'http://json-schema.org/draft-07/schema#','properties':{'CleaningAndDisinfectionProducts':{'$id':'/properties/CleaningAndDisinfectionProducts','type':'object','properties':{'D1':{'$id':'/properties/CleaningAndDisinfectionProducts/properties/D1','type':'object','properties':{'cdProceduresSwitch':{'$id':'/properties/CleaningAndDisinfectionProducts/properties/D1/properties/cdProceduresSwitch','type':'boolean','title':'The Cdproceduresswitch Schema ','default':false,'examples':[true],'if':{'cdProceduresSwitch':true},'then':{'required':['cdProceduresSwitch']}}},'cdProceduresComments':{'$id':'/properties/CleaningAndDisinfectionProducts/properties/D1/properties/cdProceduresComments','type':'string','title':'The Cdprocedurescomments Schema ','default':'','examples':['default comments'],'if':{'cdProceduresComments':{'string':'1'}},'then':{'required':['cdProceduresSwitch']}}}}}}}";
+    }
+}

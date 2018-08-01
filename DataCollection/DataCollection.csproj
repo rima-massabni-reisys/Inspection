@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.10" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Data\CleaningAndDisinfectionProducts\MockCleaningAndDisinfectionProducts.cs" />
+    <Compile Remove="Data\Biosecurity\MockBiosecurity.cs" />
+    <Compile Remove="Data\Pullets\MockPullets.cs" />
+    <Compile Remove="Data\RefrigerationProcedures\MockRefrigerationProcedures.cs" />
+    <Compile Remove="Data\RodentFliesPestControl\MockRodentsFliesOtherPestControl.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Data\CleaningAndDisinfectionProducts\FormData.json" />
+    <None Remove="Data\CleaningAndDisinfectionProducts\FormModel.json" />
+    <None Remove="Data\CleaningAndDisinfectionProducts\ValidationSchema.json" />
+    <None Remove="Data\Biosecurity\FormData.json" />
+    <None Remove="Data\Biosecurity\FormModel.json" />
+    <None Remove="Data\Biosecurity\ValidationSchema.json" />
+    <None Remove="Data\Pullets\FormData.json" />
+    <None Remove="Data\Pullets\FormModel.json" />
+    <None Remove="Data\Pullets\ValidationSchema.json" />
+    <None Remove="Data\RefrigerationProcedures\FormData.json" />
+    <None Remove="Data\RefrigerationProcedures\FormModel.json" />
+    <None Remove="Data\RefrigerationProcedures\ValidationSchema.json" />
+    <None Remove="Data\RodentFliesPestControl\FormData.json" />
+    <None Remove="Data\RodentFliesPestControl\FormModel.json" />
+    <None Remove="Data\RodentFliesPestControl\ValidationSchema.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\CleaningAndDisinfectionProducts\FormData.json" />
+    <EmbeddedResource Include="Data\CleaningAndDisinfectionProducts\FormModel.json" />
+    <EmbeddedResource Include="Data\CleaningAndDisinfectionProducts\ValidationSchema.json" />
+    <EmbeddedResource Include="Data\Biosecurity\FormData.json" />
+    <EmbeddedResource Include="Data\Biosecurity\FormModel.json" />
+    <EmbeddedResource Include="Data\Biosecurity\ValidationSchema.json" />
+    <EmbeddedResource Include="Data\Pullets\FormData.json" />
+    <EmbeddedResource Include="Data\Pullets\FormModel.json" />
+    <EmbeddedResource Include="Data\Pullets\ValidationSchema.json" />
+    <EmbeddedResource Include="Data\RefrigerationProcedures\FormData.json" />
+    <EmbeddedResource Include="Data\RefrigerationProcedures\FormModel.json" />
+    <EmbeddedResource Include="Data\RefrigerationProcedures\ValidationSchema.json" />
+    <EmbeddedResource Include="Data\RodentFliesPestControl\FormData.json" />
+    <EmbeddedResource Include="Data\RodentFliesPestControl\FormModel.json" />
+    <EmbeddedResource Include="Data\RodentFliesPestControl\ValidationSchema.json" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+    <PackageReference Include="Plugin.Badge" Version="2.0.0" />
+    <PackageReference Include="Xamarin.Controls.SignaturePad.Forms" Version="3.0.0" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kalect.Services\Kalect.Services.csproj" />
+    <ProjectReference Include="..\DataCollection\DataCollection.csproj" />
+    <ProjectReference Include="..\Kalect.Constants\Kalect.Constants.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\Home.png" />
+    <None Remove="Images\IconList.png" />
+    <None Remove="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="DependencyServices\IKalectDependecyServices.cs" />
+    <Compile Remove="MainPage.xaml.cs" />
+    <Compile Remove="App.xaml.cs" />
+    <Compile Remove="DependencyServices\IKalectDependencyServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="MainPage.xaml" />
+    <EmbeddedResource Remove="App.xaml" />
+  </ItemGroup>
+</Project>
