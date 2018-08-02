@@ -35,13 +35,13 @@ namespace Kalect.Views
             List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromDevice();
 
 
-            var customCell = new DataTemplate(typeof(CustomCell));
+            var customAssessmentCell = new DataTemplate(typeof(CustomAssessmentCell));
            
             //Bind forms
             listView = new ListView
             {
                 ItemsSource = assessments,
-                ItemTemplate = customCell
+                ItemTemplate = customAssessmentCell
             };
 
             listView.ItemSelected += ListView_ItemSelected;
@@ -63,9 +63,9 @@ namespace Kalect.Views
     }
 
 
-    public class CustomCell : ViewCell
+    public class CustomAssessmentCell : ViewCell
     {
-        public CustomCell()
+        public CustomAssessmentCell()
         {
             //instantiate each of our views
             //var image = new Image();

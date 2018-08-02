@@ -44,14 +44,23 @@ namespace Kalect.Views
                 var answer = DisplayAlert("Saved With Errors (" + messages.Count + ")", "Please check the Error messages for more details.", "OK");
             }
         }
-        
+
+        ListView sectionList;
         public AssessmentDetailPage()
         {
             Title = AppManager.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
+
+            List<string> sections = (from Sections in AppManager.SelectedAssessmentMetadata.Sections
+                                           select Sections.SectionDisplayName).ToList<string>();
+            
+            sectionList = new ListView();
+            sectionList.ItemsSource = sections;
+
+
             Content = new StackLayout
             {
                 Children = {
-                    new Label { Text = AppManager.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString() }
+                    sectionList
                 }
             };
 

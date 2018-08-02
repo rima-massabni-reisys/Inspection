@@ -22,6 +22,8 @@ namespace Kalect
             get { return _location; }
             set { _location = value; }
         }
+
+        //Add get list of sections
             
     }
 }

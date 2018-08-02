@@ -18,17 +18,19 @@ namespace Kalect.Views
             {
                 ItemsSource = GetLeftMenuItems(),
                 BackgroundColor= Color.FromHex("#F8F9F9"),
-                Margin = 0
-
             };
+
+
 
             // Create the master page with the ListView.
             this.Master = new ContentPage
             {
+                
                 Title = "Assessment",
                 Icon = "Hamburger_icon_25.png",
                 Content = new StackLayout
                 {
+                    Padding = 10,
                     Children =
                     {
                         assessmentListView

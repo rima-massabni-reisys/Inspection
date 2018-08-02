@@ -18,7 +18,7 @@ namespace Kalect.Services.Test
         [Fact]
         public void Test_GetListOfAllAssignedAssessments()
         {
-            IAssessmentManager assessmentManager = new AssessmentManager();
+            AssessmentManager assessmentManager = new AssessmentManager();
             List<AssessmentMetadataEntity> assessments =  assessmentManager.GetListOfAllAssignedAssessments();
             //Console.WriteLine(assessments);
             //Assert.True(true);
