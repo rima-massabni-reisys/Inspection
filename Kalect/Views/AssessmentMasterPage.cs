@@ -30,7 +30,6 @@ namespace Kalect.Views
                 Icon = "Hamburger_icon_25.png",
                 Content = new StackLayout
                 {
-                    Padding = 10,
                     Children =
                     {
                         assessmentListView
@@ -53,7 +52,7 @@ namespace Kalect.Views
                 else
                 {
                     //get the friendlyname of the selected left menu item
-                    string selectedFriendlyName = AppManager.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
+                    string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
                     this.Detail = new NavigationPage (new AssessmentDetailPage(selectedFriendlyName));
 
                 }
@@ -74,7 +73,7 @@ namespace Kalect.Views
             //List of forms in the left menu
             //List<string> assessmentList =  SectionManager.GetPreventionSectionList();
 
-            List<string> assessmentList = (from Sections in AppManager.SelectedAssessmentMetadata.Sections
+            List<string> assessmentList = (from Sections in AppDataWallet.SelectedAssessmentMetadata.Sections
                                            select Sections.SectionDisplayName).ToList<string>();
 
             //Add custom left menu items

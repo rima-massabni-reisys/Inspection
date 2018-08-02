@@ -12,7 +12,7 @@ namespace Kalect.Views
     {
         void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            AppManager.SelectedAssessmentMetadata = (AssessmentMetadataEntity)e.SelectedItem;
+            AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)e.SelectedItem;
             //var assessmenPage = new NavigationPage(new AssessmentMasterPage(args.SelectedItem.ToString()));
             Navigation.PushAsync(new AssessmentMasterPage(e.SelectedItem.ToString()), false);
         }

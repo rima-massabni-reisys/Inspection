@@ -13,7 +13,6 @@ namespace Kalect.Views
         }
 
         SignaturePadView signaturePadView;
-        Button saveSignatureButton;
         public SignaturePage()
         {
             ToolbarItem saveToolbarItem = new ToolbarItem();

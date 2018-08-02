@@ -19,7 +19,7 @@ namespace Kalect.Views
 
             var position = await locator.GetPositionAsync(TimeSpan.FromSeconds(10));
             latitudeLabel.Text = "Latitude: " + position.Latitude + " ,Longitude: " + position.Longitude;
-            AppManager.Location = position.Latitude + "," + position.Longitude;
+            AppDataWallet.Location = position.Latitude + "," + position.Longitude;
         }
 
         string location = string.Empty;

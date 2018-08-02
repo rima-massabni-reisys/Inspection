@@ -3,12 +3,8 @@ using Kalect.Services.Entities;
 
 namespace Kalect
 {
-    public class AppManager
+    public class AppDataWallet
     {
-        public AppManager()
-        {
-        }
-
         static AssessmentMetadataEntity _selectedAssessmentMetadata;
         public static AssessmentMetadataEntity SelectedAssessmentMetadata
         {
@@ -22,8 +18,5 @@ namespace Kalect
             get { return _location; }
             set { _location = value; }
         }
-
-        //Add get list of sections
-            
     }
 }

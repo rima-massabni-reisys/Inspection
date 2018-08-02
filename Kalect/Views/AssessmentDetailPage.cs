@@ -33,7 +33,7 @@ namespace Kalect.Views
             lblError.Text = string.Join(",", messages.ToArray()); ;
 
             //Save
-            DependencyService.Get<ISaveAndLoad>().SaveText(AppManager.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), friendlyName, formData);
+            DependencyService.Get<ISaveAndLoad>().SaveText(AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), friendlyName, formData);
 
             if (messages.Count == 0)
             {
@@ -48,18 +48,25 @@ namespace Kalect.Views
         ListView sectionList;
         public AssessmentDetailPage()
         {
-            Title = AppManager.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
+            Title = AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
 
-            List<string> sections = (from Sections in AppManager.SelectedAssessmentMetadata.Sections
-                                           select Sections.SectionDisplayName).ToList<string>();
-            
+            Label sectionListHeader = new Label();
+            sectionListHeader.Text = "Sections";
+            sectionListHeader.HorizontalTextAlignment = TextAlignment.Center;
+            sectionListHeader.FontSize = 30;
+
+            //List<string> sections = (from Sections in AppManager.SelectedAssessmentMetadata.Sections
+            //                               select Sections.SectionDisplayName).ToList<string>();
+            var customSectionCell = new DataTemplate(typeof(CustomSectionCell));
+
             sectionList = new ListView();
-            sectionList.ItemsSource = sections;
-
+            sectionList.ItemsSource = AppDataWallet.SelectedAssessmentMetadata.Sections; //sections;
+            sectionList.ItemTemplate = customSectionCell;
 
             Content = new StackLayout
             {
                 Children = {
+                    sectionListHeader,
                     sectionList
                 }
             };
@@ -70,7 +77,7 @@ namespace Kalect.Views
         Label lblError;
         public AssessmentDetailPage(string selectedItem)
         {
-            Title = AppManager.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
+            Title = AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
 
             ToolbarItem saveToolbarItem = new ToolbarItem();
             saveToolbarItem.Text = "Save";
@@ -82,7 +89,7 @@ namespace Kalect.Views
 
             //Form Header Label
             Label formTitle = new Label();
-            formTitle.Text = AppManager.SelectedAssessmentMetadata.Sections.FirstOrDefault(X => X.SectionFriendlyName == selectedItem).SectionDisplayName;
+            formTitle.Text = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault(X => X.SectionFriendlyName == selectedItem).SectionDisplayName;
             formTitle.FontSize = 30;
             //formTitle.BackgroundColor = Color.FromRgb(52,152,219);
 
@@ -91,7 +98,7 @@ namespace Kalect.Views
 
             FormService formService = new FormService();
             //Get Form Instance
-            var formInstance = formService.GetFormInstance(AppManager.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), selectedItem);
+            var formInstance = formService.GetFormInstance(AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), selectedItem);
             validationSchema = formInstance.ValidationSchema;
             //generate Layout Dynamically
 
@@ -113,6 +120,31 @@ namespace Kalect.Views
             };
         }
 
+    }
+
+    public class CustomSectionCell : ViewCell
+    {
+        public CustomSectionCell()
+        {
+            //instantiate each of our views
+            StackLayout horizontalLayout = new StackLayout();
+            Label sectionDisplayName = new Label();
+            Label sectionStatus = new Label();
+            sectionStatus.FontSize = 10;
+
+            //set bindings
+            sectionDisplayName.SetBinding(Label.TextProperty, "SectionDisplayName");
+            sectionStatus.SetBinding(Label.TextProperty, "SectionStatus");
+
+            //Set properties for desired design
+            horizontalLayout.Orientation = StackOrientation.Horizontal;
+            sectionStatus.HorizontalOptions = LayoutOptions.EndAndExpand;
+
+            //add views to the view hierarchy
+            horizontalLayout.Children.Add(sectionDisplayName);
+            horizontalLayout.Children.Add(sectionStatus);
+            View = horizontalLayout;
+        }
     }
 }
 
