@@ -6,7 +6,8 @@ namespace Kalect.Services.Interfaces
 {
     public interface IAssessmentManager
     {
-        List<AssessmentMetadataEntity> GetListOfAllAssignedAssessments();
+        List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromDevice();
+        List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromServer();
         string GetAssignedAssessment(int id);
 
     }

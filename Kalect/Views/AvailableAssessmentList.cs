@@ -10,34 +10,52 @@ namespace Kalect.Views
 {
     public class AvailableAssessmentList : ContentPage
     {
+        void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            AppManager.SelectedAssessmentMetadata = (AssessmentMetadataEntity)e.SelectedItem;
+            //var assessmenPage = new NavigationPage(new AssessmentMasterPage(args.SelectedItem.ToString()));
+            Navigation.PushAsync(new AssessmentMasterPage(e.SelectedItem.ToString()), false);
+        }
+
+
+        void RefreshList_Clicked(object sender, EventArgs e)
+        {
+            IAssessmentManager assessmentManager = new AssessmentManager();
+            List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromServer();
+
+            listView.ItemsSource = assessments;
+        }
+
+        ListView listView;
         public AvailableAssessmentList()
         {
             this.Title = "Assessments";
 
             IAssessmentManager assessmentManager = new AssessmentManager();
-            List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessments();
+            List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromDevice();
 
 
             var customCell = new DataTemplate(typeof(CustomCell));
            
             //Bind forms
-            var listView = new ListView
+            listView = new ListView
             {
                 ItemsSource = assessments,
                 ItemTemplate = customCell
             };
 
-            listView.ItemSelected += (sender, args) =>
-            {
-                AppManager.SelectedAssessmentMetadata = (AssessmentMetadataEntity)args.SelectedItem;
-                //var assessmenPage = new NavigationPage(new AssessmentMasterPage(args.SelectedItem.ToString()));
-                Navigation.PushAsync(new AssessmentMasterPage(args.SelectedItem.ToString()), false);
-            };
+            listView.ItemSelected += ListView_ItemSelected;
+
+
+            Button refreshList = new Button();
+            refreshList.Text = "Get Latest Assignments";
+            refreshList.Clicked += RefreshList_Clicked;
 
             Content = new StackLayout
             {
                 Padding=10,
                 Children = {
+                    refreshList,
                     listView 
                 }
             };
