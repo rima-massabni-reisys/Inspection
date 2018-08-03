@@ -17,7 +17,8 @@ namespace Kalect.Views
             ListView assessmentListView = new ListView
             {
                 ItemsSource = GetLeftMenuItems(),
-                BackgroundColor= Color.FromHex("#F8F9F9"),
+                BackgroundColor= Color.FromHex("#F8F9F9")
+                                      
             };
 
 
@@ -45,8 +46,6 @@ namespace Kalect.Views
                 if (args.SelectedItem.Equals("Signature"))
                 {
                     this.Detail = new NavigationPage(new SignaturePage());
-                    //this.Detail = Navigation.PushAsync(new SignaturePage(), true); //new NavigationPage(new SignaturePage());
-                    //this.Detail.Navigation.PushAsync(new SignaturePage(), true);
 
                 }
                 else
