@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 //using formgenie.Data;
 using DataCollection.Entities;
 using DataCollection.Repository;
@@ -48,6 +49,11 @@ namespace DataCollection.Services
         public Layout GenerateLayout(FormModel formModelView, string formData)
         {
             return _layoutGenerator.GenerateLayout(formModelView, formData);
+        }
+
+        public List<ContentPage>GenerateCarouselLayout(FormModel formModelView, string formData)
+        {
+            return _layoutGenerator.GenerateContentPagesForCarousel(formModelView, formData);
         }
 
         /*public Layout GetFormLayout(string FormModelJson)

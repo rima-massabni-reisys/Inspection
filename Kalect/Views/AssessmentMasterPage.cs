@@ -21,8 +21,6 @@ namespace Kalect.Views
                                       
             };
 
-
-
             // Create the master page with the ListView.
             this.Master = new ContentPage
             {
@@ -53,6 +51,7 @@ namespace Kalect.Views
                     //get the friendlyname of the selected left menu item
                     string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
                     this.Detail = new NavigationPage (new AssessmentDetailPage(selectedFriendlyName));
+                    //this.Detail = new NavigationPage(new AssessmentCarouselPage(selectedFriendlyName));
 
                 }
                 // Set the BindingContext of the detail page.
@@ -65,6 +64,7 @@ namespace Kalect.Views
 
             // Initialize the ListView selection.
             this.Detail = new NavigationPage(new AssessmentDetailPage());
+            //this.Detail = new NavigationPage(new AssessmentCarouselPage());
         }
 
         private List<string> GetLeftMenuItems()
