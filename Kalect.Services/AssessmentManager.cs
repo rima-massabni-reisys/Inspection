@@ -71,7 +71,7 @@ namespace Kalect.Services
         private void StoreAssessmentsOnDevice(string assessmentMetadataFromServer, AssessmentMetadataEntity assessmentMetadata)
         {
             //store or update. If update should bubble some kind of event for tracking.
-            DependencyService.Get<IKalectDependencyServices>().SaveAssessmentsMetadata(assessmentMetadataFromServer, assessmentMetadata.AssessmentTrackingNumber.ToString(), FileFolderUtility.GetAssessmentFileName(assessmentMetadata.AssessmentTrackingNumber.ToString()));
+            DependencyService.Get<IKalectDependencyServices>().SaveAssessmentsMetadataOnDevice(assessmentMetadataFromServer, assessmentMetadata.AssessmentTrackingNumber.ToString(), FileFolderUtility.GetAssessmentFileName(assessmentMetadata.AssessmentTrackingNumber.ToString()));
         }
 
         private List<string> LoadAssessmentFromDevice()

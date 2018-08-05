@@ -33,7 +33,8 @@ namespace Kalect.Views
             lblError.Text = string.Join(",", messages.ToArray()); ;
 
             //Save
-            DependencyService.Get<ISaveAndLoad>().SaveText(AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), friendlyName, formData);
+            //DependencyService.Get<ISaveAndLoad>().SaveText(AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), friendlyName, formData);
+            DependencyService.Get<IDataCollectionDependencyService>().SaveFormData(formData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), friendlyName, "FormData");
 
             if (messages.Count == 0)
             {

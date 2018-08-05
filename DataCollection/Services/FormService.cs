@@ -34,6 +34,7 @@ namespace DataCollection.Services
         public FormInstance GetFormInstance(string trackingNumber, string friendlyName)
         {
             FormInstanceData formInstanceData = new FormInstanceData();
+            //formInstanceData = _formRepository.GetFormInstance(trackingNumber, friendlyName);
             formInstanceData = _formRepository.GetFormInstance(trackingNumber, friendlyName);
 
             FormInstance formInstance = new FormInstance();

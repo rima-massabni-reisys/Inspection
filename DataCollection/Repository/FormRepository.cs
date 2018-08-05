@@ -18,6 +18,20 @@ namespace DataCollection.Repository
         public FormInstanceData GetFormInstance(string trackingNumber, string friendlyName)
         {
             FormInstanceData formInstanceData = new FormInstanceData();
+
+            formInstanceData.FormModel = DependencyService.Get<IDataCollectionDependencyService>().LoadFormFromDevice(trackingNumber, friendlyName, "FormModel");
+            formInstanceData.FormData = DependencyService.Get<IDataCollectionDependencyService>().LoadFormFromDevice(trackingNumber, friendlyName, "FormData");
+            formInstanceData.ValidationSchema = DependencyService.Get<IDataCollectionDependencyService>().LoadFormFromDevice(trackingNumber, friendlyName, "ValidationSchema");
+
+            return formInstanceData;
+        }
+
+
+
+        /*
+        public FormInstanceData GetFormInstance(string trackingNumber, string friendlyName)
+        {
+            FormInstanceData formInstanceData = new FormInstanceData();
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(FormModelData)).Assembly;
             string savedFormData = string.Empty;
             string FormModel = string.Empty;
@@ -184,5 +198,6 @@ namespace DataCollection.Repository
             }
             return formInstanceData;
         }
+        */
     }
 }

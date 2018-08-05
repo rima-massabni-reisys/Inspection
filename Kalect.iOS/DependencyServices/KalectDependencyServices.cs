@@ -16,6 +16,7 @@ namespace Kalect.iOS.DependencyServices
             throw new NotImplementedException();
         }
 
+        /*
         /// <summary>
         /// Saves the assessments.
         /// </summary>
@@ -57,7 +58,17 @@ namespace Kalect.iOS.DependencyServices
             }
 
         }
+        */
 
+        public void DeleteAssessmentsFromDevice()
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            //documentsPath = documentsPath + "/" + "1000001";
+            Directory.Delete(documentsPath + "/" + "1000001",true);
+            Directory.Delete(documentsPath + "/" + "1000002", true);
+            Directory.Delete(documentsPath + "/" + "1000003", true);
+
+        }
 
         /// <summary>
         /// Saves the assessments.
@@ -65,7 +76,7 @@ namespace Kalect.iOS.DependencyServices
         /// <param name="assessmentMetadata">Assessment Metadata JSON</param>
         /// <param name="folderName">Folder name. Matches TrackingNumber</param>
         /// <param name="fileName">File name.</param>
-        public void SaveAssessmentsMetadata(string assessmentMetadata, string folderName, string fileName)
+        public void SaveAssessmentsMetadataOnDevice(string assessmentMetadata, string folderName, string fileName)
         {
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             documentsPath = documentsPath + "/" + folderName;
@@ -101,6 +112,51 @@ namespace Kalect.iOS.DependencyServices
 
         }
 
+        /// <summary>
+        /// Saves the assessments.
+        /// </summary>
+        /// <param name="fileContent">Assessment Metadata JSON</param>
+        /// <param name="folderName">Folder name. Matches TrackingNumber</param>
+        /// <param name="fileName">File name.</param>
+        public void SaveFormsOnDevice(string fileContent, string folderName, string friendlyName, string fileName)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = documentsPath + "/" + folderName + "/" + friendlyName;
+            string fileNameJson = fileName + ".json";
+            var filePath = Path.Combine(documentsPath, fileNameJson);
+
+            if (Directory.Exists(documentsPath))
+            {
+                //update assessments
+                if (File.Exists(filePath))
+                {
+                    //read file
+                    //string existingAssessment = System.IO.File.ReadAllText(filePath);
+                    /*if (existingAssessment.Equals(fileContent))
+                    {
+                        // no action at the moment
+                    }
+                    else
+                    {
+                        //if different then delete the existing file and create the new updated file.
+                        File.Delete(filePath);
+                        File.WriteAllText(filePath, fileContent);
+
+                        //Bubble Notification
+                    }*/
+                }
+                else
+                {
+                    File.WriteAllText(filePath, fileContent);
+                }
+            }
+            else
+            {
+                System.IO.Directory.CreateDirectory(documentsPath);
+                File.WriteAllText(filePath, fileContent);
+            }
+
+        }
 
         public List<string> LoadAssessmentsMetadataFromDevice()
         {
@@ -113,8 +169,6 @@ namespace Kalect.iOS.DependencyServices
             List<string> existingAssessments = new List<string>();
             foreach(DirectoryInfo di in subDirectories)
             {
-
-
                 //Folder name is assumed to be tracking number and assessment file name is driven from common utility method.
                 //make sure file and folder names are in sync.
                 string assessmentMetadataFileName = Kalect.Services.Utilities.FileFolderUtility.GetAssessmentFileName(di.Name)+ ".json";

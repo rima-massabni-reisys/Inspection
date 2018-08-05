@@ -10,6 +10,13 @@ namespace Kalect.Views
 {
     public class AvailableAssessmentList : ContentPage
     {
+        
+        /*void deleteList_Clicked(object sender, EventArgs e)
+        {
+            DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentsFromDevice();
+        }*/
+
+
         void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)e.SelectedItem;
@@ -20,8 +27,10 @@ namespace Kalect.Views
 
         void RefreshList_Clicked(object sender, EventArgs e)
         {
-            IAssessmentManager assessmentManager = new AssessmentManager();
-            List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromServer();
+            //IAssessmentManager assessmentManager = new AssessmentManager();
+            //List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromServer();
+            AssessmentService assessmentService = new AssessmentService();
+            List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromServer();
 
             listView.ItemsSource = assessments;
         }
@@ -31,9 +40,10 @@ namespace Kalect.Views
         {
             this.Title = "Assessments";
 
-            IAssessmentManager assessmentManager = new AssessmentManager();
-            List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromDevice();
-
+            //IAssessmentManager assessmentManager = new AssessmentManager();
+            //List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromDevice();
+            AssessmentService assessmentService = new AssessmentService();
+            List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
 
             var customAssessmentCell = new DataTemplate(typeof(CustomAssessmentCell));
            
@@ -51,10 +61,16 @@ namespace Kalect.Views
             refreshList.Text = "Get Latest Assignments";
             refreshList.Clicked += RefreshList_Clicked;
 
+
+            /*Button deleteList = new Button();
+            deleteList.Text = "deleteList";
+            deleteList.Clicked += deleteList_Clicked;*/
+
             Content = new StackLayout
             {
                 Padding=10,
                 Children = {
+                    //deleteList,
                     refreshList,
                     listView 
                 }
