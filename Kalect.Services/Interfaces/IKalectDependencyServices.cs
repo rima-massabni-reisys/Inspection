@@ -12,5 +12,6 @@ namespace Kalect.Services.Interfaces
         List<string> LoadAssessmentsMetadataFromDevice();
         bool DoesAssessmentMetadataExistsOnDevice(string folderName, string fileName);
         void DeleteAssessmentsFromDevice();
+        void UpdateAssessmentMetadata(string assessmentMetadata, string folderName, string fileName);
     }
 }

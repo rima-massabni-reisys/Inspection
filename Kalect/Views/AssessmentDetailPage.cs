@@ -7,6 +7,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Schema;
 using System.Collections.Generic;
 using System.Linq;
+using Kalect.Services.Interfaces;
+using Kalect.Services;
 
 namespace Kalect.Views
 {
@@ -49,6 +51,14 @@ namespace Kalect.Views
         ListView sectionList;
         public AssessmentDetailPage()
         {
+            //Update Assessment to inprogress
+            AppDataWallet.SelectedAssessmentMetadata.AssessmentStatus = "In Progress";
+            AppDataWallet.SelectedAssessmentMetadata.AssessmentStatusCode = 2;
+
+            AssessmentService assessmentService = new AssessmentService();
+            assessmentService.UpdateAssessmentOnDevice(JsonConvert.SerializeObject(AppDataWallet.SelectedAssessmentMetadata), AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString());
+                         
+
             Title = AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
 
             Label sectionListHeader = new Label();
@@ -78,6 +88,14 @@ namespace Kalect.Views
         Label lblError;
         public AssessmentDetailPage(string selectedItem)
         {
+            //Update Section
+            AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault(X => X.SectionFriendlyName == selectedItem).SectionStatus = "In Progress";
+            AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault(X => X.SectionFriendlyName == selectedItem).SectionStatusCode = 2;
+            AssessmentService assessmentService = new AssessmentService();
+            assessmentService.UpdateAssessmentOnDevice(JsonConvert.SerializeObject(AppDataWallet.SelectedAssessmentMetadata), AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString());
+             
+
+
             Title = AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
 
             ToolbarItem saveToolbarItem = new ToolbarItem();

@@ -92,13 +92,14 @@ namespace Kalect.Views
             trackingNo.FontSize = 10;
             trackingNo.TextColor = Color.Gray;
             Label status = new Label();
-            status.Text = "Not Started";
+            //status.Text = "Not Started";
             status.FontSize = 10;
             status.TextColor = Color.Gray;
 
             //set bindings
             trackingNo.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
             orgName.SetBinding(Label.TextProperty, "OrganizationName");
+            status.SetBinding(Label.TextProperty, "AssessmentStatus");
             //image.SetBinding(Image.SourceProperty, "image");
 
             //Set properties for desired design

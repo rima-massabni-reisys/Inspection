@@ -201,5 +201,40 @@ namespace Kalect.iOS.DependencyServices
             return false;
         }
 
+        public void UpdateAssessmentMetadata(string assessmentMetadata, string folderName, string fileName)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = documentsPath + "/" + folderName;
+            string fileNameJson = fileName + ".json";
+            var filePath = Path.Combine(documentsPath, fileNameJson);
+
+            if (Directory.Exists(documentsPath))
+            {
+                //update assessments
+                if (File.Exists(filePath))
+                {
+                    //read file
+                    string existingAssessment = System.IO.File.ReadAllText(filePath);
+                    if (existingAssessment.Equals(assessmentMetadata))
+                    {
+                        // no action at the moment
+                    }
+                    else
+                    {
+                        //if different then delete the existing file and create the new updated file.
+                        //File.Delete(filePath);
+                        File.WriteAllText(filePath, assessmentMetadata);
+
+                        //Bubble Notification
+                    }
+                }
+            }
+            else
+            {
+                System.IO.Directory.CreateDirectory(documentsPath);
+                File.WriteAllText(filePath, assessmentMetadata);
+            }
+        }
+
     }
 }
