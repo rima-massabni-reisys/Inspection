@@ -23,19 +23,11 @@ namespace DataCollection.Services
             var formComponentLayout = new StackLayout();
             formComponentLayout.Orientation = StackOrientation.Vertical;
 
-            /*//Form Header Label
-            Label formTitle = new Label();
-            formTitle.Text = formModel.title;
-            formTitle.FontSize = 30;
-            //formTitle.BackgroundColor = Color.FromRgb(52,152,219);
-            */
-
-
             //get groups
             foreach (FormGroup fg in formModel.formgroups)
             {
-                //FormGroupBoxView boxView = new FormGroupBoxView(fg.text);
-                //formGroupLayout.Children.Add(boxView);
+                FormGroupBoxView boxView = new FormGroupBoxView(fg.text);
+                formGroupLayout.Children.Add(boxView);
 
                 //Component Selector. Need to be more robust
                 foreach (Component c in fg.components)
@@ -66,6 +58,68 @@ namespace DataCollection.Services
             return FormModelLayout;
         }
 
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData)
+        {
+            var FormModelLayout = new StackLayout();
+            FormModelLayout.Orientation = StackOrientation.Vertical;
+
+            var formGroupLayout = new StackLayout();
+            formGroupLayout.Orientation = StackOrientation.Horizontal;
+
+            var formComponentLayout = new StackLayout();
+            formComponentLayout.Orientation = StackOrientation.Vertical;
+
+            //get groups
+            //foreach (FormGroup fg in formModel.formgroups)
+            //{
+            //    FormGroupBoxView boxView = new FormGroupBoxView(fg.text);
+            //    formGroupLayout.Children.Add(boxView);
+
+            //Component Selector. Need to be more robust
+            foreach (Component c in fg.components)
+            {
+                if (c.type.Equals(ComponentTypes.YesNoSwitchView))
+                {
+                    YesNoSwitchView yesNo = new YesNoSwitchView(c, formData);
+                    formComponentLayout.Children.Add(yesNo);
+                }
+                else if (c.type.Equals(ComponentTypes.LabelEditorView))
+                {
+                    LabelEditorView labelEditorView = new LabelEditorView(c, formData);
+                    formComponentLayout.Children.Add(labelEditorView);
+                }
+                else if (c.type.Equals(ComponentTypes.CameraView))
+                {
+                    CameraView cameraView = new CameraView(c, formData);
+                    formComponentLayout.Children.Add(cameraView);
+                }
+                else if (c.type.Equals(ComponentTypes.AudioRecorderView))
+                {
+                    AudioRecorderView audioRecorderView = new AudioRecorderView();//CameraView(c, formData);
+                    formComponentLayout.Children.Add(audioRecorderView);
+                }
+
+            }
+            //}
+
+            //FormModelLayout.Children.Add(formTitle);
+            FormModelLayout.Children.Add(formGroupLayout);
+            FormModelLayout.Children.Add(formComponentLayout);
+
+
+            return FormModelLayout;
+        }
+
+
+
+
+
+        /// <summary>
+        /// This method is obsolete now and should be purged eventually.
+        /// </summary>
+        /// <returns>The content pages for carousel.</returns>
+        /// <param name="formModel">Form model.</param>
+        /// <param name="formData">Form data.</param>
         public List<ContentPage> GenerateContentPagesForCarousel(FormModel formModel, string formData)
         {
             List<ContentPage> contentPages = new List<ContentPage>();
@@ -73,25 +127,19 @@ namespace DataCollection.Services
             //var FormModelLayout = new StackLayout();
             //FormModelLayout.Orientation = StackOrientation.Vertical;
 
-            //var formGroupLayout = new StackLayout();
-            //formGroupLayout.Orientation = StackOrientation.Horizontal;
-
-            var formComponentLayout = new StackLayout();
-            formComponentLayout.Orientation = StackOrientation.Vertical;
-
-            /*//Form Header Label
-            Label formTitle = new Label();
-            formTitle.Text = formModel.title;
-            formTitle.FontSize = 30;
-            //formTitle.BackgroundColor = Color.FromRgb(52,152,219);
-            */
-
+            //var formGroupBarLayout = new StackLayout();
+            //formGroupBarLayout.Orientation = StackOrientation.Horizontal;
 
             //get groups
             foreach (FormGroup fg in formModel.formgroups)
             {
+                ContentPage page = new ContentPage();
+                StackLayout pageStackLayout = new StackLayout();
+                pageStackLayout.Orientation = StackOrientation.Vertical;
+
                 //FormGroupBoxView boxView = new FormGroupBoxView(fg.text);
-                //formGroupLayout.Children.Add(boxView);
+                //formGroupBarLayout.Children.Add(boxView);
+
 
                 //Component Selector. Need to be more robust
                 foreach (Component c in fg.components)
@@ -100,7 +148,7 @@ namespace DataCollection.Services
                     {
                         YesNoSwitchView yesNo = new YesNoSwitchView(c, formData);
 
-                        contentPages.Add(
+                        /*contentPages.Add(
                             new ContentPage()
                             {
                                 Content = new StackLayout
@@ -109,13 +157,15 @@ namespace DataCollection.Services
 
                                 }
                             }
-                        );
+                        );*/
+                        pageStackLayout.Children.Add(yesNo);
+
                     }
                     else if (c.type.Equals(ComponentTypes.LabelEditorView))
                     {
                         LabelEditorView labelEditorView = new LabelEditorView(c, formData);
                         //formComponentLayout.Children.Add(labelEditorView);
-                        contentPages.Add(
+                        /*contentPages.Add(
                             new ContentPage()
                             {
                                 Content = new StackLayout
@@ -124,13 +174,14 @@ namespace DataCollection.Services
 
                                 }
                             }
-                        );
+                        );*/
+                        pageStackLayout.Children.Add(labelEditorView);
                     }
                     else if (c.type.Equals(ComponentTypes.CameraView))
                     {
                         CameraView cameraView = new CameraView(c, formData);
                         //formComponentLayout.Children.Add(cameraView);
-                        contentPages.Add(
+                        /*contentPages.Add(
                             new ContentPage()
                             {
                                 Content = new StackLayout
@@ -138,8 +189,12 @@ namespace DataCollection.Services
                                     Children = { cameraView }
                                 }
                             }
-                        );
+                        );*/
+                        pageStackLayout.Children.Add(cameraView);
                     }
+
+                    page.Content = pageStackLayout;
+                    contentPages.Add(page);
                 }
             }
 
@@ -150,5 +205,7 @@ namespace DataCollection.Services
 
             return contentPages;
         }
+
     }
+
 }

@@ -50,8 +50,17 @@ namespace Kalect.Views
                 {
                     //get the friendlyname of the selected left menu item
                     string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
-                    this.Detail = new NavigationPage (new AssessmentDetailPage(selectedFriendlyName));
-                    //this.Detail = new NavigationPage(new AssessmentCarouselPage(selectedFriendlyName));
+
+                    /*if(AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber == 1000001)
+                    {
+                        this.Detail = new NavigationPage(new AssessmentCarouselPage(selectedFriendlyName));
+                    }
+                    else
+                    {
+                        this.Detail = new NavigationPage(new AssessmentDetailPage(selectedFriendlyName));
+                    }*/
+                    //this.Detail = new NavigationPage (new AssessmentDetailPage(selectedFriendlyName));
+                    this.Detail = new NavigationPage(new AssessmentButtonPage(selectedFriendlyName));
 
                 }
                 // Set the BindingContext of the detail page.
@@ -63,8 +72,9 @@ namespace Kalect.Views
             };
 
             // Initialize the ListView selection.
-            this.Detail = new NavigationPage(new AssessmentDetailPage());
+            //this.Detail = new NavigationPage(new AssessmentDetailPage());
             //this.Detail = new NavigationPage(new AssessmentCarouselPage());
+            this.Detail = new NavigationPage(new AssessmentButtonPage());
         }
 
         private List<string> GetLeftMenuItems()

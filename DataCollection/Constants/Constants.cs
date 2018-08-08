@@ -13,5 +13,6 @@ namespace DataCollection
         public static string YesNoSwitchView = "YesNoSwitchView";
         public static string LabelEditorView = "LabelEditorView";
         public static string CameraView = "CameraView";
+        public static string AudioRecorderView = "AudioRecorderView";
     }
 }

@@ -22,7 +22,7 @@ namespace DataCollection.Views.Components
                 //FlowDirection = FlowDirection.LeftToRight,
                 Content = new StackLayout
                 {
-                    Orientation = StackOrientation.Horizontal,
+                    Orientation = StackOrientation.Vertical,
 
                     Children = { btn }
                 }

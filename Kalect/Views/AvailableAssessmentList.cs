@@ -11,10 +11,10 @@ namespace Kalect.Views
     public class AvailableAssessmentList : ContentPage
     {
         
-        /*void deleteList_Clicked(object sender, EventArgs e)
+        void deleteList_Clicked(object sender, EventArgs e)
         {
             DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentsFromDevice();
-        }*/
+        }
 
 
         void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -47,12 +47,16 @@ namespace Kalect.Views
 
             var customAssessmentCell = new DataTemplate(typeof(CustomAssessmentCell));
            
+
+
             //Bind forms
             listView = new ListView
             {
                 ItemsSource = assessments,
                 ItemTemplate = customAssessmentCell
             };
+
+
 
             listView.ItemSelected += ListView_ItemSelected;
 
@@ -62,15 +66,15 @@ namespace Kalect.Views
             refreshList.Clicked += RefreshList_Clicked;
 
 
-            /*Button deleteList = new Button();
+            Button deleteList = new Button();
             deleteList.Text = "deleteList";
-            deleteList.Clicked += deleteList_Clicked;*/
+            deleteList.Clicked += deleteList_Clicked;
 
             Content = new StackLayout
             {
                 Padding=10,
                 Children = {
-                    //deleteList,
+                    deleteList,
                     refreshList,
                     listView 
                 }
@@ -83,6 +87,10 @@ namespace Kalect.Views
     {
         public CustomAssessmentCell()
         {
+
+            var deleteAction = new MenuItem { Text = "Delete", IsDestructive = true };
+            ContextActions.Add(deleteAction);
+
             //instantiate each of our views
             //var image = new Image();
             StackLayout cellWrapper = new StackLayout();

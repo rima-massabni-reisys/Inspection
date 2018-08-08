@@ -1,7 +1,8 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Kalect.Views;
+//using Kalect.Views;
+using Kalect.Demo;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Kalect
@@ -12,7 +13,7 @@ namespace Kalect
         {
             //InitializeComponent();
 
-            MainPage = new WelcomePage(); //MainPage();
+            MainPage = new Login(); //WelcomePage(); //MainPage();
         }
 
         protected override void OnStart()

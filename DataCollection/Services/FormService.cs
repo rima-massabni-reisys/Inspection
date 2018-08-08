@@ -56,6 +56,11 @@ namespace DataCollection.Services
             return _layoutGenerator.GenerateContentPagesForCarousel(formModelView, formData);
         }
 
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData)
+        {
+            return _layoutGenerator.GenerateLayoutForSelectedFormGroup(fg, formData);
+        }
+
         /*public Layout GetFormLayout(string FormModelJson)
         {
             var sl = new StackLayout();

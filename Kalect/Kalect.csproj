@@ -15,6 +15,7 @@
   <ItemGroup>
     <Folder Include="Views\" />
     <Folder Include="ViewModel\" />
+    <Folder Include="Demo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kalect.Services\Kalect.Services.csproj" />
@@ -31,6 +32,8 @@
     <Compile Remove="MainPage.xaml.cs" />
     <Compile Remove="App.xaml.cs" />
     <Compile Remove="DependencyServices\IKalectDependencyServices.cs" />
+    <Compile Remove="Login.xaml.cs" />
+    <Compile Remove="Demo\Login.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Remove="MainPage.xaml" />

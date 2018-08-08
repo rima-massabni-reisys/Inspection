@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DataCollection.Views.Components.AudioRecorderView">
+    <ContentView.Content>
+         <StackLayout Padding="5,80,20,0" Orientation="Vertical" Spacing="15">
+        <StackLayout Orientation="Horizontal">
+            <Switch x:Name="TimeoutSwitch" IsToggled="True" />
+            <Label Text="Timeout after silence?" />
+        </StackLayout>
+            <StackLayout Orientation="Horizontal">
+        <Button x:Name="RecordButton" Text="Record" FontSize="24" HorizontalOptions="FillAndExpand" Clicked="Record_Clicked" />
+        <Button x:Name="PlayButton" Text="Play" FontSize="24" HorizontalOptions="FillAndExpand" Clicked="Play_Clicked" IsEnabled="False" />
+        </StackLayout>
+      </StackLayout>
+    </ContentView.Content>
+</ContentView>

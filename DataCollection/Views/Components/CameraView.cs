@@ -40,6 +40,7 @@ namespace DataCollection.Views.Components
             MessageLabel = new Label();
             Content = new StackLayout
             {
+                Orientation = StackOrientation.Horizontal,
                 Children =
                 {
                     TakePhotoButton, ChoosePhotoButton,
