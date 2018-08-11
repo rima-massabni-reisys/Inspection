@@ -17,6 +17,9 @@ namespace Kalect.Services.Entities
         [JsonProperty("OrganizationAddress")]
         public string OrganizationAddress { get; set; }
 
+        [JsonProperty("OrganizationCityState")]
+        public string OrganizationCityState { get; set; }
+
         [JsonProperty("AssessmentStartDate")]
         public string AssessmentStartDate { get; set; }
 
@@ -31,6 +34,18 @@ namespace Kalect.Services.Entities
 
         [JsonProperty("Sections")]
         public Sections[] Sections { get; set; }
+
+        [JsonProperty("Weather")]
+        public string Weather { get; set; }
+
+        [JsonProperty("WeatherIcon")]
+        public string WeatherIcon { get; set; }
+
+
+        [JsonProperty("MapUrl")]
+        public string MapUrl { get; set; }
+
+
     }
 
     public class Sections

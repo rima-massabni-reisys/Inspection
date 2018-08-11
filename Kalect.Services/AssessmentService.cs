@@ -26,12 +26,26 @@ namespace Kalect.Services
         public List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromDevice()
         {
             List<AssessmentMetadataEntity> entities = new List<AssessmentMetadataEntity>();
+            WeatherService weatherService = new WeatherService();
 
             List<string> assessmentsFromDevice = LoadAssessmentFromDevice();
 
             foreach (string assessment in assessmentsFromDevice)
             {
                 AssessmentMetadataEntity entity = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(assessment);
+
+                try
+                {
+                    //send online.offline param to the method
+                    entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
+                    entity.WeatherIcon = GetWeatherIcon(entity.Weather);
+                    //entity.MapUrl = "http://maps.apple.com/?daddr=" + entity.OrganizationAddress; //Some Place&saddr=Some Other Place";
+                }
+                catch
+                {
+                    entity.Weather = "-";
+                    entity.WeatherIcon = "NoWeather.png";
+                }
                 entities.Add(entity);
 
             }
@@ -47,12 +61,33 @@ namespace Kalect.Services
 
             List<AssessmentMetadataEntity> metadataEntities = new List<AssessmentMetadataEntity>();
 
+            WeatherService weatherService = new WeatherService();
+
             foreach (AssessmentEntity entity in assessmentResponseFromServer)
             {
                 AssessmentMetadataEntity metadataEntity = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(entity.AssessmentMetadata);
 
+                //create the map url when data is pulled the first time.
+                metadataEntity.MapUrl = "http://maps.apple.com/?daddr=" + metadataEntity.OrganizationAddress;
+
+                try
+                {
+                    //send online.offline param to the method
+                    metadataEntity.Weather = weatherService.GetWeather(metadataEntity.OrganizationCityState);
+                    metadataEntity.WeatherIcon = GetWeatherIcon(metadataEntity.Weather);
+                    //entity.MapUrl = "http://maps.apple.com/?daddr=" + entity.OrganizationAddress; //Some Place&saddr=Some Other Place";
+                }
+                catch
+                {
+                    metadataEntity.Weather = "-";
+                    metadataEntity.WeatherIcon = "NoWeather.png";
+                }
+
+
+                string updatedAssessmentMetadata = JsonConvert.SerializeObject(metadataEntity);
+
                 //Store assessments metadata on the device
-                StoreAssessmentsOnDevice(entity.AssessmentMetadata, metadataEntity);
+                StoreAssessmentsOnDevice(updatedAssessmentMetadata, metadataEntity); //entity.AssessmentMetadata, metadataEntity);
                 StoreFormsOnDevice(metadataEntity, entity.Forms);
                 metadataEntities.Add(metadataEntity);
 
@@ -60,6 +95,22 @@ namespace Kalect.Services
 
             return metadataEntities;
 
+        }
+
+        private string GetWeatherIcon(string weather)
+        {
+            if (weather.ToLower().Contains("Thunderstorm".ToLower()))
+            {
+                return "Thunderstorm.png";
+            }
+            else if(weather.ToLower().Contains("Rain".ToLower()))
+            {
+                return "Rain.png";
+            }
+            else
+            {
+                return "Sunny.png";
+            }
         }
 
         #region dependency Service Calls

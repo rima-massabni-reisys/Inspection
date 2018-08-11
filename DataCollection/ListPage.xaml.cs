@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace Kalect.Demo
+namespace DataCollection
 {
-    public partial class Login : ContentPage
+    public partial class ListPage : ContentPage
     {
-        public Login()
+        public ListPage()
         {
             InitializeComponent();
         }

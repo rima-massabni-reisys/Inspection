@@ -1,0 +1,130 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using Kalect.Services.Entities;
+using Xamarin.Forms;
+
+namespace Kalect.Demo
+{
+    public class InspectionMaster : MasterDetailPage
+    {
+        public InspectionMaster(string selectedInspection)
+        {
+            NavigationPage.SetHasNavigationBar(this, false);
+ 
+            ListView assessmentListView = new ListView
+            {
+                ItemsSource = GetLeftMenuItems(),
+                //BackgroundColor = Color.FromHex("#F8F9F9")
+            };
+            assessmentListView.SeparatorVisibility = SeparatorVisibility.None;
+
+
+
+            this.Master = new ContentPage
+            {
+                Title = "Inspection",
+                Icon = "Hamburger_icon_25.png",
+                Content = new StackLayout
+                {
+                    Children =
+                    {
+                        assessmentListView
+                    }
+
+                }
+            };
+
+            // Define a selected handler for the ListView.
+            assessmentListView.ItemSelected += (sender, args) =>
+            {
+                //((ListView)sender).BackgroundColor = Color.FromHex("#3693FF");
+
+                if (args.SelectedItem.Equals("Signature"))
+                {
+                    //this.Detail = new NavigationPage(new SignaturePage());
+
+                }
+                else
+                {
+                    //get the friendlyname of the selected left menu item
+                    string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
+
+                    this.Detail = new NavigationPage(new InspectionDetail())
+                    {
+                        BarBackgroundColor = Color.FromHex("#025085"),
+                        BarTextColor = Color.White
+                    };
+
+                }
+                // Set the BindingContext of the detail page.
+                this.Detail.BindingContext = args.SelectedItem;
+                // Show the detail page.
+                this.IsPresented = false;
+
+            };
+
+            this.Detail = new NavigationPage(new InspectionDetail())
+            {
+                BarBackgroundColor = Color.FromHex("#025085"),
+                BarTextColor = Color.White
+            };
+
+        }
+
+        private List<string> GetLeftMenuItems()
+        {
+            //List of forms in the left menu
+            List<string> assessmentList = (from Sections in AppDataWallet.SelectedAssessmentMetadata.Sections
+                                           select Sections.SectionDisplayName).ToList<string>();
+
+            //Add custom left menu items
+            assessmentList.Add("Signature");
+
+            return assessmentList;
+        }
+    }
+
+    public class InspectionDetailCell : ViewCell
+    {
+        public InspectionDetailCell()
+        {
+            StackLayout cellWrapper = new StackLayout();
+           /*
+            //instantiate each of our views
+            //var image = new Image();
+            StackLayout cellWrapper = new StackLayout();
+            StackLayout horizontalLayout = new StackLayout();
+            Label orgName = new Label();
+            Label trackingNo = new Label();
+            trackingNo.FontSize = 10;
+            trackingNo.TextColor = Color.Gray;
+            Label status = new Label();
+            //status.Text = "Not Started";
+            status.FontSize = 10;
+            status.TextColor = Color.Gray;
+
+            //set bindings
+            trackingNo.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
+            orgName.SetBinding(Label.TextProperty, "OrganizationName");
+            status.SetBinding(Label.TextProperty, "AssessmentStatus");
+            //image.SetBinding(Image.SourceProperty, "image");
+
+            //Set properties for desired design
+            //cellWrapper.BackgroundColor = Color.FromHex("#eee");
+            horizontalLayout.Orientation = StackOrientation.Horizontal;
+            status.HorizontalOptions = LayoutOptions.EndAndExpand;
+
+            //add views to the view hierarchy
+            //horizontalLayout.Children.Add(image);
+            cellWrapper.Children.Add(orgName);
+            horizontalLayout.Children.Add(trackingNo);
+            horizontalLayout.Children.Add(status);
+            cellWrapper.Children.Add(horizontalLayout);
+            View = cellWrapper;// horizontalLayout;//cellWrapper;
+            */
+        }
+    }
+}
+
