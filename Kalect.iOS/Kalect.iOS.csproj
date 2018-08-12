@@ -231,5 +231,15 @@
     <BundleResource Include="Resources\Rain%402x.png" />
     <BundleResource Include="Resources\Rain%403x.png" />
     <BundleResource Include="Resources\PhoneIcon.png" />
+    <BundleResource Include="Resources\Audio.png" />
+    <BundleResource Include="Resources\Audio%402x.png" />
+    <BundleResource Include="Resources\Audio%403x.png" />
+    <BundleResource Include="Resources\Camera.png" />
+    <BundleResource Include="Resources\Camera%402x.png" />
+    <BundleResource Include="Resources\Camera%403x.png" />
+    <BundleResource Include="Resources\Video.png" />
+    <BundleResource Include="Resources\Video%402x.png" />
+    <BundleResource Include="Resources\Video%403x.png" />
+    <BundleResource Include="Resources\Play.png" />
   </ItemGroup>
 </Project>

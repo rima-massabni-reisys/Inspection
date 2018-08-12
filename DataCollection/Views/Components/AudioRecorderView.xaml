@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DataCollection.Views.Components.AudioRecorderView">
     <ContentView.Content>
-         <StackLayout Padding="5,80,20,0" Orientation="Vertical" Spacing="15">
-        <StackLayout Orientation="Horizontal">
-            <Switch x:Name="TimeoutSwitch" IsToggled="True" />
-            <Label Text="Timeout after silence?" />
-        </StackLayout>
-            <StackLayout Orientation="Horizontal">
-        <Button x:Name="RecordButton" Text="Record" FontSize="24" HorizontalOptions="FillAndExpand" Clicked="Record_Clicked" />
-        <Button x:Name="PlayButton" Text="Play" FontSize="24" HorizontalOptions="FillAndExpand" Clicked="Play_Clicked" IsEnabled="False" />
-        </StackLayout>
+        <StackLayout Orientation="Vertical" Padding="25,0,25,0">
+              <StackLayout Orientation="Horizontal" HeightRequest="100" >
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="Record Audio" />
+                            <Button x:Name="RecordButton" Image="Audio.png" Clicked="Record_Clicked" />
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                            <Label Text="Play" Margin="5,0,0,0" />
+                            <Button x:Name="PlayButton" Image="Play.png" Clicked="Play_Clicked" />
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                            <Label Text="Timeout after silence?" />
+                            <Switch x:Name="TimeoutSwitch" IsToggled="True" VerticalOptions="Center" HorizontalOptions="EndAndExpand"/>
+                        </StackLayout>
+                    </StackLayout>
+              </StackLayout>
+              <StackLayout>
+                    <BoxView HeightRequest="1" Color="#EAEAEA" Margin="0,25,0,0"/>
+              </StackLayout>
       </StackLayout>
     </ContentView.Content>
 </ContentView>

@@ -13,11 +13,21 @@ namespace Kalect.Demo
         {
             NavigationPage.SetHasNavigationBar(this, false);
  
+            //var inspectionDetailCell = new DataTemplate(typeof(InspectionDetailCell));
             ListView assessmentListView = new ListView
             {
                 ItemsSource = GetLeftMenuItems(),
+                //ItemTemplate = inspectionDetailCell
                 //BackgroundColor = Color.FromHex("#F8F9F9")
             };
+
+
+
+            /*
+            //Bind forms
+            inspectionList.ItemsSource = assessments;
+            inspectionList.ItemTemplate = customAssessmentCell;*/
+
             assessmentListView.SeparatorVisibility = SeparatorVisibility.None;
 
 
@@ -39,7 +49,7 @@ namespace Kalect.Demo
             // Define a selected handler for the ListView.
             assessmentListView.ItemSelected += (sender, args) =>
             {
-                //((ListView)sender).BackgroundColor = Color.FromHex("#3693FF");
+                //((ListView)sender).SelectedItem = Color.FromHex("#3693FF");
 
                 if (args.SelectedItem.Equals("Signature"))
                 {
@@ -49,9 +59,9 @@ namespace Kalect.Demo
                 else
                 {
                     //get the friendlyname of the selected left menu item
-                    string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
+                    //string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
 
-                    this.Detail = new NavigationPage(new InspectionDetail())
+                    this.Detail = new NavigationPage(new InspectionDetail(AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString())))
                     {
                         BarBackgroundColor = Color.FromHex("#025085"),
                         BarTextColor = Color.White
@@ -65,7 +75,8 @@ namespace Kalect.Demo
 
             };
 
-            this.Detail = new NavigationPage(new InspectionDetail())
+            //string defaultFirstFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>().SectionFriendlyName;
+            this.Detail = new NavigationPage(new InspectionDetail(AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>()))
             {
                 BarBackgroundColor = Color.FromHex("#025085"),
                 BarTextColor = Color.White
@@ -91,6 +102,8 @@ namespace Kalect.Demo
         public InspectionDetailCell()
         {
             StackLayout cellWrapper = new StackLayout();
+            cellWrapper.BackgroundColor = Color.FromHex("#3693FF");
+            View = cellWrapper;
            /*
             //instantiate each of our views
             //var image = new Image();

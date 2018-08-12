@@ -14,39 +14,174 @@ namespace DataCollection.Views.Components
         Button ChoosePhotoButton;
         Button TakeVideoButton;
         Button ChooseVideoButton;
-        Image CameraImage;
+        Image CameraPhotoImage;
         Label MessageLabel;
-        List<Image> Images;
+        BoxView photoLineSeparator;
+        BoxView videoLineSeparator;
+        Image CameraVideoImage;
         public  CameraView(Component c, string formData)
         {
             TakePhotoButton = new Button();
-            TakePhotoButton.Text = c.text;
+            //TakePhotoButton.Text = c.text;
+            TakePhotoButton.Image = "Camera.png";
             TakePhotoButton.Clicked += TakePhotoButton_Clicked;
 
+            CameraPhotoImage = new Image();
+            //CameraPhotoImage.HorizontalOptions = LayoutOptions.EndAndExpand;
+            CameraPhotoImage.HeightRequest = 100;
+
+
             ChoosePhotoButton = new Button();
-            ChoosePhotoButton.Text = "Choose Photo";
+            ChoosePhotoButton.Image = "Camera.png";
+            //ChoosePhotoButton.Text = "Choose Photo";
             ChoosePhotoButton.Clicked += ChoosePhotoButton_Clicked;
 
             TakeVideoButton = new Button();
-            TakeVideoButton.Text = "Take Video";
+            //TakeVideoButton.Text = "Take Video";
+            TakeVideoButton.Image = "Video.png";
             TakeVideoButton.Clicked += TakeVideoButton_Clicked;
 
+            CameraVideoImage = new Image();
+            //CameraVideoImage.HorizontalOptions = LayoutOptions.EndAndExpand;
+            CameraPhotoImage.HeightRequest = 100;
+
             ChooseVideoButton = new Button();
-            ChooseVideoButton.Text = "Choose Video";
+            //ChooseVideoButton.Text = "Choose Video";
+            ChooseVideoButton.Image = "Video.png";
             ChooseVideoButton.Clicked += ChooseVideoButton_Clicked;
 
-            CameraImage = new Image();
-            Images = new List<Image>();
+            photoLineSeparator = new BoxView();
+            photoLineSeparator.HeightRequest = 1;
+            photoLineSeparator.Color = Color.FromHex("#EAEAEA");
+            photoLineSeparator.Margin = new Thickness(0, 25, 0, 0);
+
+            videoLineSeparator = new BoxView();
+            videoLineSeparator.HeightRequest = 1;
+            videoLineSeparator.Color = Color.FromHex("#EAEAEA");
+            videoLineSeparator.Margin = new Thickness(0, 25, 0, 0);
+
+            Label lblTakePhoto = new Label();
+            lblTakePhoto.Text = "Take Photo";
+            Label lblChoosePhoto = new Label();
+            lblChoosePhoto.Text = "Choose Photo";
+
+            Label lblTakeVideo = new Label();
+            lblTakeVideo.Text = "Take Video";
+            Label lblChooseVideo = new Label();
+            lblChooseVideo.Text = "Choose Video";
+
+            StackLayout photoLayout = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                HeightRequest = 100,
+                Children =
+                {
+                    new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.StartAndExpand,
+                        Children=
+                        {
+                            new StackLayout
+                            {
+                                Orientation = StackOrientation.Vertical,
+                                VerticalOptions = LayoutOptions.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                                Children =
+                                {
+                                    lblTakePhoto,
+                                    TakePhotoButton
+                                }
+                            },
+                            new StackLayout
+                            {
+                                Orientation = StackOrientation.Vertical,
+                                VerticalOptions = LayoutOptions.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                                Children = 
+                                {
+                                    lblChoosePhoto,
+                                    ChoosePhotoButton
+                                }
+                            }
+                        }
+
+                    },
+                    new StackLayout
+                    {
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Children=
+                        {
+                            CameraPhotoImage
+                        }
+                    }
+                }
+            };
+
+
+            StackLayout videoLayout = new StackLayout()
+            {
+                Orientation = StackOrientation.Horizontal,
+                HeightRequest = 100,
+                //Padding = new Thickness(0, 10, 0, 10),
+                Children =
+                {
+                    new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.StartAndExpand,
+                        Children=
+                        {
+                            new StackLayout
+                            {
+                                Orientation = StackOrientation.Vertical,
+                                VerticalOptions = LayoutOptions.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                                Children =
+                                {
+                                    lblTakeVideo,
+                                    TakeVideoButton
+                                }
+                            },
+                            new StackLayout
+                            {
+                                Orientation = StackOrientation.Vertical,
+                                VerticalOptions = LayoutOptions.Center,
+                                HorizontalOptions = LayoutOptions.Center,
+                                Children =
+                                {
+                                    lblChooseVideo,
+                                    ChooseVideoButton
+                                }
+                            }
+                        }
+
+                    },
+                    new StackLayout
+                    {
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Children=
+                        {
+                            CameraVideoImage
+                        }
+                    }
+                }
+            };
+
+
+
+            //Images = new List<Image>();
             MessageLabel = new Label();
             Content = new StackLayout
             {
-                Orientation = StackOrientation.Horizontal,
+                Padding = new Thickness(25, 0, 25, 0),
+
                 Children =
                 {
-                    TakePhotoButton, ChoosePhotoButton,
-                    TakeVideoButton, ChooseVideoButton,
-                    MessageLabel,
-                    CameraImage
+                    photoLayout,
+                    photoLineSeparator,
+                    videoLayout,
+                    videoLineSeparator
 
                 }
             };
@@ -86,7 +221,7 @@ namespace DataCollection.Views.Components
 
                 //await this.DisplayAlert("File Location", file.Path, "OK");
                 MessageLabel.Text = "File Location: " + file.Path;
-                CameraImage.Source = ImageSource.FromStream(() =>
+                CameraPhotoImage.Source = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
                     return stream;
@@ -112,7 +247,7 @@ namespace DataCollection.Views.Components
             //var stream = test.GetStream();
             //using (var data = NSData.FromStream(stream))
             //    MainImage.Image = UIImage.LoadFromData(data);
-            CameraImage.Source = ImageSource.FromStream(() =>
+            CameraPhotoImage.Source = ImageSource.FromStream(() =>
                 {
                 var stream = test.GetStream();
                     return stream;

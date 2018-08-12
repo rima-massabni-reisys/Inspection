@@ -19,6 +19,7 @@ namespace DataCollection.Views.Components
         LabelView lblText;
         Editor dataEntry;
         string editorPath;
+        BoxView lineSeparator;
         public LabelEditorView(Component c, string formData)
         {
             editorPath = c.path;
@@ -28,18 +29,26 @@ namespace DataCollection.Views.Components
             BindingContext = lblEditorModel;
  
             dataEntry = new Editor();
-            dataEntry.BackgroundColor = Color.LightGray;
-            dataEntry.WidthRequest = 200;
-            dataEntry.HeightRequest = 200;
+            //dataEntry.WidthRequest = 200;
+            dataEntry.HeightRequest = 150;
+            dataEntry.BackgroundColor = Color.White;
+            dataEntry.Keyboard = Keyboard.Default;
 
             dataEntry.SetBinding(Editor.TextProperty, "EditorText");
             dataEntry.BindingContext = lblEditorModel;
             dataEntry.Completed += DataEntry_Completed;
             lblText = new LabelView(lblEditorModel.LabelText);
 
+            lineSeparator = new BoxView();
+            lineSeparator.HeightRequest = 1;
+            lineSeparator.Color = Color.FromHex("#EAEAEA");
+            lineSeparator.Margin = new Thickness(0, 25, 0, 0);
+
+
             var editorLayout = new StackLayout
             {
-                Padding = new Thickness(5, 10),
+                BackgroundColor = Color.FromHex("#EAEAEA"),
+                Padding = 1,
                 Children ={
                     dataEntry
                 }
@@ -47,9 +56,11 @@ namespace DataCollection.Views.Components
 
             Content = new StackLayout
             {
+                Padding = new Thickness(25, 10, 25, 0),
                 Children ={
                 lblText,
-                editorLayout
+                editorLayout,
+                    lineSeparator
                 }
             };
         }
