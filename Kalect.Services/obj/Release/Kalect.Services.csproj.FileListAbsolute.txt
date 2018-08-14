@@ -1,0 +1,15 @@
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/obj/Release/Kalect.Services.csprojResolveAssemblyReference.cache
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/obj/Release/Kalect.Services.csproj.CoreCompileInputs.cache
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Services.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Kalect.Constants.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Newtonsoft.Json.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Newtonsoft.Json.xml
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/obj/Release/Services.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Core.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Platform.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Xaml.dll
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Core.pdb
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Core.xml
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Xaml.pdb
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Release/Xamarin.Forms.Xaml.xml
+/Users/rei/Documents/GitHub/Kalect/Kalect.Services/obj/Release/XamlC.stamp
