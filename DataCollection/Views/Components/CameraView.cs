@@ -9,6 +9,13 @@ namespace DataCollection.Views.Components
 {
     public class CameraView : ContentView
     {
+        void TakeVideoButton_Clicked1(object sender, EventArgs e)
+        {
+            var questions = new List<string> { "Photo", "Cancel", "Take Video", "Choose Video" };
+            MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
+        }
+
+
         
         Button TakePhotoButton;
         Button ChoosePhotoButton;
@@ -21,6 +28,7 @@ namespace DataCollection.Views.Components
         Image CameraVideoImage;
         public  CameraView(Component c, string formData)
         {
+
             TakePhotoButton = new Button();
             //TakePhotoButton.Text = c.text;
             TakePhotoButton.Image = "Camera.png";
@@ -34,12 +42,13 @@ namespace DataCollection.Views.Components
             ChoosePhotoButton = new Button();
             ChoosePhotoButton.Image = "Camera.png";
             //ChoosePhotoButton.Text = "Choose Photo";
-            ChoosePhotoButton.Clicked += ChoosePhotoButton_Clicked;
+            //ChoosePhotoButton.Clicked += ChoosePhotoButton_Clicked;
 
             TakeVideoButton = new Button();
             //TakeVideoButton.Text = "Take Video";
             TakeVideoButton.Image = "Video.png";
-            TakeVideoButton.Clicked += TakeVideoButton_Clicked;
+            //TakeVideoButton.Clicked += TakeVideoButton_Clicked;
+            TakeVideoButton.Clicked += TakeVideoButton_Clicked1;
 
             CameraVideoImage = new Image();
             //CameraVideoImage.HorizontalOptions = LayoutOptions.EndAndExpand;
@@ -48,7 +57,7 @@ namespace DataCollection.Views.Components
             ChooseVideoButton = new Button();
             //ChooseVideoButton.Text = "Choose Video";
             ChooseVideoButton.Image = "Video.png";
-            ChooseVideoButton.Clicked += ChooseVideoButton_Clicked;
+            //ChooseVideoButton.Clicked += ChooseVideoButton_Clicked;
 
             photoLineSeparator = new BoxView();
             photoLineSeparator.HeightRequest = 1;
@@ -61,14 +70,10 @@ namespace DataCollection.Views.Components
             videoLineSeparator.Margin = new Thickness(0, 25, 0, 0);
 
             Label lblTakePhoto = new Label();
-            lblTakePhoto.Text = "Take Photo";
-            Label lblChoosePhoto = new Label();
-            lblChoosePhoto.Text = "Choose Photo";
+            lblTakePhoto.Text = "Photo";
 
             Label lblTakeVideo = new Label();
-            lblTakeVideo.Text = "Take Video";
-            Label lblChooseVideo = new Label();
-            lblChooseVideo.Text = "Choose Video";
+            lblTakeVideo.Text = "Video";
 
             StackLayout photoLayout = new StackLayout()
             {
@@ -91,17 +96,6 @@ namespace DataCollection.Views.Components
                                 {
                                     lblTakePhoto,
                                     TakePhotoButton
-                                }
-                            },
-                            new StackLayout
-                            {
-                                Orientation = StackOrientation.Vertical,
-                                VerticalOptions = LayoutOptions.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                                Children = 
-                                {
-                                    lblChoosePhoto,
-                                    ChoosePhotoButton
                                 }
                             }
                         }
@@ -142,17 +136,6 @@ namespace DataCollection.Views.Components
                                     lblTakeVideo,
                                     TakeVideoButton
                                 }
-                            },
-                            new StackLayout
-                            {
-                                Orientation = StackOrientation.Vertical,
-                                VerticalOptions = LayoutOptions.Center,
-                                HorizontalOptions = LayoutOptions.Center,
-                                Children =
-                                {
-                                    lblChooseVideo,
-                                    ChooseVideoButton
-                                }
                             }
                         }
 
@@ -167,7 +150,6 @@ namespace DataCollection.Views.Components
                     }
                 }
             };
-
 
 
             //Images = new List<Image>();
@@ -185,11 +167,45 @@ namespace DataCollection.Views.Components
 
                 }
             };
+
+
+            MessagingCenter.Subscribe<object, string>(this, "PhotoMessageAnswer", (sender, arg) =>
+            {
+                //System.Diagnostics.Debug.WriteLine("User choose: {0}", arg);
+                if(arg == "Take Photo")
+                {
+                    TakePhoto();
+                }
+                else if(arg == "Choose Photo")
+                {
+                    ChoosePhoto();
+                }
+                else if(arg == "Choose Video")
+                {
+                    ChooseVideo();
+                }
+                else if(arg == "Take Video")
+                {
+                    TakeVideo();
+                }
+            });
+
+
+
         }
 
-        private async void TakePhotoButton_Clicked(object sender, EventArgs e)
+
+        private void TakePhotoButton_Clicked(object sender, EventArgs e)
         {
-                await CrossMedia.Current.Initialize();
+            //create messagecenter to DisplayMessageSheet on the screen
+            var questions = new List<string> { "Photo", "Cancel", "Take Photo", "Choose Photo" };
+            MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
+
+         }
+
+        private async void TakePhoto()
+        {
+            await CrossMedia.Current.Initialize();
     
                 if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
                 {
@@ -205,15 +221,7 @@ namespace DataCollection.Views.Components
                     Name = "test.jpg",
                     SaveToAlbum= true,
                     PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small 
-                    /*Name = "test1.jpg",
-                    SaveToAlbum = AlbumSwitch.On,
-                    PhotoSize = SizeSwitch.On ? Plugin.Media.Abstractions.PhotoSize.Medium : Plugin.Media.Abstractions.PhotoSize.Full,
-                    OverlayViewProvider = OverlaySwitch.On ? func : null,
-                    AllowCropping = CroppingSwitch.On,
-                    CompressionQuality = (int)SliderQuality.Value,
-                    Directory = "Sample",
-                    DefaultCamera = FrontSwitch.On ? Plugin.Media.Abstractions.CameraDevice.Front : Plugin.Media.Abstractions.CameraDevice.Rear,
-                    RotateImage = SwitchRotate.On */
+                    
                 });
 
                 if (file == null)
@@ -226,51 +234,101 @@ namespace DataCollection.Views.Components
                     var stream = file.GetStream();
                     return stream;
                 }); 
-         }
+        }
 
-
-        private async void ChoosePhotoButton_Clicked(object sender, EventArgs e)
+        private async void ChoosePhoto()
         {
             var test = await CrossMedia.Current.PickPhotoAsync(
                     new Plugin.Media.Abstractions.PickMediaOptions
                     {
-                        /*PhotoSize = SizeSwitch.On ? Plugin.Media.Abstractions.PhotoSize.Medium : Plugin.Media.Abstractions.PhotoSize.Full,
-                        CompressionQuality = (int)SliderQuality.Value,
-                        RotateImage = SwitchRotate.On*/
                         PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small
                     });
             if (test == null)
                 return;
 
-            //new UIAlertView("Success", test.Path, null, "OK").Show();
-
-            //var stream = test.GetStream();
-            //using (var data = NSData.FromStream(stream))
-            //    MainImage.Image = UIImage.LoadFromData(data);
             CameraPhotoImage.Source = ImageSource.FromStream(() =>
-                {
+            {
                 var stream = test.GetStream();
-                    return stream;
-                }); 
+                return stream;
+            });
 
             test.Dispose();
         }
 
-        async void ChooseVideoButton_Clicked(object sender, EventArgs e)
+
+        private async void ChooseVideo()
         {
-            var test = await CrossMedia.Current.PickVideoAsync();
+            if (!CrossMedia.Current.IsPickVideoSupported)
+            {
+                //DisplayAlert("Videos Not Supported", ":( Permission not granted to videos.", "OK");
+                return;
+            }
+            var file = await CrossMedia.Current.PickVideoAsync();
+
+            if (file == null)
+                return;
+
+            CameraVideoImage.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                return stream;
+            });
+
+            //DisplayAlert("Video Selected", "Location: " + file.Path, "OK");
+            file.Dispose();
+
+            /*var test = await CrossMedia.Current.PickVideoAsync();
             if (test == null)
                 return;
 
+            CameraPhotoImage.Source = ImageSource.FromStream(() =>
+            {
+                var stream = test.GetStream();
+                return stream;
+            });
+
             //new UIAlertView("Success", test.Path, null, "OK").Show();
 
-            test.Dispose();
+            test.Dispose();*/
         }
 
 
-        async void TakeVideoButton_Clicked(object sender, EventArgs e)
+        private void TakeVideoButton_Clicked(object sender, EventArgs e)
         {
-            var test = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
+            //create messagecenter to DisplayMessageSheet on the screen
+            var questions = new List<string> { "Photo", "Cancel", "Take Video", "Choose Video" };
+            MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
+
+        }
+
+        private async void TakeVideo()
+        {
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakeVideoSupported)
+            {
+                //DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
+                return;
+            }
+
+            var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
+            {
+                Name = "video.mp4",
+                Directory = "DefaultVideos",
+            });
+
+            if (file == null)
+                return;
+
+            //DisplayAlert("Video Recorded", "Location: " + file.Path, "OK");
+
+            CameraVideoImage.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = file.GetStream();
+                    return stream;
+                }); 
+
+            file.Dispose();
+
+            /*var test = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
             {
                 Name = "test1.mp4",
                 SaveToAlbum = true
@@ -279,9 +337,16 @@ namespace DataCollection.Views.Components
             if (test == null)
                 return;
 
+            CameraPhotoImage.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = test.GetStream();
+                    return stream;
+                }); 
+
+
             //new UIAlertView("Success", test.Path, null, "OK").Show();
 
-            test.Dispose();
+            test.Dispose();*/
         }
 
 

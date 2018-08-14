@@ -19,6 +19,7 @@ namespace Kalect.Demo
 
             Children.Add(inspectionListPage);
         }
+
     }
 }
 

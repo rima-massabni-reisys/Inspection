@@ -226,7 +226,6 @@
     <BundleResource Include="Resources\Sunny%403x.png" />
     <BundleResource Include="Resources\NoWeather.png" />
     <BundleResource Include="Resources\NoWeather%402x.png" />
-    <BundleResource Include="Resources\NoWeather%403x.png" />
     <BundleResource Include="Resources\Rain.png" />
     <BundleResource Include="Resources\Rain%402x.png" />
     <BundleResource Include="Resources\Rain%403x.png" />
@@ -241,5 +240,10 @@
     <BundleResource Include="Resources\Video%402x.png" />
     <BundleResource Include="Resources\Video%403x.png" />
     <BundleResource Include="Resources\Play.png" />
+    <BundleResource Include="Resources\cloudy.png" />
+    <BundleResource Include="Resources\cloudy%402x.png" />
+    <BundleResource Include="Resources\windy.png" />
+    <BundleResource Include="Resources\windy%402x.png" />
+    <BundleResource Include="Resources\StopRecording.png" />
   </ItemGroup>
 </Project>

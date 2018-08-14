@@ -30,19 +30,32 @@ namespace Kalect.Services
 
             List<string> assessmentsFromDevice = LoadAssessmentFromDevice();
 
+            //bool isInternetAvailable = true;
+
             foreach (string assessment in assessmentsFromDevice)
             {
                 AssessmentMetadataEntity entity = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(assessment);
 
                 try
                 {
-                    //send online.offline param to the method
-                    entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
-                    entity.WeatherIcon = GetWeatherIcon(entity.Weather);
-                    //entity.MapUrl = "http://maps.apple.com/?daddr=" + entity.OrganizationAddress; //Some Place&saddr=Some Other Place";
+                    //if (isInternetAvailable)
+                    //{
+                        //send online.offline param to the method
+                        entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
+                        entity.WeatherIcon = GetWeatherIcon(entity.Weather);
+                      //  isInternetAvailable = true;
+                    //}
+                    //else
+                    //{
+                    //    entity.Weather = "-";
+                    //    entity.WeatherIcon = "NoWeather.png";
+                    //}
+                    
                 }
                 catch
                 {
+                    //set this to false so it does not keep hitting the server again and again
+                    //isInternetAvailable = false;
                     entity.Weather = "-";
                     entity.WeatherIcon = "NoWeather.png";
                 }
@@ -57,11 +70,13 @@ namespace Kalect.Services
 
         public List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromServer()
         {
+            
             List<AssessmentEntity> assessmentResponseFromServer = GetListOfAllAssignedAssessmentsFromServerAPICall();
 
             List<AssessmentMetadataEntity> metadataEntities = new List<AssessmentMetadataEntity>();
 
             WeatherService weatherService = new WeatherService();
+            bool isWeatherServiceAvailable = true;
 
             foreach (AssessmentEntity entity in assessmentResponseFromServer)
             {
@@ -72,13 +87,21 @@ namespace Kalect.Services
 
                 try
                 {
-                    //send online.offline param to the method
-                    metadataEntity.Weather = weatherService.GetWeather(metadataEntity.OrganizationCityState);
-                    metadataEntity.WeatherIcon = GetWeatherIcon(metadataEntity.Weather);
-                    //entity.MapUrl = "http://maps.apple.com/?daddr=" + entity.OrganizationAddress; //Some Place&saddr=Some Other Place";
+                    if (isWeatherServiceAvailable)
+                    {
+                        //send online.offline param to the method
+                        metadataEntity.Weather = weatherService.GetWeather(metadataEntity.OrganizationCityState);
+                        metadataEntity.WeatherIcon = GetWeatherIcon(metadataEntity.Weather);
+                        //entity.MapUrl = "http://maps.apple.com/?daddr=" + entity.OrganizationAddress; //Some Place&saddr=Some Other Place";
+                    }
+                    else{
+                        metadataEntity.Weather = "-";
+                        metadataEntity.WeatherIcon = "NoWeather.png";
+                    }
                 }
                 catch
                 {
+                    isWeatherServiceAvailable = false;
                     metadataEntity.Weather = "-";
                     metadataEntity.WeatherIcon = "NoWeather.png";
                 }
@@ -99,13 +122,22 @@ namespace Kalect.Services
 
         private string GetWeatherIcon(string weather)
         {
-            if (weather.ToLower().Contains("Thunderstorm".ToLower()))
+            string weatherLowerCase = weather.ToLower();
+            if (weatherLowerCase.Contains("thunderstorm"))
             {
                 return "Thunderstorm.png";
             }
-            else if(weather.ToLower().Contains("Rain".ToLower()))
+            else if(weatherLowerCase.Contains("rain"))
             {
                 return "Rain.png";
+            }
+            else if(weatherLowerCase.Contains("cloudy"))
+            {
+                return "Cloudy.png";
+            }
+            else if(weatherLowerCase.Contains("wind"))
+            {
+                return "Windy.png";
             }
             else
             {

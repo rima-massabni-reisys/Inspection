@@ -19,11 +19,13 @@ namespace Kalect.Demo
             foreach (Button qbtn in questionNavigationButtonBarLayout.Children)
             {
                 qbtn.BackgroundColor = Color.FromHex("#EAEAEA");
+                qbtn.TextColor = Color.Black;
             }
 
             //set the select button color and load question
             Xamarin.Forms.Button btn = (Button)sender;
             btn.BackgroundColor = Color.FromHex("#3693FF");
+            btn.TextColor = Color.White;
             formGroup = (FormGroup)btn.CommandParameter;
             LoadQuestions(formGroup);
 
@@ -115,7 +117,7 @@ namespace Kalect.Demo
 
             questionNavigationButtonBarLayout = new StackLayout();
             questionNavigationButtonBarLayout.Orientation = StackOrientation.Horizontal;
-            questionNavigationButtonBarLayout.Padding = new Thickness(25, 10, 10, 25);
+            questionNavigationButtonBarLayout.Padding = new Thickness(25, 10, 10, 10);
             PageLayout.Children.Add(questionNavigationButtonBarLayout);
 
             //Create Button list for Navigation
@@ -123,9 +125,9 @@ namespace Kalect.Demo
             foreach (FormGroup fg in formInstance.FormModelView.formgroups)
             {
                 questionButton = new Button();
-                questionButton.WidthRequest = 50;
-                questionButton.HeightRequest = 50;
-                questionButton.CornerRadius = 25;
+                questionButton.WidthRequest = 80;
+                questionButton.HeightRequest = 80;
+                questionButton.CornerRadius = 40;
                 questionButton.Margin = new Thickness(0,0, 20, 0);
                 questionButton.BackgroundColor = Color.FromHex("#EAEAEA");
                 questionButton.Text = fg.text;
@@ -144,6 +146,12 @@ namespace Kalect.Demo
             LoadFirstQuestionByDefault(formGroup);
 
             ScrollView scrollView = new ScrollView();
+
+            MessagingCenter.Subscribe<object, List<string>>(this, "PhotoMessageQuestion", async (sender, arg) =>
+            {
+                var photoAction = await DisplayActionSheet(arg[0], arg[1], arg[2],arg[3]);
+                MessagingCenter.Send<object, string>(this, "PhotoMessageAnswer", photoAction);
+            });
 
             //Final Page Content
             //Content = _pageLayout;
@@ -174,7 +182,11 @@ namespace Kalect.Demo
         {
             //Select the color of first button
             View firstButton = questionNavigationButtonBarLayout.Children.FirstOrDefault<View>();
-            firstButton.BackgroundColor  = Color.FromHex("#3693FF");
+            Button frstbtn = (Button)firstButton;
+            frstbtn.BackgroundColor  = Color.FromHex("#3693FF");
+            frstbtn.TextColor = Color.White;
+            //firstButton.SetBinding(Button.TextColorProperty, "#FFFFFF");
+
 
             LoadQuestions(fg);
         }

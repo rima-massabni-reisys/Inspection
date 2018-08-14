@@ -45,18 +45,19 @@ namespace DataCollection.Views.Components
                     //start recording audio
                     var audioRecordTask = await recorder.StartRecording();
 
-                    RecordButton.Text = "Stop Recording";
+                    //RecordButton.Text = "Stop Recording";
+                    RecordButton.Image = "StopRecording.png";
                     RecordButton.IsEnabled = true;
 
                     await audioRecordTask;
 
-                    RecordButton.Text = "Record";
+                    //RecordButton.Text = "Record";
                     PlayButton.IsEnabled = true;
                 }
                 else //Stop button clicked
                 {
                     RecordButton.IsEnabled = false;
-
+                    RecordButton.Image = "Audio.png";
                     //stop the recording...
                     await recorder.StopRecording();
 
