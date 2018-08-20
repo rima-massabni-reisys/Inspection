@@ -1584,11 +1584,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/Kalect.iOS.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/Kalect.iOS.csproj",
       "projectName": "Kalect.iOS",
-      "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/Kalect.iOS.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/Kalect.iOS.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rei/.config/NuGet/NuGet.Config"
@@ -1603,14 +1603,14 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/rei/Documents/GitHub/Kalect/Kalect/Kalect.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect/Kalect.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj"
             },
-            "/Users/rei/Documents/GitHub/Kalect/DataCollection/DataCollection.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/DataCollection/DataCollection.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj"
             },
-            "/Users/rei/Documents/GitHub/Kalect/Kalect.Services/Kalect.Services.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.Services/Kalect.Services.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj"
             }
           }
         }

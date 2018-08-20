@@ -133,11 +133,11 @@ namespace Kalect.Services
             }
             else if(weatherLowerCase.Contains("cloudy"))
             {
-                return "Cloudy.png";
+                return "cloudy.png";
             }
             else if(weatherLowerCase.Contains("wind"))
             {
-                return "Windy.png";
+                return "windy.png";
             }
             else
             {

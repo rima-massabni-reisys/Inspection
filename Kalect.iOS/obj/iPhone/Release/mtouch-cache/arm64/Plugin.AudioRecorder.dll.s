@@ -15010,7 +15010,7 @@ _mono_aot_file_info:
 	.long 344,5800,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 99,163,243,157,234,66,143,83,107,149,202,173,82,169,136,144
+	.byte 207,67,110,131,163,112,151,134,91,5,21,209,136,47,161,101
 	.globl _mono_aot_module_Plugin_AudioRecorder_info
 	.align 3
 _mono_aot_module_Plugin_AudioRecorder_info:

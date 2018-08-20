@@ -516,11 +516,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Kalect/DataCollection/DataCollection.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj",
       "projectName": "DataCollection",
-      "projectPath": "/Users/rei/Documents/GitHub/Kalect/DataCollection/DataCollection.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Kalect/DataCollection/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection/DataCollection/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -6258,7 +6258,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "CDD7698A-598B-45DB-B6B1-31B8C37E5CC5"
+	.asciz "FE49C2E2-089A-4BE8-9376-C2E484FACD18"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -6343,7 +6343,7 @@ _mono_aot_file_info:
 	.long 184,2632,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 226,234,60,200,57,98,188,3,217,200,238,213,105,56,32,143
+	.byte 100,252,169,85,161,63,78,163,185,95,205,157,163,26,0,71
 	.globl _mono_aot_module_Services_info
 	.align 3
 _mono_aot_module_Services_info:

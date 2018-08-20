@@ -1193,11 +1193,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Kalect/Kalect.Android/Kalect.Android.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect.Android/Kalect.Android.csproj",
       "projectName": "Kalect.Android",
-      "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.Android/Kalect.Android.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Android/Kalect.Android.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.Android/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Android/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rei/.config/NuGet/NuGet.Config"
@@ -1212,8 +1212,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "/Users/rei/Documents/GitHub/Kalect/Kalect/Kalect.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect/Kalect.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj"
             }
           }
         }

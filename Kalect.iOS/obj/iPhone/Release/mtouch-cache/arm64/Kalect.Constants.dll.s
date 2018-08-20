@@ -387,7 +387,7 @@ _mono_aot_file_info:
 	.long 32,560,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 144,108,250,230,125,137,69,239,6,33,40,195,126,157,78,90
+	.byte 84,120,205,51,248,32,144,84,99,145,6,222,225,214,229,55
 	.globl _mono_aot_module_Kalect_Constants_info
 	.align 3
 _mono_aot_module_Kalect_Constants_info:

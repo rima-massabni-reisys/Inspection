@@ -680,11 +680,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Kalect/Kalect/Kalect.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj",
       "projectName": "Kalect",
-      "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect/Kalect.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Kalect/Kalect/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -702,14 +702,14 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "/Users/rei/Documents/GitHub/Kalect/Kalect.Services/Kalect.Services.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.Services/Kalect.Services.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj"
             },
-            "/Users/rei/Documents/GitHub/Kalect/DataCollection/DataCollection.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/DataCollection/DataCollection.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj"
             },
-            "/Users/rei/Documents/GitHub/Kalect/Kalect.Constants/Kalect.Constants.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.Constants/Kalect.Constants.csproj"
+            "/Users/rei/Documents/GitHub/Inspection/Kalect.Constants/Kalect.Constants.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Constants/Kalect.Constants.csproj"
             }
           }
         }

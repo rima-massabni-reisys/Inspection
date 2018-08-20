@@ -125,11 +125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Kalect/Kalect.UITests/Kalect.UITests.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/Kalect.UITests.csproj",
       "projectName": "Kalect.UITests",
-      "projectPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.UITests/Kalect.UITests.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/Kalect.UITests.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Kalect/Kalect.UITests/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rei/.config/NuGet/NuGet.Config"

@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip DataCollection_Constants__ctor
 DataCollection_Constants__ctor:
-.file 1 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Constants/Constants.cs"
+.file 1 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Constants/Constants.cs"
 .loc 1 8 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -186,7 +186,7 @@ Lme_1:
 	.align 4
 	.no_dead_strip DataCollection_ListPage__ctor
 DataCollection_ListPage__ctor:
-.file 2 "/Users/rei/Documents/GitHub/Kalect/DataCollection/ListPage.xaml.cs"
+.file 2 "/Users/rei/Documents/GitHub/Inspection/DataCollection/ListPage.xaml.cs"
 .loc 2 10 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -206,7 +206,7 @@ Lme_2:
 	.align 4
 	.no_dead_strip DataCollection_ListPage_InitializeComponent
 DataCollection_ListPage_InitializeComponent:
-.file 3 "/Users/rei/Documents/GitHub/Kalect/DataCollection/obj/Release/netstandard2.0/ListPage.xaml.g.cs"
+.file 3 "/Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/ListPage.xaml.g.cs"
 .loc 3 39 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -377,7 +377,7 @@ Lme_3:
 	.align 4
 	.no_dead_strip DataCollection_Views_MyPage__ctor
 DataCollection_Views_MyPage__ctor:
-.file 4 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/MyPage.xaml.cs"
+.file 4 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/MyPage.xaml.cs"
 .loc 4 10 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -397,7 +397,7 @@ Lme_4:
 	.align 4
 	.no_dead_strip DataCollection_Views_MyPage_InitializeComponent
 DataCollection_Views_MyPage_InitializeComponent:
-.file 5 "/Users/rei/Documents/GitHub/Kalect/DataCollection/obj/Release/netstandard2.0/Views/MyPage.xaml.g.cs"
+.file 5 "/Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/Views/MyPage.xaml.g.cs"
 .loc 5 21 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -422,7 +422,7 @@ Lme_5:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_AudioRecorderView__ctor
 DataCollection_Views_Components_AudioRecorderView__ctor:
-.file 6 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/AudioRecorderView.xaml.cs"
+.file 6 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs"
 .loc 6 14 0 prologue_end
 .word 0xa9ba7bfd
 .word 0x910003fd
@@ -917,7 +917,7 @@ Lme_b:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_AudioRecorderView_InitializeComponent
 DataCollection_Views_Components_AudioRecorderView_InitializeComponent:
-.file 7 "/Users/rei/Documents/GitHub/Kalect/DataCollection/obj/Release/netstandard2.0/Views/Components/AudioRecorderView.xaml.g.cs"
+.file 7 "/Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/Views/Components/AudioRecorderView.xaml.g.cs"
 .loc 7 30 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1586,7 +1586,7 @@ Lme_10:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_ButtonView_get_text
 DataCollection_Views_Components_ButtonView_get_text:
-.file 8 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/ButtonView.cs"
+.file 8 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/ButtonView.cs"
 .loc 8 10 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -1753,7 +1753,7 @@ Lme_14:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_CameraView_TakeVideoButton_Clicked1_object_System_EventArgs
 DataCollection_Views_Components_CameraView_TakeVideoButton_Clicked1_object_System_EventArgs:
-.file 9 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/CameraView.cs"
+.file 9 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs"
 .loc 9 14 0 prologue_end
 .word 0xa9bb7bfd
 .word 0x910003fd
@@ -5306,7 +5306,7 @@ Lme_2d:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_FormGroupBoxView_get_text
 DataCollection_Views_Components_FormGroupBoxView_get_text:
-.file 10 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/FormGroupBoxView.cs"
+.file 10 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/FormGroupBoxView.cs"
 .loc 10 10 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -5523,7 +5523,7 @@ Lme_30:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_LabelEditorView_DataEntry_Completed_object_System_EventArgs
 DataCollection_Views_Components_LabelEditorView_DataEntry_Completed_object_System_EventArgs:
-.file 11 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/LabelEditorView.cs"
+.file 11 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/LabelEditorView.cs"
 .loc 11 13 0 prologue_end
 .word 0xa9bc7bfd
 .word 0x910003fd
@@ -6071,7 +6071,7 @@ Lme_32:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_LabelEditorViewModel_get_LabelText
 DataCollection_Views_Components_LabelEditorViewModel_get_LabelText:
-.file 12 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/LabelEditorViewModel.cs"
+.file 12 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/LabelEditorViewModel.cs"
 .loc 12 13 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6398,7 +6398,7 @@ Lme_3a:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_LabelView__ctor
 DataCollection_Views_Components_LabelView__ctor:
-.file 13 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/LabelView.cs"
+.file 13 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/LabelView.cs"
 .loc 13 10 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -6539,7 +6539,7 @@ Lme_3c:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_LabelViewModel_get_LabelText
 DataCollection_Views_Components_LabelViewModel_get_LabelText:
-.file 14 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/LabelViewModel.cs"
+.file 14 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/LabelViewModel.cs"
 .loc 14 13 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6806,7 +6806,7 @@ Lme_42:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_SwitchView_get_SelectedAnswerValue
 DataCollection_Views_Components_SwitchView_get_SelectedAnswerValue:
-.file 15 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/SwitchView.cs"
+.file 15 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/SwitchView.cs"
 .loc 15 11 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7168,7 +7168,7 @@ Lme_46:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_SwitchViewModel_get_SwitchValue
 DataCollection_Views_Components_SwitchViewModel_get_SwitchValue:
-.file 16 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/SwitchViewModel.cs"
+.file 16 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/SwitchViewModel.cs"
 .loc 16 14 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7422,7 +7422,7 @@ Lme_4c:
 	.align 4
 	.no_dead_strip DataCollection_Views_Components_YesNoSwitchView_get_QuestionText
 DataCollection_Views_Components_YesNoSwitchView_get_QuestionText:
-.file 17 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Views/Components/YesNoSwitchView.cs"
+.file 17 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/YesNoSwitchView.cs"
 .loc 17 12 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7739,7 +7739,7 @@ Lme_4f:
 	.align 4
 	.no_dead_strip DataCollection_Utilities_Utility__ctor
 DataCollection_Utilities_Utility__ctor:
-.file 18 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Utilities/Utility.cs"
+.file 18 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Utilities/Utility.cs"
 .loc 18 11 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7920,7 +7920,7 @@ Lme_52:
 	.align 4
 	.no_dead_strip DataCollection_Services_ComponentSelector__ctor
 DataCollection_Services_ComponentSelector__ctor:
-.file 19 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Services/ComponentSelector.cs"
+.file 19 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Services/ComponentSelector.cs"
 .loc 19 11 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -7951,7 +7951,7 @@ Lme_54:
 	.align 4
 	.no_dead_strip DataCollection_Services_FormDataService_get_FormData
 DataCollection_Services_FormDataService_get_FormData:
-.file 20 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Services/FormDataService.cs"
+.file 20 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Services/FormDataService.cs"
 .loc 20 12 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
@@ -8023,7 +8023,7 @@ Lme_57:
 	.align 4
 	.no_dead_strip DataCollection_Services_FormService__ctor
 DataCollection_Services_FormService__ctor:
-.file 21 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Services/FormService.cs"
+.file 21 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Services/FormService.cs"
 .loc 21 19 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -8251,7 +8251,7 @@ Lme_5c:
 	.align 4
 	.no_dead_strip DataCollection_Services_LayoutGenerator__ctor
 DataCollection_Services_LayoutGenerator__ctor:
-.file 22 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Services/LayoutGenerator.cs"
+.file 22 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Services/LayoutGenerator.cs"
 .loc 22 13 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -9212,7 +9212,7 @@ Lme_61:
 	.align 4
 	.no_dead_strip DataCollection_Repository_FormRepository__ctor
 DataCollection_Repository_FormRepository__ctor:
-.file 23 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Repository/FormRepository.cs"
+.file 23 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Repository/FormRepository.cs"
 .loc 23 16 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -9383,7 +9383,7 @@ Lme_63:
 	.align 4
 	.no_dead_strip DataCollection_Repository_DataObjects_FormInstanceData_get_FormModel
 DataCollection_Repository_DataObjects_FormInstanceData_get_FormModel:
-.file 24 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Repository/DataObjects/FormInstanceData.cs"
+.file 24 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Repository/DataObjects/FormInstanceData.cs"
 .loc 24 6 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -9528,7 +9528,7 @@ Lme_6b:
 	.align 4
 	.no_dead_strip DataCollection_Repository_DataObjects_ComponentData_get_id
 DataCollection_Repository_DataObjects_ComponentData_get_id:
-.file 25 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Repository/DataObjects/FormModelData.cs"
+.file 25 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Repository/DataObjects/FormModelData.cs"
 .loc 25 8 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -9961,7 +9961,7 @@ Lme_80:
 	.align 4
 	.no_dead_strip DataCollection_Entities_FormInstance_get_FormModelView
 DataCollection_Entities_FormInstance_get_FormModelView:
-.file 26 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Entities/FormInstance.cs"
+.file 26 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Entities/FormInstance.cs"
 .loc 26 8 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -10106,7 +10106,7 @@ Lme_87:
 	.align 4
 	.no_dead_strip DataCollection_Entities_Component_get_id
 DataCollection_Entities_Component_get_id:
-.file 27 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Entities/FormModel.cs"
+.file 27 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Entities/FormModel.cs"
 .loc 27 8 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -10539,7 +10539,7 @@ Lme_9c:
 	.align 4
 	.no_dead_strip DataCollection_Data_CleaningAndDisinfectionProducts_CDP__cctor
 DataCollection_Data_CleaningAndDisinfectionProducts_CDP__cctor:
-.file 28 "/Users/rei/Documents/GitHub/Kalect/DataCollection/Data/CleaningAndDisinfectionProducts/CDP.cs"
+.file 28 "/Users/rei/Documents/GitHub/Inspection/DataCollection/Data/CleaningAndDisinfectionProducts/CDP.cs"
 .loc 28 6 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
@@ -25346,7 +25346,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "03431B32-8B1C-4FF7-94A9-A556AE87BC69"
+	.asciz "35FD092A-007B-480C-9859-8A1FFB42FCFA"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -25431,7 +25431,7 @@ _mono_aot_file_info:
 	.long 512,9104,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 64,253,103,86,64,244,128,71,158,33,11,186,45,130,57,18
+	.byte 135,155,67,226,123,47,231,16,206,7,220,67,127,248,140,247
 	.globl _mono_aot_module_DataCollection_info
 	.align 3
 _mono_aot_module_DataCollection_info:

@@ -121,7 +121,7 @@ jit_code_start:
 	.align 4
 	.no_dead_strip Kalect_App__ctor
 Kalect_App__ctor:
-.file 1 "/Users/rei/Documents/GitHub/Kalect/Kalect/App.cs"
+.file 1 "/Users/rei/Documents/GitHub/Inspection/Kalect/App.cs"
 .loc 1 12 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -189,7 +189,7 @@ Lme_3:
 	.align 4
 	.no_dead_strip Kalect_AppDataWallet_get_SelectedAssessmentMetadata
 Kalect_AppDataWallet_get_SelectedAssessmentMetadata:
-.file 2 "/Users/rei/Documents/GitHub/Kalect/Kalect/AppDataWallet.cs"
+.file 2 "/Users/rei/Documents/GitHub/Inspection/Kalect/AppDataWallet.cs"
 .loc 2 11 0 prologue_end
 .word 0xa9bf7bfd
 .word 0x910003fd
@@ -274,7 +274,7 @@ Lme_8:
 	.align 4
 	.no_dead_strip Kalect_Views_AssessmentButtonPage_QuestionButton_Clicked_object_System_EventArgs
 Kalect_Views_AssessmentButtonPage_QuestionButton_Clicked_object_System_EventArgs:
-.file 3 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/AssessmentButtonPage.cs"
+.file 3 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/AssessmentButtonPage.cs"
 .loc 3 19 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -1430,7 +1430,7 @@ Lme_11:
 	.align 4
 	.no_dead_strip Kalect_Views_AssessmentCarouselPage_SaveToolbarItem_Clicked_object_System_EventArgs
 Kalect_Views_AssessmentCarouselPage_SaveToolbarItem_Clicked_object_System_EventArgs:
-.file 4 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/AssessmentCarouselPage.cs"
+.file 4 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/AssessmentCarouselPage.cs"
 .loc 4 15 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -1826,7 +1826,7 @@ Lme_15:
 	.align 4
 	.no_dead_strip Kalect_Views_AssessmentDetailPage_SaveToolbarItem_Clicked_object_System_EventArgs
 Kalect_Views_AssessmentDetailPage_SaveToolbarItem_Clicked_object_System_EventArgs:
-.file 5 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/AssessmentDetailPage.cs"
+.file 5 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/AssessmentDetailPage.cs"
 .loc 5 20 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -3127,7 +3127,7 @@ Lme_1e:
 	.align 4
 	.no_dead_strip Kalect_Views_AssessmentMasterPage__ctor_string
 Kalect_Views_AssessmentMasterPage__ctor_string:
-.file 6 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/AssessmentMasterPage.cs"
+.file 6 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/AssessmentMasterPage.cs"
 .loc 6 13 0 prologue_end
 .word 0xa9b17bfd
 .word 0x910003fd
@@ -3737,7 +3737,7 @@ Lme_26:
 	.align 4
 	.no_dead_strip Kalect_Views_AvailableAssessmentList_deleteList_Clicked_object_System_EventArgs
 Kalect_Views_AvailableAssessmentList_deleteList_Clicked_object_System_EventArgs:
-.file 7 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/AvailableAssessmentList.cs"
+.file 7 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/AvailableAssessmentList.cs"
 .loc 7 16 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -4712,7 +4712,7 @@ Lme_2c:
 	.align 4
 	.no_dead_strip Kalect_Views_DefaultScreen__ctor
 Kalect_Views_DefaultScreen__ctor:
-.file 8 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/DefaultScreen.cs"
+.file 8 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/DefaultScreen.cs"
 .loc 8 25 0 prologue_end
 .word 0xa9b17bfd
 .word 0x910003fd
@@ -5423,7 +5423,7 @@ Lme_30:
 	.align 4
 	.no_dead_strip Kalect_Views_SignaturePage__ctor
 Kalect_Views_SignaturePage__ctor:
-.file 9 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/SignaturePage.cs"
+.file 9 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/SignaturePage.cs"
 .loc 9 16 0 prologue_end
 .word 0xa9b17bfd
 .word 0x910003fd
@@ -5887,7 +5887,7 @@ Lme_33:
 	.align 4
 	.no_dead_strip Kalect_Views_WelcomePage__ctor
 Kalect_Views_WelcomePage__ctor:
-.file 10 "/Users/rei/Documents/GitHub/Kalect/Kalect/Views/WelcomePage.cs"
+.file 10 "/Users/rei/Documents/GitHub/Inspection/Kalect/Views/WelcomePage.cs"
 .loc 10 12 0 prologue_end
 .word 0xa9b97bfd
 .word 0x910003fd
@@ -6016,7 +6016,7 @@ Lme_34:
 	.align 4
 	.no_dead_strip Kalect_ViewModel_AvailableAssessmentListViewModel__ctor
 Kalect_ViewModel_AvailableAssessmentListViewModel__ctor:
-.file 11 "/Users/rei/Documents/GitHub/Kalect/Kalect/ViewModel/AvailableAssessmentListViewModel.cs"
+.file 11 "/Users/rei/Documents/GitHub/Inspection/Kalect/ViewModel/AvailableAssessmentListViewModel.cs"
 .loc 11 10 0 prologue_end
 .word 0xa9be7bfd
 .word 0x910003fd
@@ -6030,7 +6030,7 @@ Lme_35:
 	.align 4
 	.no_dead_strip Kalect_Demo_InspectionDetail_QuestionButton_Clicked_object_System_EventArgs
 Kalect_Demo_InspectionDetail_QuestionButton_Clicked_object_System_EventArgs:
-.file 12 "/Users/rei/Documents/GitHub/Kalect/Kalect/Demo/InspectionDetail.cs"
+.file 12 "/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionDetail.cs"
 .loc 12 19 0 prologue_end
 .word 0xa9aa7bfd
 .word 0x910003fd
@@ -8153,7 +8153,7 @@ Lme_40:
 	.align 4
 	.no_dead_strip Kalect_Demo_InspectionHome__ctor
 Kalect_Demo_InspectionHome__ctor:
-.file 13 "/Users/rei/Documents/GitHub/Kalect/Kalect/Demo/InspectionHome.cs"
+.file 13 "/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionHome.cs"
 .loc 13 9 0 prologue_end
 .word 0xa9b27bfd
 .word 0x910003fd
@@ -8283,7 +8283,7 @@ Lme_41:
 	.align 4
 	.no_dead_strip Kalect_Demo_InspectionList_DeleteList_Clicked_object_System_EventArgs
 Kalect_Demo_InspectionList_DeleteList_Clicked_object_System_EventArgs:
-.file 14 "/Users/rei/Documents/GitHub/Kalect/Kalect/Demo/InspectionList.cs"
+.file 14 "/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionList.cs"
 .loc 14 16 0 prologue_end
 .word 0xa9bd7bfd
 .word 0x910003fd
@@ -12230,7 +12230,7 @@ Lme_4e:
 	.align 4
 	.no_dead_strip Kalect_Demo_InspectionMaster__ctor_string
 Kalect_Demo_InspectionMaster__ctor_string:
-.file 15 "/Users/rei/Documents/GitHub/Kalect/Kalect/Demo/InspectionMaster.cs"
+.file 15 "/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionMaster.cs"
 .loc 15 12 0 prologue_end
 .word 0xa9ab7bfd
 .word 0x910003fd
@@ -13104,7 +13104,7 @@ Lme_58:
 	.align 4
 	.no_dead_strip Kalect_Demo_Login__ctor
 Kalect_Demo_Login__ctor:
-.file 16 "/Users/rei/Documents/GitHub/Kalect/Kalect/Demo/Login.cs"
+.file 16 "/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/Login.cs"
 .loc 16 32 0 prologue_end
 .word 0xd2812410
 .word 0x910003f1
@@ -29335,7 +29335,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "CDAFB524-CE7C-4872-AA14-E62CA5024505"
+	.asciz "F2025407-11E5-4A96-B984-992872086550"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -29420,7 +29420,7 @@ _mono_aot_file_info:
 	.long 400,9104,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 199,59,175,218,206,46,133,227,209,4,208,129,48,75,252,66
+	.byte 242,36,202,59,205,166,58,235,111,2,250,111,174,190,117,186
 	.globl _mono_aot_module_Kalect_info
 	.align 3
 _mono_aot_module_Kalect_info:

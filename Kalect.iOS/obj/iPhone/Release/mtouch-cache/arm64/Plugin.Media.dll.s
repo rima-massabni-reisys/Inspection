@@ -46909,7 +46909,7 @@ _mono_aot_file_info:
 	.long 1128,19488,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 245,160,102,31,140,228,97,133,117,95,18,223,230,122,253,152
+	.byte 18,109,136,164,4,29,190,208,217,195,172,218,14,153,207,204
 	.globl _mono_aot_module_Plugin_Media_info
 	.align 3
 _mono_aot_module_Plugin_Media_info:

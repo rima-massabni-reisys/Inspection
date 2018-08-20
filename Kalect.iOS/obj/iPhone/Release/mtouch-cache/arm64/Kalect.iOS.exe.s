@@ -1940,7 +1940,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "04364873-CB00-4276-86C6-EEF946ABEC89"
+	.asciz "A2A32E34-9D97-459A-B8DA-7614CA04F04B"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -2025,7 +2025,7 @@ _mono_aot_file_info:
 	.long 64,1160,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 244,251,137,172,142,127,221,217,173,95,54,204,239,18,82,82
+	.byte 159,45,194,248,74,249,210,250,149,133,90,160,7,227,86,29
 	.globl _mono_aot_module_Kalect_iOS_info
 	.align 3
 _mono_aot_module_Kalect_iOS_info:

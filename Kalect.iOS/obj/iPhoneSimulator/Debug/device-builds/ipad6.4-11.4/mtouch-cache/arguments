@@ -1,7 +1,7 @@
 # Version: 11.12.0.4 (d15-7: 64fece5f)
-# [first argument, ignore] # --cache=/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-cache
+# [first argument, ignore] # --cache=/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-cache
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mtouch/mtouch.exe \
-	--sim=/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/bin/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/Kalect.iOS.app \
+	--sim=/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/Kalect.iOS.app \
 	--executable=Kalect.iOS \
 	--debug \
 	--nolink \
@@ -11,12 +11,12 @@
 	--aot-options=-O=-float32 \
 	--http-message-handler=HttpClientHandler \
 	--abi=x86_64 \
-	--symbollist=/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-symbols.list \
+	--symbollist=/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-symbols.list \
 	--dsym=no \
-	-r=/Users/rei/Documents/GitHub/Kalect/DataCollection/bin/Debug/netstandard2.0/DataCollection.dll \
-	-r=/Users/rei/Documents/GitHub/Kalect/Kalect/bin/Debug/netstandard2.0/Kalect.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/DataCollection/bin/Debug/netstandard2.0/DataCollection.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/Kalect/bin/Debug/netstandard2.0/Kalect.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/mscorlib.dll \
-	-r=/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Debug/Services.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/Kalect.Services/bin/Debug/Services.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
@@ -209,9 +209,9 @@
 	-r=/Users/rei/.nuget/packages/xamarin.forms/3.1.0.637273/lib/Xamarin.iOS10/zh-Hans/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r=/Users/rei/.nuget/packages/xamarin.forms/3.1.0.637273/lib/Xamarin.iOS10/zh-Hant/Xamarin.Forms.Platform.iOS.resources.dll \
 	-r=/Users/rei/.nuget/packages/xamarin.testcloud.agent/0.21.5/lib/Xamarin.iOS/Calabash.dll \
-	-r=/Users/rei/Documents/GitHub/Kalect/DataCollection/bin/Debug/netstandard2.0/DataCollection.dll \
-	-r=/Users/rei/Documents/GitHub/Kalect/Kalect/bin/Debug/netstandard2.0/Kalect.dll \
-	-r=/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Debug/Services.dll \
-	-r=/Users/rei/Documents/GitHub/Kalect/Kalect.Services/bin/Debug/Kalect.Constants.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/DataCollection/bin/Debug/netstandard2.0/DataCollection.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/Kalect/bin/Debug/netstandard2.0/Kalect.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/Kalect.Services/bin/Debug/Services.dll \
+	-r=/Users/rei/Documents/GitHub/Inspection/Kalect.Services/bin/Debug/Kalect.Constants.dll \
 	'--target-framework=Xamarin.iOS,v1.0' \
-	--root-assembly=/Users/rei/Documents/GitHub/Kalect/Kalect.iOS/bin/iPhoneSimulator/Debug/Kalect.iOS.exe \
+	--root-assembly=/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Kalect.iOS.exe \
