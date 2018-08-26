@@ -254,3 +254,9 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/Kalect.iOS.exe
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Icon-512.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Icon-Original.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Plugin.Connectivity.Abstractions.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Plugin.Connectivity.Abstractions.pdb
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Plugin.Connectivity.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Plugin.Connectivity.pdb
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Xamarin.Essentials.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Xamarin.SimplePing.iOS.dll

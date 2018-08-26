@@ -39,3 +39,7 @@ netstandard
 Services
 DataCollection
 Kalect.Constants
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
+Xamarin.Android.Support.CustomTabs
+Xamarin.Essentials

@@ -39,3 +39,7 @@ Services
 Kalect.Constants
 Plugin.Geolocator
 Plugin.AudioRecorder
+Plugin.Connectivity.Abstractions
+Plugin.Connectivity
+Xamarin.Android.Support.CustomTabs
+Xamarin.Essentials

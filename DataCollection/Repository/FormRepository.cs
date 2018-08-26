@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using DataCollection.Data.CleaningAndDisinfectionProducts;
@@ -26,6 +27,10 @@ namespace DataCollection.Repository
             return formInstanceData;
         }
 
+        public List<FormInstanceData> GetAllForms(string folderName)
+        {
+            return DependencyService.Get<IDataCollectionDependencyService>().LoadAllFormsFromDevice(folderName);
+        }
 
 
         /*

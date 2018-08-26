@@ -28,8 +28,6 @@
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>CFBundleName</key>
-	<string>Kalect</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>NSCameraUsageDescription</key>
@@ -48,5 +46,7 @@
 	<string>This app needs to access your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs to access your location.</string>
+	<key>CFBundleName</key>
+	<string>Kalect</string>
 </dict>
 </plist>

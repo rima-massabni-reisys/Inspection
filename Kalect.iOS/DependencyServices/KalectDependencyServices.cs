@@ -236,5 +236,28 @@ namespace Kalect.iOS.DependencyServices
             }
         }
 
+        public void SaveImage(Stream bitmap, string folderName, string fileName)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = documentsPath + "/" + folderName;
+
+            var filePath = Path.Combine(documentsPath, fileName);
+
+            byte[] buffer = new byte[16 * 1024];
+            MemoryStream ms = new MemoryStream();
+            using (ms)
+            {
+                int read;
+                while ((read = bitmap.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    ms.Write(buffer, 0, read);
+                }
+                //ms.ToArray();
+            }
+
+            File.WriteAllBytes(filePath, ms.ToArray());
+
+        }
+
     }
 }

@@ -4,6 +4,7 @@ using Plugin.Media;
 using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using DataCollection.DependencyServices;
 
 namespace DataCollection.Views.Components
 {
@@ -26,8 +27,12 @@ namespace DataCollection.Views.Components
         BoxView photoLineSeparator;
         BoxView videoLineSeparator;
         Image CameraVideoImage;
-        public  CameraView(Component c, string formData)
+        string AssessmentTrackingNumber;
+        string ComponentPath;
+        public  CameraView(Component c, string formData, string assessentTrackingNumber)
         {
+            AssessmentTrackingNumber = assessentTrackingNumber;
+            ComponentPath = c.path;
 
             TakePhotoButton = new Button();
             //TakePhotoButton.Text = c.text;
@@ -190,8 +195,6 @@ namespace DataCollection.Views.Components
                 }
             });
 
-
-
         }
 
 
@@ -206,34 +209,41 @@ namespace DataCollection.Views.Components
         private async void TakePhoto()
         {
             await CrossMedia.Current.Initialize();
-    
-                if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-                {
 
-                    //DisplayAlert("No Camera", ":( No camera available.", "OK");
-                    MessageLabel.Text = "No Camera";    
-                    return;
-                }
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
 
-                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-                {
-                    Directory = "Sample",
-                    Name = "test.jpg",
-                    SaveToAlbum= true,
-                    PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small 
-                    
-                });
+                //DisplayAlert("No Camera", ":( No camera available.", "OK");
+                MessageLabel.Text = "No Camera";
+                return;
+            }
 
-                if (file == null)
-                    return;
+            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".jpg";
 
-                //await this.DisplayAlert("File Location", file.Path, "OK");
-                MessageLabel.Text = "File Location: " + file.Path;
-                CameraPhotoImage.Source = ImageSource.FromStream(() =>
-                {
-                    var stream = file.GetStream();
-                    return stream;
-                }); 
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+                Directory = "Sample",
+                Name = fileName,
+                SaveToAlbum = true,
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small
+
+            });
+
+            if (file == null)
+                return;
+
+
+            //Save
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
+
+
+            //await this.DisplayAlert("File Location", file.Path, "OK");
+            MessageLabel.Text = "File Location: " + file.Path;
+            CameraPhotoImage.Source = ImageSource.FromStream(() =>
+            {
+                var stream = file.GetStream();
+                return stream;
+            });
         }
 
         private async void ChoosePhoto()
@@ -252,6 +262,11 @@ namespace DataCollection.Views.Components
                 return stream;
             });
 
+            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".jpg";
+            //Save
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(test.GetStream(), AssessmentTrackingNumber, fileName);
+                
+
             test.Dispose();
         }
 
@@ -260,7 +275,6 @@ namespace DataCollection.Views.Components
         {
             if (!CrossMedia.Current.IsPickVideoSupported)
             {
-                //DisplayAlert("Videos Not Supported", ":( Permission not granted to videos.", "OK");
                 return;
             }
             var file = await CrossMedia.Current.PickVideoAsync();
@@ -274,22 +288,13 @@ namespace DataCollection.Views.Components
                 return stream;
             });
 
-            //DisplayAlert("Video Selected", "Location: " + file.Path, "OK");
+            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".mp4";
+            //Save
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
+             
+
             file.Dispose();
 
-            /*var test = await CrossMedia.Current.PickVideoAsync();
-            if (test == null)
-                return;
-
-            CameraPhotoImage.Source = ImageSource.FromStream(() =>
-            {
-                var stream = test.GetStream();
-                return stream;
-            });
-
-            //new UIAlertView("Success", test.Path, null, "OK").Show();
-
-            test.Dispose();*/
         }
 
 
@@ -309,44 +314,30 @@ namespace DataCollection.Views.Components
                 return;
             }
 
+            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".mp4";
+
             var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
             {
-                Name = "video.mp4",
+                Name = fileName,
                 Directory = "DefaultVideos",
             });
 
             if (file == null)
                 return;
-
-            //DisplayAlert("Video Recorded", "Location: " + file.Path, "OK");
-
+            
             CameraVideoImage.Source = ImageSource.FromStream(() =>
                 {
                     var stream = file.GetStream();
                     return stream;
                 }); 
 
+
+            //Save
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
+             
+
             file.Dispose();
 
-            /*var test = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
-            {
-                Name = "test1.mp4",
-                SaveToAlbum = true
-            });
-
-            if (test == null)
-                return;
-
-            CameraPhotoImage.Source = ImageSource.FromStream(() =>
-                {
-                    var stream = test.GetStream();
-                    return stream;
-                }); 
-
-
-            //new UIAlertView("Success", test.Path, null, "OK").Show();
-
-            test.Dispose();*/
         }
 
 

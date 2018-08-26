@@ -56,9 +56,9 @@ namespace DataCollection.Services
             return _layoutGenerator.GenerateContentPagesForCarousel(formModelView, formData);
         }
 
-        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData)
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber)
         {
-            return _layoutGenerator.GenerateLayoutForSelectedFormGroup(fg, formData);
+            return _layoutGenerator.GenerateLayoutForSelectedFormGroup(fg, formData, assessmentTrackingNumber);
         }
 
         /*public Layout GetFormLayout(string FormModelJson)
@@ -70,6 +70,26 @@ namespace DataCollection.Services
 
             return _layoutGenerator.GenerateLayout(view);
         }*/
+
+
+        public List<FormInstance> GetAllForms(string trackingNumber)
+        {
+            List<FormInstance> formInstances = new List<FormInstance>();
+            List<FormInstanceData> allFormInstances =_formRepository.GetAllForms(trackingNumber);
+
+            foreach(FormInstanceData formInstanceData in allFormInstances)
+            {
+                FormInstance formInstance = new FormInstance();
+                formInstance.FriendlyName = formInstanceData.FriendlyName;
+                formInstance.FormModelView = JsonConvert.DeserializeObject<FormModel>(formInstanceData.FormModel);
+                formInstance.FormData = formInstanceData.FormData;
+                formInstance.ValidationSchema = formInstanceData.ValidationSchema;
+
+                formInstances.Add(formInstance);
+            }
+
+            return formInstances;
+        }
 
 
 

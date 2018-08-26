@@ -42,11 +42,11 @@ namespace DataCollection.Services
                         LabelEditorView labelEditorView = new LabelEditorView(c, formData);
                         formComponentLayout.Children.Add(labelEditorView);
                     }
-                    else if(c.type.Equals(ComponentTypes.CameraView))
+                    /*else if(c.type.Equals(ComponentTypes.CameraView))
                     {
                         CameraView cameraView = new CameraView(c, formData);
                         formComponentLayout.Children.Add(cameraView);
-                    }
+                    }*/
                 }
             }
 
@@ -58,7 +58,7 @@ namespace DataCollection.Services
             return FormModelLayout;
         }
 
-        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData)
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber)
         {
             var FormModelLayout = new StackLayout();
             FormModelLayout.Orientation = StackOrientation.Vertical;
@@ -90,7 +90,7 @@ namespace DataCollection.Services
                 }
                 else if (c.type.Equals(ComponentTypes.CameraView))
                 {
-                    CameraView cameraView = new CameraView(c, formData);
+                    CameraView cameraView = new CameraView(c, formData,assessmentTrackingNumber);
                     formComponentLayout.Children.Add(cameraView);
                 }
                 else if (c.type.Equals(ComponentTypes.AudioRecorderView))
@@ -177,7 +177,7 @@ namespace DataCollection.Services
                         );*/
                         pageStackLayout.Children.Add(labelEditorView);
                     }
-                    else if (c.type.Equals(ComponentTypes.CameraView))
+                    /*else if (c.type.Equals(ComponentTypes.CameraView))
                     {
                         CameraView cameraView = new CameraView(c, formData);
                         //formComponentLayout.Children.Add(cameraView);
@@ -190,8 +190,8 @@ namespace DataCollection.Services
                                 }
                             }
                         );*/
-                        pageStackLayout.Children.Add(cameraView);
-                    }
+                        /*pageStackLayout.Children.Add(cameraView);
+                    }*/
 
                     page.Content = pageStackLayout;
                     contentPages.Add(page);

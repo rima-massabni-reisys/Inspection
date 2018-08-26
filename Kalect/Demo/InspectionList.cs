@@ -6,6 +6,8 @@ using Kalect.Services.Entities;
 using Kalect.Services.Interfaces;
 using Xamarin.Forms;
 using System.Linq;
+using Plugin.Connectivity;
+using Xamarin.Essentials;
 
 namespace Kalect.Demo
 {
@@ -121,6 +123,13 @@ namespace Kalect.Demo
             //syncButton.Margin = new Thickness(25, 0, 0, 0);
             //syncButton.FontSize = 20;
             syncButton.HorizontalOptions = LayoutOptions.Start;
+
+            if (CrossConnectivity.Current.IsConnected) 
+            {
+                syncButton.IsVisible = true;  
+            } else {
+                syncButton.IsVisible = false;
+            }  
 
             deleteList = new Button();
             deleteList.Clicked += DeleteList_Clicked;
@@ -295,10 +304,26 @@ namespace Kalect.Demo
 
         }
 
+        bool IsPhone()
+        {
+            var idiom = DeviceInfo.Idiom;
+            if(idiom.ToLower().Equals("phone"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public CustomInspectionCell()
         {
-            var syncAction = new MenuItem { Text = "Delete", IsDestructive = true, Icon="sync.png"  };
+            var syncAction = new MenuItem { Text = "Sync", IsDestructive = false, Icon = "sync.png"  };
+
+            var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, Icon = "sync.png" };
+
+            ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
 
             StackLayout rowWrapper = new StackLayout();
@@ -394,7 +419,12 @@ namespace Kalect.Demo
             phoneButton.Clicked += phoneButton_Clicked;
 
             phoneLayout.Children.Add(phoneButton);
-            rowWrapper.Children.Add(phoneLayout);
+
+            //only add phone icon for phone
+            if (IsPhone())
+            {
+                rowWrapper.Children.Add(phoneLayout);
+            }
 
             StackLayout mapLayout = new StackLayout();
             mapLayout.Orientation = StackOrientation.Vertical;

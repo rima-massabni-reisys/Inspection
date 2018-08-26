@@ -764,6 +764,108 @@ bl _p_14
 Lme_d:
 .text
 	.align 4
+	.no_dead_strip Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string
+Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string:
+.loc 1 1 0
+.word 0xa9b87bfd
+.word 0x910003fd
+.word 0xa9015fb6
+.word 0xa90267b8
+.word 0xf9001bba
+.word 0xf9001fa0
+.word 0xaa0103f8
+.word 0xaa0203f9
+.word 0xf90023a3
+.word 0xf90027bf
+.word 0xd28000a0
+bl _p_9
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x1, [x16, #232]
+.word 0xaa1903e2
+bl _p_10
+.word 0xf94023a1
+bl _p_11
+.word 0xaa0003fa
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #296]
+.word 0xd2880001
+bl _p_21
+.word 0xaa0003f9
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #304]
+.word 0xd2800a01
+bl _p_3
+.word 0xf9003ba0
+bl _p_28
+.word 0xf9403ba0
+.word 0xaa0003f7
+.word 0xf90027b7
+.word 0x14000008
+.word 0xaa1703e0
+.word 0xaa1903e1
+.word 0xd2800002
+.word 0xaa1603e3
+.word 0xf94002e4
+.word 0xf9403890
+.word 0xd63f0200
+.word 0xb9801b23
+.word 0xaa1803e0
+.word 0xaa1903e1
+.word 0xd2800002
+.word 0xf9400304
+.word 0xf9404090
+.word 0xd63f0200
+.word 0x93407c00
+.word 0xaa0003e1
+.word 0xaa0103e0
+.word 0xaa0103f6
+.word 0x6b1f001f
+.word 0x54fffdac
+.word 0xf9002bbf
+.word 0x94000005
+.word 0xf9402ba0
+.word 0xb4000040
+bl _p_29
+.word 0x14000010
+.word 0xf90037be
+.word 0xf94027a0
+.word 0xb4000160
+.word 0xf94027a1
+.word 0xaa0103e0
+.word 0xf9400021
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x15, [x16, #312]
+.word 0x928004f0
+.word 0xf2bffff0
+.word 0xf8706830
+.word 0xd63f0200
+.word 0xf94037be
+.word 0xd61f03c0
+.word 0xaa1703e0
+.word 0xf94002e1
+.word 0xf9409c30
+.word 0xd63f0200
+.word 0xaa0003e1
+.word 0xaa1a03e0
+bl _p_30
+.word 0xa9415fb6
+.word 0xa94267b8
+.word 0xf9401bba
+.word 0x910003bf
+.word 0xa8c87bfd
+.word 0xd65f03c0
+
+Lme_e:
+.text
+	.align 4
 	.no_dead_strip Kalect_iOS_DependencyServices_KalectDependencyServices__ctor
 Kalect_iOS_DependencyServices_KalectDependencyServices__ctor:
 .loc 1 1 0
@@ -774,7 +876,7 @@ Kalect_iOS_DependencyServices_KalectDependencyServices__ctor:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_e:
+Lme_f:
 .text
 	.align 4
 	.no_dead_strip Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string
@@ -883,7 +985,7 @@ bl _p_13
 .word 0xa8c77bfd
 .word 0xd65f03c0
 
-Lme_f:
+Lme_10:
 .text
 	.align 4
 	.no_dead_strip Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveFormData_string_string_string_string
@@ -983,7 +1085,370 @@ bl _p_14
 .word 0xa8c87bfd
 .word 0xd65f03c0
 
-Lme_10:
+Lme_11:
+.text
+	.align 4
+	.no_dead_strip Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string
+Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string:
+.loc 1 1 0
+.word 0xa9b87bfd
+.word 0x910003fd
+.word 0xa9015fb6
+.word 0xa90267b8
+.word 0xf9001bba
+.word 0xf9001fa0
+.word 0xaa0103f8
+.word 0xaa0203f9
+.word 0xf90023a3
+.word 0xf90027bf
+.word 0xd28000a0
+bl _p_9
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x1, [x16, #232]
+.word 0xaa1903e2
+bl _p_10
+.word 0xf94023a1
+bl _p_11
+.word 0xaa0003fa
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #296]
+.word 0xd2880001
+bl _p_21
+.word 0xaa0003f9
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #304]
+.word 0xd2800a01
+bl _p_3
+.word 0xf9003ba0
+bl _p_28
+.word 0xf9403ba0
+.word 0xaa0003f7
+.word 0xf90027b7
+.word 0x14000008
+.word 0xaa1703e0
+.word 0xaa1903e1
+.word 0xd2800002
+.word 0xaa1603e3
+.word 0xf94002e4
+.word 0xf9403890
+.word 0xd63f0200
+.word 0xb9801b23
+.word 0xaa1803e0
+.word 0xaa1903e1
+.word 0xd2800002
+.word 0xf9400304
+.word 0xf9404090
+.word 0xd63f0200
+.word 0x93407c00
+.word 0xaa0003e1
+.word 0xaa0103e0
+.word 0xaa0103f6
+.word 0x6b1f001f
+.word 0x54fffdac
+.word 0xf9002bbf
+.word 0x94000005
+.word 0xf9402ba0
+.word 0xb4000040
+bl _p_29
+.word 0x14000010
+.word 0xf90037be
+.word 0xf94027a0
+.word 0xb4000160
+.word 0xf94027a1
+.word 0xaa0103e0
+.word 0xf9400021
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x15, [x16, #312]
+.word 0x928004f0
+.word 0xf2bffff0
+.word 0xf8706830
+.word 0xd63f0200
+.word 0xf94037be
+.word 0xd61f03c0
+.word 0xaa1703e0
+.word 0xf94002e1
+.word 0xf9409c30
+.word 0xd63f0200
+.word 0xaa0003e1
+.word 0xaa1a03e0
+bl _p_30
+.word 0xa9415fb6
+.word 0xa94267b8
+.word 0xf9401bba
+.word 0x910003bf
+.word 0xa8c87bfd
+.word 0xd65f03c0
+
+Lme_12:
+.text
+	.align 4
+	.no_dead_strip Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string
+Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string:
+.loc 1 1 0
+.word 0xa9b87bfd
+.word 0x910003fd
+.word 0xa90157b4
+.word 0xa9025fb6
+.word 0xa90367b8
+.word 0xf90023ba
+.word 0xaa0003f9
+.word 0xaa0103fa
+.word 0xd28000a0
+bl _p_9
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x1, [x16, #232]
+.word 0xaa1a03e2
+bl _p_10
+bl _p_31
+.word 0xf9002ba0
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #320]
+.word 0xd2800501
+bl _p_3
+.word 0xaa0003e1
+.word 0xf9402ba0
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x2, [x16, #328]
+.word 0xf9400042
+.word 0xf9000822
+.word 0x91004023
+.word 0xd349fc63
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0063
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x4, [x16, #16]
+.word 0x8b040063
+.word 0xd280003e
+.word 0x3900007e
+.word 0xaa0103fa
+.word 0xaa0003f8
+.word 0xd2800017
+.word 0x14000091
+.word 0x93407ee0
+.word 0xb9801b01
+.word 0xeb00003f
+.word 0x10000011
+.word 0x540012e9
+.word 0xd37df000
+.word 0x8b000300
+.word 0x91008000
+.word 0xf9400016
+.word 0xaa1603e0
+.word 0xf9003fa0
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #272]
+.word 0xd2800e01
+bl _p_3
+.word 0xf9403fa1
+.word 0xf9003ba0
+bl _p_23
+.word 0xf9403ba0
+.word 0xaa0003f5
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #336]
+.word 0xd2800601
+bl _p_3
+.word 0xaa0003f4
+.word 0xf90033a0
+.word 0xf90037a0
+.word 0xaa1503e0
+.word 0xf94002a1
+.word 0xf9403830
+.word 0xd63f0200
+.word 0xf94037a2
+.word 0xaa0203e1
+.word 0xf940003e
+.word 0xf9000840
+.word 0x91004021
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.word 0xd2800015
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #344]
+.word 0xd2800281
+bl _p_3
+.word 0xaa0003e1
+.word 0xb900103f
+.word 0xaa0103e0
+.word 0xf940003e
+bl _p_32
+.word 0xaa0003e2
+.word 0xaa1903e0
+.word 0xaa1603e1
+bl _p_33
+.word 0xf94033a1
+.word 0xf940029e
+.word 0xf9000c20
+.word 0xf9002fa1
+.word 0x91006281
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.word 0xd2800035
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #344]
+.word 0xd2800281
+bl _p_3
+.word 0xaa0003e1
+.word 0xd280003e
+.word 0xb900103e
+.word 0xaa0103e0
+.word 0xf940003e
+bl _p_32
+.word 0xaa0003e2
+.word 0xaa1903e0
+.word 0xaa1603e1
+bl _p_33
+.word 0xf9402fa1
+.word 0xf940029e
+.word 0xf9001020
+.word 0xf9002ba1
+.word 0x91008281
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.word 0xd2800055
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #344]
+.word 0xd2800281
+bl _p_3
+.word 0xaa0003e1
+.word 0xd280005e
+.word 0xb900103e
+.word 0xaa0103e0
+.word 0xf940003e
+bl _p_32
+.word 0xaa0003e2
+.word 0xaa1903e0
+.word 0xaa1603e1
+bl _p_33
+.word 0xf9402ba1
+.word 0xf940029e
+.word 0xf9001420
+.word 0x9100a281
+.word 0xd349fc21
+.word 0xd29ffffe
+.word 0xf2a00ffe
+.word 0x8a1e0021
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x2, [x16, #16]
+.word 0x8b020021
+.word 0xd280003e
+.word 0x3900003e
+.word 0xaa1a03e0
+.word 0xaa1403e1
+.word 0xf940035e
+bl _p_34
+.word 0x110006f7
+.word 0xb9801b00
+.word 0x6b0002ff
+.word 0x54ffedcb
+.word 0xaa1a03e0
+.word 0xa94157b4
+.word 0xa9425fb6
+.word 0xa94367b8
+.word 0xf94023ba
+.word 0x910003bf
+.word 0xa8c87bfd
+.word 0xd65f03c0
+.word 0xd2801e80
+.word 0xaa1103e1
+bl _p_27
+
+Lme_13:
+.text
+	.align 4
+	.no_dead_strip Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string
+Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string:
+.loc 1 1 0
+.word 0xa9bd7bfd
+.word 0x910003fd
+.word 0xf9000bba
+.word 0xf9000fa0
+.word 0xf90013a1
+.word 0xaa0203fa
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x1, [x16, #216]
+.word 0xaa1a03e0
+bl _p_8
+.word 0xaa0003e1
+.word 0xf94013a0
+bl _p_11
+.word 0xaa0003fa
+.word 0xaa1a03e0
+bl _p_12
+.word 0x53001c00
+.word 0x34000080
+.word 0xaa1a03e0
+bl _p_13
+.word 0x14000005
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #224]
+.word 0xf9400000
+.word 0xf9400bba
+.word 0x910003bf
+.word 0xa8c37bfd
+.word 0xd65f03c0
+
+Lme_14:
 .text
 	.align 4
 	.no_dead_strip Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor
@@ -996,7 +1461,7 @@ Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_11:
+Lme_15:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
@@ -1012,12 +1477,12 @@ System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF:
 .word 0x35000140
 .loc 2 72 0
 .word 0xf9401fa0
-bl _p_28
+bl _p_35
 .word 0x3980b410
 .word 0xb5000050
-bl _p_29
+bl _p_36
 .word 0xf9401fa0
-bl _p_30
+bl _p_37
 .word 0xf9400000
 .word 0x14000025
 .loc 2 74 0
@@ -1027,17 +1492,17 @@ bl _p_30
 .word 0x9100a3a0
 .word 0xf90023a0
 .word 0xf9401fa0
-bl _p_31
+bl _p_38
 .word 0xaa0003ef
 .word 0xf94023a0
 .word 0xf9400ba1
-bl _p_32
+bl _p_39
 .word 0xf94017a0
 .word 0xf9000fa0
 .word 0xf9401ba0
 .word 0xf90013a0
 .word 0xf9401fa0
-bl _p_31
+bl _p_38
 .word 0xd2800401
 bl _p_3
 .word 0x91004003
@@ -1062,7 +1527,7 @@ ldr x4, [x16, #16]
 .word 0xa8c57bfd
 .word 0xd65f03c0
 
-Lme_13:
+Lme_17:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_get_Count
@@ -1077,7 +1542,7 @@ System_Array_InternalArray__ICollection_get_Count:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_14:
+Lme_18:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_get_IsReadOnly
@@ -1091,7 +1556,7 @@ System_Array_InternalArray__ICollection_get_IsReadOnly:
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_15:
+Lme_19:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Clear
@@ -1101,7 +1566,7 @@ System_Array_InternalArray__ICollection_Clear:
 .word 0x910003fd
 .word 0xf9000ba0
 .word 0xd287ca60
-bl _p_33
+bl _p_40
 .word 0xaa0003e1
 .word 0xd2802100
 .word 0xf2a04000
@@ -1111,7 +1576,7 @@ bl _p_15
 .word 0xa8c27bfd
 .word 0xd65f03c0
 
-Lme_16:
+Lme_1a:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Add_T_REF_T_REF
@@ -1123,7 +1588,7 @@ System_Array_InternalArray__ICollection_Add_T_REF_T_REF:
 .word 0xf9000ba0
 .word 0xf9000fa1
 .word 0xd287d060
-bl _p_33
+bl _p_40
 .word 0xaa0003e1
 .word 0xd2802100
 .word 0xf2a04000
@@ -1133,7 +1598,7 @@ bl _p_15
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_17:
+Lme_1b:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
@@ -1145,7 +1610,7 @@ System_Array_InternalArray__ICollection_Remove_T_REF_T_REF:
 .word 0xf9000ba0
 .word 0xf9000fa1
 .word 0xd287d060
-bl _p_33
+bl _p_40
 .word 0xaa0003e1
 .word 0xd2802100
 .word 0xf2a04000
@@ -1155,7 +1620,7 @@ bl _p_15
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_18:
+Lme_1c:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
@@ -1181,7 +1646,7 @@ System_Array_InternalArray__ICollection_Contains_T_REF_T_REF:
 .word 0x14000016
 .loc 2 100 0
 .word 0xf9401fa0
-bl _p_34
+bl _p_41
 .word 0x93407ee0
 .word 0xd37df000
 .word 0x8b000320
@@ -1219,14 +1684,14 @@ bl _p_34
 .word 0xd65f03c0
 .loc 2 95 0
 .word 0xd287d7e0
-bl _p_33
+bl _p_40
 .word 0xaa0003e1
 .word 0xd28022a0
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_15
 
-Lme_19:
+Lme_1d:
 .text
 	.align 4
 	.no_dead_strip System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
@@ -1254,14 +1719,14 @@ System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int:
 .word 0xaa1603e1
 .word 0xf94013a2
 .word 0xb9802ba3
-bl _p_35
+bl _p_42
 .loc 2 120 0
 .word 0xf9400bb6
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
 
-Lme_1a:
+Lme_1e:
 .text
 	.align 4
 	.no_dead_strip wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string
@@ -1276,7 +1741,7 @@ wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string:
 
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #352]
 .word 0xb9400000
 .word 0x350006c0
 .word 0x14000001
@@ -1332,7 +1797,7 @@ ldr x0, [x16, #296]
 .word 0xd65f03c0
 .word 0xaa1803e0
 bl _p_15
-bl _p_36
+bl _p_43
 .word 0xaa0003f8
 .word 0xb5ffff80
 .word 0x17ffffc9
@@ -1340,7 +1805,7 @@ bl _p_36
 .word 0xaa1103e1
 bl _p_27
 
-Lme_1b:
+Lme_1f:
 .text
 	.align 4
 	.no_dead_strip wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string
@@ -1355,7 +1820,7 @@ wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string:
 
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #352]
 .word 0xb9400000
 .word 0x35000620
 .word 0x14000001
@@ -1406,7 +1871,7 @@ ldr x0, [x16, #296]
 .word 0xd65f03c0
 .word 0xaa1803e0
 bl _p_15
-bl _p_36
+bl _p_43
 .word 0xaa0003f8
 .word 0xb5ffff80
 .word 0x17ffffce
@@ -1414,7 +1879,7 @@ bl _p_36
 .word 0xaa1103e1
 bl _p_27
 
-Lme_1c:
+Lme_20:
 .text
 	.align 4
 	.no_dead_strip wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string
@@ -1430,7 +1895,7 @@ wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string:
 
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x0, [x16, #296]
+ldr x0, [x16, #352]
 .word 0xb9400000
 .word 0x35000720
 .word 0x14000001
@@ -1489,7 +1954,7 @@ ldr x0, [x16, #296]
 .word 0xd65f03c0
 .word 0xaa1703e0
 bl _p_15
-bl _p_36
+bl _p_43
 .word 0xaa0003f7
 .word 0xb5ffff80
 .word 0x17ffffc6
@@ -1497,9 +1962,245 @@ bl _p_36
 .word 0xaa1103e1
 bl _p_27
 
-Lme_1d:
+Lme_21:
 .text
-ut_30:
+	.align 4
+	.no_dead_strip wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData
+wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData:
+.word 0xa9bb7bfd
+.word 0x910003fd
+.word 0xa9015fb6
+.word 0xa90267b8
+.word 0xf9001bba
+.word 0xaa0003f9
+.word 0xaa0103fa
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #352]
+.word 0xb9400000
+.word 0x350006c0
+.word 0x14000001
+.word 0xf9403738
+.word 0xaa1803e0
+.word 0xb5000220
+.word 0xf9401338
+.word 0xaa1803e0
+.word 0xb4000100
+.word 0xf9401f20
+.word 0xf9400b22
+.word 0xaa1803e0
+.word 0xaa1a03e1
+.word 0xd63f0040
+.word 0x53001c00
+.word 0x14000020
+.word 0xf9401f20
+.word 0xf9400b21
+.word 0xaa1a03e0
+.word 0xd63f0020
+.word 0x53001c00
+.word 0x1400001a
+.word 0xb9801b19
+.word 0xd2800017
+.word 0x93407ee0
+.word 0xb9801b01
+.word 0xeb00003f
+.word 0x10000011
+.word 0x540003e9
+.word 0xd37df000
+.word 0x8b000300
+.word 0x91008000
+.word 0xf9400016
+.word 0xaa1603e2
+.word 0xaa0203e0
+.word 0xaa1a03e1
+.word 0xf90023a2
+.word 0xf9400c50
+.word 0xd63f0200
+.word 0xf94023a1
+.word 0x53001c00
+.word 0x53001c16
+.word 0x110006f7
+.word 0xaa1703e0
+.word 0x6b19001f
+.word 0x54fffd6b
+.word 0xaa1603e0
+.word 0xa9415fb6
+.word 0xa94267b8
+.word 0xf9401bba
+.word 0x910003bf
+.word 0xa8c57bfd
+.word 0xd65f03c0
+.word 0xaa1803e0
+bl _p_15
+bl _p_43
+.word 0xaa0003f8
+.word 0xb5ffff80
+.word 0x17ffffc9
+.word 0xd2801e80
+.word 0xaa1103e1
+bl _p_27
+
+Lme_22:
+.text
+	.align 4
+	.no_dead_strip wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData
+wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData:
+.word 0xa9bb7bfd
+.word 0x910003fd
+.word 0xa9015fb6
+.word 0xa90267b8
+.word 0xf9001bba
+.word 0xaa0003f9
+.word 0xaa0103fa
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #352]
+.word 0xb9400000
+.word 0x35000620
+.word 0x14000001
+.word 0xf9403738
+.word 0xaa1803e0
+.word 0xb50001e0
+.word 0xf9401338
+.word 0xaa1803e0
+.word 0xb40000e0
+.word 0xf9401f20
+.word 0xf9400b22
+.word 0xaa1803e0
+.word 0xaa1a03e1
+.word 0xd63f0040
+.word 0x1400001c
+.word 0xf9401f20
+.word 0xf9400b21
+.word 0xaa1a03e0
+.word 0xd63f0020
+.word 0x14000017
+.word 0xb9801b19
+.word 0xd2800017
+.word 0x93407ee0
+.word 0xb9801b01
+.word 0xeb00003f
+.word 0x10000011
+.word 0x54000389
+.word 0xd37df000
+.word 0x8b000300
+.word 0x91008000
+.word 0xf9400016
+.word 0xaa1603e2
+.word 0xaa0203e0
+.word 0xaa1a03e1
+.word 0xf90023a2
+.word 0xf9400c50
+.word 0xd63f0200
+.word 0xf94023a0
+.word 0x110006f7
+.word 0xaa1703e0
+.word 0x6b19001f
+.word 0x54fffdab
+.word 0xa9415fb6
+.word 0xa94267b8
+.word 0xf9401bba
+.word 0x910003bf
+.word 0xa8c57bfd
+.word 0xd65f03c0
+.word 0xaa1803e0
+bl _p_15
+bl _p_43
+.word 0xaa0003f8
+.word 0xb5ffff80
+.word 0x17ffffce
+.word 0xd2801e80
+.word 0xaa1103e1
+bl _p_27
+
+Lme_23:
+.text
+	.align 4
+	.no_dead_strip wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData
+wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData:
+.word 0xa9bb7bfd
+.word 0x910003fd
+.word 0xa9015bb5
+.word 0xa90263b7
+.word 0xa9036bb9
+.word 0xaa0003f8
+.word 0xaa0103f9
+.word 0xaa0203fa
+
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x0, [x16, #352]
+.word 0xb9400000
+.word 0x35000720
+.word 0x14000001
+.word 0xf9403717
+.word 0xaa1703e0
+.word 0xb5000260
+.word 0xf9401317
+.word 0xaa1703e0
+.word 0xb4000120
+.word 0xf9401f00
+.word 0xf9400b03
+.word 0xaa1703e0
+.word 0xaa1903e1
+.word 0xaa1a03e2
+.word 0xd63f0060
+.word 0x93407c00
+.word 0x14000022
+.word 0xf9401f00
+.word 0xf9400b02
+.word 0xaa1903e0
+.word 0xaa1a03e1
+.word 0xd63f0040
+.word 0x93407c00
+.word 0x1400001b
+.word 0xb9801af8
+.word 0xd2800016
+.word 0x93407ec0
+.word 0xb9801ae1
+.word 0xeb00003f
+.word 0x10000011
+.word 0x54000409
+.word 0xd37df000
+.word 0x8b0002e0
+.word 0x91008000
+.word 0xf9400015
+.word 0xaa1503e3
+.word 0xaa0303e0
+.word 0xaa1903e1
+.word 0xaa1a03e2
+.word 0xf90023a3
+.word 0xf9400c70
+.word 0xd63f0200
+.word 0x93407c00
+.word 0xf94023a1
+.word 0xaa0003f5
+.word 0x110006d6
+.word 0xaa1603e0
+.word 0x6b18001f
+.word 0x54fffd4b
+.word 0xaa1503e0
+.word 0xa9415bb5
+.word 0xa94263b7
+.word 0xa9436bb9
+.word 0x910003bf
+.word 0xa8c57bfd
+.word 0xd65f03c0
+.word 0xaa1703e0
+bl _p_15
+bl _p_43
+.word 0xaa0003f7
+.word 0xb5ffff80
+.word 0x17ffffc6
+.word 0xd2801e80
+.word 0xaa1103e1
+bl _p_27
+
+Lme_24:
+.text
+ut_37:
 add x0, x0, 16
 b System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 ut_end:
@@ -1507,7 +2208,7 @@ ut_end:
 _unbox_trampoline_p:
 
 	.long 0
-LDIFF_SYM3=ut_end - ut_30
+LDIFF_SYM3=ut_end - ut_37
 	.long LDIFF_SYM3
 .text
 	.align 4
@@ -1542,7 +2243,7 @@ ldr x3, [x16, #16]
 .word 0xa8c37bfd
 .word 0xd65f03c0
 
-Lme_1e:
+Lme_25:
 .text
 	.align 3
 jit_code_end:
@@ -1566,9 +2267,13 @@ bl Kalect_iOS_DependencyServices_KalectDependencyServices_SaveFormsOnDevice_stri
 bl Kalect_iOS_DependencyServices_KalectDependencyServices_LoadAssessmentsMetadataFromDevice
 bl Kalect_iOS_DependencyServices_KalectDependencyServices_DoesAssessmentMetadataExistsOnDevice_string_string
 bl Kalect_iOS_DependencyServices_KalectDependencyServices_UpdateAssessmentMetadata_string_string_string
+bl Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string
 bl Kalect_iOS_DependencyServices_KalectDependencyServices__ctor
 bl Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string
 bl Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveFormData_string_string_string_string
+bl Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string
+bl Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string
+bl Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string
 bl Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor
 bl method_addresses
 bl System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
@@ -1582,6 +2287,9 @@ bl System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
 bl wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string
 bl wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string
 bl wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string
+bl wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData
+bl wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData
+bl wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData
 bl System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 method_addresses_end:
 
@@ -1589,14 +2297,14 @@ method_addresses_end:
 	.align 3
 unbox_trampolines:
 
-	.long 30
+	.long 37
 unbox_trampolines_end:
 
 	.long 0
 .text
 	.align 3
 unbox_trampoline_addresses:
-bl ut_30
+bl ut_37
 
 	.long 0
 .section __TEXT, __const
@@ -1607,12 +2315,14 @@ unwind_info:
 	.byte 0,68,14,64,157,8,158,7,68,13,29,68,153,6,154,5,13,12,31,0,68,14,48,157,6,158,5,68,13,29,19,12
 	.byte 31,0,68,14,64,157,8,158,7,68,13,29,68,151,6,68,154,5,19,12,31,0,68,14,112,157,14,158,13,68,13,29
 	.byte 68,150,12,68,154,11,23,12,31,0,68,14,96,157,12,158,11,68,13,29,68,151,10,152,9,68,153,8,154,7,16,12
-	.byte 31,0,68,14,64,157,8,158,7,68,13,29,68,154,6,18,12,31,0,68,14,112,157,14,158,13,68,13,29,68,153,12
-	.byte 154,11,17,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,154,14,13,12,31,0,68,14,80,157,10,158,9,68
-	.byte 13,29,26,12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3,68,154,2,16,12,31
-	.byte 0,68,14,64,157,8,158,7,68,13,29,68,150,6,26,12,31,0,68,14,80,157,10,158,9,68,13,29,68,150,8,151
-	.byte 7,68,152,6,153,5,68,154,4,28,12,31,0,68,14,80,157,10,158,9,68,13,29,68,149,8,150,7,68,151,6,152
-	.byte 5,68,153,4,154,3
+	.byte 31,0,68,14,64,157,8,158,7,68,13,29,68,154,6,27,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,150
+	.byte 14,151,13,68,152,12,153,11,68,154,10,18,12,31,0,68,14,112,157,14,158,13,68,13,29,68,153,12,154,11,17,12
+	.byte 31,0,68,14,128,1,157,16,158,15,68,13,29,68,154,14,32,12,31,0,68,14,128,1,157,16,158,15,68,13,29,68
+	.byte 148,14,149,13,68,150,12,151,11,68,152,10,153,9,68,154,8,16,12,31,0,68,14,48,157,6,158,5,68,13,29,68
+	.byte 154,4,13,12,31,0,68,14,80,157,10,158,9,68,13,29,26,12,31,0,68,14,64,157,8,158,7,68,13,29,68,150
+	.byte 6,151,5,68,152,4,153,3,68,154,2,16,12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,26,12,31,0
+	.byte 68,14,80,157,10,158,9,68,13,29,68,150,8,151,7,68,152,6,153,5,68,154,4,28,12,31,0,68,14,80,157,10
+	.byte 158,9,68,13,29,68,149,8,150,7,68,151,6,152,5,68,153,4,154,3
 
 .text
 	.align 4
@@ -1623,293 +2333,349 @@ plt_UIKit_UIApplication_Main_string___string_string:
 _p_1:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #312]
+ldr x16, [x16, #368]
 br x16
-.word 705
+.word 831
 	.no_dead_strip plt_Xamarin_Forms_Forms_Init
 plt_Xamarin_Forms_Forms_Init:
 _p_2:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #320]
+ldr x16, [x16, #376]
 br x16
-.word 710
+.word 836
 	.no_dead_strip plt_wrapper_alloc_object_AllocSmall_intptr_intptr
 plt_wrapper_alloc_object_AllocSmall_intptr_intptr:
 _p_3:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #328]
+ldr x16, [x16, #384]
 br x16
-.word 715
+.word 841
 	.no_dead_strip plt_Kalect_App__ctor
 plt_Kalect_App__ctor:
 _p_4:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #336]
+ldr x16, [x16, #392]
 br x16
-.word 723
+.word 849
 	.no_dead_strip plt_Xamarin_Forms_Platform_iOS_FormsApplicationDelegate_LoadApplication_Xamarin_Forms_Application
 plt_Xamarin_Forms_Platform_iOS_FormsApplicationDelegate_LoadApplication_Xamarin_Forms_Application:
 _p_5:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #344]
+ldr x16, [x16, #400]
 br x16
-.word 728
+.word 854
 	.no_dead_strip plt_Xamarin_Forms_Platform_iOS_FormsApplicationDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDictionary
 plt_Xamarin_Forms_Platform_iOS_FormsApplicationDelegate_FinishedLaunching_UIKit_UIApplication_Foundation_NSDictionary:
 _p_6:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #352]
+ldr x16, [x16, #408]
 br x16
-.word 733
+.word 859
 	.no_dead_strip plt_Xamarin_Forms_Platform_iOS_FormsApplicationDelegate__ctor
 plt_Xamarin_Forms_Platform_iOS_FormsApplicationDelegate__ctor:
 _p_7:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #360]
+ldr x16, [x16, #416]
 br x16
-.word 738
+.word 864
 	.no_dead_strip plt_string_Concat_string_string
 plt_string_Concat_string_string:
 _p_8:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #368]
+ldr x16, [x16, #424]
 br x16
-.word 743
+.word 869
 	.no_dead_strip plt_System_Environment_GetFolderPath_System_Environment_SpecialFolder
 plt_System_Environment_GetFolderPath_System_Environment_SpecialFolder:
 _p_9:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #376]
+ldr x16, [x16, #432]
 br x16
-.word 746
+.word 872
 	.no_dead_strip plt_string_Concat_string_string_string
 plt_string_Concat_string_string_string:
 _p_10:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #384]
+ldr x16, [x16, #440]
 br x16
-.word 749
+.word 875
 	.no_dead_strip plt_System_IO_Path_Combine_string_string
 plt_System_IO_Path_Combine_string_string:
 _p_11:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #392]
+ldr x16, [x16, #448]
 br x16
-.word 752
+.word 878
 	.no_dead_strip plt_System_IO_File_Exists_string
 plt_System_IO_File_Exists_string:
 _p_12:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #400]
+ldr x16, [x16, #456]
 br x16
-.word 755
+.word 881
 	.no_dead_strip plt_System_IO_File_ReadAllText_string
 plt_System_IO_File_ReadAllText_string:
 _p_13:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #408]
+ldr x16, [x16, #464]
 br x16
-.word 758
+.word 884
 	.no_dead_strip plt_System_IO_File_WriteAllText_string_string
 plt_System_IO_File_WriteAllText_string_string:
 _p_14:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #416]
+ldr x16, [x16, #472]
 br x16
-.word 761
+.word 887
 	.no_dead_strip plt__jit_icall_mono_arch_throw_exception
 plt__jit_icall_mono_arch_throw_exception:
 _p_15:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #424]
+ldr x16, [x16, #480]
 br x16
-.word 764
+.word 890
 	.no_dead_strip plt_System_IO_Directory_Delete_string_bool
 plt_System_IO_Directory_Delete_string_bool:
 _p_16:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #432]
+ldr x16, [x16, #488]
 br x16
-.word 792
+.word 918
 	.no_dead_strip plt_System_IO_Directory_Exists_string
 plt_System_IO_Directory_Exists_string:
 _p_17:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #440]
+ldr x16, [x16, #496]
 br x16
-.word 795
+.word 921
 	.no_dead_strip plt_string_Equals_string
 plt_string_Equals_string:
 _p_18:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #448]
+ldr x16, [x16, #504]
 br x16
-.word 798
+.word 924
 	.no_dead_strip plt_System_IO_File_Delete_string
 plt_System_IO_File_Delete_string:
 _p_19:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #456]
+ldr x16, [x16, #512]
 br x16
-.word 801
+.word 927
 	.no_dead_strip plt_System_IO_Directory_CreateDirectory_string
 plt_System_IO_Directory_CreateDirectory_string:
 _p_20:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #464]
+ldr x16, [x16, #520]
 br x16
-.word 804
+.word 930
 	.no_dead_strip plt_wrapper_alloc_object_AllocVector_intptr_intptr
 plt_wrapper_alloc_object_AllocVector_intptr_intptr:
 _p_21:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #472]
+ldr x16, [x16, #528]
 br x16
-.word 807
+.word 933
 	.no_dead_strip plt_string_Concat_string__
 plt_string_Concat_string__:
 _p_22:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #480]
+ldr x16, [x16, #536]
 br x16
-.word 815
+.word 941
 	.no_dead_strip plt_System_IO_DirectoryInfo__ctor_string
 plt_System_IO_DirectoryInfo__ctor_string:
 _p_23:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #488]
+ldr x16, [x16, #544]
 br x16
-.word 818
+.word 944
 	.no_dead_strip plt_System_IO_DirectoryInfo_GetDirectories
 plt_System_IO_DirectoryInfo_GetDirectories:
 _p_24:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #496]
+ldr x16, [x16, #552]
 br x16
-.word 821
+.word 947
 	.no_dead_strip plt_Kalect_Services_Utilities_FileFolderUtility_GetAssessmentFileName_string
 plt_Kalect_Services_Utilities_FileFolderUtility_GetAssessmentFileName_string:
 _p_25:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #504]
+ldr x16, [x16, #560]
 br x16
-.word 824
+.word 950
 	.no_dead_strip plt_System_Collections_Generic_List_1_string_Add_string
 plt_System_Collections_Generic_List_1_string_Add_string:
 _p_26:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #512]
+ldr x16, [x16, #568]
 br x16
-.word 829
+.word 955
 	.no_dead_strip plt__jit_icall_mono_arch_throw_corlib_exception
 plt__jit_icall_mono_arch_throw_corlib_exception:
 _p_27:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #520]
-br x16
-.word 840
-	.no_dead_strip plt__rgctx_fetch_0
-plt__rgctx_fetch_0:
-_p_28:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #528]
-br x16
-.word 897
-	.no_dead_strip plt__jit_icall_mono_generic_class_init
-plt__jit_icall_mono_generic_class_init:
-_p_29:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #536]
-br x16
-.word 905
-	.no_dead_strip plt__rgctx_fetch_1
-plt__rgctx_fetch_1:
-_p_30:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #544]
-br x16
-.word 931
-	.no_dead_strip plt__rgctx_fetch_2
-plt__rgctx_fetch_2:
-_p_31:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #552]
-br x16
-.word 945
-	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
-plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
-_p_32:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #560]
-br x16
-.word 953
-	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
-plt__jit_icall_mono_helper_ldstr_mscorlib:
-_p_33:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
-ldr x16, [x16, #568]
-br x16
-.word 971
-	.no_dead_strip plt__rgctx_fetch_3
-plt__rgctx_fetch_3:
-_p_34:
-adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
-add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
 ldr x16, [x16, #576]
 br x16
-.word 1017
-	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
-plt_System_Array_Copy_System_Array_int_System_Array_int_int:
-_p_35:
+.word 966
+	.no_dead_strip plt_System_IO_MemoryStream__ctor
+plt_System_IO_MemoryStream__ctor:
+_p_28:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
 ldr x16, [x16, #584]
 br x16
-.word 1039
-	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
-plt__jit_icall_mono_thread_interruption_checkpoint:
-_p_36:
+.word 1001
+	.no_dead_strip plt__jit_icall_mono_thread_self_abort
+plt__jit_icall_mono_thread_self_abort:
+_p_29:
 adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
 add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
 ldr x16, [x16, #592]
 br x16
-.word 1042
+.word 1004
+	.no_dead_strip plt_System_IO_File_WriteAllBytes_string_byte__
+plt_System_IO_File_WriteAllBytes_string_byte__:
+_p_30:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #600]
+br x16
+.word 1029
+	.no_dead_strip plt_System_IO_Directory_GetDirectories_string
+plt_System_IO_Directory_GetDirectories_string:
+_p_31:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #608]
+br x16
+.word 1032
+	.no_dead_strip plt_System_Enum_ToString
+plt_System_Enum_ToString:
+_p_32:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #616]
+br x16
+.word 1035
+	.no_dead_strip plt_Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string
+plt_Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string:
+_p_33:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #624]
+br x16
+.word 1038
+	.no_dead_strip plt_System_Collections_Generic_List_1_DataCollection_Repository_DataObjects_FormInstanceData_Add_DataCollection_Repository_DataObjects_FormInstanceData
+plt_System_Collections_Generic_List_1_DataCollection_Repository_DataObjects_FormInstanceData_Add_DataCollection_Repository_DataObjects_FormInstanceData:
+_p_34:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #632]
+br x16
+.word 1043
+	.no_dead_strip plt__rgctx_fetch_0
+plt__rgctx_fetch_0:
+_p_35:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #640]
+br x16
+.word 1078
+	.no_dead_strip plt__jit_icall_mono_generic_class_init
+plt__jit_icall_mono_generic_class_init:
+_p_36:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #648]
+br x16
+.word 1086
+	.no_dead_strip plt__rgctx_fetch_1
+plt__rgctx_fetch_1:
+_p_37:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #656]
+br x16
+.word 1112
+	.no_dead_strip plt__rgctx_fetch_2
+plt__rgctx_fetch_2:
+_p_38:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #664]
+br x16
+.word 1127
+	.no_dead_strip plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
+plt_System_Array_InternalEnumerator_1_T_REF__ctor_System_Array:
+_p_39:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #672]
+br x16
+.word 1135
+	.no_dead_strip plt__jit_icall_mono_helper_ldstr_mscorlib
+plt__jit_icall_mono_helper_ldstr_mscorlib:
+_p_40:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #680]
+br x16
+.word 1154
+	.no_dead_strip plt__rgctx_fetch_3
+plt__rgctx_fetch_3:
+_p_41:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #688]
+br x16
+.word 1200
+	.no_dead_strip plt_System_Array_Copy_System_Array_int_System_Array_int_int
+plt_System_Array_Copy_System_Array_int_System_Array_int_int:
+_p_42:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #696]
+br x16
+.word 1222
+	.no_dead_strip plt__jit_icall_mono_thread_interruption_checkpoint
+plt__jit_icall_mono_thread_interruption_checkpoint:
+_p_43:
+adrp x16, mono_aot_Kalect_iOS_got@PAGE+0
+add x16, x16, mono_aot_Kalect_iOS_got@PAGEOFF
+ldr x16, [x16, #704]
+br x16
+.word 1225
 plt_end:
 .section __DATA, __bss
 	.align 3
-.lcomm mono_aot_Kalect_iOS_got, 600
+.lcomm mono_aot_Kalect_iOS_got, 712
 got_end:
 .section __TEXT, __const
 	.align 3
@@ -1940,7 +2706,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "A2A32E34-9D97-459A-B8DA-7614CA04F04B"
+	.asciz "97BC643E-B8B7-48FF-B046-8F033703C60F"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -2019,13 +2785,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 38,600,37,31,66,387000831,0,1634
-	.long 128,8,8,9,0,25,2808,1168
-	.long 672,440,0,568,640,496,0,336
-	.long 64,1160,0,0,0,0,0,0
+	.long 45,712,44,38,66,387000831,0,1898
+	.long 128,8,8,9,0,25,3400,1496
+	.long 920,680,0,816,888,736,0,552
+	.long 72,1488,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 159,45,194,248,74,249,210,250,149,133,90,160,7,227,86,29
+	.byte 59,228,57,111,23,109,97,114,255,208,92,44,129,71,22,161
 	.globl _mono_aot_module_Kalect_iOS_info
 	.align 3
 _mono_aot_module_Kalect_iOS_info:
@@ -8198,6 +8964,413 @@ LDIFF_SYM1022=Lme_d - Kalect_iOS_DependencyServices_KalectDependencyServices_Upd
 Lfde13_end:
 
 .section __DWARF, __debug_info,regular,debug
+LTDIE_154:
+
+	.byte 5
+	.asciz "System_Threading_Tasks_Task`1"
+
+	.byte 80,16
+LDIFF_SYM1023=LTDIE_40 - Ldebug_info_start
+	.long LDIFF_SYM1023
+	.byte 2,35,0,6
+	.asciz "m_result"
+
+LDIFF_SYM1024=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1024
+	.byte 2,35,72,0,7
+	.asciz "System_Threading_Tasks_Task`1"
+
+LDIFF_SYM1025=LTDIE_154 - Ldebug_info_start
+	.long LDIFF_SYM1025
+LTDIE_154_POINTER:
+
+	.byte 13
+LDIFF_SYM1026=LTDIE_154 - Ldebug_info_start
+	.long LDIFF_SYM1026
+LTDIE_154_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1027=LTDIE_154 - Ldebug_info_start
+	.long LDIFF_SYM1027
+LTDIE_155:
+
+	.byte 5
+	.asciz "System_AsyncCallback"
+
+	.byte 112,16
+LDIFF_SYM1028=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1028
+	.byte 2,35,0,0,7
+	.asciz "System_AsyncCallback"
+
+LDIFF_SYM1029=LTDIE_155 - Ldebug_info_start
+	.long LDIFF_SYM1029
+LTDIE_155_POINTER:
+
+	.byte 13
+LDIFF_SYM1030=LTDIE_155 - Ldebug_info_start
+	.long LDIFF_SYM1030
+LTDIE_155_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1031=LTDIE_155 - Ldebug_info_start
+	.long LDIFF_SYM1031
+LTDIE_153:
+
+	.byte 5
+	.asciz "_ReadWriteTask"
+
+	.byte 128,1,16
+LDIFF_SYM1032=LTDIE_154 - Ldebug_info_start
+	.long LDIFF_SYM1032
+	.byte 2,35,0,6
+	.asciz "_isRead"
+
+LDIFF_SYM1033=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1033
+	.byte 2,35,112,6
+	.asciz "_stream"
+
+LDIFF_SYM1034=LTDIE_152_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1034
+	.byte 2,35,80,6
+	.asciz "_buffer"
+
+LDIFF_SYM1035=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1035
+	.byte 2,35,88,6
+	.asciz "_offset"
+
+LDIFF_SYM1036=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1036
+	.byte 2,35,116,6
+	.asciz "_count"
+
+LDIFF_SYM1037=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1037
+	.byte 2,35,120,6
+	.asciz "_callback"
+
+LDIFF_SYM1038=LTDIE_155_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1038
+	.byte 2,35,96,6
+	.asciz "_context"
+
+LDIFF_SYM1039=LTDIE_43_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1039
+	.byte 2,35,104,0,7
+	.asciz "_ReadWriteTask"
+
+LDIFF_SYM1040=LTDIE_153 - Ldebug_info_start
+	.long LDIFF_SYM1040
+LTDIE_153_POINTER:
+
+	.byte 13
+LDIFF_SYM1041=LTDIE_153 - Ldebug_info_start
+	.long LDIFF_SYM1041
+LTDIE_153_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1042=LTDIE_153 - Ldebug_info_start
+	.long LDIFF_SYM1042
+LTDIE_158:
+
+	.byte 5
+	.asciz "System_Threading_Tasks_Task`1"
+
+	.byte 80,16
+LDIFF_SYM1043=LTDIE_40 - Ldebug_info_start
+	.long LDIFF_SYM1043
+	.byte 2,35,0,6
+	.asciz "m_result"
+
+LDIFF_SYM1044=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1044
+	.byte 2,35,72,0,7
+	.asciz "System_Threading_Tasks_Task`1"
+
+LDIFF_SYM1045=LTDIE_158 - Ldebug_info_start
+	.long LDIFF_SYM1045
+LTDIE_158_POINTER:
+
+	.byte 13
+LDIFF_SYM1046=LTDIE_158 - Ldebug_info_start
+	.long LDIFF_SYM1046
+LTDIE_158_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1047=LTDIE_158 - Ldebug_info_start
+	.long LDIFF_SYM1047
+LTDIE_157:
+
+	.byte 5
+	.asciz "_TaskNode"
+
+	.byte 96,16
+LDIFF_SYM1048=LTDIE_158 - Ldebug_info_start
+	.long LDIFF_SYM1048
+	.byte 2,35,0,6
+	.asciz "Prev"
+
+LDIFF_SYM1049=LTDIE_157_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1049
+	.byte 2,35,80,6
+	.asciz "Next"
+
+LDIFF_SYM1050=LTDIE_157_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1050
+	.byte 2,35,88,0,7
+	.asciz "_TaskNode"
+
+LDIFF_SYM1051=LTDIE_157 - Ldebug_info_start
+	.long LDIFF_SYM1051
+LTDIE_157_POINTER:
+
+	.byte 13
+LDIFF_SYM1052=LTDIE_157 - Ldebug_info_start
+	.long LDIFF_SYM1052
+LTDIE_157_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1053=LTDIE_157 - Ldebug_info_start
+	.long LDIFF_SYM1053
+LTDIE_156:
+
+	.byte 5
+	.asciz "System_Threading_SemaphoreSlim"
+
+	.byte 64,16
+LDIFF_SYM1054=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM1054
+	.byte 2,35,0,6
+	.asciz "m_currentCount"
+
+LDIFF_SYM1055=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1055
+	.byte 2,35,48,6
+	.asciz "m_maxCount"
+
+LDIFF_SYM1056=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1056
+	.byte 2,35,52,6
+	.asciz "m_waitCount"
+
+LDIFF_SYM1057=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1057
+	.byte 2,35,56,6
+	.asciz "m_lockObj"
+
+LDIFF_SYM1058=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1058
+	.byte 2,35,16,6
+	.asciz "m_waitHandle"
+
+LDIFF_SYM1059=LTDIE_60_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1059
+	.byte 2,35,24,6
+	.asciz "m_asyncHead"
+
+LDIFF_SYM1060=LTDIE_157_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1060
+	.byte 2,35,32,6
+	.asciz "m_asyncTail"
+
+LDIFF_SYM1061=LTDIE_157_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1061
+	.byte 2,35,40,0,7
+	.asciz "System_Threading_SemaphoreSlim"
+
+LDIFF_SYM1062=LTDIE_156 - Ldebug_info_start
+	.long LDIFF_SYM1062
+LTDIE_156_POINTER:
+
+	.byte 13
+LDIFF_SYM1063=LTDIE_156 - Ldebug_info_start
+	.long LDIFF_SYM1063
+LTDIE_156_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1064=LTDIE_156 - Ldebug_info_start
+	.long LDIFF_SYM1064
+LTDIE_152:
+
+	.byte 5
+	.asciz "System_IO_Stream"
+
+	.byte 40,16
+LDIFF_SYM1065=LTDIE_63 - Ldebug_info_start
+	.long LDIFF_SYM1065
+	.byte 2,35,0,6
+	.asciz "_activeReadWriteTask"
+
+LDIFF_SYM1066=LTDIE_153_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1066
+	.byte 2,35,24,6
+	.asciz "_asyncActiveSemaphore"
+
+LDIFF_SYM1067=LTDIE_156_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1067
+	.byte 2,35,32,0,7
+	.asciz "System_IO_Stream"
+
+LDIFF_SYM1068=LTDIE_152 - Ldebug_info_start
+	.long LDIFF_SYM1068
+LTDIE_152_POINTER:
+
+	.byte 13
+LDIFF_SYM1069=LTDIE_152 - Ldebug_info_start
+	.long LDIFF_SYM1069
+LTDIE_152_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1070=LTDIE_152 - Ldebug_info_start
+	.long LDIFF_SYM1070
+LTDIE_159:
+
+	.byte 5
+	.asciz "System_IO_MemoryStream"
+
+	.byte 80,16
+LDIFF_SYM1071=LTDIE_152 - Ldebug_info_start
+	.long LDIFF_SYM1071
+	.byte 2,35,0,6
+	.asciz "_buffer"
+
+LDIFF_SYM1072=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1072
+	.byte 2,35,40,6
+	.asciz "_origin"
+
+LDIFF_SYM1073=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1073
+	.byte 2,35,56,6
+	.asciz "_position"
+
+LDIFF_SYM1074=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1074
+	.byte 2,35,60,6
+	.asciz "_length"
+
+LDIFF_SYM1075=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1075
+	.byte 2,35,64,6
+	.asciz "_capacity"
+
+LDIFF_SYM1076=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1076
+	.byte 2,35,68,6
+	.asciz "_expandable"
+
+LDIFF_SYM1077=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1077
+	.byte 2,35,72,6
+	.asciz "_writable"
+
+LDIFF_SYM1078=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1078
+	.byte 2,35,73,6
+	.asciz "_exposable"
+
+LDIFF_SYM1079=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1079
+	.byte 2,35,74,6
+	.asciz "_isOpen"
+
+LDIFF_SYM1080=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1080
+	.byte 2,35,75,6
+	.asciz "_lastReadTask"
+
+LDIFF_SYM1081=LTDIE_154_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1081
+	.byte 2,35,48,0,7
+	.asciz "System_IO_MemoryStream"
+
+LDIFF_SYM1082=LTDIE_159 - Ldebug_info_start
+	.long LDIFF_SYM1082
+LTDIE_159_POINTER:
+
+	.byte 13
+LDIFF_SYM1083=LTDIE_159 - Ldebug_info_start
+	.long LDIFF_SYM1083
+LTDIE_159_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1084=LTDIE_159 - Ldebug_info_start
+	.long LDIFF_SYM1084
+	.byte 2
+	.asciz "Kalect.iOS.DependencyServices.KalectDependencyServices:SaveImage"
+	.asciz "Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string"
+
+	.byte 0,0
+	.quad Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string
+	.quad Lme_e
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1085=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1085
+	.byte 0,3
+	.asciz "bitmap"
+
+LDIFF_SYM1086=LTDIE_152_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1086
+	.byte 1,104,3
+	.asciz "folderName"
+
+LDIFF_SYM1087=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1087
+	.byte 1,105,3
+	.asciz "fileName"
+
+LDIFF_SYM1088=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1088
+	.byte 3,141,192,0,11
+	.asciz "V_0"
+
+LDIFF_SYM1089=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1089
+	.byte 1,106,11
+	.asciz "V_1"
+
+LDIFF_SYM1090=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1090
+	.byte 1,105,11
+	.asciz "V_2"
+
+LDIFF_SYM1091=LTDIE_159_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1091
+	.byte 1,103,11
+	.asciz "V_3"
+
+LDIFF_SYM1092=LTDIE_159_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1092
+	.byte 3,141,200,0,11
+	.asciz "V_4"
+
+LDIFF_SYM1093=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1093
+	.byte 1,102,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1094=Lfde14_end - Lfde14_start
+	.long LDIFF_SYM1094
+Lfde14_start:
+
+	.long 0
+	.align 3
+	.quad Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string
+
+LDIFF_SYM1095=Lme_e - Kalect_iOS_DependencyServices_KalectDependencyServices_SaveImage_System_IO_Stream_string_string
+	.long LDIFF_SYM1095
+	.long 0
+	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,150,14,151,13,68,152,12,153,11,68,154,10
+	.align 3
+Lfde14_end:
+
+.section __DWARF, __debug_info,regular,debug
 
 	.byte 2
 	.asciz "Kalect.iOS.DependencyServices.KalectDependencyServices:.ctor"
@@ -8205,122 +9378,122 @@ Lfde13_end:
 
 	.byte 0,0
 	.quad Kalect_iOS_DependencyServices_KalectDependencyServices__ctor
-	.quad Lme_e
+	.quad Lme_f
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1023=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1023
+LDIFF_SYM1096=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1096
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1024=Lfde14_end - Lfde14_start
-	.long LDIFF_SYM1024
-Lfde14_start:
+LDIFF_SYM1097=Lfde15_end - Lfde15_start
+	.long LDIFF_SYM1097
+Lfde15_start:
 
 	.long 0
 	.align 3
 	.quad Kalect_iOS_DependencyServices_KalectDependencyServices__ctor
 
-LDIFF_SYM1025=Lme_e - Kalect_iOS_DependencyServices_KalectDependencyServices__ctor
-	.long LDIFF_SYM1025
+LDIFF_SYM1098=Lme_f - Kalect_iOS_DependencyServices_KalectDependencyServices__ctor
+	.long LDIFF_SYM1098
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde14_end:
+Lfde15_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_152:
+LTDIE_160:
 
 	.byte 5
 	.asciz "Kalect_iOS_DependencyServices_DataCollectionDependencyService"
 
 	.byte 16,16
-LDIFF_SYM1026=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM1026
+LDIFF_SYM1099=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM1099
 	.byte 2,35,0,0,7
 	.asciz "Kalect_iOS_DependencyServices_DataCollectionDependencyService"
 
-LDIFF_SYM1027=LTDIE_152 - Ldebug_info_start
-	.long LDIFF_SYM1027
-LTDIE_152_POINTER:
+LDIFF_SYM1100=LTDIE_160 - Ldebug_info_start
+	.long LDIFF_SYM1100
+LTDIE_160_POINTER:
 
 	.byte 13
-LDIFF_SYM1028=LTDIE_152 - Ldebug_info_start
-	.long LDIFF_SYM1028
-LTDIE_152_REFERENCE:
+LDIFF_SYM1101=LTDIE_160 - Ldebug_info_start
+	.long LDIFF_SYM1101
+LTDIE_160_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1029=LTDIE_152 - Ldebug_info_start
-	.long LDIFF_SYM1029
+LDIFF_SYM1102=LTDIE_160 - Ldebug_info_start
+	.long LDIFF_SYM1102
 	.byte 2
 	.asciz "Kalect.iOS.DependencyServices.DataCollectionDependencyService:LoadFormFromDevice"
 	.asciz "Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string"
 
 	.byte 0,0
 	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string
-	.quad Lme_f
+	.quad Lme_10
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1030=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1030
+LDIFF_SYM1103=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1103
 	.byte 0,3
 	.asciz "folderName"
 
-LDIFF_SYM1031=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1031
+LDIFF_SYM1104=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1104
 	.byte 2,141,40,3
 	.asciz "friendlyName"
 
-LDIFF_SYM1032=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1032
+LDIFF_SYM1105=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1105
 	.byte 1,105,3
 	.asciz "fileName"
 
-LDIFF_SYM1033=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1033
+LDIFF_SYM1106=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1106
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM1034=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1034
+LDIFF_SYM1107=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1107
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM1035=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1035
+LDIFF_SYM1108=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1108
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM1036=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1036
+LDIFF_SYM1109=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1109
 	.byte 1,106,11
 	.asciz "V_3"
 
-LDIFF_SYM1037=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1037
+LDIFF_SYM1110=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1110
 	.byte 1,105,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1038=Lfde15_end - Lfde15_start
-	.long LDIFF_SYM1038
-Lfde15_start:
+LDIFF_SYM1111=Lfde16_end - Lfde16_start
+	.long LDIFF_SYM1111
+Lfde16_start:
 
 	.long 0
 	.align 3
 	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string
 
-LDIFF_SYM1039=Lme_f - Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string
-	.long LDIFF_SYM1039
+LDIFF_SYM1112=Lme_10 - Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFormFromDevice_string_string_string
+	.long LDIFF_SYM1112
 	.long 0
 	.byte 12,31,0,68,14,112,157,14,158,13,68,13,29,68,153,12,154,11
 	.align 3
-Lfde15_end:
+Lfde16_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8330,66 +9503,461 @@ Lfde15_end:
 
 	.byte 0,0
 	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveFormData_string_string_string_string
-	.quad Lme_10
+	.quad Lme_11
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1040=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1040
+LDIFF_SYM1113=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1113
 	.byte 0,3
 	.asciz "formData"
 
-LDIFF_SYM1041=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1041
+LDIFF_SYM1114=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1114
 	.byte 2,141,32,3
 	.asciz "folderName"
 
-LDIFF_SYM1042=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1042
+LDIFF_SYM1115=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1115
 	.byte 2,141,40,3
 	.asciz "friendlyName"
 
-LDIFF_SYM1043=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1043
+LDIFF_SYM1116=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1116
 	.byte 2,141,48,3
 	.asciz "fileName"
 
-LDIFF_SYM1044=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1044
+LDIFF_SYM1117=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1117
 	.byte 2,141,56,11
 	.asciz "V_0"
 
-LDIFF_SYM1045=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1045
+LDIFF_SYM1118=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1118
 	.byte 0,11
 	.asciz "V_1"
 
-LDIFF_SYM1046=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1046
+LDIFF_SYM1119=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1119
 	.byte 0,11
 	.asciz "V_2"
 
-LDIFF_SYM1047=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1047
+LDIFF_SYM1120=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1120
 	.byte 1,106,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1048=Lfde16_end - Lfde16_start
-	.long LDIFF_SYM1048
-Lfde16_start:
+LDIFF_SYM1121=Lfde17_end - Lfde17_start
+	.long LDIFF_SYM1121
+Lfde17_start:
 
 	.long 0
 	.align 3
 	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveFormData_string_string_string_string
 
-LDIFF_SYM1049=Lme_10 - Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveFormData_string_string_string_string
-	.long LDIFF_SYM1049
+LDIFF_SYM1122=Lme_11 - Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveFormData_string_string_string_string
+	.long LDIFF_SYM1122
 	.long 0
 	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,154,14
 	.align 3
-Lfde16_end:
+Lfde17_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Kalect.iOS.DependencyServices.DataCollectionDependencyService:SaveImage"
+	.asciz "Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string"
+
+	.byte 0,0
+	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string
+	.quad Lme_12
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1123=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1123
+	.byte 0,3
+	.asciz "bitmap"
+
+LDIFF_SYM1124=LTDIE_152_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1124
+	.byte 1,104,3
+	.asciz "folderName"
+
+LDIFF_SYM1125=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1125
+	.byte 1,105,3
+	.asciz "fileName"
+
+LDIFF_SYM1126=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1126
+	.byte 3,141,192,0,11
+	.asciz "V_0"
+
+LDIFF_SYM1127=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1127
+	.byte 1,106,11
+	.asciz "V_1"
+
+LDIFF_SYM1128=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1128
+	.byte 1,105,11
+	.asciz "V_2"
+
+LDIFF_SYM1129=LTDIE_159_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1129
+	.byte 1,103,11
+	.asciz "V_3"
+
+LDIFF_SYM1130=LTDIE_159_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1130
+	.byte 3,141,200,0,11
+	.asciz "V_4"
+
+LDIFF_SYM1131=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1131
+	.byte 1,102,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1132=Lfde18_end - Lfde18_start
+	.long LDIFF_SYM1132
+Lfde18_start:
+
+	.long 0
+	.align 3
+	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string
+
+LDIFF_SYM1133=Lme_12 - Kalect_iOS_DependencyServices_DataCollectionDependencyService_SaveImage_System_IO_Stream_string_string
+	.long LDIFF_SYM1133
+	.long 0
+	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,150,14,151,13,68,152,12,153,11,68,154,10
+	.align 3
+Lfde18_end:
+
+.section __DWARF, __debug_info,regular,debug
+LTDIE_161:
+
+	.byte 5
+	.asciz "System_Collections_Generic_List`1"
+
+	.byte 40,16
+LDIFF_SYM1134=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM1134
+	.byte 2,35,0,6
+	.asciz "_items"
+
+LDIFF_SYM1135=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1135
+	.byte 2,35,16,6
+	.asciz "_size"
+
+LDIFF_SYM1136=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1136
+	.byte 2,35,32,6
+	.asciz "_version"
+
+LDIFF_SYM1137=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1137
+	.byte 2,35,36,6
+	.asciz "_syncRoot"
+
+LDIFF_SYM1138=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1138
+	.byte 2,35,24,0,7
+	.asciz "System_Collections_Generic_List`1"
+
+LDIFF_SYM1139=LTDIE_161 - Ldebug_info_start
+	.long LDIFF_SYM1139
+LTDIE_161_POINTER:
+
+	.byte 13
+LDIFF_SYM1140=LTDIE_161 - Ldebug_info_start
+	.long LDIFF_SYM1140
+LTDIE_161_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1141=LTDIE_161 - Ldebug_info_start
+	.long LDIFF_SYM1141
+LTDIE_163:
+
+	.byte 5
+	.asciz "System_IO_FileSystemInfo"
+
+	.byte 96,16
+LDIFF_SYM1142=LTDIE_63 - Ldebug_info_start
+	.long LDIFF_SYM1142
+	.byte 2,35,0,6
+	.asciz "_data"
+
+LDIFF_SYM1143=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1143
+	.byte 2,35,48,6
+	.asciz "_dataInitialised"
+
+LDIFF_SYM1144=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1144
+	.byte 2,35,88,6
+	.asciz "FullPath"
+
+LDIFF_SYM1145=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1145
+	.byte 2,35,24,6
+	.asciz "OriginalPath"
+
+LDIFF_SYM1146=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1146
+	.byte 2,35,32,6
+	.asciz "_displayPath"
+
+LDIFF_SYM1147=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1147
+	.byte 2,35,40,0,7
+	.asciz "System_IO_FileSystemInfo"
+
+LDIFF_SYM1148=LTDIE_163 - Ldebug_info_start
+	.long LDIFF_SYM1148
+LTDIE_163_POINTER:
+
+	.byte 13
+LDIFF_SYM1149=LTDIE_163 - Ldebug_info_start
+	.long LDIFF_SYM1149
+LTDIE_163_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1150=LTDIE_163 - Ldebug_info_start
+	.long LDIFF_SYM1150
+LTDIE_162:
+
+	.byte 5
+	.asciz "System_IO_DirectoryInfo"
+
+	.byte 112,16
+LDIFF_SYM1151=LTDIE_163 - Ldebug_info_start
+	.long LDIFF_SYM1151
+	.byte 2,35,0,6
+	.asciz "current"
+
+LDIFF_SYM1152=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1152
+	.byte 2,35,96,6
+	.asciz "parent"
+
+LDIFF_SYM1153=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1153
+	.byte 2,35,104,0,7
+	.asciz "System_IO_DirectoryInfo"
+
+LDIFF_SYM1154=LTDIE_162 - Ldebug_info_start
+	.long LDIFF_SYM1154
+LTDIE_162_POINTER:
+
+	.byte 13
+LDIFF_SYM1155=LTDIE_162 - Ldebug_info_start
+	.long LDIFF_SYM1155
+LTDIE_162_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1156=LTDIE_162 - Ldebug_info_start
+	.long LDIFF_SYM1156
+LTDIE_164:
+
+	.byte 5
+	.asciz "DataCollection_Repository_DataObjects_FormInstanceData"
+
+	.byte 48,16
+LDIFF_SYM1157=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM1157
+	.byte 2,35,0,6
+	.asciz "<FriendlyName>k__BackingField"
+
+LDIFF_SYM1158=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1158
+	.byte 2,35,16,6
+	.asciz "<FormModel>k__BackingField"
+
+LDIFF_SYM1159=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1159
+	.byte 2,35,24,6
+	.asciz "<FormData>k__BackingField"
+
+LDIFF_SYM1160=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1160
+	.byte 2,35,32,6
+	.asciz "<ValidationSchema>k__BackingField"
+
+LDIFF_SYM1161=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1161
+	.byte 2,35,40,0,7
+	.asciz "DataCollection_Repository_DataObjects_FormInstanceData"
+
+LDIFF_SYM1162=LTDIE_164 - Ldebug_info_start
+	.long LDIFF_SYM1162
+LTDIE_164_POINTER:
+
+	.byte 13
+LDIFF_SYM1163=LTDIE_164 - Ldebug_info_start
+	.long LDIFF_SYM1163
+LTDIE_164_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1164=LTDIE_164 - Ldebug_info_start
+	.long LDIFF_SYM1164
+LTDIE_165:
+
+	.byte 8
+	.asciz "DataCollection_Repository_DataObjects_FormFiles"
+
+	.byte 4
+LDIFF_SYM1165=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1165
+	.byte 9
+	.asciz "FormModel"
+
+	.byte 0,9
+	.asciz "FormData"
+
+	.byte 1,9
+	.asciz "ValidationSchema"
+
+	.byte 2,0,7
+	.asciz "DataCollection_Repository_DataObjects_FormFiles"
+
+LDIFF_SYM1166=LTDIE_165 - Ldebug_info_start
+	.long LDIFF_SYM1166
+LTDIE_165_POINTER:
+
+	.byte 13
+LDIFF_SYM1167=LTDIE_165 - Ldebug_info_start
+	.long LDIFF_SYM1167
+LTDIE_165_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1168=LTDIE_165 - Ldebug_info_start
+	.long LDIFF_SYM1168
+	.byte 2
+	.asciz "Kalect.iOS.DependencyServices.DataCollectionDependencyService:LoadAllFormsFromDevice"
+	.asciz "Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string"
+
+	.byte 0,0
+	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string
+	.quad Lme_13
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1169=LTDIE_160_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1169
+	.byte 1,105,3
+	.asciz "folderName"
+
+LDIFF_SYM1170=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1170
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM1171=LTDIE_161_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1171
+	.byte 1,106,11
+	.asciz "V_1"
+
+LDIFF_SYM1172=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1172
+	.byte 1,104,11
+	.asciz "V_2"
+
+LDIFF_SYM1173=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1173
+	.byte 1,103,11
+	.asciz "V_3"
+
+LDIFF_SYM1174=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1174
+	.byte 1,102,11
+	.asciz "V_4"
+
+LDIFF_SYM1175=LTDIE_162_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1175
+	.byte 1,101,11
+	.asciz "V_5"
+
+LDIFF_SYM1176=LTDIE_164_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1176
+	.byte 1,100,11
+	.asciz "V_6"
+
+LDIFF_SYM1177=LTDIE_165 - Ldebug_info_start
+	.long LDIFF_SYM1177
+	.byte 1,101,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1178=Lfde19_end - Lfde19_start
+	.long LDIFF_SYM1178
+Lfde19_start:
+
+	.long 0
+	.align 3
+	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string
+
+LDIFF_SYM1179=Lme_13 - Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadAllFormsFromDevice_string
+	.long LDIFF_SYM1179
+	.long 0
+	.byte 12,31,0,68,14,128,1,157,16,158,15,68,13,29,68,148,14,149,13,68,150,12,151,11,68,152,10,153,9,68,154,8
+	.align 3
+Lfde19_end:
+
+.section __DWARF, __debug_info,regular,debug
+
+	.byte 2
+	.asciz "Kalect.iOS.DependencyServices.DataCollectionDependencyService:LoadFileJson"
+	.asciz "Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string"
+
+	.byte 0,0
+	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string
+	.quad Lme_14
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1180=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1180
+	.byte 0,3
+	.asciz "fileDirectoryPath"
+
+LDIFF_SYM1181=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1181
+	.byte 2,141,32,3
+	.asciz "fileName"
+
+LDIFF_SYM1182=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1182
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM1183=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1183
+	.byte 1,106,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1184=Lfde20_end - Lfde20_start
+	.long LDIFF_SYM1184
+Lfde20_start:
+
+	.long 0
+	.align 3
+	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string
+
+LDIFF_SYM1185=Lme_14 - Kalect_iOS_DependencyServices_DataCollectionDependencyService_LoadFileJson_string_string
+	.long LDIFF_SYM1185
+	.long 0
+	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29,68,154,4
+	.align 3
+Lfde20_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8399,87 +9967,87 @@ Lfde16_end:
 
 	.byte 0,0
 	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor
-	.quad Lme_11
+	.quad Lme_15
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1050=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1050
+LDIFF_SYM1186=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1186
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1051=Lfde17_end - Lfde17_start
-	.long LDIFF_SYM1051
-Lfde17_start:
+LDIFF_SYM1187=Lfde21_end - Lfde21_start
+	.long LDIFF_SYM1187
+Lfde21_start:
 
 	.long 0
 	.align 3
 	.quad Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor
 
-LDIFF_SYM1052=Lme_11 - Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor
-	.long LDIFF_SYM1052
+LDIFF_SYM1188=Lme_15 - Kalect_iOS_DependencyServices_DataCollectionDependencyService__ctor
+	.long LDIFF_SYM1188
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde17_end:
+Lfde21_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_153:
+LTDIE_166:
 
 	.byte 5
 	.asciz "System_Array"
 
 	.byte 16,16
-LDIFF_SYM1053=LTDIE_1 - Ldebug_info_start
-	.long LDIFF_SYM1053
+LDIFF_SYM1189=LTDIE_1 - Ldebug_info_start
+	.long LDIFF_SYM1189
 	.byte 2,35,0,0,7
 	.asciz "System_Array"
 
-LDIFF_SYM1054=LTDIE_153 - Ldebug_info_start
-	.long LDIFF_SYM1054
-LTDIE_153_POINTER:
+LDIFF_SYM1190=LTDIE_166 - Ldebug_info_start
+	.long LDIFF_SYM1190
+LTDIE_166_POINTER:
 
 	.byte 13
-LDIFF_SYM1055=LTDIE_153 - Ldebug_info_start
-	.long LDIFF_SYM1055
-LTDIE_153_REFERENCE:
+LDIFF_SYM1191=LTDIE_166 - Ldebug_info_start
+	.long LDIFF_SYM1191
+LTDIE_166_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1056=LTDIE_153 - Ldebug_info_start
-	.long LDIFF_SYM1056
+LDIFF_SYM1192=LTDIE_166 - Ldebug_info_start
+	.long LDIFF_SYM1192
 	.byte 2
 	.asciz "System.Array:InternalArray__IEnumerable_GetEnumerator<T_REF>"
 	.asciz "System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF"
 
 	.byte 1,71
 	.quad System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
-	.quad Lme_13
+	.quad Lme_17
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1057=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1057
+LDIFF_SYM1193=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1193
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1058=Lfde18_end - Lfde18_start
-	.long LDIFF_SYM1058
-Lfde18_start:
+LDIFF_SYM1194=Lfde22_end - Lfde22_start
+	.long LDIFF_SYM1194
+Lfde22_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
 
-LDIFF_SYM1059=Lme_13 - System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
-	.long LDIFF_SYM1059
+LDIFF_SYM1195=Lme_17 - System_Array_InternalArray__IEnumerable_GetEnumerator_T_REF
+	.long LDIFF_SYM1195
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29
 	.align 3
-Lfde18_end:
+Lfde22_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8489,31 +10057,31 @@ Lfde18_end:
 
 	.byte 1,61
 	.quad System_Array_InternalArray__ICollection_get_Count
-	.quad Lme_14
+	.quad Lme_18
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1060=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1060
+LDIFF_SYM1196=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1196
 	.byte 2,141,16,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1061=Lfde19_end - Lfde19_start
-	.long LDIFF_SYM1061
-Lfde19_start:
+LDIFF_SYM1197=Lfde23_end - Lfde23_start
+	.long LDIFF_SYM1197
+Lfde23_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_get_Count
 
-LDIFF_SYM1062=Lme_14 - System_Array_InternalArray__ICollection_get_Count
-	.long LDIFF_SYM1062
+LDIFF_SYM1198=Lme_18 - System_Array_InternalArray__ICollection_get_Count
+	.long LDIFF_SYM1198
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde19_end:
+Lfde23_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8523,31 +10091,31 @@ Lfde19_end:
 
 	.byte 1,66
 	.quad System_Array_InternalArray__ICollection_get_IsReadOnly
-	.quad Lme_15
+	.quad Lme_19
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1063=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1063
+LDIFF_SYM1199=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1199
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1064=Lfde20_end - Lfde20_start
-	.long LDIFF_SYM1064
-Lfde20_start:
+LDIFF_SYM1200=Lfde24_end - Lfde24_start
+	.long LDIFF_SYM1200
+Lfde24_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_get_IsReadOnly
 
-LDIFF_SYM1065=Lme_15 - System_Array_InternalArray__ICollection_get_IsReadOnly
-	.long LDIFF_SYM1065
+LDIFF_SYM1201=Lme_19 - System_Array_InternalArray__ICollection_get_IsReadOnly
+	.long LDIFF_SYM1201
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde20_end:
+Lfde24_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8557,31 +10125,31 @@ Lfde20_end:
 
 	.byte 1,79
 	.quad System_Array_InternalArray__ICollection_Clear
-	.quad Lme_16
+	.quad Lme_1a
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1066=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1066
+LDIFF_SYM1202=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1202
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1067=Lfde21_end - Lfde21_start
-	.long LDIFF_SYM1067
-Lfde21_start:
+LDIFF_SYM1203=Lfde25_end - Lfde25_start
+	.long LDIFF_SYM1203
+Lfde25_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_Clear
 
-LDIFF_SYM1068=Lme_16 - System_Array_InternalArray__ICollection_Clear
-	.long LDIFF_SYM1068
+LDIFF_SYM1204=Lme_1a - System_Array_InternalArray__ICollection_Clear
+	.long LDIFF_SYM1204
 	.long 0
 	.byte 12,31,0,68,14,32,157,4,158,3,68,13,29
 	.align 3
-Lfde21_end:
+Lfde25_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8591,36 +10159,36 @@ Lfde21_end:
 
 	.byte 1,84
 	.quad System_Array_InternalArray__ICollection_Add_T_REF_T_REF
-	.quad Lme_17
+	.quad Lme_1b
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1069=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1069
+LDIFF_SYM1205=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1205
 	.byte 2,141,16,3
 	.asciz "item"
 
-LDIFF_SYM1070=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1070
+LDIFF_SYM1206=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1206
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1071=Lfde22_end - Lfde22_start
-	.long LDIFF_SYM1071
-Lfde22_start:
+LDIFF_SYM1207=Lfde26_end - Lfde26_start
+	.long LDIFF_SYM1207
+Lfde26_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_Add_T_REF_T_REF
 
-LDIFF_SYM1072=Lme_17 - System_Array_InternalArray__ICollection_Add_T_REF_T_REF
-	.long LDIFF_SYM1072
+LDIFF_SYM1208=Lme_1b - System_Array_InternalArray__ICollection_Add_T_REF_T_REF
+	.long LDIFF_SYM1208
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde22_end:
+Lfde26_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8630,36 +10198,36 @@ Lfde22_end:
 
 	.byte 1,89
 	.quad System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
-	.quad Lme_18
+	.quad Lme_1c
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1073=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1073
+LDIFF_SYM1209=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1209
 	.byte 2,141,16,3
 	.asciz "item"
 
-LDIFF_SYM1074=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1074
+LDIFF_SYM1210=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1210
 	.byte 0,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1075=Lfde23_end - Lfde23_start
-	.long LDIFF_SYM1075
-Lfde23_start:
+LDIFF_SYM1211=Lfde27_end - Lfde27_start
+	.long LDIFF_SYM1211
+Lfde27_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
 
-LDIFF_SYM1076=Lme_18 - System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
-	.long LDIFF_SYM1076
+LDIFF_SYM1212=Lme_1c - System_Array_InternalArray__ICollection_Remove_T_REF_T_REF
+	.long LDIFF_SYM1212
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde23_end:
+Lfde27_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8669,51 +10237,51 @@ Lfde23_end:
 
 	.byte 1,94
 	.quad System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
-	.quad Lme_19
+	.quad Lme_1d
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1077=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1077
+LDIFF_SYM1213=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1213
 	.byte 1,105,3
 	.asciz "item"
 
-LDIFF_SYM1078=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1078
+LDIFF_SYM1214=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1214
 	.byte 1,106,11
 	.asciz "length"
 
-LDIFF_SYM1079=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1079
+LDIFF_SYM1215=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1215
 	.byte 1,104,11
 	.asciz "i"
 
-LDIFF_SYM1080=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1080
+LDIFF_SYM1216=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1216
 	.byte 1,103,11
 	.asciz "value"
 
-LDIFF_SYM1081=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1081
+LDIFF_SYM1217=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1217
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1082=Lfde24_end - Lfde24_start
-	.long LDIFF_SYM1082
-Lfde24_start:
+LDIFF_SYM1218=Lfde28_end - Lfde28_start
+	.long LDIFF_SYM1218
+Lfde28_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
 
-LDIFF_SYM1083=Lme_19 - System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
-	.long LDIFF_SYM1083
+LDIFF_SYM1219=Lme_1d - System_Array_InternalArray__ICollection_Contains_T_REF_T_REF
+	.long LDIFF_SYM1219
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6,151,5,68,152,4,153,3,68,154,2
 	.align 3
-Lfde24_end:
+Lfde28_end:
 
 .section __DWARF, __debug_info,regular,debug
 
@@ -8723,385 +10291,658 @@ Lfde24_end:
 
 	.byte 1,119
 	.quad System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
-	.quad Lme_1a
+	.quad Lme_1e
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1084=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1084
+LDIFF_SYM1220=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1220
 	.byte 2,141,24,3
 	.asciz "array"
 
-LDIFF_SYM1085=LDIE_SZARRAY - Ldebug_info_start
-	.long LDIFF_SYM1085
+LDIFF_SYM1221=LDIE_SZARRAY - Ldebug_info_start
+	.long LDIFF_SYM1221
 	.byte 2,141,32,3
 	.asciz "arrayIndex"
 
-LDIFF_SYM1086=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1086
+LDIFF_SYM1222=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1222
 	.byte 2,141,40,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1087=Lfde25_end - Lfde25_start
-	.long LDIFF_SYM1087
-Lfde25_start:
+LDIFF_SYM1223=Lfde29_end - Lfde29_start
+	.long LDIFF_SYM1223
+Lfde29_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
 
-LDIFF_SYM1088=Lme_1a - System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
-	.long LDIFF_SYM1088
+LDIFF_SYM1224=Lme_1e - System_Array_InternalArray__ICollection_CopyTo_T_REF_T_REF___int
+	.long LDIFF_SYM1224
 	.long 0
 	.byte 12,31,0,68,14,64,157,8,158,7,68,13,29,68,150,6
 	.align 3
-Lfde25_end:
+Lfde29_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_154:
+LTDIE_167:
 
 	.byte 5
 	.asciz "System_Predicate`1"
 
 	.byte 112,16
-LDIFF_SYM1089=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM1089
+LDIFF_SYM1225=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1225
 	.byte 2,35,0,0,7
 	.asciz "System_Predicate`1"
 
-LDIFF_SYM1090=LTDIE_154 - Ldebug_info_start
-	.long LDIFF_SYM1090
-LTDIE_154_POINTER:
+LDIFF_SYM1226=LTDIE_167 - Ldebug_info_start
+	.long LDIFF_SYM1226
+LTDIE_167_POINTER:
 
 	.byte 13
-LDIFF_SYM1091=LTDIE_154 - Ldebug_info_start
-	.long LDIFF_SYM1091
-LTDIE_154_REFERENCE:
+LDIFF_SYM1227=LTDIE_167 - Ldebug_info_start
+	.long LDIFF_SYM1227
+LTDIE_167_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1092=LTDIE_154 - Ldebug_info_start
-	.long LDIFF_SYM1092
+LDIFF_SYM1228=LTDIE_167 - Ldebug_info_start
+	.long LDIFF_SYM1228
 	.byte 2
 	.asciz "(wrapper_delegate-invoke)_System.Predicate`1<string>:invoke_bool_T"
 	.asciz "wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string"
 
 	.byte 0,0
 	.quad wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string
-	.quad Lme_1b
+	.quad Lme_1f
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1093=LTDIE_154_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1093
+LDIFF_SYM1229=LTDIE_167_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1229
 	.byte 1,105,3
 	.asciz "param0"
 
-LDIFF_SYM1094=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1094
+LDIFF_SYM1230=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1230
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM1095=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1095
+LDIFF_SYM1231=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1231
 	.byte 1,103,11
 	.asciz "V_1"
 
-LDIFF_SYM1096=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1096
+LDIFF_SYM1232=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1232
 	.byte 1,105,11
 	.asciz "V_2"
 
-LDIFF_SYM1097=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1097
+LDIFF_SYM1233=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1233
 	.byte 1,104,11
 	.asciz "V_3"
 
-LDIFF_SYM1098=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1098
+LDIFF_SYM1234=LTDIE_15_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1234
 	.byte 1,102,11
 	.asciz "V_4"
 
-LDIFF_SYM1099=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1099
+LDIFF_SYM1235=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1235
 	.byte 1,104,11
 	.asciz "V_5"
 
-LDIFF_SYM1100=LDIE_BOOLEAN - Ldebug_info_start
-	.long LDIFF_SYM1100
+LDIFF_SYM1236=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1236
 	.byte 1,102,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1101=Lfde26_end - Lfde26_start
-	.long LDIFF_SYM1101
-Lfde26_start:
+LDIFF_SYM1237=Lfde30_end - Lfde30_start
+	.long LDIFF_SYM1237
+Lfde30_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string
 
-LDIFF_SYM1102=Lme_1b - wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string
-	.long LDIFF_SYM1102
+LDIFF_SYM1238=Lme_1f - wrapper_delegate_invoke_System_Predicate_1_string_invoke_bool_T_string
+	.long LDIFF_SYM1238
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,150,8,151,7,68,152,6,153,5,68,154,4
 	.align 3
-Lfde26_end:
+Lfde30_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_155:
+LTDIE_168:
 
 	.byte 5
 	.asciz "System_Action`1"
 
 	.byte 112,16
-LDIFF_SYM1103=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM1103
+LDIFF_SYM1239=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1239
 	.byte 2,35,0,0,7
 	.asciz "System_Action`1"
 
-LDIFF_SYM1104=LTDIE_155 - Ldebug_info_start
-	.long LDIFF_SYM1104
-LTDIE_155_POINTER:
+LDIFF_SYM1240=LTDIE_168 - Ldebug_info_start
+	.long LDIFF_SYM1240
+LTDIE_168_POINTER:
 
 	.byte 13
-LDIFF_SYM1105=LTDIE_155 - Ldebug_info_start
-	.long LDIFF_SYM1105
-LTDIE_155_REFERENCE:
+LDIFF_SYM1241=LTDIE_168 - Ldebug_info_start
+	.long LDIFF_SYM1241
+LTDIE_168_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1106=LTDIE_155 - Ldebug_info_start
-	.long LDIFF_SYM1106
+LDIFF_SYM1242=LTDIE_168 - Ldebug_info_start
+	.long LDIFF_SYM1242
 	.byte 2
 	.asciz "(wrapper_delegate-invoke)_System.Action`1<string>:invoke_void_T"
 	.asciz "wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string"
 
 	.byte 0,0
 	.quad wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string
-	.quad Lme_1c
+	.quad Lme_20
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1107=LTDIE_155_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1107
+LDIFF_SYM1243=LTDIE_168_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1243
 	.byte 1,105,3
 	.asciz "param0"
 
-LDIFF_SYM1108=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1108
+LDIFF_SYM1244=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1244
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM1109=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1109
+LDIFF_SYM1245=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1245
 	.byte 1,103,11
 	.asciz "V_1"
 
-LDIFF_SYM1110=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1110
+LDIFF_SYM1246=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1246
 	.byte 1,105,11
 	.asciz "V_2"
 
-LDIFF_SYM1111=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1111
+LDIFF_SYM1247=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1247
 	.byte 1,104,11
 	.asciz "V_3"
 
-LDIFF_SYM1112=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1112
+LDIFF_SYM1248=LTDIE_15_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1248
 	.byte 1,102,11
 	.asciz "V_4"
 
-LDIFF_SYM1113=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1113
+LDIFF_SYM1249=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1249
 	.byte 1,104,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1114=Lfde27_end - Lfde27_start
-	.long LDIFF_SYM1114
-Lfde27_start:
+LDIFF_SYM1250=Lfde31_end - Lfde31_start
+	.long LDIFF_SYM1250
+Lfde31_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string
 
-LDIFF_SYM1115=Lme_1c - wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string
-	.long LDIFF_SYM1115
+LDIFF_SYM1251=Lme_20 - wrapper_delegate_invoke_System_Action_1_string_invoke_void_T_string
+	.long LDIFF_SYM1251
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,150,8,151,7,68,152,6,153,5,68,154,4
 	.align 3
-Lfde27_end:
+Lfde31_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_156:
+LTDIE_169:
 
 	.byte 5
 	.asciz "System_Comparison`1"
 
 	.byte 112,16
-LDIFF_SYM1116=LTDIE_15 - Ldebug_info_start
-	.long LDIFF_SYM1116
+LDIFF_SYM1252=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1252
 	.byte 2,35,0,0,7
 	.asciz "System_Comparison`1"
 
-LDIFF_SYM1117=LTDIE_156 - Ldebug_info_start
-	.long LDIFF_SYM1117
-LTDIE_156_POINTER:
+LDIFF_SYM1253=LTDIE_169 - Ldebug_info_start
+	.long LDIFF_SYM1253
+LTDIE_169_POINTER:
 
 	.byte 13
-LDIFF_SYM1118=LTDIE_156 - Ldebug_info_start
-	.long LDIFF_SYM1118
-LTDIE_156_REFERENCE:
+LDIFF_SYM1254=LTDIE_169 - Ldebug_info_start
+	.long LDIFF_SYM1254
+LTDIE_169_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1119=LTDIE_156 - Ldebug_info_start
-	.long LDIFF_SYM1119
+LDIFF_SYM1255=LTDIE_169 - Ldebug_info_start
+	.long LDIFF_SYM1255
 	.byte 2
 	.asciz "(wrapper_delegate-invoke)_System.Comparison`1<string>:invoke_int_T_T"
 	.asciz "wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string"
 
 	.byte 0,0
 	.quad wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string
-	.quad Lme_1d
+	.quad Lme_21
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1120=LTDIE_156_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1120
+LDIFF_SYM1256=LTDIE_169_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1256
 	.byte 1,104,3
 	.asciz "param0"
 
-LDIFF_SYM1121=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1121
+LDIFF_SYM1257=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1257
 	.byte 1,105,3
 	.asciz "param1"
 
-LDIFF_SYM1122=LDIE_STRING - Ldebug_info_start
-	.long LDIFF_SYM1122
+LDIFF_SYM1258=LDIE_STRING - Ldebug_info_start
+	.long LDIFF_SYM1258
 	.byte 1,106,11
 	.asciz "V_0"
 
-LDIFF_SYM1123=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1123
+LDIFF_SYM1259=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1259
 	.byte 1,102,11
 	.asciz "V_1"
 
-LDIFF_SYM1124=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1124
+LDIFF_SYM1260=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1260
 	.byte 1,104,11
 	.asciz "V_2"
 
-LDIFF_SYM1125=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1125
+LDIFF_SYM1261=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1261
 	.byte 1,103,11
 	.asciz "V_3"
 
-LDIFF_SYM1126=LTDIE_15_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1126
+LDIFF_SYM1262=LTDIE_15_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1262
 	.byte 1,101,11
 	.asciz "V_4"
 
-LDIFF_SYM1127=LDIE_OBJECT - Ldebug_info_start
-	.long LDIFF_SYM1127
+LDIFF_SYM1263=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1263
 	.byte 1,103,11
 	.asciz "V_5"
 
-LDIFF_SYM1128=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1128
+LDIFF_SYM1264=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1264
 	.byte 1,101,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1129=Lfde28_end - Lfde28_start
-	.long LDIFF_SYM1129
-Lfde28_start:
+LDIFF_SYM1265=Lfde32_end - Lfde32_start
+	.long LDIFF_SYM1265
+Lfde32_start:
 
 	.long 0
 	.align 3
 	.quad wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string
 
-LDIFF_SYM1130=Lme_1d - wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string
-	.long LDIFF_SYM1130
+LDIFF_SYM1266=Lme_21 - wrapper_delegate_invoke_System_Comparison_1_string_invoke_int_T_T_string_string
+	.long LDIFF_SYM1266
 	.long 0
 	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,149,8,150,7,68,151,6,152,5,68,153,4,154,3
 	.align 3
-Lfde28_end:
+Lfde32_end:
 
 .section __DWARF, __debug_info,regular,debug
-LTDIE_157:
+LTDIE_170:
+
+	.byte 5
+	.asciz "System_Predicate`1"
+
+	.byte 112,16
+LDIFF_SYM1267=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1267
+	.byte 2,35,0,0,7
+	.asciz "System_Predicate`1"
+
+LDIFF_SYM1268=LTDIE_170 - Ldebug_info_start
+	.long LDIFF_SYM1268
+LTDIE_170_POINTER:
+
+	.byte 13
+LDIFF_SYM1269=LTDIE_170 - Ldebug_info_start
+	.long LDIFF_SYM1269
+LTDIE_170_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1270=LTDIE_170 - Ldebug_info_start
+	.long LDIFF_SYM1270
+	.byte 2
+	.asciz "(wrapper_delegate-invoke)_System.Predicate`1<DataCollection.Repository.DataObjects.FormInstanceData>:invoke_bool_T"
+	.asciz "wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData"
+
+	.byte 0,0
+	.quad wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData
+	.quad Lme_22
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1271=LTDIE_170_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1271
+	.byte 1,105,3
+	.asciz "param0"
+
+LDIFF_SYM1272=LTDIE_164_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1272
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM1273=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1273
+	.byte 1,103,11
+	.asciz "V_1"
+
+LDIFF_SYM1274=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1274
+	.byte 1,105,11
+	.asciz "V_2"
+
+LDIFF_SYM1275=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1275
+	.byte 1,104,11
+	.asciz "V_3"
+
+LDIFF_SYM1276=LTDIE_15_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1276
+	.byte 1,102,11
+	.asciz "V_4"
+
+LDIFF_SYM1277=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1277
+	.byte 1,104,11
+	.asciz "V_5"
+
+LDIFF_SYM1278=LDIE_BOOLEAN - Ldebug_info_start
+	.long LDIFF_SYM1278
+	.byte 1,102,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1279=Lfde33_end - Lfde33_start
+	.long LDIFF_SYM1279
+Lfde33_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData
+
+LDIFF_SYM1280=Lme_22 - wrapper_delegate_invoke_System_Predicate_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_bool_T_DataCollection_Repository_DataObjects_FormInstanceData
+	.long LDIFF_SYM1280
+	.long 0
+	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,150,8,151,7,68,152,6,153,5,68,154,4
+	.align 3
+Lfde33_end:
+
+.section __DWARF, __debug_info,regular,debug
+LTDIE_171:
+
+	.byte 5
+	.asciz "System_Action`1"
+
+	.byte 112,16
+LDIFF_SYM1281=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1281
+	.byte 2,35,0,0,7
+	.asciz "System_Action`1"
+
+LDIFF_SYM1282=LTDIE_171 - Ldebug_info_start
+	.long LDIFF_SYM1282
+LTDIE_171_POINTER:
+
+	.byte 13
+LDIFF_SYM1283=LTDIE_171 - Ldebug_info_start
+	.long LDIFF_SYM1283
+LTDIE_171_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1284=LTDIE_171 - Ldebug_info_start
+	.long LDIFF_SYM1284
+	.byte 2
+	.asciz "(wrapper_delegate-invoke)_System.Action`1<DataCollection.Repository.DataObjects.FormInstanceData>:invoke_void_T"
+	.asciz "wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData"
+
+	.byte 0,0
+	.quad wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData
+	.quad Lme_23
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1285=LTDIE_171_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1285
+	.byte 1,105,3
+	.asciz "param0"
+
+LDIFF_SYM1286=LTDIE_164_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1286
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM1287=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1287
+	.byte 1,103,11
+	.asciz "V_1"
+
+LDIFF_SYM1288=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1288
+	.byte 1,105,11
+	.asciz "V_2"
+
+LDIFF_SYM1289=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1289
+	.byte 1,104,11
+	.asciz "V_3"
+
+LDIFF_SYM1290=LTDIE_15_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1290
+	.byte 1,102,11
+	.asciz "V_4"
+
+LDIFF_SYM1291=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1291
+	.byte 1,104,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1292=Lfde34_end - Lfde34_start
+	.long LDIFF_SYM1292
+Lfde34_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData
+
+LDIFF_SYM1293=Lme_23 - wrapper_delegate_invoke_System_Action_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_void_T_DataCollection_Repository_DataObjects_FormInstanceData
+	.long LDIFF_SYM1293
+	.long 0
+	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,150,8,151,7,68,152,6,153,5,68,154,4
+	.align 3
+Lfde34_end:
+
+.section __DWARF, __debug_info,regular,debug
+LTDIE_172:
+
+	.byte 5
+	.asciz "System_Comparison`1"
+
+	.byte 112,16
+LDIFF_SYM1294=LTDIE_15 - Ldebug_info_start
+	.long LDIFF_SYM1294
+	.byte 2,35,0,0,7
+	.asciz "System_Comparison`1"
+
+LDIFF_SYM1295=LTDIE_172 - Ldebug_info_start
+	.long LDIFF_SYM1295
+LTDIE_172_POINTER:
+
+	.byte 13
+LDIFF_SYM1296=LTDIE_172 - Ldebug_info_start
+	.long LDIFF_SYM1296
+LTDIE_172_REFERENCE:
+
+	.byte 14
+LDIFF_SYM1297=LTDIE_172 - Ldebug_info_start
+	.long LDIFF_SYM1297
+	.byte 2
+	.asciz "(wrapper_delegate-invoke)_System.Comparison`1<DataCollection.Repository.DataObjects.FormInstanceData>:invoke_int_T_T"
+	.asciz "wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData"
+
+	.byte 0,0
+	.quad wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData
+	.quad Lme_24
+
+	.byte 2,118,16,3
+	.asciz "this"
+
+LDIFF_SYM1298=LTDIE_172_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1298
+	.byte 1,104,3
+	.asciz "param0"
+
+LDIFF_SYM1299=LTDIE_164_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1299
+	.byte 1,105,3
+	.asciz "param1"
+
+LDIFF_SYM1300=LTDIE_164_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1300
+	.byte 1,106,11
+	.asciz "V_0"
+
+LDIFF_SYM1301=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1301
+	.byte 1,102,11
+	.asciz "V_1"
+
+LDIFF_SYM1302=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1302
+	.byte 1,104,11
+	.asciz "V_2"
+
+LDIFF_SYM1303=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1303
+	.byte 1,103,11
+	.asciz "V_3"
+
+LDIFF_SYM1304=LTDIE_15_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1304
+	.byte 1,101,11
+	.asciz "V_4"
+
+LDIFF_SYM1305=LDIE_OBJECT - Ldebug_info_start
+	.long LDIFF_SYM1305
+	.byte 1,103,11
+	.asciz "V_5"
+
+LDIFF_SYM1306=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1306
+	.byte 1,101,0
+
+.section __DWARF, __debug_frame,regular,debug
+
+LDIFF_SYM1307=Lfde35_end - Lfde35_start
+	.long LDIFF_SYM1307
+Lfde35_start:
+
+	.long 0
+	.align 3
+	.quad wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData
+
+LDIFF_SYM1308=Lme_24 - wrapper_delegate_invoke_System_Comparison_1_DataCollection_Repository_DataObjects_FormInstanceData_invoke_int_T_T_DataCollection_Repository_DataObjects_FormInstanceData_DataCollection_Repository_DataObjects_FormInstanceData
+	.long LDIFF_SYM1308
+	.long 0
+	.byte 12,31,0,68,14,80,157,10,158,9,68,13,29,68,149,8,150,7,68,151,6,152,5,68,153,4,154,3
+	.align 3
+Lfde35_end:
+
+.section __DWARF, __debug_info,regular,debug
+LTDIE_173:
 
 	.byte 5
 	.asciz "_InternalEnumerator`1"
 
 	.byte 32,16
-LDIFF_SYM1131=LTDIE_12 - Ldebug_info_start
-	.long LDIFF_SYM1131
+LDIFF_SYM1309=LTDIE_12 - Ldebug_info_start
+	.long LDIFF_SYM1309
 	.byte 2,35,0,6
 	.asciz "array"
 
-LDIFF_SYM1132=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1132
+LDIFF_SYM1310=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1310
 	.byte 2,35,16,6
 	.asciz "idx"
 
-LDIFF_SYM1133=LDIE_I4 - Ldebug_info_start
-	.long LDIFF_SYM1133
+LDIFF_SYM1311=LDIE_I4 - Ldebug_info_start
+	.long LDIFF_SYM1311
 	.byte 2,35,24,0,7
 	.asciz "_InternalEnumerator`1"
 
-LDIFF_SYM1134=LTDIE_157 - Ldebug_info_start
-	.long LDIFF_SYM1134
-LTDIE_157_POINTER:
+LDIFF_SYM1312=LTDIE_173 - Ldebug_info_start
+	.long LDIFF_SYM1312
+LTDIE_173_POINTER:
 
 	.byte 13
-LDIFF_SYM1135=LTDIE_157 - Ldebug_info_start
-	.long LDIFF_SYM1135
-LTDIE_157_REFERENCE:
+LDIFF_SYM1313=LTDIE_173 - Ldebug_info_start
+	.long LDIFF_SYM1313
+LTDIE_173_REFERENCE:
 
 	.byte 14
-LDIFF_SYM1136=LTDIE_157 - Ldebug_info_start
-	.long LDIFF_SYM1136
+LDIFF_SYM1314=LTDIE_173 - Ldebug_info_start
+	.long LDIFF_SYM1314
 	.byte 2
 	.asciz "System.Array/InternalEnumerator`1<T_REF>:.ctor"
 	.asciz "System_Array_InternalEnumerator_1_T_REF__ctor_System_Array"
 
 	.byte 1,218,1
 	.quad System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
-	.quad Lme_1e
+	.quad Lme_25
 
 	.byte 2,118,16,3
 	.asciz "this"
 
-LDIFF_SYM1137=LDIE_I - Ldebug_info_start
-	.long LDIFF_SYM1137
+LDIFF_SYM1315=LDIE_I - Ldebug_info_start
+	.long LDIFF_SYM1315
 	.byte 2,141,16,3
 	.asciz "array"
 
-LDIFF_SYM1138=LTDIE_153_REFERENCE - Ldebug_info_start
-	.long LDIFF_SYM1138
+LDIFF_SYM1316=LTDIE_166_REFERENCE - Ldebug_info_start
+	.long LDIFF_SYM1316
 	.byte 2,141,24,0
 
 .section __DWARF, __debug_frame,regular,debug
 
-LDIFF_SYM1139=Lfde29_end - Lfde29_start
-	.long LDIFF_SYM1139
-Lfde29_start:
+LDIFF_SYM1317=Lfde36_end - Lfde36_start
+	.long LDIFF_SYM1317
+Lfde36_start:
 
 	.long 0
 	.align 3
 	.quad System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
 
-LDIFF_SYM1140=Lme_1e - System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
-	.long LDIFF_SYM1140
+LDIFF_SYM1318=Lme_25 - System_Array_InternalEnumerator_1_T_REF__ctor_System_Array
+	.long LDIFF_SYM1318
 	.long 0
 	.byte 12,31,0,68,14,48,157,6,158,5,68,13,29
 	.align 3
-Lfde29_end:
+Lfde36_end:
 
 .section __DWARF, __debug_info,regular,debug
 

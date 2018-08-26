@@ -262,3 +262,9 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Thunderstorm.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Icon-512.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Icon-Original.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.Abstractions.pdb
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Plugin.Connectivity.pdb
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Xamarin.SimplePing.iOS.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Xamarin.Essentials.dll

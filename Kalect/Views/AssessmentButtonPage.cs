@@ -169,9 +169,9 @@ namespace Kalect.Views
             FormDataService.FormData = _formInstance.FormData;
             StackLayout formGroupLayout = new StackLayout();
             //_formGroupLayout.Children.Clear();
-            formGroupLayout.Children.Add(_formService.GenerateLayoutForSelectedFormGroup(formGroup, _formInstance.FormData));
+            formGroupLayout.Children.Add(_formService.GenerateLayoutForSelectedFormGroup(formGroup, _formInstance.FormData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString()));
 
-            //check if formGroupLayout has been added for previous question. Remove that add new one.
+            //check if formGroupLayout has been added for previous question. Remove that add new one.x
             if (_pageLayout.Children.Count == 3)
             {
                 _pageLayout.Children.RemoveAt(2);

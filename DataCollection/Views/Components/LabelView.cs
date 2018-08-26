@@ -26,6 +26,20 @@ namespace DataCollection.Views.Components
 
             Content = lbl;
         }
+
+        public LabelView(string labelText, int fontSize)
+        {
+            lblViewModel = new LabelViewModel(labelText);
+            BindingContext = lblViewModel;
+
+            //set labeltext
+            lbl.SetBinding(Label.TextProperty, "LabelText");
+            lbl.BindingContext = lblViewModel;
+            lbl.FontSize = fontSize;
+
+            Content = lbl;
+        }
+
     }
 }
 

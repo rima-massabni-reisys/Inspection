@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Kalect.Services.Interfaces
 {
@@ -13,5 +14,6 @@ namespace Kalect.Services.Interfaces
         bool DoesAssessmentMetadataExistsOnDevice(string folderName, string fileName);
         void DeleteAssessmentsFromDevice();
         void UpdateAssessmentMetadata(string assessmentMetadata, string folderName, string fileName);
+        void SaveImage(Stream bitmap, string folderName, string fileName);
     }
 }

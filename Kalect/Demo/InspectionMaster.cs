@@ -30,7 +30,7 @@ namespace Kalect.Demo
 
             assessmentListView.SeparatorVisibility = SeparatorVisibility.None;
 
-
+            IsGestureEnabled = false;
 
             this.Master = new ContentPage
             {
@@ -50,11 +50,15 @@ namespace Kalect.Demo
             assessmentListView.ItemSelected += (sender, args) =>
             {
                 //((ListView)sender).SelectedItem = Color.FromHex("#3693FF");
-
-                if (args.SelectedItem.Equals("Signature"))
+                IsGestureEnabled = false;
+                if (args.SelectedItem.Equals("Submit"))
                 {
-                    //this.Detail = new NavigationPage(new SignaturePage());
+                    this.Detail = new NavigationPage(new Signature());
 
+                }
+                else if(args.SelectedItem.Equals("Review"))
+                {
+                    this.Detail = new NavigationPage(new InspectionReview()); //new NavigationPage(new GroupedList()); //new NavigationPage(new InspectionReview());
                 }
                 else
                 {
@@ -78,6 +82,7 @@ namespace Kalect.Demo
             //string defaultFirstFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>().SectionFriendlyName;
             this.Detail = new NavigationPage(new InspectionDetail(AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>()))
             {
+                
                 BarBackgroundColor = Color.FromHex("#025085"),
                 BarTextColor = Color.White
             };
@@ -90,8 +95,10 @@ namespace Kalect.Demo
             List<string> assessmentList = (from Sections in AppDataWallet.SelectedAssessmentMetadata.Sections
                                            select Sections.SectionDisplayName).ToList<string>();
 
+            //Add Review
+            assessmentList.Add("Review");
             //Add custom left menu items
-            assessmentList.Add("Signature");
+            assessmentList.Add("Submit");
 
             return assessmentList;
         }

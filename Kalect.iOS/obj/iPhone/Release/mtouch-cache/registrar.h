@@ -27,6 +27,7 @@
 @class CoreImage_CILanczosScaleTransform;
 @class UIKit_UIControlEventProxy;
 @class UIActionSheetDelegate;
+@class UIActivityItemSource;
 @class UICollectionViewDataSource;
 @class UIImagePickerControllerDelegate;
 @class UIPickerViewModel;
@@ -146,6 +147,12 @@
 @class SignaturePadView;
 @class Xamarin_Controls_InkPresenter;
 @class SignaturePadCanvasView;
+@protocol SimplePingDelegate;
+@class SimplePingDelegate;
+@class Xamarin_SimplePing_SimplePing__SimplePingDelegate;
+@class SimplePing;
+@class Xamarin_Essentials_ShareActivityItemSource;
+@class Xamarin_Essentials_SingleLocationListener;
 
 @interface UIApplicationDelegate : NSObject<UIApplicationDelegate> {
 }
@@ -173,6 +180,11 @@
 @end
 
 @interface UIActionSheetDelegate : NSObject<UIActionSheetDelegate> {
+}
+	-(id) init;
+@end
+
+@interface UIActivityItemSource : NSObject<UIActivityItemSource> {
 }
 	-(id) init;
 @end
@@ -707,6 +719,37 @@
 	-(void) setStrokeWidth:(float)p0;
 	-(BOOL) conformsToProtocol:(void *)p0;
 	-(id) init;
+@end
+
+@protocol SimplePingDelegate
+	@optional -(void) simplePing:(id)p0 didStartWithAddress:(NSData *)p1;
+	@optional -(void) simplePing:(id)p0 didFailWithError:(NSError *)p1;
+	@optional -(void) simplePing:(id)p0 didSendPacket:(NSData *)p1 sequenceNumber:(unsigned short)p2;
+	@optional -(void) simplePing:(id)p0 didFailToSendPacket:(NSData *)p1 sequenceNumber:(unsigned short)p2 error:(NSError *)p3;
+	@optional -(void) simplePing:(id)p0 didReceivePingResponsePacket:(NSData *)p1 sequenceNumber:(unsigned short)p2;
+	@optional -(void) simplePing:(id)p0 didReceiveUnexpectedPacket:(NSData *)p1;
+@end
+
+@interface SimplePingDelegate : NSObject<SimplePingDelegate> {
+}
+	-(id) init;
+@end
+
+@interface SimplePing : NSObject {
+}
+	-(void) sendPingWithData:(NSData *)p0;
+	-(void) start;
+	-(void) stop;
+	-(NSInteger) addressStyle;
+	-(void) setAddressStyle:(NSInteger)p0;
+	-(id) delegate;
+	-(void) setDelegate:(id)p0;
+	-(NSData *) hostAddress;
+	-(unsigned char) hostAddressFamily;
+	-(NSString *) hostName;
+	-(unsigned short) identifier;
+	-(unsigned short) nextSequenceNumber;
+	-(id) initWithHostName:(NSString *)p0;
 @end
 
 

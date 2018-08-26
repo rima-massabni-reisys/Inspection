@@ -8,6 +8,8 @@ using Newtonsoft.Json.Schema;
 using Xamarin.Forms;
 using System.Linq;
 using Kalect.Services.Entities;
+using Kalect.Services;
+using Newtonsoft.Json;
 
 namespace Kalect.Demo
 {
@@ -91,6 +93,8 @@ namespace Kalect.Demo
 
         public InspectionDetail(Sections selectedSection)
         {
+            UpdateAssessmentJsonOnDevice();
+
             Title = "Inspection Checklist";
 
             SelectedFriendlyName = selectedSection.SectionFriendlyName;
@@ -110,7 +114,7 @@ namespace Kalect.Demo
             formNameLayout.Padding = new Thickness(25, 25, 0, 0);
             Label lblFormName = new Label();
             lblFormName.Text = selectedSection.SectionDisplayName;
-            lblFormName.TextColor = Color.FromHex("#000000");
+            lblFormName.TextColor = Color.FromHex("#CBCBCB");
             lblFormName.FontSize = 30;
             formNameLayout.Children.Add(lblFormName);
             PageLayout.Children.Add(formNameLayout);
@@ -118,7 +122,17 @@ namespace Kalect.Demo
             questionNavigationButtonBarLayout = new StackLayout();
             questionNavigationButtonBarLayout.Orientation = StackOrientation.Horizontal;
             questionNavigationButtonBarLayout.Padding = new Thickness(25, 10, 10, 10);
-            PageLayout.Children.Add(questionNavigationButtonBarLayout);
+            questionNavigationButtonBarLayout.FlowDirection = FlowDirection.LeftToRight;
+
+            ScrollView qbar = new ScrollView();
+            qbar.FlowDirection = FlowDirection.LeftToRight;
+            qbar.Orientation = ScrollOrientation.Horizontal;
+            qbar.HorizontalScrollBarVisibility = ScrollBarVisibility.Always;
+
+            qbar.Content = questionNavigationButtonBarLayout;
+
+            //PageLayout.Children.Add(questionNavigationButtonBarLayout);
+            PageLayout.Children.Add(qbar);
 
             //Create Button list for Navigation
             Button questionButton;
@@ -132,6 +146,7 @@ namespace Kalect.Demo
                 questionButton.BackgroundColor = Color.FromHex("#EAEAEA");
                 questionButton.Text = fg.text;
                 questionButton.TextColor = Color.Black;
+                questionButton.FontSize = 20;
                 questionButton.Clicked += QuestionButton_Clicked;
                 questionButton.CommandParameter = fg;
                 questionNavigationButtonBarLayout.Children.Add(questionButton);
@@ -143,10 +158,12 @@ namespace Kalect.Demo
 
             //Load First Question
             formGroup = formInstance.FormModelView.formgroups[0];
+
             LoadFirstQuestionByDefault(formGroup);
 
-            ScrollView scrollView = new ScrollView();
+            //ScrollView scrollView = new ScrollView();
 
+            //Subscribe to message to show displayaction sheet on click of camera
             MessagingCenter.Subscribe<object, List<string>>(this, "PhotoMessageQuestion", async (sender, arg) =>
             {
                 var photoAction = await DisplayActionSheet(arg[0], arg[1], arg[2],arg[3]);
@@ -196,8 +213,8 @@ namespace Kalect.Demo
             //Set static FormData
             FormDataService.FormData = formInstance.FormData;
             StackLayout formGroupLayout = new StackLayout();
-            //_formGroupLayout.Children.Clear();
-            formGroupLayout.Children.Add(formService.GenerateLayoutForSelectedFormGroup(formGroup, formInstance.FormData));
+           
+            formGroupLayout.Children.Add(formService.GenerateLayoutForSelectedFormGroup(fg, formInstance.FormData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString()));
 
             //check if formGroupLayout has been added for previous question. Remove that add new one.
             if (PageLayout.Children.Count == 3)
@@ -207,6 +224,17 @@ namespace Kalect.Demo
             lblErrorMessage.Text = string.Empty;
             PageLayout.Children.Add(formGroupLayout);
 
+        }
+
+        private void UpdateAssessmentJsonOnDevice()
+        {
+            //Update Assessment to inprogress
+            AppDataWallet.SelectedAssessmentMetadata.AssessmentStatus = "In Progress";
+            AppDataWallet.SelectedAssessmentMetadata.AssessmentStatusCode = 2;
+
+            AssessmentService assessmentService = new AssessmentService();
+            assessmentService.UpdateAssessmentOnDevice(JsonConvert.SerializeObject(AppDataWallet.SelectedAssessmentMetadata), AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString());
+                
         }
     }
 }

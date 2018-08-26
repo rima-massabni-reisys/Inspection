@@ -23,7 +23,8 @@ namespace DataCollection.Views.Components
             lineSeparator.Margin = new Thickness(0, 25, 0, 0);
             switchView = new SwitchView(c, formData);
 
-            question = new LabelView(c.text);
+            question = new LabelView(c.text,20);
+
             this.Padding = new Thickness(25, 20, 25, 0);
 
             Content = new ScrollView

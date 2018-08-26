@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "ddce98c3d7fd164c0adccd3e1b7f97b9be1d1d95"
+    "signature": "01109cef8a1cab83db0bfd4a7dcbb2709d31c895"
   },
   "compilationOptions": {},
   "targets": {
@@ -15,9 +15,11 @@
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "11.0.2",
           "Plugin.Badge": "2.0.0",
+          "Xam.Plugin.Connectivity": "4.0.0.190-beta",
           "Xam.Plugin.Geolocator": "4.5.0.6",
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
+          "Xamarin.Essentials": "0.10.0-preview",
           "Xamarin.Forms": "3.1.0.697729"
         },
         "runtime": {
@@ -76,6 +78,29 @@
           }
         }
       },
+      "System.Numerics.Vectors/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "assemblyVersion": "4.1.4.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        }
+      },
+      "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.0/Plugin.Connectivity.Abstractions.dll": {
+            "assemblyVersion": "4.0.0.190",
+            "fileVersion": "4.0.0.190"
+          },
+          "lib/netstandard1.0/Plugin.Connectivity.dll": {
+            "assemblyVersion": "4.0.0.190",
+            "fileVersion": "4.0.0.190"
+          }
+        }
+      },
       "Xam.Plugin.Geolocator/4.5.0.6": {
         "runtime": {
           "lib/netstandard2.0/Plugin.Geolocator.dll": {
@@ -103,6 +128,17 @@
           "lib/netstandard1.0/SignaturePad.Forms.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "Xamarin.Essentials/0.10.0-preview": {
+        "dependencies": {
+          "System.Numerics.Vectors": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Xamarin.Essentials.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
           }
         }
       },
@@ -201,6 +237,20 @@
       "path": "plugin.permissions/3.0.0.12",
       "hashPath": "plugin.permissions.3.0.0.12.nupkg.sha512"
     },
+    "System.Numerics.Vectors/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MNcaYxUJvUcoXOa+jgKl/GDw/Mh+wMrxDjW4dre7qrp35LUGTjUBNtZsNjxsWX592ocdyqt1X5hMJB+5OStoYw==",
+      "path": "system.numerics.vectors/4.5.0",
+      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+    },
+    "Xam.Plugin.Connectivity/4.0.0.190-beta": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p9PofTKArw6wHg45GpRRE+xDioJGOSAgA+X+E+vUf1CFZmTzeOO3YCmFdP7/W8x6f85Z50zugXGoszEGJx4QSg==",
+      "path": "xam.plugin.connectivity/4.0.0.190-beta",
+      "hashPath": "xam.plugin.connectivity.4.0.0.190-beta.nupkg.sha512"
+    },
     "Xam.Plugin.Geolocator/4.5.0.6": {
       "type": "package",
       "serviceable": true,
@@ -221,6 +271,13 @@
       "sha512": "sha512-qxBLxS0M4ajQMLU0QvzoRgvwMIBE7fR8ljlDKi+645I56gFbga8PoXNUABpw3XK9P1G0+OFu+q/LZstirwyUFQ==",
       "path": "xamarin.controls.signaturepad.forms/3.0.0",
       "hashPath": "xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512"
+    },
+    "Xamarin.Essentials/0.10.0-preview": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oA8oAHIHf4ymPPQoi7sLKF0704fFgwoqmQDy1G1kOxXrEZF0W5XpTXS2y2h4/RC/7bn0DzhTS6wiC90Om4YSHA==",
+      "path": "xamarin.essentials/0.10.0-preview",
+      "hashPath": "xamarin.essentials.0.10.0-preview.nupkg.sha512"
     },
     "Xamarin.Forms/3.1.0.697729": {
       "type": "package",

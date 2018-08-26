@@ -941,6 +941,8 @@ Function=xamarin_localized_string_format_9
 	/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-cache/Link/Xamarin.iOS.dll
 Function=xamarin_init_nsthread
 	/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-cache/Link/Xamarin.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_SimplePing
+	/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/mtouch-cache/Link/Xamarin.SimplePing.iOS.dll
 Function=mono_pmip
 Function=xamarin_dyn_objc_msgSend
 Function=xamarin_dyn_objc_msgSendSuper

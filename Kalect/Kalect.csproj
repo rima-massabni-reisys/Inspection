@@ -11,6 +11,8 @@
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xam.Plugin.Connectivity" Version="4.0.0.190-beta" />
+    <PackageReference Include="Xamarin.Essentials" Version="0.10.0-preview" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\" />
@@ -39,5 +41,9 @@
     <EmbeddedResource Remove="MainPage.xaml" />
     <EmbeddedResource Remove="App.xaml" />
     <EmbeddedResource Remove="Demo\Login.xaml" />
+    <EmbeddedResource Remove="Demo\GroupedListXAML.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.xaml" />
   </ItemGroup>
 </Project>

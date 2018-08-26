@@ -15,7 +15,7 @@ namespace Kalect.Demo
             };
 
             inspectionListPage.Icon = "Group3.png";
-            inspectionListPage.Title = "Home";
+            inspectionListPage.Title = "Dashboard";
 
             Children.Add(inspectionListPage);
         }

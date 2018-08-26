@@ -1,4 +1,14 @@
-OS junk files
+.vs/
+Kalect.Android/bin/
+Kalect.Android/obj/
+Kalect.iOS/bin/
+Kalect.Services.Test/bin/
+Kalect.Services.Test/obj/
+Kalect.UITests/bin/
+
+
+
+#OS junk files
 [Tt]humbs.db
 *.DS_Store
 
@@ -28,6 +38,7 @@ OS junk files
 *.obj
 ipch/
 obj/
+bin/
 [Bb]in
 [Dd]ebug*/
 [Rr]elease*/

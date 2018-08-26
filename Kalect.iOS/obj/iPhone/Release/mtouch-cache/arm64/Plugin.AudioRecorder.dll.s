@@ -8025,7 +8025,7 @@ System_Runtime_CompilerServices_AsyncTaskMethodBuilder_1_System_Threading_Tasks_
 .word 0xf9401800
 .word 0xf9002ba0
 .word 0x14000009
-.word 0xd29e1b20
+.word 0xd29e1d20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -8099,7 +8099,7 @@ System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start_Plugin_AudioRecorde
 .word 0xf9401800
 .word 0xf9002ba0
 .word 0x14000009
-.word 0xd29e1b20
+.word 0xd29e1d20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -8208,7 +8208,7 @@ System_Runtime_CompilerServices_AsyncTaskMethodBuilder_Start_Plugin_AudioRecorde
 .word 0xf9401c00
 .word 0xf9002fa0
 .word 0x14000009
-.word 0xd29e1b20
+.word 0xd29e1d20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -8922,11 +8922,11 @@ bl _p_130
 .word 0xa8c67bfd
 .word 0xd65f03c0
 .loc 5 356 0
-.word 0xd2969ce0
+.word 0xd2969ee0
 .word 0xf2a00020
 bl _p_99
 .word 0xf9002ba0
-.word 0xd296a0e0
+.word 0xd296a2e0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e2
@@ -9008,11 +9008,11 @@ bl _p_130
 .word 0xa8c77bfd
 .word 0xd65f03c0
 .loc 5 386 0
-.word 0xd2969ce0
+.word 0xd2969ee0
 .word 0xf2a00020
 bl _p_99
 .word 0xf90033a0
-.word 0xd296a0e0
+.word 0xd296a2e0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e2
@@ -9081,7 +9081,7 @@ bl _p_132
 .word 0xa8c77bfd
 .word 0xd65f03c0
 .loc 5 397 0
-.word 0xd296b580
+.word 0xd296b780
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -9090,7 +9090,7 @@ bl _p_99
 bl _mono_create_corlib_exception_1
 bl _p_25
 .loc 5 401 0
-.word 0xd296b7c0
+.word 0xd296b9c0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -9099,11 +9099,11 @@ bl _p_99
 bl _mono_create_corlib_exception_1
 bl _p_25
 .loc 5 406 0
-.word 0xd2969ce0
+.word 0xd2969ee0
 .word 0xf2a00020
 bl _p_99
 .word 0xf9002ba0
-.word 0xd296a0e0
+.word 0xd296a2e0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e2
@@ -9179,7 +9179,7 @@ bl _p_132
 .word 0xa8c87bfd
 .word 0xd65f03c0
 .loc 5 422 0
-.word 0xd296b580
+.word 0xd296b780
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -9188,7 +9188,7 @@ bl _p_99
 bl _mono_create_corlib_exception_1
 bl _p_25
 .loc 5 426 0
-.word 0xd296b7c0
+.word 0xd296b9c0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -9197,11 +9197,11 @@ bl _p_99
 bl _mono_create_corlib_exception_1
 bl _p_25
 .loc 5 430 0
-.word 0xd2969ce0
+.word 0xd2969ee0
 .word 0xf2a00020
 bl _p_99
 .word 0xf90033a0
-.word 0xd296a0e0
+.word 0xd296a2e0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e2
@@ -9840,7 +9840,7 @@ bl _p_156
 .word 0xa8c87bfd
 .word 0xd65f03c0
 .loc 5 891 0
-.word 0xd296b7c0
+.word 0xd296b9c0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -9848,7 +9848,7 @@ bl _p_99
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd296ba40
+.word 0xd296bc40
 .word 0xf2a00020
 .loc 5 886 0
 bl _p_99
@@ -10034,7 +10034,7 @@ ldr x2, [x16, #16]
 .word 0x910003bf
 .word 0xa8c47bfd
 .word 0xd65f03c0
-.word 0xd2969ce0
+.word 0xd2969ee0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -10772,7 +10772,7 @@ bl _p_50
 .word 0xa8c97bfd
 .word 0xd65f03c0
 .loc 6 820 0
-.word 0xd296c740
+.word 0xd296c940
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -10780,7 +10780,7 @@ bl _p_99
 .word 0xf2a04000
 bl _mono_create_corlib_exception_1
 bl _p_25
-.word 0xd296c440
+.word 0xd296c640
 .word 0xf2a00020
 .loc 6 817 0
 bl _p_99
@@ -11079,7 +11079,7 @@ bl _p_137
 .word 0xa8c37bfd
 .word 0xd65f03c0
 .loc 3 610 0
-.word 0xd297cd20
+.word 0xd297cf20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -11214,7 +11214,7 @@ bl _p_146
 .word 0xa8c47bfd
 .word 0xd65f03c0
 .loc 3 649 0
-.word 0xd29769e0
+.word 0xd2976be0
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -11223,7 +11223,7 @@ bl _p_99
 bl _mono_create_corlib_exception_1
 bl _p_25
 .loc 3 675 0
-.word 0xd297cd20
+.word 0xd297cf20
 .word 0xf2a00020
 bl _p_99
 .word 0xaa0003e1
@@ -15010,7 +15010,7 @@ _mono_aot_file_info:
 	.long 344,5800,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 207,67,110,131,163,112,151,134,91,5,21,209,136,47,161,101
+	.byte 121,117,170,90,71,238,150,231,160,160,112,32,183,146,200,49
 	.globl _mono_aot_module_Plugin_AudioRecorder_info
 	.align 3
 _mono_aot_module_Plugin_AudioRecorder_info:

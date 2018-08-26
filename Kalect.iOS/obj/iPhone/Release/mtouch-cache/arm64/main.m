@@ -23,16 +23,20 @@ extern void *mono_aot_module_Xamarin_Forms_Xaml_info;
 extern void *mono_aot_module_Plugin_AudioRecorder_info;
 extern void *mono_aot_module_Plugin_Media_info;
 extern void *mono_aot_module_Plugin_Permissions_info;
+extern void *mono_aot_module_Newtonsoft_Json_Schema_info;
 extern void *mono_aot_module_Newtonsoft_Json_info;
 extern void *mono_aot_module_Services_info;
 extern void *mono_aot_module_Kalect_Constants_info;
 extern void *mono_aot_module_Microsoft_CSharp_info;
 extern void *mono_aot_module_Calabash_info;
 extern void *mono_aot_module_Kalect_info;
-extern void *mono_aot_module_Newtonsoft_Json_Schema_info;
 extern void *mono_aot_module_Plugin_Geolocator_info;
 extern void *mono_aot_module_SignaturePad_Forms_info;
 extern void *mono_aot_module_SignaturePad_info;
+extern void *mono_aot_module_Plugin_Connectivity_info;
+extern void *mono_aot_module_Plugin_Connectivity_Abstractions_info;
+extern void *mono_aot_module_Xamarin_SimplePing_iOS_info;
+extern void *mono_aot_module_Xamarin_Essentials_info;
 
 void xamarin_register_modules_impl ()
 {
@@ -59,16 +63,20 @@ void xamarin_register_modules_impl ()
 	mono_aot_register_module (mono_aot_module_Plugin_AudioRecorder_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Media_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Permissions_info);
+	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_Schema_info);
 	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_info);
 	mono_aot_register_module (mono_aot_module_Services_info);
 	mono_aot_register_module (mono_aot_module_Kalect_Constants_info);
 	mono_aot_register_module (mono_aot_module_Microsoft_CSharp_info);
 	mono_aot_register_module (mono_aot_module_Calabash_info);
 	mono_aot_register_module (mono_aot_module_Kalect_info);
-	mono_aot_register_module (mono_aot_module_Newtonsoft_Json_Schema_info);
 	mono_aot_register_module (mono_aot_module_Plugin_Geolocator_info);
 	mono_aot_register_module (mono_aot_module_SignaturePad_Forms_info);
 	mono_aot_register_module (mono_aot_module_SignaturePad_info);
+	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_info);
+	mono_aot_register_module (mono_aot_module_Plugin_Connectivity_Abstractions_info);
+	mono_aot_register_module (mono_aot_module_Xamarin_SimplePing_iOS_info);
+	mono_aot_register_module (mono_aot_module_Xamarin_Essentials_info);
 
 }
 
@@ -84,6 +92,10 @@ void xamarin_register_assemblies_impl ()
 	xamarin_open_and_register ("SignaturePad.Forms.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 	xamarin_open_and_register ("SignaturePad.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Xamarin.SimplePing.iOS.dll", &exception_gchandle);
+	xamarin_process_managed_exception_gchandle (exception_gchandle);
+	xamarin_open_and_register ("Xamarin.Essentials.dll", &exception_gchandle);
 	xamarin_process_managed_exception_gchandle (exception_gchandle);
 
 }
