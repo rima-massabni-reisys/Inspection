@@ -14,7 +14,6 @@
 /Users/rei/Documents/GitHub/Inspection/DataCollection/bin/Release/netstandard2.0/DataCollection.deps.json
 /Users/rei/Documents/GitHub/Inspection/DataCollection/bin/Release/netstandard2.0/DataCollection.dll
 /Users/rei/Documents/GitHub/Inspection/DataCollection/bin/Release/netstandard2.0/DataCollection.pdb
-/Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/DataCollection.csprojResolveAssemblyReference.cache
 /Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/ListPage.xaml.g.cs
 /Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/Views/Components/AudioRecorderView.xaml.g.cs
 /Users/rei/Documents/GitHub/Inspection/DataCollection/obj/Release/netstandard2.0/Views/MyPage.xaml.g.cs

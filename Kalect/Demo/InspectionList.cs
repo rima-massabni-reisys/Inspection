@@ -8,6 +8,9 @@ using Xamarin.Forms;
 using System.Linq;
 using Plugin.Connectivity;
 using Xamarin.Essentials;
+using System.Threading.Tasks;
+using Kalect.IntegrationServices;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Kalect.Demo
 {
@@ -267,12 +270,14 @@ namespace Kalect.Demo
             inspectionList.ItemTemplate = customAssessmentCell;
             inspectionList.ItemSelected += InspectionList_ItemSelected;
             inspectionList.HeightRequest = 500;
-            inspectionList.RowHeight = 100;
+            inspectionList.RowHeight = 125;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
 
             UpdateInspectionCountCircles(assessments);
+
+            //ContextTest().Wait();
 
         }
 
@@ -282,6 +287,7 @@ namespace Kalect.Demo
             inprogressButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 2).Count.ToString();
             completedButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 3).Count.ToString();
         }
+
     }
 
     public class CustomInspectionCell : ViewCell
@@ -437,30 +443,6 @@ namespace Kalect.Demo
                                
             mapLayout.Children.Add(locationArrowButton);
             rowWrapper.Children.Add(mapLayout);
-
-            //string weatherReport = weatherService.GetWeather(this.SetBinding("OrganizationCityState"));
-                                                 
-
-
-            //set bindings
-
-            /*trackingNo.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
-
-            status.SetBinding(Label.TextProperty, "AssessmentStatus");
-            //image.SetBinding(Image.SourceProperty, "image");
-
-            //Set properties for desired design
-            //cellWrapper.BackgroundColor = Color.FromHex("#eee");
-            horizontalLayout.Orientation = StackOrientation.Horizontal;
-            status.HorizontalOptions = LayoutOptions.EndAndExpand;
-
-            //add views to the view hierarchy
-            //horizontalLayout.Children.Add(image);
-            cellWrapper.Children.Add(orgName);
-            cellWrapper.Children.Add(progressBar);
-            horizontalLayout.Children.Add(trackingNo);
-            horizontalLayout.Children.Add(status);
-            cellWrapper.Children.Add(horizontalLayout);*/
 
             View = rowWrapper;// horizontalLayout;//cellWrapper;
         }

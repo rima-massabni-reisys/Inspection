@@ -31,13 +31,19 @@ namespace Kalect.Demo
             assessmentListView.SeparatorVisibility = SeparatorVisibility.None;
 
             IsGestureEnabled = false;
+            this.WidthRequest = 200;
+
+            this.MasterBehavior = MasterBehavior.Split;
 
             this.Master = new ContentPage
             {
                 Title = "Inspection",
                 Icon = "Hamburger_icon_25.png",
+
                 Content = new StackLayout
                 {
+                    //Padding = new Thickness(0, 20, 0, 0),
+                    Margin = new Thickness(0, 20, 0, 0),
                     Children =
                     {
                         assessmentListView
@@ -75,7 +81,7 @@ namespace Kalect.Demo
                 // Set the BindingContext of the detail page.
                 this.Detail.BindingContext = args.SelectedItem;
                 // Show the detail page.
-                this.IsPresented = false;
+                this.IsPresented = true;
 
             };
 

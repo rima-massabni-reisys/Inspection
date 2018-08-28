@@ -70,6 +70,7 @@
     <CodesignKey>iPhone Developer: Yogesh Kumar (378BQWGR7U)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: com.REI.Kalect Development</CodesignProvision>
+    <MtouchSdkVersion>11.4</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -135,10 +136,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.1.0.637273</Version>
+      <Version>3.1.0.697729</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.TestCloud.Agent">
-      <Version>0.21.5</Version>
+      <Version>0.21.6</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
@@ -219,9 +220,15 @@
     <BundleResource Include="Resources\Thunderstorm.png" />
     <BundleResource Include="Resources\Icon-512.png" />
     <BundleResource Include="Resources\Icon-Original.png" />
+    <BundleResource Include="Resources\appsettings.json" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />
     <ITunesArtwork Include="iTunesArtwork%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

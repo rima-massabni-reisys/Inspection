@@ -191,8 +191,8 @@ namespace Kalect.Services
         private List<AssessmentEntity> GetListOfAllAssignedAssessmentsFromServerAPICall()
         {
             var client = new HttpClient();
-            var response = client.GetStringAsync("http://handbookwebapi.azurewebsites.net/api/assessment").Result;
-            //var response = client.GetStringAsync("http://hsa-is2-uat8.amer.reisystems.com/handbookwebapi/api/kalectMetadata").Result;
+            //var response = client.GetStringAsync("http://handbookwebapi.azurewebsites.net/api/assessment").Result;
+            var response = client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context").Result;
             List<AssessmentEntity> assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
 
             return assessmentResponse;

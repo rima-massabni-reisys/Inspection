@@ -23,11 +23,14 @@
     <ProjectReference Include="..\Kalect.Services\Kalect.Services.csproj" />
     <ProjectReference Include="..\DataCollection\DataCollection.csproj" />
     <ProjectReference Include="..\Kalect.Constants\Kalect.Constants.csproj" />
+    <ProjectReference Include="..\Kalect.IntegrationServices\Kalect.IntegrationServices.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Images\Home.png" />
     <None Remove="Images\IconList.png" />
     <None Remove="app.config" />
+    <None Remove="appsettings.config" />
+    <None Remove="appsettings.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="DependencyServices\IKalectDependecyServices.cs" />
@@ -45,5 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

@@ -4,9 +4,3 @@
 /Users/rei/Documents/GitHub/Kalect/Kalect.UITests/obj/Release/Kalect.UITests.csproj.CoreCompileInputs.cache
 /Users/rei/Documents/GitHub/Kalect/Kalect.UITests/obj/Release/Kalect.UITests.dll
 /Users/rei/Documents/GitHub/Kalect/Kalect.UITests/obj/Release/Kalect.UITests.csprojResolveAssemblyReference.cache
-/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/bin/Release/Kalect.UITests.dll
-/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/bin/Release/nunit.framework.dll
-/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/bin/Release/Xamarin.UITest.dll
-/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/obj/Release/Kalect.UITests.csprojResolveAssemblyReference.cache
-/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/obj/Release/Kalect.UITests.csproj.CoreCompileInputs.cache
-/Users/rei/Documents/GitHub/Inspection/Kalect.UITests/obj/Release/Kalect.UITests.dll

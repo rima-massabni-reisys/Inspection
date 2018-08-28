@@ -44,6 +44,7 @@ namespace Kalect.Demo
             //Read formData
             string formData = FormDataService.FormData;
 
+            /*
             //Validate
             JObject fd = JObject.Parse(formData);
             IList<string> messages;
@@ -66,18 +67,20 @@ namespace Kalect.Demo
 
             //Show Error
             lblErrorMessage.Text = string.Join(Environment.NewLine, errorMessageToDisplay.ToArray());
-
+            */
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveFormData(formData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), SelectedFriendlyName, "FormData");
 
-            if (errorMessageToDisplay.Count == 0)
+            var answer = DisplayAlert("SAVE", "Form Saved Succesfully", "OK");
+
+            /*if (errorMessageToDisplay.Count == 0)
             {
                 var answer = DisplayAlert("Saved with No Errors", "Form Saved Succesfully", "OK");
             }
             else
             {
                 var answer = DisplayAlert("Saved With Errors (" + errorMessageToDisplay.Count + ")", "Please check the Error messages for more details.", "OK");
-            }
+            }*/
         }
 
 

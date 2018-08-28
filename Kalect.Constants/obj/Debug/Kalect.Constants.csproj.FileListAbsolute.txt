@@ -6,7 +6,7 @@
 /Users/rei/Documents/GitHub/Kalect/Kalect.Constants/obj/Debug/Kalect.Constants.csprojResolveAssemblyReference.cache
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/bin/Debug/Kalect.Constants.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/bin/Debug/Kalect.Constants.pdb
-/Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.csprojResolveAssemblyReference.cache
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.csproj.CoreCompileInputs.cache
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.pdb
+/Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.csprojResolveAssemblyReference.cache

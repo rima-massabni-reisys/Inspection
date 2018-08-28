@@ -64,9 +64,17 @@ namespace Kalect.iOS.DependencyServices
         {
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             //documentsPath = documentsPath + "/" + "1000001";
-            Directory.Delete(documentsPath + "/" + "1000001",true);
-            Directory.Delete(documentsPath + "/" + "1000002", true);
-            Directory.Delete(documentsPath + "/" + "1000003", true);
+            if (Directory.Exists(documentsPath + "/" + "693"))
+                Directory.Delete(documentsPath + "/" + "693",true);
+
+            if(Directory.Exists(documentsPath + "/" + "1000001"))
+                Directory.Delete(documentsPath + "/" + "1000001", true);
+
+            if (Directory.Exists(documentsPath + "/" + "1000003"))
+                Directory.Delete(documentsPath + "/" + "1000002", true);
+
+            if (Directory.Exists(documentsPath + "/" + "1000003"))
+                Directory.Delete(documentsPath + "/" + "1000003", true);
 
         }
 

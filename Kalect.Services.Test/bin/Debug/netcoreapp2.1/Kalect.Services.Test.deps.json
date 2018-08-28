@@ -1056,7 +1056,7 @@
       },
       "Kalect.Services/1.0.0": {
         "dependencies": {
-          "Kalect.Constants": "1.0.6799.39966",
+          "Kalect.Constants": "1.0.6813.18332",
           "Xamarin.Forms.Core": "0.0.0.0",
           "Xamarin.Forms.Platform": "1.0.0.0"
         },
@@ -1064,11 +1064,11 @@
           "Services.dll": {}
         }
       },
-      "Kalect.Constants.Reference/1.0.6799.39966": {
+      "Kalect.Constants.Reference/1.0.6813.18332": {
         "runtime": {
           "Kalect.Constants.dll": {
-            "assemblyVersion": "1.0.6799.39966",
-            "fileVersion": "1.0.6799.39966"
+            "assemblyVersion": "1.0.6813.18332",
+            "fileVersion": "1.0.6813.18332"
           }
         }
       },
@@ -1633,7 +1633,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Kalect.Constants.Reference/1.0.6799.39966": {
+    "Kalect.Constants.Reference/1.0.6813.18332": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

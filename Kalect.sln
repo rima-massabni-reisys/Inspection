@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalect.Constants", "Kalect.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalect.Services.Test", "Kalect.Services.Test\Kalect.Services.Test.csproj", "{2B50721C-F735-404C-B8D6-6E239368327F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kalect.IntegrationServices", "Kalect.IntegrationServices\Kalect.IntegrationServices.csproj", "{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +159,22 @@ Global
 		{2B50721C-F735-404C-B8D6-6E239368327F}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
 		{2B50721C-F735-404C-B8D6-6E239368327F}.AppStore|iPhone.ActiveCfg = Release|Any CPU
 		{2B50721C-F735-404C-B8D6-6E239368327F}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Release|iPhone.Build.0 = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{EFA63FD3-7E6C-4ADD-A8C5-A28B1E0F6C22}.AppStore|iPhone.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		Policies = $0
