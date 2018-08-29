@@ -221,6 +221,18 @@
     <BundleResource Include="Resources\Icon-512.png" />
     <BundleResource Include="Resources\Icon-Original.png" />
     <BundleResource Include="Resources\appsettings.json" />
+    <BundleResource Include="Resources\dashboard.png" />
+    <BundleResource Include="Resources\dashboard%402x.png" />
+    <BundleResource Include="Resources\dashboard%403x.png" />
+    <BundleResource Include="Resources\Farm.png" />
+    <BundleResource Include="Resources\Farm%402x.png" />
+    <BundleResource Include="Resources\Farm%403x.png" />
+    <BundleResource Include="Resources\phone.png" />
+    <BundleResource Include="Resources\phone%402x.png" />
+    <BundleResource Include="Resources\phone%403x.png" />
+    <BundleResource Include="Resources\Profile.png" />
+    <BundleResource Include="Resources\Profile%402x.png" />
+    <BundleResource Include="Resources\Profile%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

@@ -33,7 +33,8 @@ namespace Kalect.Demo
             IsGestureEnabled = false;
             this.WidthRequest = 200;
 
-            this.MasterBehavior = MasterBehavior.Split;
+            //this.MasterBehavior = MasterBehavior.Split;
+
 
             this.Master = new ContentPage
             {
@@ -81,7 +82,7 @@ namespace Kalect.Demo
                 // Set the BindingContext of the detail page.
                 this.Detail.BindingContext = args.SelectedItem;
                 // Show the detail page.
-                this.IsPresented = true;
+                this.IsPresented = false; //true;
 
             };
 

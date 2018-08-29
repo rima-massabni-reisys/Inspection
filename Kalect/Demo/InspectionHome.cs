@@ -19,7 +19,7 @@ namespace Kalect.Demo
                 BarTextColor = Color.White
             };
 
-            inspectionListPage.Icon = "Group3.png";
+            inspectionListPage.Icon = "dashboard.png";
             inspectionListPage.Title = "Dashboard";
 
 

@@ -83,11 +83,9 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/DataCollection.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Kalect.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Services.dll
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Kalect.IntegrationServices.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Kalect.Constants.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Kalect.pdb
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/DataCollection.pdb
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhone/Release/Kalect.IntegrationServices.pdb
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/ibtool/_BundleResourceWithLogicalName.items
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/actool/_PartialAppManifest.items
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/actool/_BundleResourceWithLogicalName.items
@@ -156,3 +154,15 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/Kalect.iOS.csproj.CoreCompileInputs.cache
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/XamlC.stamp
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/Kalect.iOS.exe
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/dashboard.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/dashboard@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/dashboard@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Farm.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Farm@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Farm@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/phone.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/phone@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/phone@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Profile.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Profile@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Profile@3x.png

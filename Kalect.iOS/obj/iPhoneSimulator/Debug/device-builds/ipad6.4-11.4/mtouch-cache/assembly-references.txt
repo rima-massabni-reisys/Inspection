@@ -39,10 +39,10 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Runtime.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Collections.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.Services/bin/Debug/Kalect.Constants.dll
-/Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Dynamic.Runtime.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Diagnostics.Debug.dll
-/Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.IO.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Threading.Tasks.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Dynamic.Runtime.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.IO.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
 /Users/rei/.nuget/packages/xamarin.testcloud.agent/0.21.6/lib/Xamarin.iOS/Calabash.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect/bin/Debug/netstandard2.0/Kalect.dll

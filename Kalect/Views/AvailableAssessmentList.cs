@@ -25,12 +25,12 @@ namespace Kalect.Views
         }
 
 
-        void RefreshList_Clicked(object sender, EventArgs e)
+        async void RefreshList_Clicked(object sender, EventArgs e)
         {
             //IAssessmentManager assessmentManager = new AssessmentManager();
             //List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromServer();
             AssessmentService assessmentService = new AssessmentService();
-            List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromServer();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer();
 
             listView.ItemsSource = assessments;
         }

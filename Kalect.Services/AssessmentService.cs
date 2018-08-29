@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Kalect.Services.Entities;
 using Kalect.Services.Interfaces;
 using Kalect.Services.Utilities;
@@ -68,10 +69,10 @@ namespace Kalect.Services
         }
 
 
-        public List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromServer()
+        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromServer()
         {
             
-            List<AssessmentEntity> assessmentResponseFromServer = GetListOfAllAssignedAssessmentsFromServerAPICall();
+            List<AssessmentEntity> assessmentResponseFromServer = await GetListOfAllAssignedAssessmentsFromServerAPICall();
 
             List<AssessmentMetadataEntity> metadataEntities = new List<AssessmentMetadataEntity>();
 
@@ -133,7 +134,7 @@ namespace Kalect.Services
             }
             else if(weatherLowerCase.Contains("cloudy"))
             {
-                return "cloudy.png";
+                return "Cloudy.png";
             }
             else if(weatherLowerCase.Contains("wind"))
             {
@@ -188,15 +189,17 @@ namespace Kalect.Services
 
         #region webAPI calls
 
-        private List<AssessmentEntity> GetListOfAllAssignedAssessmentsFromServerAPICall()
+        private async Task<List<AssessmentEntity>> GetListOfAllAssignedAssessmentsFromServerAPICall()
         {
             var client = new HttpClient();
             //var response = client.GetStringAsync("http://handbookwebapi.azurewebsites.net/api/assessment").Result;
-            var response = client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context").Result;
+            //var response = client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context").Result;
+
+            var response = await client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context");
+
             List<AssessmentEntity> assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
 
             return assessmentResponse;
-
         }
 
     #endregion

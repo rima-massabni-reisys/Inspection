@@ -16,6 +16,15 @@ namespace Kalect.Demo
 {
     public class InspectionList : ContentPage
     {
+        async void InspectionList_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)((ListView)sender).SelectedItem;
+            //var assessmenPage = new NavigationPage(new AssessmentMasterPage(args.SelectedItem.ToString()));
+            await Navigation.PushAsync(new InspectionMaster(((ListView)sender).SelectedItem.ToString()), false);
+            ((ListView)sender).SelectedItem = null;
+        }
+
+
         void DeleteList_Clicked(object sender, EventArgs e)
         {
             activityIndicator.IsRunning = true;
@@ -28,23 +37,26 @@ namespace Kalect.Demo
         }
 
 
-        void RefreshList_Clicked(object sender, EventArgs e)
+        async void RefreshList_Clicked(object sender, EventArgs e)
         {
-            activityIndicator.IsRunning = true;
+            //activityIndicator.IsRunning = true;
+            this.IsBusy = true;
             AssessmentService assessmentService = new AssessmentService();
-            List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromServer();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer();
 
             inspectionList.ItemsSource = assessments;
-            activityIndicator.IsRunning = false;
+            this.IsBusy = false;
+            //activityIndicator.IsRunning = false;
         }
 
 
-        void InspectionList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        /*async void InspectionList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)e.SelectedItem;
             //var assessmenPage = new NavigationPage(new AssessmentMasterPage(args.SelectedItem.ToString()));
-            Navigation.PushAsync(new InspectionMaster(e.SelectedItem.ToString()), false);
-        }
+            await Navigation.PushAsync(new InspectionMaster(e.SelectedItem.ToString()), false);
+
+        }*/
 
 
         ActivityIndicator activityIndicator;
@@ -80,6 +92,7 @@ namespace Kalect.Demo
             //newButton.Margin = new Thickness(150, 0, 0, 0);
             newButton.FontSize = 50;
             newButton.TextColor = Color.White;
+
 
             Label lblNew = new Label();
             lblNew.Text = "New";
@@ -165,7 +178,6 @@ namespace Kalect.Demo
                 //Padding = 10,
                 Orientation = StackOrientation.Vertical,
                 Children = {
-
                     new StackLayout{
                         HeightRequest = 175,
                         BackgroundColor = Color.FromHex("#F8F9F9"),
@@ -268,12 +280,14 @@ namespace Kalect.Demo
             //Bind forms
             inspectionList.ItemsSource = assessments;
             inspectionList.ItemTemplate = customAssessmentCell;
-            inspectionList.ItemSelected += InspectionList_ItemSelected;
+            //inspectionList.ItemSelected += InspectionList_ItemSelected;
             inspectionList.HeightRequest = 500;
             inspectionList.RowHeight = 125;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
+            inspectionList.ItemTapped += InspectionList_ItemTapped;
+
 
             UpdateInspectionCountCircles(assessments);
 
@@ -342,7 +356,7 @@ namespace Kalect.Demo
             rowImageLayout.VerticalOptions = LayoutOptions.Center;
             rowImageLayout.Padding = new Thickness(25, 0, 15, 0);
             Image rowImage = new Image();
-            rowImage.Source = "InpectionCell.png";  
+            rowImage.Source = "Farm.png";  
             rowImageLayout.Children.Add(rowImage);
             rowWrapper.Children.Add(rowImageLayout);
 
@@ -363,7 +377,7 @@ namespace Kalect.Demo
             Label orgAddress = new Label();
             orgAddress.FontSize = 15;
             orgAddress.SetBinding(Label.TextProperty, "OrganizationAddress");
-            orgAddress.TextColor = Color.FromHex("#CBCBCB");
+            orgAddress.TextColor = Color.FromHex("#B0B0B0");
 
 
             mainContent.Children.Add(inspectiontype);
@@ -391,7 +405,7 @@ namespace Kalect.Demo
 
             Label assessmentStatus = new Label();
             assessmentStatus.SetBinding(Label.TextProperty, "AssessmentStatus");
-            assessmentStatus.TextColor = Color.FromHex("#CBCBCB");
+            assessmentStatus.TextColor = Color.FromHex("#B0B0B0");
             assessmentStatus.FontSize = 15;
             progressLayout.Children.Add(labelPercentage);
             progressLayout.Children.Add(progressBar);
@@ -420,7 +434,7 @@ namespace Kalect.Demo
             phoneLayout.WidthRequest = 50;
 
             Button phoneButton = new Button();
-            phoneButton.Image = "PhoneIcon.png";
+            phoneButton.Image = "phone.png";
             //phoneButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
             phoneButton.Clicked += phoneButton_Clicked;
 

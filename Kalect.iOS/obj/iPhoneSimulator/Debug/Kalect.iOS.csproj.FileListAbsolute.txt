@@ -289,3 +289,15 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.exe
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.pdb
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/appsettings.json
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/dashboard.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/dashboard@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/dashboard@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Farm.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Farm@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Farm@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/phone.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/phone@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/phone@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Profile.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Profile@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/Profile@3x.png

@@ -117,7 +117,7 @@ namespace Kalect.Demo
             formNameLayout.Padding = new Thickness(25, 25, 0, 0);
             Label lblFormName = new Label();
             lblFormName.Text = selectedSection.SectionDisplayName;
-            lblFormName.TextColor = Color.FromHex("#CBCBCB");
+            lblFormName.TextColor = Color.FromHex("#B0B0B0");
             lblFormName.FontSize = 30;
             formNameLayout.Children.Add(lblFormName);
             PageLayout.Children.Add(formNameLayout);
