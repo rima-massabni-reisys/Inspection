@@ -48,5 +48,7 @@
 	<string>This app needs to access your location.</string>
 	<key>CFBundleName</key>
 	<string>Kalect</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>

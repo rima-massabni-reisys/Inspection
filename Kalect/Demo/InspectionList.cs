@@ -19,7 +19,8 @@ namespace Kalect.Demo
         async void InspectionList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)((ListView)sender).SelectedItem;
-            //var assessmenPage = new NavigationPage(new AssessmentMasterPage(args.SelectedItem.ToString()));
+            //var assessmenPage = new NavigationPage(new AssessmentMasterPage(((ListView)sender).SelectedItem.ToString()));
+            //await Navigation.PushAsync(new NavigationPage(new InspectionMaster(((ListView)sender).SelectedItem.ToString())), false);
             await Navigation.PushAsync(new InspectionMaster(((ListView)sender).SelectedItem.ToString()), false);
             ((ListView)sender).SelectedItem = null;
         }
@@ -181,7 +182,6 @@ namespace Kalect.Demo
                     new StackLayout{
                         HeightRequest = 175,
                         BackgroundColor = Color.FromHex("#F8F9F9"),
-
                         Children=
                         {
                             new StackLayout
@@ -267,7 +267,21 @@ namespace Kalect.Demo
                             refreshList
                         }
                     }
-
+                    /*, new StackLayout
+                    {
+                        BackgroundColor = Color.LightGray,
+                        Children =
+                        {
+                            new StackLayout
+                            {
+                                Padding = new Thickness(10,10,10,10),
+                                Children=
+                                {
+                                    inspectionList
+                                }
+                            }
+                        }
+                    }*/
                     ,inspectionList
                 }
             };

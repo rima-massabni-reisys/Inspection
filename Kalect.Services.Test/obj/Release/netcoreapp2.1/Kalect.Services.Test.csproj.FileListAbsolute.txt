@@ -18,3 +18,7 @@
 /Users/rei/Documents/GitHub/Kalect/Kalect.Services.Test/bin/Release/netcoreapp2.1/Xamarin.Forms.Platform.dll
 /Users/rei/Documents/GitHub/Kalect/Kalect.Services.Test/bin/Release/netcoreapp2.1/Xamarin.Forms.Core.pdb
 /Users/rei/Documents/GitHub/Kalect/Kalect.Services.Test/bin/Release/netcoreapp2.1/Xamarin.Forms.Core.xml
+/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/obj/Release/netcoreapp2.1/Kalect.Services.Test.csprojResolveAssemblyReference.cache
+/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/obj/Release/netcoreapp2.1/Kalect.Services.Test.csproj.CoreCompileInputs.cache
+/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/obj/Release/netcoreapp2.1/Kalect.Services.Test.AssemblyInfoInputs.cache
+/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/obj/Release/netcoreapp2.1/Kalect.Services.Test.AssemblyInfo.cs

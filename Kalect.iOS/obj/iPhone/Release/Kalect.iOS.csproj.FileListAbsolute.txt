@@ -166,3 +166,5 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Profile.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Profile@2x.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/Profile@3x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/reddot.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/reddot@2x.png

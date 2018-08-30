@@ -40,6 +40,7 @@
     <Compile Include="Entities\FormEntity.cs" />
     <Compile Include="Entities\AssessmentEntity.cs" />
     <Compile Include="WeatherService.cs" />
+    <Compile Include="Entities\LeftMenuItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kalect.Constants\Kalect.Constants.csproj">
