@@ -1,25 +1,16 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect/Demo/InspectionMaster.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect.Services/AssessmentService.cs">
     <Files>
-      <File FileName="Kalect/Demo/InspectionList.cs" Line="36" Column="13" />
-      <File FileName="Kalect.Services/AssessmentService.cs" Line="77" Column="1" />
-      <File FileName="Kalect/Views/AvailableAssessmentList.cs" Line="35" Column="48" />
-      <File FileName="Kalect/Demo/InspectionMaster.cs" Line="15" Column="18" />
-      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="103" Column="1" />
-      <File FileName="Kalect/Demo/InspectionReview.cs" Line="37" Column="13" />
-      <File FileName="Kalect.Services/Entities/LeftMenuItem.cs" Line="11" Column="2" />
-      <File FileName="Kalect/Views/AssessmentMasterPage.cs" Line="1" Column="1" />
-      <File FileName="Kalect.iOS/Info.plist" />
-      <File FileName="Kalect/Demo/InspectionHome.cs" Line="22" Column="1" />
+      <File FileName="Kalect/Demo/InspectionReview.cs" Line="37" Column="1" />
+      <File FileName="Kalect/Demo/InspectionMaster.cs" Line="126" Column="21" />
+      <File FileName="Kalect/Demo/InspectionList.cs" Line="28" Column="9" />
+      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="142" Column="13" />
+      <File FileName="Kalect.Services/AssessmentService.cs" Line="194" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="194" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="200" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionMaster.cs" relfile="Kalect/Demo/InspectionMaster.cs" line="99" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D7878609-F17E-45C5-9C1D-1E0622BA1AEE" automaticSigning="True">

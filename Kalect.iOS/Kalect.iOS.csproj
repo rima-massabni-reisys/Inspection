@@ -106,6 +106,7 @@
     <Compile Include="DependencyServices\SaveAndLoad.cs" />
     <Compile Include="DependencyServices\KalectDependencyServices.cs" />
     <Compile Include="DependencyServices\DataCollectionDependencyService.cs" />
+    <Compile Include="DependencyServices\DeviceOrientationDependencyServices.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

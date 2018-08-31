@@ -10,6 +10,8 @@ using System.Linq;
 using Kalect.Services.Entities;
 using Kalect.Services;
 using Newtonsoft.Json;
+using Xamarin.Essentials;
+using Kalect.Services.Interfaces;
 
 namespace Kalect.Demo
 {
@@ -83,6 +85,27 @@ namespace Kalect.Demo
             }*/
         }
 
+        void OrientationSensor_ReadingChanged(object sender, OrientationSensorChangedEventArgs e)
+        {
+            SetNavigationBarOnOrientation(); 
+        }
+
+        void SetNavigationBarOnOrientation()
+        {
+            var orientation = DependencyService.Get<IDeviceOrientationDependenyServices>().GetOrientation();
+            switch (orientation)
+            {
+                case DeviceOrientation.Undefined:
+                    NavigationPage.SetHasNavigationBar(this, true);
+                    break;
+                case DeviceOrientation.Landscape:
+                    NavigationPage.SetHasNavigationBar(this, false);
+                    break;
+                case DeviceOrientation.Portrait:
+                    NavigationPage.SetHasNavigationBar(this, true);
+                    break;
+            }
+        }
 
         string SelectedFriendlyName;
         string ValidationSchema;
@@ -93,17 +116,40 @@ namespace Kalect.Demo
         FormGroup formGroup;
         ToolbarItem SaveToolbarItem;
         StackLayout questionNavigationButtonBarLayout;
+        //SensorSpeed speed = SensorSpeed.UI;
 
         public InspectionDetail(Sections selectedSection)
         {
+
+            /*try
+            {
+                if (OrientationSensor.IsMonitoring)
+                    OrientationSensor.Stop();
+                else
+                    OrientationSensor.Start(speed);
+            }
+            catch (FeatureNotSupportedException)
+            {
+                OrientationSensor.Stop();
+            }
+            catch (Exception)
+            {
+                OrientationSensor.Stop();
+            }*/
+
+
             UpdateAssessmentJsonOnDevice();
 
-            Title = "Inspection Checklist";
+            Title = "Inspection";
 
             SelectedFriendlyName = selectedSection.SectionFriendlyName;
             formService = new FormService();
 
             CreateToolBar();
+            //NavigationPage.SetHasNavigationBar(this, false);
+
+            //SetNavigationBarOnOrientation();
+
             CreateErrorLabel();
 
             //Get Form Instance

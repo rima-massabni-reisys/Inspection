@@ -49,8 +49,8 @@
 /Users/rei/.nuget/packages/xam.plugin.geolocator/4.5.0.6/lib/xamarinios10/Plugin.Geolocator.dll
 /Users/rei/.nuget/packages/xamarin.controls.signaturepad.forms/3.0.0/lib/Xamarin.iOS/SignaturePad.Forms.dll
 /Users/rei/.nuget/packages/xamarin.controls.signaturepad/3.0.0/lib/Xamarin.iOS/SignaturePad.dll
+/Users/rei/.nuget/packages/xamarin.essentials/0.10.0-preview/lib/xamarinios10/Xamarin.Essentials.dll
 /Users/rei/.nuget/packages/xam.plugin.connectivity/4.0.0.190-beta/lib/Xamarin.iOS10/Plugin.Connectivity.dll
 /Users/rei/.nuget/packages/xam.plugin.connectivity/4.0.0.190-beta/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Threading.dll
 /Users/rei/.nuget/packages/xamarin.simpleping/1.4.0/lib/XamariniOS10/Xamarin.SimplePing.iOS.dll
-/Users/rei/.nuget/packages/xamarin.essentials/0.10.0-preview/lib/xamarinios10/Xamarin.Essentials.dll

@@ -41,6 +41,8 @@
     <Compile Include="Entities\AssessmentEntity.cs" />
     <Compile Include="WeatherService.cs" />
     <Compile Include="Entities\LeftMenuItem.cs" />
+    <Compile Include="Interfaces\IDeviceOrientationDependenyServices.cs" />
+    <Compile Include="Entities\DeviceOrientation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kalect.Constants\Kalect.Constants.csproj">

@@ -71,7 +71,7 @@ namespace Kalect.Demo
 
         public InspectionList()
         {
-            Title = "Tom's Inspections";
+            Title = "Inspections";
             NavigationPage.SetHasNavigationBar(this, true);
 
             activityIndicator = new ActivityIndicator();
@@ -175,7 +175,7 @@ namespace Kalect.Demo
 
             inspectionList = new ListView();
             Content = new StackLayout
-            {
+            {   BackgroundColor = Color.FromHex("#F8F9F9"),
                 //Padding = 10,
                 Orientation = StackOrientation.Vertical,
                 Children = {
@@ -256,33 +256,35 @@ namespace Kalect.Demo
                             }
                         }
                     },
-                    new StackLayout
-                    {
-                        Padding = 25,
-                        Orientation = StackOrientation.Horizontal,
-                        Children=
-                        {
-                            syncButton,
-                            deleteList,
-                            refreshList
-                        }
-                    }
-                    /*, new StackLayout
-                    {
-                        BackgroundColor = Color.LightGray,
+                    new StackLayout{
+                        BackgroundColor = Color.FromHex("#F8F9F9"),
+                        Padding = new Thickness(15,0,15,0),
+                        Margin = 0,
                         Children =
                         {
                             new StackLayout
                             {
-                                Padding = new Thickness(10,10,10,10),
+                                //BackgroundColor = Color.White,
+                                Orientation = StackOrientation.Horizontal,
+                                Children=
+                                {
+                                    syncButton,
+                                    deleteList,
+                                    refreshList,
+
+                                }
+                            },
+                            new StackLayout
+                            {
+                                Margin = 0,
                                 Children=
                                 {
                                     inspectionList
                                 }
                             }
                         }
-                    }*/
-                    ,inspectionList
+                    }
+
                 }
             };
 
@@ -295,7 +297,7 @@ namespace Kalect.Demo
             inspectionList.ItemsSource = assessments;
             inspectionList.ItemTemplate = customAssessmentCell;
             //inspectionList.ItemSelected += InspectionList_ItemSelected;
-            inspectionList.HeightRequest = 500;
+            inspectionList.HeightRequest = 1000;
             inspectionList.RowHeight = 125;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             inspectionList.SeparatorColor = Color.Gray;

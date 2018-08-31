@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using Kalect.Services.Entities;
+using Kalect.Services.Interfaces;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -10,6 +11,54 @@ namespace Kalect.Demo
 {
     public class InspectionMaster : MasterDetailPage
     {
+        void SetSplitModeOnOrientation()
+        {
+            if (!IsPhone())
+            {
+                var orientation = DependencyService.Get<IDeviceOrientationDependenyServices>().GetOrientation();
+                switch (orientation)
+                {
+                    case DeviceOrientation.Undefined:
+                        this.MasterBehavior = MasterBehavior.Popover;
+                        break;
+                    case DeviceOrientation.Landscape:
+                        this.MasterBehavior = MasterBehavior.Split;
+                        break;
+                    case DeviceOrientation.Portrait:
+                        this.MasterBehavior = MasterBehavior.Popover;
+                        break;
+                }
+            }
+            else
+            {
+                this.MasterBehavior = MasterBehavior.Popover;
+            }
+        }
+
+        void SetMasterPresentationOnOrientation()
+        {
+            if(!IsPhone())
+            {
+                var orientation = DependencyService.Get<IDeviceOrientationDependenyServices>().GetOrientation();
+                switch (orientation)
+                {
+                    case DeviceOrientation.Undefined:
+                        this.IsPresented = false; //true;
+                        break;
+                    case DeviceOrientation.Landscape:
+                        this.IsPresented = true; //true;
+                        break;
+                    case DeviceOrientation.Portrait:
+                        this.IsPresented = false; //true;
+                        break;
+                }
+            }
+            else{
+                this.IsPresented = false; //true;
+            }
+        }
+
+
         public InspectionMaster(string selectedInspection)
         {
             NavigationPage.SetHasNavigationBar(this, false);
@@ -18,11 +67,11 @@ namespace Kalect.Demo
             ListView assessmentListView = new ListView
             {
                 ItemsSource = GetLeftMenuItemsList(), //GetLeftMenuItems(),
-                ItemTemplate = inspectionDetailCell
-                //BackgroundColor = Color.FromHex("#F8F9F9")
+                ItemTemplate = inspectionDetailCell,
+                BackgroundColor = Color.FromHex("#F8F9F9")
             };
 
-
+            //SetSplitModeOnOrientation();
 
             /*
             //Bind forms
@@ -34,25 +83,26 @@ namespace Kalect.Demo
             IsGestureEnabled = false;
             this.WidthRequest = 200;
 
-            /*if (IsPhone())
-            {
-                this.MasterBehavior = MasterBehavior.Split;
-                //this.IsPresented = true; //true;
-            }*/
-
 
 
             this.Master = new ContentPage
             {
                 Title = "Inspection",
                 Icon = "Hamburger_icon_25.png",
+                WidthRequest = 200,
 
                 Content = new StackLayout
                 {
+
                     //Padding = new Thickness(0, 20, 0, 0),
-                    Margin = new Thickness(0, 20, 0, 0),
+                    Margin = new Thickness(0, 0, 0, 0),
+                    Padding = 0,
                     Children =
                     {
+                        new BoxView(){
+                            Color = Color.FromHex("#025085"),
+                            HeightRequest = 64.2
+                        },
                         assessmentListView
                     }
 
@@ -67,12 +117,22 @@ namespace Kalect.Demo
                 IsGestureEnabled = false;
                 if (selectedLeftMenuItem.DisplayName.Equals("Submit"))
                 {
-                    this.Detail = new NavigationPage(new Signature());
+                    this.Detail = new NavigationPage(new Signature())
+                    {
+                        BarBackgroundColor = Color.FromHex("#025085"),
+                        BarTextColor = Color.White
+                    };
+                    
 
                 }
                 else if(selectedLeftMenuItem.DisplayName.Equals("Review"))
                 {
-                    this.Detail = new NavigationPage(new InspectionReview()); //new NavigationPage(new GroupedList()); //new NavigationPage(new InspectionReview());
+                    this.Detail = new NavigationPage(new InspectionReview())
+                    {
+                        BarBackgroundColor = Color.FromHex("#025085"),
+                        BarTextColor = Color.White
+                    };
+                        //new NavigationPage(new GroupedList()); //new NavigationPage(new InspectionReview());
                 }
                 else if(selectedLeftMenuItem.DisplayName.Equals(""))
                 {
@@ -93,22 +153,14 @@ namespace Kalect.Demo
                 // Set the BindingContext of the detail page.
                 this.Detail.BindingContext = args.SelectedItem;
                 // Show the detail page.
-
-                /*if (!IsPhone())
-                {
-                    this.IsPresented = true; //true;
-                }
-                else{*/
-                    this.IsPresented = false; //true;
-                //}
-
+                this.IsPresented = false;
+                //SetMasterPresentationOnOrientation();
 
             };
 
             //string defaultFirstFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>().SectionFriendlyName;
             this.Detail = new NavigationPage(new InspectionDetail(AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>()))
             {
-                
                 BarBackgroundColor = Color.FromHex("#025085"),
                 BarTextColor = Color.White
             };
@@ -183,9 +235,11 @@ namespace Kalect.Demo
 
             Image statusIcon = new Image();
             statusIcon.Source = "reddot.png";
+            statusIcon.Margin = new Thickness(2, 0, 2, 0);
 
             Label lblSectionName = new Label();
             lblSectionName.SetBinding(Label.TextProperty, "DisplayName");
+            lblSectionName.Margin = new Thickness(2, 0, 2, 0);
 
             StackLayout leftMenuItemLayout = new StackLayout();
             leftMenuItemLayout.Orientation = StackOrientation.Horizontal;
@@ -194,42 +248,12 @@ namespace Kalect.Demo
             leftMenuItemLayout.Children.Add(statusIcon);
             leftMenuItemLayout.Children.Add(lblSectionName);
 
+            leftMenuItemLayout.SetBinding(Layout.BackgroundColorProperty, "#3693FF");
             cellWrapper.Children.Add(leftMenuItemLayout);
 
+
+
             View = cellWrapper;
-           /*
-            //instantiate each of our views
-            //var image = new Image();
-            StackLayout cellWrapper = new StackLayout();
-            StackLayout horizontalLayout = new StackLayout();
-            Label orgName = new Label();
-            Label trackingNo = new Label();
-            trackingNo.FontSize = 10;
-            trackingNo.TextColor = Color.Gray;
-            Label status = new Label();
-            //status.Text = "Not Started";
-            status.FontSize = 10;
-            status.TextColor = Color.Gray;
-
-            //set bindings
-            trackingNo.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
-            orgName.SetBinding(Label.TextProperty, "OrganizationName");
-            status.SetBinding(Label.TextProperty, "AssessmentStatus");
-            //image.SetBinding(Image.SourceProperty, "image");
-
-            //Set properties for desired design
-            //cellWrapper.BackgroundColor = Color.FromHex("#eee");
-            horizontalLayout.Orientation = StackOrientation.Horizontal;
-            status.HorizontalOptions = LayoutOptions.EndAndExpand;
-
-            //add views to the view hierarchy
-            //horizontalLayout.Children.Add(image);
-            cellWrapper.Children.Add(orgName);
-            horizontalLayout.Children.Add(trackingNo);
-            horizontalLayout.Children.Add(status);
-            cellWrapper.Children.Add(horizontalLayout);
-            View = cellWrapper;// horizontalLayout;//cellWrapper;
-            */
         }
     }
 }
