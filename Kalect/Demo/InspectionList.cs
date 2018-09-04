@@ -11,6 +11,8 @@ using Xamarin.Essentials;
 using System.Threading.Tasks;
 using Kalect.IntegrationServices;
 using Microsoft.Extensions.DependencyInjection;
+using DataCollection.Services;
+using DataCollection.Entities;
 
 namespace Kalect.Demo
 {
@@ -118,7 +120,7 @@ namespace Kalect.Demo
             completedButton.HeightRequest = 100;
             completedButton.CornerRadius = 50;
             completedButton.Text = "12";
-            completedButton.BackgroundColor = Color.FromHex("#CBCBCB");
+            completedButton.BackgroundColor = Color.FromHex("#e9e9e9");
             completedButton.HorizontalOptions = LayoutOptions.End;
             //completedButton.Margin = new Thickness(0, 0, 150, 0);
             completedButton.FontSize = 50;
@@ -176,27 +178,24 @@ namespace Kalect.Demo
             inspectionList = new ListView();
             Content = new StackLayout
             {   BackgroundColor = Color.FromHex("#F8F9F9"),
-                //Padding = 10,
                 Orientation = StackOrientation.Vertical,
                 Children = {
                     new StackLayout{
                         HeightRequest = 175,
                         BackgroundColor = Color.FromHex("#F8F9F9"),
+                        HorizontalOptions=LayoutOptions.CenterAndExpand,
                         Children=
                         {
                             new StackLayout
                             {
-                                Padding=new Thickness(25,25,25,25),
+                                Padding=new Thickness(0,25,0,0),
                                 Orientation = StackOrientation.Horizontal,
-                                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                //HorizontalOptions = LayoutOptions.CenterAndExpand,
                                 Children=
                                 {
                                     new StackLayout
                                     {
-                                        Padding = new Thickness(0,0,25,0),//
-                                            
                                         Orientation = StackOrientation.Vertical,
-                                        //HorizontalOptions = LayoutOptions.Start,
                                         Children=
                                         {
                                             newButton,
@@ -235,7 +234,7 @@ namespace Kalect.Demo
                                     {
                                         Orientation = StackOrientation.Vertical,
                                         //HorizontalOptions = LayoutOptions.End,
-                                        Padding = new Thickness(25,0,0,0),//
+                                        //Padding = new Thickness(25,0,0,0),//
                                         Children =
                                         {
                                             completedButton,
@@ -291,13 +290,21 @@ namespace Kalect.Demo
 
             AssessmentService assessmentService = new AssessmentService();
             List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
+
             var customAssessmentCell = new DataTemplate(typeof(CustomInspectionCell));
+            if (DeviceProperty.IsPhone())
+            {
+                //change temppate to phone
+                customAssessmentCell = new DataTemplate(typeof(CustomInspectionCellPhone));
+            }
+
+
 
             //Bind forms
             inspectionList.ItemsSource = assessments;
             inspectionList.ItemTemplate = customAssessmentCell;
             //inspectionList.ItemSelected += InspectionList_ItemSelected;
-            inspectionList.HeightRequest = 1000;
+            //inspectionList.HeightRequest = 1000;
             inspectionList.RowHeight = 125;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             inspectionList.SeparatorColor = Color.Gray;
@@ -322,6 +329,28 @@ namespace Kalect.Demo
 
     public class CustomInspectionCell : ViewCell
     {
+        async void SyncAction_Clicked(object sender, EventArgs e)
+        {
+            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+
+            var menuItem = (MenuItem)sender;
+            var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
+
+            FormService formService = new FormService();
+            List<FormInstance> formInstances = formService.GetAllForms(selectedAssessment.AssessmentTrackingNumber.ToString());
+
+            foreach (Sections section in selectedAssessment.Sections)
+            {
+                FormInstance formInstance = new FormInstance();
+                formInstance = formInstances.Find(x => x.FriendlyName == section.SectionFriendlyName);
+
+                await formService.UpdateFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
+            }
+            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
+
+        }
+
+
         void phoneButton_Clicked(object sender, EventArgs e)
         {
             Xamarin.Forms.Button btn = (Button)sender;
@@ -329,7 +358,6 @@ namespace Kalect.Demo
             //url = url.Replace(' ', '+');
             Device.OpenUri(new Uri("tel: 1234567890"));
         }
-
 
         void LocationArrowButton_Clicked(object sender, EventArgs e)
         {
@@ -340,24 +368,16 @@ namespace Kalect.Demo
 
         }
 
-        bool IsPhone()
-        {
-            var idiom = DeviceInfo.Idiom;
-            if(idiom.ToLower().Equals("phone"))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
         public CustomInspectionCell()
         {
-            var syncAction = new MenuItem { Text = "Sync", IsDestructive = false, Icon = "sync.png"  };
+            var syncAction = new MenuItem { Text = "Sync", IsDestructive = true, Icon = "sync.png"  };
+            syncAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            syncAction.Clicked += SyncAction_Clicked;
+            syncAction.SetBinding(MenuItem.IconProperty, "sync.png");
 
-            var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, Icon = "sync.png" };
+            var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png" };
+            lastUpdatedAction.SetBinding(MenuItem.TextProperty, "AssessmentEndDate");
+
 
             ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
@@ -383,7 +403,8 @@ namespace Kalect.Demo
             //mainContent.Padding = new Thickness(0, 0, 25, 0);
 
             Label inspectiontype = new Label();
-            inspectiontype.Text = "Egg Inspection";
+            //inspectiontype.Text = "Egg Inspection";
+            inspectiontype.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
             inspectiontype.FontAttributes = FontAttributes.Bold;
 
             Label orgName = new Label();
@@ -443,29 +464,37 @@ namespace Kalect.Demo
             weatherLayout.Children.Add(weatherImage);
             rowWrapper.Children.Add(weatherLayout);
 
-            StackLayout phoneLayout = new StackLayout();
-            phoneLayout.Orientation = StackOrientation.Vertical;
-            phoneLayout.VerticalOptions = LayoutOptions.Center;
-            phoneLayout.Margin = new Thickness(25, 0, 0, 0);
-            phoneLayout.WidthRequest = 50;
-
-            Button phoneButton = new Button();
-            phoneButton.Image = "phone.png";
-            //phoneButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
-            phoneButton.Clicked += phoneButton_Clicked;
-
-            phoneLayout.Children.Add(phoneButton);
-
-            //only add phone icon for phone
-            if (IsPhone())
+            if (DeviceProperty.IsPhone())
             {
+                StackLayout phoneLayout = new StackLayout();
+                phoneLayout.Orientation = StackOrientation.Vertical;
+                phoneLayout.VerticalOptions = LayoutOptions.Center;
+                phoneLayout.Margin = new Thickness(25, 0, 0, 0);
+                phoneLayout.WidthRequest = 50;
+
+                Button phoneButton = new Button();
+                phoneButton.Image = "phone.png";
+                //phoneButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
+                phoneButton.Clicked += phoneButton_Clicked;
+
+                phoneLayout.Children.Add(phoneButton);
+
+                //only add phone icon for phone
+
                 rowWrapper.Children.Add(phoneLayout);
             }
 
             StackLayout mapLayout = new StackLayout();
             mapLayout.Orientation = StackOrientation.Vertical;
             mapLayout.VerticalOptions = LayoutOptions.Center;
-            mapLayout.Margin = new Thickness(25, 0, 0, 0);
+            if(DeviceProperty.IsPhone())
+            {
+                mapLayout.Margin = new Thickness(25, 0, 0, 0);
+            }
+            else{
+                mapLayout.Margin = new Thickness(50, 0, 0, 0);
+            }
+
             Button locationArrowButton = new Button();
             locationArrowButton.Image = "location-arrow.png";
             locationArrowButton.SetBinding(Button.CommandParameterProperty, "MapUrl");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 //using formgenie.Data;
 using DataCollection.Entities;
 using DataCollection.Repository;
@@ -91,7 +92,10 @@ namespace DataCollection.Services
             return formInstances;
         }
 
-
+        public async Task UpdateFormData(Guid assessmentId, string formData)
+        {
+            await _formRepository.UpdateFormData(assessmentId, formData);
+        }
 
     }
 }

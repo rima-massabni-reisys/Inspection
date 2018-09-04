@@ -29,7 +29,7 @@ namespace Kalect.Services
             List<AssessmentMetadataEntity> entities = new List<AssessmentMetadataEntity>();
             WeatherService weatherService = new WeatherService();
 
-            List<string> assessmentsFromDevice = LoadAssessmentFromDevice();
+            List<string> assessmentsFromDevice = LoadAllAssessmentFromDevice();
 
             //bool isInternetAvailable = true;
 
@@ -178,10 +178,26 @@ namespace Kalect.Services
             }
         }
 
-        private List<string> LoadAssessmentFromDevice()
+        private List<string> LoadAllAssessmentFromDevice()
         {
             return DependencyService.Get<IKalectDependencyServices>().LoadAssessmentsMetadataFromDevice();
         }
+
+
+        /*public async Task SyncAssessment(AssessmentMetadataEntity assessmentMetadataEntity)
+        {
+            FormService formService = new FormService();
+            List<FormInstance> formInstances = formService.GetAllForms(assessmentMetadataEntity.AssessmentTrackingNumber.ToString());
+
+            foreach(Sections section in assessmentMetadataEntity.Sections)
+            {
+                FormInstance formInstance = new FormInstance();
+                formInstance = formInstances.Find(x => x.FriendlyName == section.SectionFriendlyName);
+
+                await formService.UpdateFormData(assessmentMetadataEntity.AssessmentId, formInstance.FormData);
+            }
+
+        }*/
 
         #endregion
 

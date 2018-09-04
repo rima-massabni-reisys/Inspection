@@ -1,16 +1,50 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect.Services/AssessmentService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataCollection/Repository/FormRepository.cs">
     <Files>
-      <File FileName="Kalect/Demo/InspectionReview.cs" Line="37" Column="1" />
-      <File FileName="Kalect/Demo/InspectionMaster.cs" Line="126" Column="21" />
-      <File FileName="Kalect/Demo/InspectionList.cs" Line="28" Column="9" />
-      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="142" Column="13" />
-      <File FileName="Kalect.Services/AssessmentService.cs" Line="194" Column="1" />
+      <File FileName="DataCollection/Services/FormService.cs" Line="97" Column="1" />
+      <File FileName="DataCollection/Repository/FormRepository.cs" Line="65" Column="10" />
+      <File FileName="DataCollection/Services/FormDataService.cs" Line="1" Column="1" />
+      <File FileName="DataCollection/DependencyServices/IDataCollectionDependencyService.cs" Line="1" Column="1" />
+      <File FileName="Kalect.Services/AssessmentService.cs" Line="24" Column="10" />
+      <File FileName="DataCollection/Repository/IFormRepository.cs" Line="15" Column="2" />
+      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="50" Column="1" />
+      <File FileName="Kalect/Demo/InspectionList.cs" Line="347" Column="1" />
+      <File FileName="Kalect.Services/Interfaces/IAssessmentManager.cs" Line="1" Column="1" />
+      <File FileName="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" Line="40" Column="1" />
+      <File FileName="Kalect.iOS/DependencyServices/KalectDependencyServices.cs" Line="85" Column="10" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/Versions/5.10.1/lib/mono/msbuild/15.0/bin/Microsoft.Common.CurrentVersion.targets" Line="1609" Column="52" />
+      <File FileName="Kalect.Services/Entities/AssessmentMetadataEntity.cs" Line="11" Column="48" />
+      <File FileName="Kalect.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="Kalect/Demo/CustomInspectionCellPhone.cs" Line="110" Column="13" />
+      <File FileName="Kalect.Services.Test/AssessmentServiceTest.cs" Line="34" Column="6" />
+      <File FileName="Kalect.iOS/DependencyServices/DeviceOrientationDependencyServices.cs" Line="20" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Kalect" expanded="True">
+            <Node name="DataCollection" expanded="True">
+              <Node name="Repository" expanded="True">
+                <Node name="FormRepository.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="Kalect.Services" expanded="True">
+              <Node name="References" expanded="True" />
+              <Node name="Packages" expanded="True" />
+            </Node>
+            <Node name="Kalect.UITests" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionList.cs" relfile="Kalect/Demo/InspectionList.cs" line="334" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Repository/FormRepository.cs" relfile="DataCollection/Repository/FormRepository.cs" line="44" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionList.cs" relfile="Kalect/Demo/InspectionList.cs" line="347" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D7878609-F17E-45C5-9C1D-1E0622BA1AEE" automaticSigning="True">

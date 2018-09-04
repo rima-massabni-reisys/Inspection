@@ -31,6 +31,9 @@ namespace Kalect.Demo
             btn.BackgroundColor = Color.FromHex("#3693FF");
             btn.TextColor = Color.White;
             formGroup = (FormGroup)btn.CommandParameter;
+
+            //reget formInstance in case it has been updated
+            formInstance = formService.GetFormInstance(AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), SelectedFriendlyName);
             LoadQuestions(formGroup);
 
         }

@@ -61,6 +61,7 @@ namespace Kalect.Demo
             formTitle.Text = "Submit";
             formTitle.FontSize = 30;
             formTitle.Margin = new Thickness(0, 0, 0, 15);
+            formTitle.TextColor = Color.FromHex("#B0B0B0");
 
             Label lblFullName = new Label();
             lblFullName.Text = "Full Name";

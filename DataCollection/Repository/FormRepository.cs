@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Net;
 using System.Reflection;
+using System.Threading.Tasks;
 using DataCollection.Data.CleaningAndDisinfectionProducts;
 using DataCollection.DependencyServices;
 using DataCollection.Repository.DataObjects;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using System.Text;
+//using System.Net.Http.Extensions;
+//using System.Net.Http.Formatting;
 
 namespace DataCollection.Repository
 {
@@ -30,6 +37,31 @@ namespace DataCollection.Repository
         public List<FormInstanceData> GetAllForms(string folderName)
         {
             return DependencyService.Get<IDataCollectionDependencyService>().LoadAllFormsFromDevice(folderName);
+        }
+
+        public async Task UpdateFormData(Guid reportId, string formData)
+        {
+            string url = "http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/" + reportId; //"http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/164c2015-2ec4-4744-907f-36115a08b1e6";
+
+            var client = new HttpClient();
+            //var response = await client.PostAsJsonAsync(url, formData);
+
+
+
+            client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+
+            //var response = await client.PostAsync()
+
+            var response = await client.PostAsync(url, new StringContent(formData, Encoding.UTF8, "application/json")); //(url, formData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                //message = response.Content.ReadAsStringAsync().Result;// + response.Content.ReadAsStringAsync().Exception;
+            }
+            else
+            {
+                
+            }
         }
 
 

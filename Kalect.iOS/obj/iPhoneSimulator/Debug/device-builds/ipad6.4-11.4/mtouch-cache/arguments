@@ -19,6 +19,7 @@
 	-r=/Users/rei/Documents/GitHub/Inspection/Kalect.Services/bin/Debug/Services.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
+	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Net.Http.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Xamarin.iOS.dll \
 	-r=/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/Microsoft.Win32.Primitives.dll \
@@ -185,6 +186,7 @@
 	-r=/Users/rei/.nuget/packages/plugin.permissions/3.0.0.12/lib/xamarinios10/Plugin.Permissions.dll \
 	-r=/Users/rei/.nuget/packages/system.buffers/4.4.0/lib/netstandard2.0/System.Buffers.dll \
 	-r=/Users/rei/.nuget/packages/system.memory/4.5.1/lib/netstandard2.0/System.Memory.dll \
+	-r=/Users/rei/.nuget/packages/system.net.http/4.3.3/runtimes/win/lib/netstandard1.3/System.Net.Http.dll \
 	-r=/Users/rei/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.1/lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll \
 	-r=/Users/rei/.nuget/packages/xam.plugin.connectivity/4.0.0.190-beta/lib/Xamarin.iOS10/Plugin.Connectivity.Abstractions.dll \
 	-r=/Users/rei/.nuget/packages/xam.plugin.connectivity/4.0.0.190-beta/lib/Xamarin.iOS10/Plugin.Connectivity.dll \

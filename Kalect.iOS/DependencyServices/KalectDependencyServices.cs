@@ -76,6 +76,12 @@ namespace Kalect.iOS.DependencyServices
             if (Directory.Exists(documentsPath + "/" + "1000003"))
                 Directory.Delete(documentsPath + "/" + "1000003", true);
 
+            for (int i =0; i < 10;i++)
+            {
+                if (Directory.Exists(documentsPath + "/" + i))
+                    Directory.Delete(documentsPath + "/" + i, true);
+            }
+
         }
 
         /// <summary>
