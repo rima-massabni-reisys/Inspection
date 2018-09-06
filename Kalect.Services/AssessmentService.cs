@@ -24,12 +24,12 @@ namespace Kalect.Services
         {
         }
 
-        public List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromDevice()
+        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromDevice()
         {
             List<AssessmentMetadataEntity> entities = new List<AssessmentMetadataEntity>();
             WeatherService weatherService = new WeatherService();
 
-            List<string> assessmentsFromDevice = LoadAllAssessmentFromDevice();
+            List<string> assessmentsFromDevice = await LoadAllAssessmentFromDevice();
 
             //bool isInternetAvailable = true;
 
@@ -39,19 +39,13 @@ namespace Kalect.Services
 
                 try
                 {
-                    //if (isInternetAvailable)
-                    //{
-                        //send online.offline param to the method
-                        entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
-                        entity.WeatherIcon = GetWeatherIcon(entity.Weather);
-                      //  isInternetAvailable = true;
-                    //}
-                    //else
-                    //{
-                    //    entity.Weather = "-";
-                    //    entity.WeatherIcon = "NoWeather.png";
-                    //}
-                    
+                    entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
+                    entity.WeatherIcon = GetWeatherIcon(entity.Weather);
+                    entity.LastUpdatedDateFormatted = entity.LastUpdatedDate.TimeAgo();
+                    if (entity.AssessmentCategories != null)
+                    {
+                        entity.AssessmentCategoriesIcon = GetCategoryIcon(entity.AssessmentCategories);
+                    }
                 }
                 catch
                 {
@@ -85,6 +79,8 @@ namespace Kalect.Services
 
                 //create the map url when data is pulled the first time.
                 metadataEntity.MapUrl = "http://maps.apple.com/?daddr=" + metadataEntity.OrganizationAddress;
+                metadataEntity.LastUpdatedDateFormatted = metadataEntity.LastUpdatedDate.TimeAgo();
+                metadataEntity.AssessmentCategoriesIcon = GetCategoryIcon(metadataEntity.AssessmentCategories);
 
                 try
                 {
@@ -93,7 +89,7 @@ namespace Kalect.Services
                         //send online.offline param to the method
                         metadataEntity.Weather = weatherService.GetWeather(metadataEntity.OrganizationCityState);
                         metadataEntity.WeatherIcon = GetWeatherIcon(metadataEntity.Weather);
-                        //entity.MapUrl = "http://maps.apple.com/?daddr=" + entity.OrganizationAddress; //Some Place&saddr=Some Other Place";
+
                     }
                     else{
                         metadataEntity.Weather = "-";
@@ -146,6 +142,51 @@ namespace Kalect.Services
             }
         }
 
+        private string GetCategoryIcon(string assessmentCategory)
+        {
+            string assessmentCategoryLowerCase = assessmentCategory.ToLower();
+            if (assessmentCategoryLowerCase.Contains("farm"))
+            {
+                return "farmnew.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("bio"))
+            {
+                return "bio.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("cosmetics"))
+            {
+                return "cosmetics.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("drungs"))
+            {
+                return "drugs.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("electronics"))
+            {
+                return "electronics.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("food"))
+            {
+                return "food.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("medical"))
+            {
+                return "medical.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("tobacco"))
+            {
+                return "tobacco.png";
+            }
+            else if (assessmentCategoryLowerCase.Contains("vet"))
+            {
+                return "vet.png";
+            }
+            else
+            {
+                return "farmnew.png";
+            }
+        }
+
         #region dependency Service Calls
 
         //SaveAssessmentMetadataOnDevice - Creates Folder using AssessmentTrackingNumber and stores assessmentmetadata in the root
@@ -178,9 +219,9 @@ namespace Kalect.Services
             }
         }
 
-        private List<string> LoadAllAssessmentFromDevice()
+        private async Task<List<string>> LoadAllAssessmentFromDevice()
         {
-            return DependencyService.Get<IKalectDependencyServices>().LoadAssessmentsMetadataFromDevice();
+            return await DependencyService.Get<IKalectDependencyServices>().LoadAssessmentsMetadataFromDevice();
         }
 
 

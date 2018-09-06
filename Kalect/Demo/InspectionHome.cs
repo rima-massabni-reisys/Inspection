@@ -26,12 +26,12 @@ namespace Kalect.Demo
             Children.Add(inspectionListPage);
         }
 
-        protected override void OnAppearing()
+        /*protected override void OnAppearing()
         {
             base.OnAppearing();
 
             //InspectionListLoad();
-        }
+        }*/
 
     }
 }

@@ -9,7 +9,7 @@ namespace DataCollection.Repository
     {
         FormInstanceData GetFormInstance(string trackingNumber, string friendlyName);
         List<FormInstanceData> GetAllForms(string folderName);
-        Task UpdateFormData(Guid reportId, string formData);
+        Task SyncFormData(Guid reportId, string formData);
     }
 
 }

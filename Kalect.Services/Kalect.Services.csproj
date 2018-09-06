@@ -43,6 +43,7 @@
     <Compile Include="Entities\LeftMenuItem.cs" />
     <Compile Include="Interfaces\IDeviceOrientationDependenyServices.cs" />
     <Compile Include="Entities\DeviceOrientation.cs" />
+    <Compile Include="Utilities\Extension.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kalect.Constants\Kalect.Constants.csproj">

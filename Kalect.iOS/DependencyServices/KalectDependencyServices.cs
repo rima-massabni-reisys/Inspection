@@ -5,6 +5,7 @@ using Kalect.Services.Interfaces;
 using Xamarin.Forms;
 using Kalect.Services;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 [assembly: Dependency(typeof(KalectDependencyServices))]
 namespace Kalect.iOS.DependencyServices
@@ -172,7 +173,7 @@ namespace Kalect.iOS.DependencyServices
 
         }
 
-        public List<string> LoadAssessmentsMetadataFromDevice()
+        public Task<List<string>> LoadAssessmentsMetadataFromDevice()
         {
             var personalFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
 
@@ -194,7 +195,7 @@ namespace Kalect.iOS.DependencyServices
             }
 
 
-            return existingAssessments;
+            return Task.FromResult<List<string>>(existingAssessments);
         }
 
         public bool DoesAssessmentMetadataExistsOnDevice(string folderName, string fileName)

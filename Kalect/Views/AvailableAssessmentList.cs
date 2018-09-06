@@ -42,20 +42,24 @@ namespace Kalect.Views
 
             //IAssessmentManager assessmentManager = new AssessmentManager();
             //List<AssessmentMetadataEntity> assessments = assessmentManager.GetListOfAllAssignedAssessmentsFromDevice();
-            AssessmentService assessmentService = new AssessmentService();
+            /*AssessmentService assessmentService = new AssessmentService();
             List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
+            */
 
             var customAssessmentCell = new DataTemplate(typeof(CustomAssessmentCell));
            
 
 
             //Bind forms
-            listView = new ListView
+            /*listView = new ListView
             {
                 ItemsSource = assessments,
                 ItemTemplate = customAssessmentCell
-            };
+            };*/
 
+            ListView listView = new ListView();
+            BindList();
+            listView.ItemTemplate = customAssessmentCell;
 
 
             listView.ItemSelected += ListView_ItemSelected;
@@ -79,6 +83,13 @@ namespace Kalect.Views
                     listView 
                 }
             };
+        }
+
+        async void BindList()
+        {
+            AssessmentService assessmentService = new AssessmentService();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
+
         }
     }
 

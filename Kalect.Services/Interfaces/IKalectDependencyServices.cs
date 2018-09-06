@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace Kalect.Services.Interfaces
 {
@@ -10,7 +11,7 @@ namespace Kalect.Services.Interfaces
         void LoadAssessments(string folderName, string fileName);
         void SaveAssessmentsMetadataOnDevice(string assessmentMetadata, string folderName, string fileName);
         void SaveFormsOnDevice(string fileContent, string folderName, string friendlyName, string fileName);
-        List<string> LoadAssessmentsMetadataFromDevice();
+        Task<List<string>> LoadAssessmentsMetadataFromDevice();
         bool DoesAssessmentMetadataExistsOnDevice(string folderName, string fileName);
         void DeleteAssessmentsFromDevice();
         void UpdateAssessmentMetadata(string assessmentMetadata, string folderName, string fileName);

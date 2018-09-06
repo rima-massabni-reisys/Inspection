@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Kalect.Services.Entities;
 using Kalect.Services.Interfaces;
 using Kalect.Services.Utilities;
@@ -18,17 +19,17 @@ namespace Kalect.Services
 
         #region Interface Implementation
 
-        public List<AssessmentMetadataEntity> GetListOfAllAssignedAssessments()
+        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessments()
         {
 
-            return GetListOfAllAssignedAssessmentsFromDevice();
+            return await GetListOfAllAssignedAssessmentsFromDevice();
         }
 
-        public List<AssessmentMetadataEntity> GetListOfAllAssignedAssessmentsFromDevice()
+        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromDevice()
         {
             List<AssessmentMetadataEntity> entities = new List<AssessmentMetadataEntity>();
 
-            List<string> assessmentsFromDevice = LoadAssessmentFromDevice();
+            List<string> assessmentsFromDevice = await LoadAssessmentFromDevice();
 
             foreach (string assessment in assessmentsFromDevice)
             {
@@ -74,9 +75,9 @@ namespace Kalect.Services
             DependencyService.Get<IKalectDependencyServices>().SaveAssessmentsMetadataOnDevice(assessmentMetadataFromServer, assessmentMetadata.AssessmentTrackingNumber.ToString(), FileFolderUtility.GetAssessmentFileName(assessmentMetadata.AssessmentTrackingNumber.ToString()));
         }
 
-        private List<string> LoadAssessmentFromDevice()
+        private async Task<List<string>> LoadAssessmentFromDevice()
         {
-            return DependencyService.Get<IKalectDependencyServices>().LoadAssessmentsMetadataFromDevice();
+            return await DependencyService.Get<IKalectDependencyServices>().LoadAssessmentsMetadataFromDevice();
         }
 
 

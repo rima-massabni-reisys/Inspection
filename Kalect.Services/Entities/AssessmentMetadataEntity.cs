@@ -45,7 +45,17 @@ namespace Kalect.Services.Entities
         [JsonProperty("MapUrl")]
         public string MapUrl { get; set; }
 
+        [JsonProperty("LastUpdatedDate")]
+        public DateTime LastUpdatedDate { get; set; }
 
+        [JsonProperty("LastUpdatedDateFormatted")]
+        public string LastUpdatedDateFormatted { get; set; }
+
+        [JsonProperty("AssessmentCategories")]
+        public string AssessmentCategories { get; set; }
+
+        [JsonProperty("AssessmentCategoriesIcon")]
+        public string AssessmentCategoriesIcon { get; set; }
     }
 
     public class Sections

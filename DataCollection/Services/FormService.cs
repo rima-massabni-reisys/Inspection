@@ -92,9 +92,9 @@ namespace DataCollection.Services
             return formInstances;
         }
 
-        public async Task UpdateFormData(Guid assessmentId, string formData)
+        public async Task SyncFormData(Guid assessmentId, string formData)
         {
-            await _formRepository.UpdateFormData(assessmentId, formData);
+            await _formRepository.SyncFormData(assessmentId, formData);
         }
 
     }

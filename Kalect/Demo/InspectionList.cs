@@ -18,6 +18,25 @@ namespace Kalect.Demo
 {
     public class InspectionList : ContentPage
     {
+        void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
+        {
+            if (CrossConnectivity.Current.IsConnected) 
+            {
+                syncButton.IsEnabled = true;
+                this.IsBusy = true;
+                this.OnAppearing();
+                this.IsBusy = false;
+
+            } else {
+                syncButton.IsEnabled = false;
+                this.IsBusy = true;
+                this.OnAppearing();
+                this.IsBusy = false;
+            }  
+
+        }
+
+
         async void InspectionList_ItemTapped(object sender, ItemTappedEventArgs e)
         {
             AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)((ListView)sender).SelectedItem;
@@ -53,6 +72,28 @@ namespace Kalect.Demo
         }
 
 
+        protected async override void OnAppearing()
+        {
+            //base.OnAppearing();
+            if (isFirstLoad)
+                isFirstLoad = false;
+            else
+            {
+                this.IsBusy = true;
+                inspectionList.ItemsSource = await GetListOfAllAssignedAssessmentsFromDevice();
+                this.IsBusy = false;
+            }
+        }
+
+
+        async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromDevice()
+        {
+            AssessmentService assessmentService = new AssessmentService();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
+
+            return assessments;
+        }
+
         /*async void InspectionList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             AppDataWallet.SelectedAssessmentMetadata = (AssessmentMetadataEntity)e.SelectedItem;
@@ -70,9 +111,13 @@ namespace Kalect.Demo
         Button syncButton;
         Button deleteList;
         Button refreshList;
+        bool isFirstLoad;
 
         public InspectionList()
         {
+            isFirstLoad = true;
+            this.BackgroundImage = "GrayBackground.png";
+
             Title = "Inspections";
             NavigationPage.SetHasNavigationBar(this, true);
 
@@ -120,7 +165,7 @@ namespace Kalect.Demo
             completedButton.HeightRequest = 100;
             completedButton.CornerRadius = 50;
             completedButton.Text = "12";
-            completedButton.BackgroundColor = Color.FromHex("#e9e9e9");
+            completedButton.BackgroundColor = Color.FromHex("#CBCBCB"); // ("#e9e9e9");
             completedButton.HorizontalOptions = LayoutOptions.End;
             //completedButton.Margin = new Thickness(0, 0, 150, 0);
             completedButton.FontSize = 50;
@@ -145,9 +190,9 @@ namespace Kalect.Demo
 
             if (CrossConnectivity.Current.IsConnected) 
             {
-                syncButton.IsVisible = true;  
+                syncButton.IsEnabled = true;  
             } else {
-                syncButton.IsVisible = false;
+                syncButton.IsEnabled = false;
             }  
 
             deleteList = new Button();
@@ -176,19 +221,22 @@ namespace Kalect.Demo
 
 
             inspectionList = new ListView();
+            //inspectionList.HeightRequest = 700;
+            inspectionList.SeparatorColor = Color.FromHex("#CBCBCB");
+
             Content = new StackLayout
-            {   BackgroundColor = Color.FromHex("#F8F9F9"),
+            {   //BackgroundColor = Color.FromHex("#F8F9F9"),
                 Orientation = StackOrientation.Vertical,
                 Children = {
                     new StackLayout{
                         HeightRequest = 175,
-                        BackgroundColor = Color.FromHex("#F8F9F9"),
+                        //BackgroundColor = Color.FromHex("#F8F9F9"),
                         HorizontalOptions=LayoutOptions.CenterAndExpand,
                         Children=
                         {
                             new StackLayout
                             {
-                                Padding=new Thickness(0,25,0,0),
+                                Padding= new Thickness(0,25,0,0),
                                 Orientation = StackOrientation.Horizontal,
                                 //HorizontalOptions = LayoutOptions.CenterAndExpand,
                                 Children=
@@ -256,8 +304,8 @@ namespace Kalect.Demo
                         }
                     },
                     new StackLayout{
-                        BackgroundColor = Color.FromHex("#F8F9F9"),
-                        Padding = new Thickness(15,0,15,0),
+                        //BackgroundColor = Color.FromHex("#F8F9F9"),
+                        Padding = new Thickness(25,10,25,25),
                         Margin = 0,
                         Children =
                         {
@@ -265,6 +313,7 @@ namespace Kalect.Demo
                             {
                                 //BackgroundColor = Color.White,
                                 Orientation = StackOrientation.Horizontal,
+                                Padding= new Thickness(0,0,0,0),
                                 Children=
                                 {
                                     syncButton,
@@ -275,6 +324,8 @@ namespace Kalect.Demo
                             },
                             new StackLayout
                             {
+                                BackgroundColor = Color.FromHex("#CBCBCB"),
+                                Padding = 1,
                                 Margin = 0,
                                 Children=
                                 {
@@ -288,8 +339,8 @@ namespace Kalect.Demo
             };
 
 
-            AssessmentService assessmentService = new AssessmentService();
-            List<AssessmentMetadataEntity> assessments = assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
+            //AssessmentService assessmentService = new AssessmentService();
+            //List<AssessmentMetadataEntity> assessments = GetListOfAllAssignedAssessmentsFromDevice().Wait(); //assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
 
             var customAssessmentCell = new DataTemplate(typeof(CustomInspectionCell));
             if (DeviceProperty.IsPhone())
@@ -298,10 +349,10 @@ namespace Kalect.Demo
                 customAssessmentCell = new DataTemplate(typeof(CustomInspectionCellPhone));
             }
 
-
-
+            this.IsBusy = true;
+            BindList();
             //Bind forms
-            inspectionList.ItemsSource = assessments;
+            //inspectionList.ItemsSource = assessments;
             inspectionList.ItemTemplate = customAssessmentCell;
             //inspectionList.ItemSelected += InspectionList_ItemSelected;
             //inspectionList.HeightRequest = 1000;
@@ -310,12 +361,20 @@ namespace Kalect.Demo
             inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
             inspectionList.ItemTapped += InspectionList_ItemTapped;
+            this.IsBusy = false;
 
-
-            UpdateInspectionCountCircles(assessments);
+            //UpdateInspectionCountCircles(assessments);
 
             //ContextTest().Wait();
+            Connectivity.ConnectivityChanged += Connectivity_ConnectivityChanged;
 
+        }
+
+        private async void BindList()
+        {
+            List<AssessmentMetadataEntity> assessments =await GetListOfAllAssignedAssessmentsFromDevice();
+            inspectionList.ItemsSource = assessments;
+            UpdateInspectionCountCircles(assessments);
         }
 
         private void UpdateInspectionCountCircles(List<AssessmentMetadataEntity> assessments)
@@ -344,7 +403,7 @@ namespace Kalect.Demo
                 FormInstance formInstance = new FormInstance();
                 formInstance = formInstances.Find(x => x.FriendlyName == section.SectionFriendlyName);
 
-                await formService.UpdateFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
+                await formService.SyncFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
             }
             ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
 
@@ -368,16 +427,27 @@ namespace Kalect.Demo
 
         }
 
+
         public CustomInspectionCell()
         {
-            var syncAction = new MenuItem { Text = "Sync", IsDestructive = true, Icon = "sync.png"  };
+            var syncAction = new MenuItem {IsDestructive = true, Icon = "sync.png"  };
             syncAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
-            syncAction.Clicked += SyncAction_Clicked;
+
             syncAction.SetBinding(MenuItem.IconProperty, "sync.png");
 
-            var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png" };
-            lastUpdatedAction.SetBinding(MenuItem.TextProperty, "AssessmentEndDate");
+            if (CrossConnectivity.Current.IsConnected) 
+            {
+                syncAction.Text = "Sync";  
+                syncAction.Clicked += SyncAction_Clicked;
+            } else {
+                syncAction.Text = "Sync Not Available";
+            }  
 
+            var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png"  };
+            lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
+
+
+            //lastUpdatedAction.SetBinding()
 
             ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
@@ -392,27 +462,30 @@ namespace Kalect.Demo
             rowImageLayout.VerticalOptions = LayoutOptions.Center;
             rowImageLayout.Padding = new Thickness(25, 0, 15, 0);
             Image rowImage = new Image();
-            rowImage.Source = "Farm.png";  
+            rowImage.SetBinding(Image.SourceProperty, "AssessmentCategoriesIcon");
+            //rowImage.Source = "Farm.png";
+            rowImage.WidthRequest = 70;
+            rowImage.HeightRequest = 70;
             rowImageLayout.Children.Add(rowImage);
             rowWrapper.Children.Add(rowImageLayout);
 
             StackLayout mainContent = new StackLayout();
             mainContent.Orientation = StackOrientation.Vertical;
             mainContent.VerticalOptions = LayoutOptions.Center;
-            mainContent.WidthRequest = 250;
+            mainContent.WidthRequest = 500;
             //mainContent.Padding = new Thickness(0, 0, 25, 0);
 
             Label inspectiontype = new Label();
-            //inspectiontype.Text = "Egg Inspection";
+            //inspectiontype.Text = "Inspection 1200001";
             inspectiontype.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
-            inspectiontype.FontAttributes = FontAttributes.Bold;
+            //inspectiontype.FontAttributes = FontAttributes.Bold;
 
             Label orgName = new Label();
             orgName.SetBinding(Label.TextProperty, "OrganizationName");
-            orgName.FontSize = 15;
+            //orgName.FontSize = 15;
 
             Label orgAddress = new Label();
-            orgAddress.FontSize = 15;
+            //orgAddress.FontSize = 15;
             orgAddress.SetBinding(Label.TextProperty, "OrganizationAddress");
             orgAddress.TextColor = Color.FromHex("#B0B0B0");
 
@@ -423,7 +496,7 @@ namespace Kalect.Demo
             rowWrapper.Children.Add(mainContent);
 
 
-            StackLayout progressLayout = new StackLayout();
+            /*StackLayout progressLayout = new StackLayout();
             progressLayout.Orientation = StackOrientation.Vertical;
             progressLayout.VerticalOptions = LayoutOptions.Center;
             progressLayout.Margin = new Thickness(25, 0 , 0, 0);
@@ -448,57 +521,35 @@ namespace Kalect.Demo
             progressLayout.Children.Add(progressBar);
             progressLayout.Children.Add(assessmentStatus);
 
-            rowWrapper.Children.Add(progressLayout);
+            rowWrapper.Children.Add(progressLayout);*/
 
             StackLayout weatherLayout = new StackLayout();
             weatherLayout.Orientation = StackOrientation.Vertical;
             weatherLayout.VerticalOptions = LayoutOptions.Center;
             weatherLayout.Margin = new Thickness(25, 0, 0, 0);
-            weatherLayout.WidthRequest = 50;
+            //weatherLayout.WidthRequest = 100;
+            //weatherLayout.HeightRequest = 100;
 
             //Label lblWeather = new Label();
             //lblWeather.SetBinding(Label.TextProperty, "Weather");
             Image weatherImage = new Image();
             weatherImage.SetBinding(Image.SourceProperty, "WeatherIcon");
-
+            weatherImage.WidthRequest = 50;
+            weatherImage.HeightRequest = 50;
             weatherLayout.Children.Add(weatherImage);
             rowWrapper.Children.Add(weatherLayout);
-
-            if (DeviceProperty.IsPhone())
-            {
-                StackLayout phoneLayout = new StackLayout();
-                phoneLayout.Orientation = StackOrientation.Vertical;
-                phoneLayout.VerticalOptions = LayoutOptions.Center;
-                phoneLayout.Margin = new Thickness(25, 0, 0, 0);
-                phoneLayout.WidthRequest = 50;
-
-                Button phoneButton = new Button();
-                phoneButton.Image = "phone.png";
-                //phoneButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
-                phoneButton.Clicked += phoneButton_Clicked;
-
-                phoneLayout.Children.Add(phoneButton);
-
-                //only add phone icon for phone
-
-                rowWrapper.Children.Add(phoneLayout);
-            }
 
             StackLayout mapLayout = new StackLayout();
             mapLayout.Orientation = StackOrientation.Vertical;
             mapLayout.VerticalOptions = LayoutOptions.Center;
-            if(DeviceProperty.IsPhone())
-            {
-                mapLayout.Margin = new Thickness(25, 0, 0, 0);
-            }
-            else{
-                mapLayout.Margin = new Thickness(50, 0, 0, 0);
-            }
+            mapLayout.Margin = new Thickness(50, 0, 25, 0);
 
             Button locationArrowButton = new Button();
             locationArrowButton.Image = "location-arrow.png";
             locationArrowButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
             locationArrowButton.Clicked += LocationArrowButton_Clicked;
+            locationArrowButton.HeightRequest = 60;
+            locationArrowButton.WidthRequest = 60;
                                
             mapLayout.Children.Add(locationArrowButton);
             rowWrapper.Children.Add(mapLayout);

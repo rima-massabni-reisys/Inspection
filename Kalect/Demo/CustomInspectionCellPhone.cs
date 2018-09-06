@@ -1,10 +1,36 @@
 ﻿using System;
+using System.Collections.Generic;
+using DataCollection.Entities;
+using DataCollection.Services;
+using Kalect.Services.Entities;
+using Plugin.Connectivity;
 using Xamarin.Forms;
 
 namespace Kalect.Demo
 {
     public class CustomInspectionCellPhone : ViewCell
     {
+        async void SyncAction_Clicked(object sender, EventArgs e)
+        {
+            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+
+            var menuItem = (MenuItem)sender;
+            var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
+
+            FormService formService = new FormService();
+            List<FormInstance> formInstances = formService.GetAllForms(selectedAssessment.AssessmentTrackingNumber.ToString());
+
+            foreach (Sections section in selectedAssessment.Sections)
+            {
+                FormInstance formInstance = new FormInstance();
+                formInstance = formInstances.Find(x => x.FriendlyName == section.SectionFriendlyName);
+
+                await formService.SyncFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
+            }
+            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
+        }
+
+
         void phoneButton_Clicked(object sender, EventArgs e)
         {
             Xamarin.Forms.Button btn = (Button)sender;
@@ -24,9 +50,21 @@ namespace Kalect.Demo
 
         public CustomInspectionCellPhone()
         {
-            var syncAction = new MenuItem { Text = "Sync", IsDestructive = true, Icon = "sync.png" };
+            var syncAction = new MenuItem {IsDestructive = true, Icon = "sync.png"  };
+            syncAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+
+            syncAction.SetBinding(MenuItem.IconProperty, "sync.png");
+
+            if (CrossConnectivity.Current.IsConnected) 
+            {
+                syncAction.Text = "Sync";  
+                syncAction.Clicked += SyncAction_Clicked;
+            } else {
+                syncAction.Text = "Sync Not Available";
+            }  
 
             var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, Icon = "sync.png" };
+            lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
 
             ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
@@ -42,7 +80,10 @@ namespace Kalect.Demo
             rowImageLayout.VerticalOptions = LayoutOptions.Center;
             rowImageLayout.Padding = new Thickness(5, 0, 5, 0);
             Image rowImage = new Image();
-            rowImage.Source = "Farm.png";
+            rowImage.SetBinding(Image.SourceProperty, "AssessmentCategoriesIcon");
+            //rowImage.Source = "Farm.png";
+            rowImage.WidthRequest = 70;
+            rowImage.HeightRequest = 70;
             rowImageLayout.Children.Add(rowImage);
             rowWrapper.Children.Add(rowImageLayout);
 

@@ -283,6 +283,9 @@ namespace Kalect.Demo
             //Update Assessment to inprogress
             AppDataWallet.SelectedAssessmentMetadata.AssessmentStatus = "In Progress";
             AppDataWallet.SelectedAssessmentMetadata.AssessmentStatusCode = 2;
+            DateTime now = DateTime.Now;
+            //string formattedDate = "Last Update: " + Environment.NewLine+ now.ToShortDateString() + Environment.NewLine + now.ToShortTimeString();
+            AppDataWallet.SelectedAssessmentMetadata.LastUpdatedDate = DateTime.Now; //"Last Update: " +Environment.NewLine+ DateTime.Now;
 
             AssessmentService assessmentService = new AssessmentService();
             assessmentService.UpdateAssessmentOnDevice(JsonConvert.SerializeObject(AppDataWallet.SelectedAssessmentMetadata), AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString());

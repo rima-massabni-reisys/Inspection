@@ -10,6 +10,7 @@ using DataCollection.Data.CleaningAndDisinfectionProducts;
 using DataCollection.DependencyServices;
 using DataCollection.Repository.DataObjects;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 using System.Text;
 //using System.Net.Http.Extensions;
@@ -39,20 +40,24 @@ namespace DataCollection.Repository
             return DependencyService.Get<IDataCollectionDependencyService>().LoadAllFormsFromDevice(folderName);
         }
 
-        public async Task UpdateFormData(Guid reportId, string formData)
+        public async Task SyncFormData(Guid reportId, string formData)
         {
             string url = "http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/" + reportId; //"http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/164c2015-2ec4-4744-907f-36115a08b1e6";
 
+            var jObject = JObject.Parse(formData);
+
+            /*var data = new
+            {
+                item = jObject
+            };*/
+
+            var postObj = JsonConvert.SerializeObject(jObject);
+
             var client = new HttpClient();
-            //var response = await client.PostAsJsonAsync(url, formData);
-
-
-
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            //var response = await client.PostAsync()
 
-            var response = await client.PostAsync(url, new StringContent(formData, Encoding.UTF8, "application/json")); //(url, formData);
+            var response = await client.PostAsync(url, new StringContent(postObj, Encoding.UTF8, "application/json")); //(url, formData);
 
             if (response.IsSuccessStatusCode)
             {
@@ -62,6 +67,13 @@ namespace DataCollection.Repository
             {
                 
             }
+
+            /*using (var client = new WebClient())
+            {
+                //var dataString = JsonConvert.SerializeObject(vm);
+                //client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
+                var response = await client.UploadStringTaskAsync(new Uri(url), formData);
+            }*/
         }
 
 

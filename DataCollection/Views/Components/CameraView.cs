@@ -57,7 +57,7 @@ namespace DataCollection.Views.Components
 
             CameraVideoImage = new Image();
             //CameraVideoImage.HorizontalOptions = LayoutOptions.EndAndExpand;
-            CameraPhotoImage.HeightRequest = 100;
+            CameraVideoImage.HeightRequest = 100;
 
             ChooseVideoButton = new Button();
             //ChooseVideoButton.Text = "Choose Video";
@@ -117,6 +117,9 @@ namespace DataCollection.Views.Components
                 }
             };
 
+            MessageLabel = new Label();
+            MessageLabel.VerticalOptions = LayoutOptions.CenterAndExpand;
+            MessageLabel.TextColor = Color.Green;
 
             StackLayout videoLayout = new StackLayout()
             {
@@ -150,7 +153,7 @@ namespace DataCollection.Views.Components
                         HorizontalOptions = LayoutOptions.EndAndExpand,
                         Children=
                         {
-                            CameraVideoImage
+                            MessageLabel//CameraVideoImage
                         }
                     }
                 }
@@ -158,7 +161,7 @@ namespace DataCollection.Views.Components
 
 
             //Images = new List<Image>();
-            MessageLabel = new Label();
+
             Content = new StackLayout
             {
                 Padding = new Thickness(25, 0, 25, 0),
@@ -291,7 +294,7 @@ namespace DataCollection.Views.Components
             string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".mp4";
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
-             
+            MessageLabel.Text = "Video Saved"; 
 
             file.Dispose();
 
@@ -320,6 +323,7 @@ namespace DataCollection.Views.Components
             {
                 Name = fileName,
                 Directory = "DefaultVideos",
+                SaveToAlbum=true
             });
 
             if (file == null)
@@ -334,7 +338,7 @@ namespace DataCollection.Views.Components
 
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
-             
+            MessageLabel.Text = "Video Saved";
 
             file.Dispose();
 
