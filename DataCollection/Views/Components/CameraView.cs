@@ -221,7 +221,8 @@ namespace DataCollection.Views.Components
                 return;
             }
 
-            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".jpg";
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
 
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
@@ -241,7 +242,7 @@ namespace DataCollection.Views.Components
 
 
             //await this.DisplayAlert("File Location", file.Path, "OK");
-            MessageLabel.Text = "File Location: " + file.Path;
+            //MessageLabel.Text = "File Location: " + file.Path;
             CameraPhotoImage.Source = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
@@ -265,7 +266,8 @@ namespace DataCollection.Views.Components
                 return stream;
             });
 
-            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".jpg";
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveImage(test.GetStream(), AssessmentTrackingNumber, fileName);
                 
@@ -291,7 +293,8 @@ namespace DataCollection.Views.Components
                 return stream;
             });
 
-            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".mp4";
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
             MessageLabel.Text = "Video Saved"; 
@@ -317,7 +320,8 @@ namespace DataCollection.Views.Components
                 return;
             }
 
-            string fileName = AssessmentTrackingNumber + "_" + ComponentPath + ".mp4";
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
 
             var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
             {

@@ -23,7 +23,6 @@ namespace DataCollection.Views.Components
             lbl.SetBinding(Label.TextProperty, "LabelText");
             lbl.BindingContext = lblViewModel;
 
-
             Content = lbl;
         }
 

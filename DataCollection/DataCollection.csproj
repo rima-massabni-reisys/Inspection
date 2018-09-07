@@ -53,4 +53,7 @@
     <EmbeddedResource Include="Data\RodentFliesPestControl\FormModel.json" />
     <EmbeddedResource Include="Data\RodentFliesPestControl\ValidationSchema.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\OneDriveClient\" />
+  </ItemGroup>
 </Project>

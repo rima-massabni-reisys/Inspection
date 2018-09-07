@@ -13,6 +13,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 using System.Text;
+using DataCollection.Services.OneDrive;
 //using System.Net.Http.Extensions;
 //using System.Net.Http.Formatting;
 
@@ -74,6 +75,28 @@ namespace DataCollection.Repository
                 //client.Headers.Add(HttpRequestHeader.ContentType, "application/json");
                 var response = await client.UploadStringTaskAsync(new Uri(url), formData);
             }*/
+        }
+
+        public async Task SyncMediaToOneDrive(string trackingNumber)
+        {
+            OneDriveClient oneDriveClient = new OneDriveClient();
+
+
+
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = documentsPath + "/" + trackingNumber;
+
+            string[] fileList = Directory.Exists(documentsPath)
+                                         ? Directory.GetFiles(documentsPath, "*.jpg")
+                                            : null;
+            foreach(string filePathAndName in fileList)
+            {
+                FileInfo info = new FileInfo(filePathAndName);
+                string fileName = info.Name;
+                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
+                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
+            }
+
         }
 
 

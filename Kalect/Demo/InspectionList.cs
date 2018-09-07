@@ -18,6 +18,41 @@ namespace Kalect.Demo
 {
     public class InspectionList : ContentPage
     {
+        async void CompletedButton_Clicked(object sender, EventArgs e)
+        {
+            ((Page)this.Parent).IsBusy = true;
+            List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
+            assessments = await GetListOfAllAssignedAssessmentsFromDevice();
+            var completeAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 3);
+            inspectionList.ItemsSource = completeAssessment;
+            //UpdateInspectionCountCircles(completeAssessment);
+            ((Page)this.Parent).IsBusy = false;
+        }
+
+
+        async void NewButton_Clicked(object sender, EventArgs e)
+        {
+            ((Page)this.Parent).IsBusy = true;
+            List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
+            assessments = await GetListOfAllAssignedAssessmentsFromDevice();
+            var newAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 1);
+            inspectionList.ItemsSource = newAssessment;
+            //UpdateInspectionCountCircles(newAssessment);
+            ((Page)this.Parent).IsBusy = false;
+        }
+
+
+        async void InprogressButton_Clicked(object sender, EventArgs e)
+        {
+            ((Page)this.Parent).IsBusy = true;
+            List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
+            assessments = await GetListOfAllAssignedAssessmentsFromDevice();
+            var inProgressAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 2);
+            inspectionList.ItemsSource = inProgressAssessment;
+            ((Page)this.Parent).IsBusy = false;
+        }
+
+
         void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
             if (CrossConnectivity.Current.IsConnected) 
@@ -55,6 +90,7 @@ namespace Kalect.Demo
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
 
             inspectionList.ItemsSource = assessments;
+            UpdateInspectionCountCircles(assessments);
             activityIndicator.IsRunning = false;
         }
 
@@ -67,6 +103,7 @@ namespace Kalect.Demo
             List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer();
 
             inspectionList.ItemsSource = assessments;
+            UpdateInspectionCountCircles(assessments);
             this.IsBusy = false;
             //activityIndicator.IsRunning = false;
         }
@@ -80,7 +117,10 @@ namespace Kalect.Demo
             else
             {
                 this.IsBusy = true;
-                inspectionList.ItemsSource = await GetListOfAllAssignedAssessmentsFromDevice();
+                AssessmentService assessmentService = new AssessmentService();
+                List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer();
+                inspectionList.ItemsSource = assessments;
+                UpdateInspectionCountCircles(assessments);
                 this.IsBusy = false;
             }
         }
@@ -140,6 +180,8 @@ namespace Kalect.Demo
             //newButton.Margin = new Thickness(150, 0, 0, 0);
             newButton.FontSize = 50;
             newButton.TextColor = Color.White;
+            newButton.Clicked += NewButton_Clicked;
+
 
 
             Label lblNew = new Label();
@@ -155,6 +197,7 @@ namespace Kalect.Demo
             inprogressButton.HorizontalOptions = LayoutOptions.CenterAndExpand;
             inprogressButton.FontSize = 50;
             inprogressButton.TextColor = Color.White;
+            inprogressButton.Clicked += InprogressButton_Clicked;
 
             Label lblInprogress = new Label();
             lblInprogress.Text = "In Progress";
@@ -170,6 +213,7 @@ namespace Kalect.Demo
             //completedButton.Margin = new Thickness(0, 0, 150, 0);
             completedButton.FontSize = 50;
             completedButton.TextColor = Color.White;
+            completedButton.Clicked += CompletedButton_Clicked;
 
             Label lblCompleted = new Label();
             lblCompleted.Text = "Completed";
@@ -405,6 +449,8 @@ namespace Kalect.Demo
 
                 await formService.SyncFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
             }
+            await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
+
             ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
 
         }
@@ -440,7 +486,7 @@ namespace Kalect.Demo
                 syncAction.Text = "Sync";  
                 syncAction.Clicked += SyncAction_Clicked;
             } else {
-                syncAction.Text = "Sync Not Available";
+                syncAction.Text = "Offline";
             }  
 
             var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png"  };

@@ -27,6 +27,9 @@ namespace Kalect.Demo
 
                 await formService.SyncFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
             }
+            await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
+
+
             ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
         }
 

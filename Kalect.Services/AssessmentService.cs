@@ -41,7 +41,7 @@ namespace Kalect.Services
                 {
                     entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
                     entity.WeatherIcon = GetWeatherIcon(entity.Weather);
-                    entity.LastUpdatedDateFormatted = entity.LastUpdatedDate.TimeAgo();
+                    entity.LastUpdatedDateFormatted = Convert.ToDateTime(entity.LastUpdatedDate).TimeAgo();
                     if (entity.AssessmentCategories != null)
                     {
                         entity.AssessmentCategoriesIcon = GetCategoryIcon(entity.AssessmentCategories);
@@ -79,7 +79,7 @@ namespace Kalect.Services
 
                 //create the map url when data is pulled the first time.
                 metadataEntity.MapUrl = "http://maps.apple.com/?daddr=" + metadataEntity.OrganizationAddress;
-                metadataEntity.LastUpdatedDateFormatted = metadataEntity.LastUpdatedDate.TimeAgo();
+                metadataEntity.LastUpdatedDateFormatted = Convert.ToDateTime(metadataEntity.LastUpdatedDate).TimeAgo();
                 metadataEntity.AssessmentCategoriesIcon = GetCategoryIcon(metadataEntity.AssessmentCategories);
 
                 try

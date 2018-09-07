@@ -46,7 +46,7 @@ namespace Kalect.Services.Entities
         public string MapUrl { get; set; }
 
         [JsonProperty("LastUpdatedDate")]
-        public DateTime LastUpdatedDate { get; set; }
+        public string LastUpdatedDate { get; set; }
 
         [JsonProperty("LastUpdatedDateFormatted")]
         public string LastUpdatedDateFormatted { get; set; }

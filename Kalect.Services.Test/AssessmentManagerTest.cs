@@ -16,10 +16,10 @@ namespace Kalect.Services.Test
             Assert.True(true);
         }
         [Fact]
-        public void Test_GetListOfAllAssignedAssessments()
+        public async void Test_GetListOfAllAssignedAssessments()
         {
             AssessmentManager assessmentManager = new AssessmentManager();
-            List<AssessmentMetadataEntity> assessments =  assessmentManager.GetListOfAllAssignedAssessments();
+            List<AssessmentMetadataEntity> assessments =  await assessmentManager.GetListOfAllAssignedAssessments();
             //Console.WriteLine(assessments);
             //Assert.True(true);
             if(assessments.Count == 3)

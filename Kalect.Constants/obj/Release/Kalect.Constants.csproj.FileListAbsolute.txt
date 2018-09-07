@@ -5,3 +5,4 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/bin/Release/Kalect.Constants.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Release/Kalect.Constants.csproj.CoreCompileInputs.cache
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Release/Kalect.Constants.dll
+/Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Release/Kalect.Constants.csprojResolveAssemblyReference.cache

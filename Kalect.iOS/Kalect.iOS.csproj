@@ -269,6 +269,9 @@
     <BundleResource Include="Resources\profile-picture.png" />
     <BundleResource Include="Resources\farmnew.png" />
     <BundleResource Include="Resources\airplane-mode.png" />
+    <BundleResource Include="Resources\reisystems.jpg" />
+    <BundleResource Include="Resources\AboutIcon.png" />
+    <BundleResource Include="Resources\AboutIcon%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

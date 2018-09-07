@@ -95,6 +95,12 @@ namespace DataCollection.Services
         public async Task SyncFormData(Guid assessmentId, string formData)
         {
             await _formRepository.SyncFormData(assessmentId, formData);
+
+        }
+
+        public async Task SyncMediaToOneDrive(string trackingNumber)
+        {
+            await _formRepository.SyncMediaToOneDrive(trackingNumber);
         }
 
     }
