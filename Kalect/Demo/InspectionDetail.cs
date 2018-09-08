@@ -12,6 +12,7 @@ using Kalect.Services;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Kalect.Services.Interfaces;
+using System.Threading;
 
 namespace Kalect.Demo
 {
@@ -119,28 +120,11 @@ namespace Kalect.Demo
         FormGroup formGroup;
         ToolbarItem SaveToolbarItem;
         StackLayout questionNavigationButtonBarLayout;
-        //SensorSpeed speed = SensorSpeed.UI;
+        private readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
         public InspectionDetail(Sections selectedSection)
         {
-
-            /*try
-            {
-                if (OrientationSensor.IsMonitoring)
-                    OrientationSensor.Stop();
-                else
-                    OrientationSensor.Start(speed);
-            }
-            catch (FeatureNotSupportedException)
-            {
-                OrientationSensor.Stop();
-            }
-            catch (Exception)
-            {
-                OrientationSensor.Stop();
-            }*/
-
-
+            
             UpdateAssessmentJsonOnDevice();
 
             Title = "Inspection";
@@ -216,11 +200,14 @@ namespace Kalect.Demo
             //ScrollView scrollView = new ScrollView();
 
             //Subscribe to message to show displayaction sheet on click of camera
-            MessagingCenter.Subscribe<object, List<string>>(this, "PhotoMessageQuestion", async (sender, arg) =>
+
+            /*MessagingCenter.Subscribe<object, List<string>>(this, "PhotoMessageQuestion", async (sender, arg) =>
             {
                 var photoAction = await DisplayActionSheet(arg[0], arg[1], arg[2],arg[3]);
                 MessagingCenter.Send<object, string>(this, "PhotoMessageAnswer", photoAction);
-            });
+                //unsubscribe
+                //MessagingCenter.Unsubscribe<object, List<string>>(this, "PhotoMessageQuestion");
+            });*/
 
             //Final Page Content
             //Content = _pageLayout;
@@ -232,6 +219,14 @@ namespace Kalect.Demo
             };
 
         }
+
+        /*protected override void OnDisappearing()
+        {
+            //base.OnDisappearing();
+            MessagingCenter.Unsubscribe<object, List<string>>(this, "PhotoMessageQuestion");
+            MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
+            //MessagingCenter.Unsubscribe<Application, SocketScanInfo>(this, "OnDecodedData");
+        }*/
 
         private void CreateToolBar()
         {

@@ -5,15 +5,28 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using DataCollection.DependencyServices;
+using System.Threading;
 
 namespace DataCollection.Views.Components
 {
     public class CameraView : ContentView
     {
-        void TakeVideoButton_Clicked1(object sender, EventArgs e)
+        async void TakeVideoButton_Clicked1(object sender, EventArgs e)
         {
-            var questions = new List<string> { "Photo", "Cancel", "Take Video", "Choose Video" };
-            MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
+            /*var questions = new List<string> { "Photo", "Cancel", "Take Video", "Choose Video" };
+            MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);*/
+
+            //Find parent page 
+            var response = await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).DisplayActionSheet("Video", "Cancel", "Take Video", "Choose Video");
+
+            if (response == "Take Video")
+            {
+                TakeVideo();
+            }
+            else if (response == "Choose Video")
+            {
+                ChooseVideo();
+            }
         }
 
 
@@ -29,6 +42,9 @@ namespace DataCollection.Views.Components
         Image CameraVideoImage;
         string AssessmentTrackingNumber;
         string ComponentPath;
+
+        private readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
+
         public  CameraView(Component c, string formData, string assessentTrackingNumber)
         {
             AssessmentTrackingNumber = assessentTrackingNumber;
@@ -176,7 +192,7 @@ namespace DataCollection.Views.Components
                 }
             };
 
-
+            /*
             MessagingCenter.Subscribe<object, string>(this, "PhotoMessageAnswer", (sender, arg) =>
             {
                 //System.Diagnostics.Debug.WriteLine("User choose: {0}", arg);
@@ -197,20 +213,35 @@ namespace DataCollection.Views.Components
                     TakeVideo();
                 }
             });
+            */
 
         }
 
 
-        private void TakePhotoButton_Clicked(object sender, EventArgs e)
+        private async void TakePhotoButton_Clicked(object sender, EventArgs e)
         {
             //create messagecenter to DisplayMessageSheet on the screen
-            var questions = new List<string> { "Photo", "Cancel", "Take Photo", "Choose Photo" };
-            MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
+            //var questions = new List<string> { "Photo", "Cancel", "Take Photo", "Choose Photo" };
+            //MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
+
+            //Find parent page 
+            var response = await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).DisplayActionSheet("Photo", "Cancel", "Take Photo", "Choose Photo");
+
+            if (response == "Take Photo")
+            {
+                TakePhoto();
+            }
+            else if (response == "Choose Photo")
+            {
+                ChoosePhoto();
+            }
 
          }
 
         private async void TakePhoto()
         {
+            //await _semaphoreSlim.WaitAsync();
+
             await CrossMedia.Current.Initialize();
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
@@ -248,10 +279,16 @@ namespace DataCollection.Views.Components
                 var stream = file.GetStream();
                 return stream;
             });
+
+            //_semaphoreSlim.Release();
+
+            MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
         }
 
         private async void ChoosePhoto()
         {
+            //await _semaphoreSlim.WaitAsync();
+
             var test = await CrossMedia.Current.PickPhotoAsync(
                     new Plugin.Media.Abstractions.PickMediaOptions
                     {
@@ -273,11 +310,16 @@ namespace DataCollection.Views.Components
                 
 
             test.Dispose();
+            //_semaphoreSlim.Release();
+
+            MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
         }
 
 
         private async void ChooseVideo()
         {
+            //await _semaphoreSlim.WaitAsync();
+
             if (!CrossMedia.Current.IsPickVideoSupported)
             {
                 return;
@@ -300,20 +342,24 @@ namespace DataCollection.Views.Components
             MessageLabel.Text = "Video Saved"; 
 
             file.Dispose();
+           // _semaphoreSlim.Release();
 
+            MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
         }
 
 
-        private void TakeVideoButton_Clicked(object sender, EventArgs e)
+        /*private void TakeVideoButton_Clicked(object sender, EventArgs e)
         {
             //create messagecenter to DisplayMessageSheet on the screen
             var questions = new List<string> { "Photo", "Cancel", "Take Video", "Choose Video" };
             MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
 
-        }
+        }*/
 
         private async void TakeVideo()
         {
+            //await _semaphoreSlim.WaitAsync();
+
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakeVideoSupported)
             {
                 //DisplayAlert("No Camera", ":( No camera avaialble.", "OK");
@@ -345,7 +391,9 @@ namespace DataCollection.Views.Components
             MessageLabel.Text = "Video Saved";
 
             file.Dispose();
+            //_semaphoreSlim.Release();
 
+            MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
         }
 
 

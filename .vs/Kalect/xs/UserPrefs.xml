@@ -1,40 +1,24 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect/Demo/CustomInspectionCellPhone.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataCollection/Views/Components/CameraView.cs">
     <Files>
-      <File FileName="Kalect/Demo/InspectionList.cs" Line="441" Column="13" />
-      <File FileName="Kalect.Services/AssessmentService.cs" Line="84" Column="1" />
-      <File FileName="Kalect.Services.Test/AssessmentManagerTest.cs" Line="22" Column="22" />
+      <File FileName="DataCollection/Views/Components/CameraView.cs" Line="36" Column="27" />
+      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="204" Column="1" />
       <File FileName="Kalect.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" Line="101" Column="1" />
-      <File FileName="DataCollection/Services/FormService.cs" Line="103" Column="1" />
-      <File FileName="DataCollection/Repository/FormRepository.cs" Line="97" Column="1" />
-      <File FileName="DataCollection/Services/OneDriveClient/OneDriveClient.cs" Line="41" Column="13" />
-      <File FileName="DataCollection/Services/LayoutGenerator.cs" Line="7" Column="34" />
-      <File FileName="DataCollection/Services/OneDriveClient/AuthTokenGenerator.cs" Line="21" Column="1" />
-      <File FileName="DataCollection/Services/OneDriveClient/Configuration.cs" Line="5" Column="43" />
-      <File FileName="DataCollection/Views/Components/CameraView.cs" Line="223" Column="1" />
-      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="288" Column="1" />
-      <File FileName="Kalect.Services/Utilities/Extension.cs" Line="8" Column="1" />
-      <File FileName="Kalect.Services/WeatherService.cs" Line="33" Column="1" />
-      <File FileName="Kalect.Services/Entities/AssessmentMetadataEntity.cs" Line="51" Column="22" />
-      <File FileName="Kalect.Services/Utilities/FileFolderUtility.cs" Line="13" Column="1" />
-      <File FileName="Kalect.iOS/DependencyServices/KalectDependencyServices.cs" Line="124" Column="48" />
-      <File FileName="Kalect.iOS/DependencyServices/SaveAndLoad.cs" Line="1" Column="1" />
-      <File FileName="../../../.nuget/packages/xamarin.forms/3.1.0.697729/build/netstandard2.0/Xamarin.Forms.targets" Line="36" Column="3" />
-      <File FileName="Kalect/Demo/CustomInspectionCellPhone.cs" Line="32" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="336" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Services/OneDriveClient/OneDriveClient.cs" relfile="DataCollection/Services/OneDriveClient/OneDriveClient.cs" line="27" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Services/OneDriveClient/OneDriveClient.cs" relfile="DataCollection/Services/OneDriveClient/OneDriveClient.cs" line="42" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionDetail.cs" relfile="Kalect/Demo/InspectionDetail.cs" line="288" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="358" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="331" column="13" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionDetail.cs" relfile="Kalect/Demo/InspectionDetail.cs" line="226" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="184" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="212" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionDetail.cs" relfile="Kalect/Demo/InspectionDetail.cs" line="204" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.aa8e8ac635b78cbabffa349462f2506cacb7fd0d" automaticSigning="True">
+  <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D7878609-F17E-45C5-9C1D-1E0622BA1AEE" automaticSigning="True">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="4N96495CFH" TeamId="LCXLK73939" />
   </MonoDevelop.Ide.ItemProperties.Kalect.iOS>
   <MonoDevelop.Ide.ItemProperties.Kalect.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
