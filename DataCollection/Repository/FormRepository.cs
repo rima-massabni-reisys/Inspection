@@ -86,10 +86,22 @@ namespace DataCollection.Repository
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             documentsPath = documentsPath + "/" + trackingNumber;
 
-            string[] fileList = Directory.Exists(documentsPath)
+            string[] jpgFileList = Directory.Exists(documentsPath)
                                          ? Directory.GetFiles(documentsPath, "*.jpg")
                                             : null;
-            foreach(string filePathAndName in fileList)
+            foreach(string filePathAndName in jpgFileList)
+            {
+                FileInfo info = new FileInfo(filePathAndName);
+                string fileName = info.Name;
+                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
+                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
+            }
+
+
+            string[] mp4FileList = Directory.Exists(documentsPath)
+                                         ? Directory.GetFiles(documentsPath, "*.mp4")
+                                            : null;
+            foreach (string filePathAndName in mp4FileList)
             {
                 FileInfo info = new FileInfo(filePathAndName);
                 string fileName = info.Name;

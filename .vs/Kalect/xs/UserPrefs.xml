@@ -1,20 +1,22 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DataCollection/Views/Components/CameraView.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataCollection/Repository/FormRepository.cs">
     <Files>
-      <File FileName="DataCollection/Views/Components/CameraView.cs" Line="36" Column="27" />
-      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="204" Column="1" />
-      <File FileName="Kalect.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="DataCollection/Services/FormService.cs" Line="103" Column="1" />
+      <File FileName="DataCollection/Repository/FormRepository.cs" Line="97" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>(Page)this.Parent.Parent.Parent.Parent.Parent.Parent</Value>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="358" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="331" column="13" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionDetail.cs" relfile="Kalect/Demo/InspectionDetail.cs" line="226" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="184" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="212" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect/Demo/InspectionDetail.cs" relfile="Kalect/Demo/InspectionDetail.cs" line="204" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="382" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="355" column="13" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
