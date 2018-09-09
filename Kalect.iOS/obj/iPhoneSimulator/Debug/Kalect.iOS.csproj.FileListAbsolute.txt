@@ -221,11 +221,6 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/DataCollection.pdb
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Services.pdb
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/bin/iPhoneSimulator/Debug/Kalect.Constants.pdb
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.csprojResolveAssemblyReference.cache
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.csproj.CoreCompileInputs.cache
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.exe
-/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.pdb
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/ibtool/_BundleResourceWithLogicalName.items
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/actool/_PartialAppManifest.items
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/actool/_BundleResourceWithLogicalName.items
@@ -338,4 +333,11 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/airplane-mode.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/AboutIcon.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/AboutIcon@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/PauseYellow.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/PlayGreen.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/device-builds/ipad6.4-11.4/optimized/
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.csprojResolveAssemblyReference.cache
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.csproj.CoreCompileInputs.cache
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/XamlC.stamp
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.exe
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhoneSimulator/Debug/Kalect.iOS.pdb

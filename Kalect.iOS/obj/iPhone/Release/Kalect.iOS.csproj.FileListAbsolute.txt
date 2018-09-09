@@ -204,3 +204,5 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/airplane-mode.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/AboutIcon.png
 /Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/AboutIcon@2x.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/PauseYellow.png
+/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj/iPhone/Release/optimized/PlayGreen.png

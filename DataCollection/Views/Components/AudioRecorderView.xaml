@@ -12,6 +12,10 @@
                             <Label Text="Play" Margin="5,0,0,0" />
                             <Button x:Name="PlayButton" Image="Play.png" Clicked="Play_Clicked" />
                         </StackLayout>
+                        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" Padding="15">
+                            <Label x:Name="lblTest" Text="Test" Margin="5,0,0,0" />
+                            <Button x:Name="TestButton" Image="Play.png" Clicked="Test_Clicked" />
+                        </StackLayout>
                     </StackLayout>
                     <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
                         <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">

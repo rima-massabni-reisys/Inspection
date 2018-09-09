@@ -272,6 +272,8 @@
     <BundleResource Include="Resources\reisystems.jpg" />
     <BundleResource Include="Resources\AboutIcon.png" />
     <BundleResource Include="Resources\AboutIcon%402x.png" />
+    <BundleResource Include="Resources\PauseYellow.png" />
+    <BundleResource Include="Resources\PlayGreen.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

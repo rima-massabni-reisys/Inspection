@@ -26,6 +26,11 @@ namespace DataCollection.Views.Components
             player.FinishedPlaying += Player_FinishedPlaying;
         }
 
+        void Test_Clicked(object sender, EventArgs e)
+        {
+            lblTest.Text = "Clicked";
+        }
+
         async void Record_Clicked(object sender, EventArgs e)
         {
             await RecordAudio();
