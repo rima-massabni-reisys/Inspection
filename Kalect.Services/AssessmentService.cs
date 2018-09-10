@@ -252,7 +252,7 @@ namespace Kalect.Services
             //var response = client.GetStringAsync("http://handbookwebapi.azurewebsites.net/api/assessment").Result;
             //var response = client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context").Result;
 
-            var response = await client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context");
+            var response = await client.GetStringAsync("http://fda-client-api2.azurewebsites.net/api/context");
 
             List<AssessmentEntity> assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
 

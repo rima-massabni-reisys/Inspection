@@ -20,7 +20,8 @@ namespace DataCollection.Views.Components
             bool switchValue = false;
             //read formData based on the c.path
             var switchValueFormData = Utilities.Utility.GetFormDataValue(formData, path);
-            if (switchValueFormData.ToString().ToUpper().Equals("FALSE"))
+            //if (switchValueFormData.ToString().ToUpper().Equals("FALSE"))
+            if (switchValueFormData.ToString().ToUpper().Equals("NO") || switchValueFormData.ToString().ToUpper().Equals("FALSE"))
                 switchValue = false;
             else
                 switchValue = true;
@@ -50,7 +51,17 @@ namespace DataCollection.Views.Components
         private void sw_Toggled(object sender, ToggledEventArgs e)
         {
             //lblAnswer.lbl.Text = e.Value.ToString();
-            FormDataService.UpdateFormDataValue(path, Convert.ToBoolean(e.Value));
+            string val = "no";
+            if(e.Value)
+            {
+                val = "yes";
+            }
+            else
+            {
+                val = "no";
+            }
+            //FormDataService.UpdateFormDataValue(path, Convert.ToBoolean(e.Value));
+            FormDataService.UpdateFormDataValue(path, val);
         }
     }
 }

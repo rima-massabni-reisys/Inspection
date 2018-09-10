@@ -43,7 +43,7 @@ namespace DataCollection.Repository
 
         public async Task SyncFormData(Guid reportId, string formData)
         {
-            string url = "http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/" + reportId; //"http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/164c2015-2ec4-4744-907f-36115a08b1e6";
+            string url = "http://fda-client-api2.azurewebsites.net/api/datacollection/" + reportId; //"http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/164c2015-2ec4-4744-907f-36115a08b1e6";
 
             var jObject = JObject.Parse(formData);
 
@@ -52,7 +52,7 @@ namespace DataCollection.Repository
                 item = jObject
             };*/
 
-            var postObj = JsonConvert.SerializeObject(jObject);
+            var postObj = JsonConvert.SerializeObject(formData);//jObject
 
             var client = new HttpClient();
             client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
