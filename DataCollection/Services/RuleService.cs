@@ -32,7 +32,13 @@ namespace DataCollection.Services
                 JSchema schema = JSchema.Parse(formInstance.ValidationSchema);
                 bool valid = fd.IsValid(schema, out messages);
 
-                IList<string> errorMessages = messages.ToArray();
+                List<string> descriptiveErrorMessages = new List<string>();
+                foreach(string message in messages)
+                {
+                    descriptiveErrorMessages.Add(GetDescriptiveErrorMessage(formInstance.ValidationSchema, message));
+                }
+
+                IList<string> errorMessages = descriptiveErrorMessages.ToArray();
 
                 validationEntity.Messages = errorMessages.ToList<string>();
 
@@ -41,6 +47,22 @@ namespace DataCollection.Services
 
             return validations;
 
+        }
+
+        private string GetDescriptiveErrorMessage(string validationSchema, string message)
+        {
+            if(message.Contains("length"))
+            {
+                return "Comments Minimum Length must be 50.";
+            }
+            else if(message.Contains("required"))
+            {
+                return "Field is Required.";
+            }
+            else{
+                return "Field is Required.";
+            }
+                
         }
     }
 }
