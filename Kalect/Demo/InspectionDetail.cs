@@ -127,7 +127,7 @@ namespace Kalect.Demo
             
             UpdateAssessmentJsonOnDevice();
 
-            Title = "Inspection";
+            Title = AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
 
             SelectedFriendlyName = selectedSection.SectionFriendlyName;
             formService = new FormService();
