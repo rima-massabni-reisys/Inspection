@@ -8,12 +8,17 @@ namespace Kalect.Demo
     {
         async void CmdLogin_Clicked(object sender, EventArgs e)
         {
+            IsBusy = true;
+            activityIndicator.IsVisible = true;
+            activityIndicator.IsRunning = true;
             var agree = await DisplayAlert("Terms and Conditions", "I agree to the FDA.gov, gsa.gov and whitehouse.gov terms and conditions and the FDA privacy policy.", "Agree", "Cancel");
             if(Convert.ToBoolean(agree))
             {
                 await Navigation.PushModalAsync(new InspectionHome());
-            } 
-
+            }
+            IsBusy = false;
+            activityIndicator.IsRunning = false;
+            activityIndicator.IsVisible = false;
         }
 
         Image inspectIcon;
@@ -29,9 +34,16 @@ namespace Kalect.Demo
         Image touchImage;
         Button cmdEnableTouch;
         Button cmdRegistration;
+        ActivityIndicator activityIndicator;
         public Login()
         {
-            
+         
+            activityIndicator = new ActivityIndicator();
+            activityIndicator.Color = Color.FromHex("#3693FF");
+            activityIndicator.VerticalOptions = LayoutOptions.Center;
+            activityIndicator.HorizontalOptions = LayoutOptions.Center;
+            AbsoluteLayout.SetLayoutFlags(activityIndicator, AbsoluteLayoutFlags.PositionProportional);
+            AbsoluteLayout.SetLayoutBounds(activityIndicator, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 
             this.BackgroundImage = "Background.png";
 
@@ -156,7 +168,8 @@ namespace Kalect.Demo
                     {
                         Padding = 50,
                         Children={
-                            fdaLogo
+                            fdaLogo,
+                                    activityIndicator
                         }
                     },
                 new StackLayout

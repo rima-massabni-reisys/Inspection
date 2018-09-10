@@ -1,9 +1,16 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DataCollection/Services/RuleService.cs">
+    <Files>
+      <File FileName="Kalect/Demo/Login.cs" Line="170" Column="35" />
+      <File FileName="Kalect/Demo/InspectionList.cs" Line="183" Column="138" />
+      <File FileName="Kalect.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="DataCollection/Services/RuleService.cs" Line="29" Column="27" />
+    </Files>
     <Pads>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State>
           <Value>(Page)this.Parent.Parent.Parent.Parent.Parent.Parent</Value>
+          <Value>this.IsBusy</Value>
         </State>
       </Pad>
     </Pads>
