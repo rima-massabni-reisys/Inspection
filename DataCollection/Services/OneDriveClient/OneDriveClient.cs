@@ -36,7 +36,7 @@ namespace DataCollection.Services.OneDrive
             requestJson["fileName"] = fileName;
             //requestJson["content"]["sourceUri"] = "https://upload.wikimedia.org/wikipedia/commons/5/55/Atelopus_zeteki1.jpg";
             requestJson["content"]["encodedFileBytes"] = encodedFileBytes;
-            requestJson["targetUser"] = "yogesh.kumar@reisystems.com";//"srikanth.devarajan@reisystems.com"; //
+            requestJson["targetUser"] = "srikanth.devarajan@reisystems.com"; //"yogesh.kumar@reisystems.com";//
             requestJson["targetTaxonomy"] = "fda/"+trackingNumber;
 
             var postObj = JsonConvert.SerializeObject(requestJson);

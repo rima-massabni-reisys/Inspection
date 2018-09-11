@@ -282,7 +282,7 @@ namespace Kalect.Demo
 
             inspectionList = new ListView();
             //inspectionList.HeightRequest = 700;
-            inspectionList.SeparatorColor = Color.FromHex("#CBCBCB");
+            //inspectionList.SeparatorColor = Color.FromHex("#CBCBCB");
 
             Content = new StackLayout
             {   //BackgroundColor = Color.FromHex("#F8F9F9"),
@@ -419,9 +419,10 @@ namespace Kalect.Demo
             //inspectionList.HeightRequest = 1000;
             inspectionList.RowHeight = 125;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
-            inspectionList.SeparatorColor = Color.Gray;
+            //inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
             inspectionList.ItemTapped += InspectionList_ItemTapped;
+            inspectionList.SeparatorVisibility = SeparatorVisibility.None;
             StopBusy();
             //UpdateInspectionCountCircles(assessments);
 
@@ -616,7 +617,19 @@ namespace Kalect.Demo
             mapLayout.Children.Add(locationArrowButton);
             rowWrapper.Children.Add(mapLayout);
 
-            View = rowWrapper;// horizontalLayout;//cellWrapper;
+            //View = rowWrapper;
+
+            StackLayout cellVerticalLayout = new StackLayout();
+            cellVerticalLayout.Orientation = StackOrientation.Vertical;
+
+            BoxView lineSeprator = new BoxView();
+            lineSeprator.HeightRequest = 5;
+            lineSeprator.BackgroundColor = Color.FromHex("#ECF0F1");
+
+            cellVerticalLayout.Children.Add(rowWrapper);
+            cellVerticalLayout.Children.Add(lineSeprator);
+
+            View = cellVerticalLayout; //rowWrapper;// horizontalLayout;//cellWrapper;
         }
     }
 }

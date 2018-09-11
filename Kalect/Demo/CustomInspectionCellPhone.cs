@@ -206,13 +206,19 @@ namespace Kalect.Demo
 
 
 
-                
+            //View = rowWrapper;
 
+            StackLayout cellVerticalLayout = new StackLayout();
+            cellVerticalLayout.Orientation = StackOrientation.Vertical;
 
+            BoxView lineSeprator = new BoxView();
+            lineSeprator.HeightRequest = 5;
+            lineSeprator.BackgroundColor = Color.FromHex("#ECF0F1");
 
-            //rowWrapper.Children.Add(mapLayout);
+            cellVerticalLayout.Children.Add(rowWrapper);
+            cellVerticalLayout.Children.Add(lineSeprator);
 
-            View = rowWrapper;// horizontalLayout;//cellWrapper;
+            View = cellVerticalLayout; //rowWrapper;// horizontalLayout;//cellWrapper;
         }
     }
 

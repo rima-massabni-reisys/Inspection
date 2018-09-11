@@ -260,7 +260,7 @@ namespace DataCollection.Views.Components
                 Directory = "Sample",
                 Name = fileName,
                 SaveToAlbum = true,
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Small
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Full //Plugin.Media.Abstractions.PhotoSize.Small
 
             });
 
