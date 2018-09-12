@@ -45,6 +45,7 @@
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.IO.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Microsoft.CSharp.dll
 /Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Runtime.Extensions.dll
+/Library/Frameworks/Xamarin.iOS.framework/Versions/11.12.0.4/lib/mono/Xamarin.iOS/Facades/System.Linq.dll
 /Users/rei/.nuget/packages/xamarin.testcloud.agent/0.21.6/lib/Xamarin.iOS/Calabash.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect/bin/Release/netstandard2.0/Kalect.dll
 /Users/rei/.nuget/packages/xam.plugin.geolocator/4.5.0.6/lib/xamarinios10/Plugin.Geolocator.dll

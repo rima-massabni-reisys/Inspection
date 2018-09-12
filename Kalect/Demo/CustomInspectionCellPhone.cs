@@ -97,9 +97,9 @@ namespace Kalect.Demo
             //mainContent.Padding = new Thickness(0, 0, 25, 0);
 
             Label inspectiontype = new Label();
-            inspectiontype.Text = "Egg Inspection";
-            inspectiontype.FontAttributes = FontAttributes.Bold;
-            inspectiontype.FontSize = 12;
+            //inspectiontype.Text = "Inspection 1200001";
+            inspectiontype.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
+            //inspectiontype.FontAttributes = FontAttributes.Bold;
 
             Label orgName = new Label();
             orgName.SetBinding(Label.TextProperty, "OrganizationName");

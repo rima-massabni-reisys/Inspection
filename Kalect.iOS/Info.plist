@@ -46,8 +46,6 @@
 	<string>This app needs to access your location.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs to access your location.</string>
-	<key>CFBundleName</key>
-	<string>Kalect</string>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIStatusBarTintParameters</key>
@@ -60,5 +58,7 @@
 			<true/>
 		</dict>
 	</dict>
+	<key>CFBundleName</key>
+	<string>Inspection</string>
 </dict>
 </plist>

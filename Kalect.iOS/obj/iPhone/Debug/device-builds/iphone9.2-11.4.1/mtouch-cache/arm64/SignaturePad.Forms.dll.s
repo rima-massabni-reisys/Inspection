@@ -89046,13 +89046,13 @@ _mono_aot_file_info:
 	.align 3
 	.quad unbox_trampoline_addresses
 
-	.long 1135,12328,406,784,70,387000831,0,118254
+	.long 1135,12328,406,784,70,387000831,0,118258
 	.long 128,8,8,9,0,25,139336,21072
 	.long 20384,16944,0,18784,20336,17104,0,12480
 	.long 1144,21064,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 25,31,22,216,175,205,159,210,138,161,135,109,167,82,244,5
+	.byte 52,2,65,119,59,149,103,67,127,110,198,121,161,56,122,196
 	.globl _mono_aot_module_SignaturePad_Forms_info
 	.align 3
 _mono_aot_module_SignaturePad_Forms_info:

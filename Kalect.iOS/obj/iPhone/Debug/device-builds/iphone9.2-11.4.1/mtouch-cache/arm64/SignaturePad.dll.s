@@ -69539,7 +69539,7 @@ _mono_aot_file_info:
 	.long 816,13440,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 145,242,203,243,59,179,3,215,37,29,62,221,27,12,195,121
+	.byte 140,214,137,103,25,167,13,209,223,188,41,39,47,188,138,9
 	.globl _mono_aot_module_SignaturePad_info
 	.align 3
 _mono_aot_module_SignaturePad_info:

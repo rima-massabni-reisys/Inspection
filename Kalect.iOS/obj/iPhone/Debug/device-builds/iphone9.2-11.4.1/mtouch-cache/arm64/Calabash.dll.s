@@ -213,7 +213,7 @@ runtime_version:
 .section __TEXT, __const
 	.align 2
 assembly_guid:
-	.asciz "C4957944-B0CF-407E-B420-DD2011A2A537"
+	.asciz "14E3BDD5-A1DB-44E1-B64B-0818D05FB21E"
 .section __TEXT, __const
 	.align 2
 assembly_name:
@@ -298,7 +298,7 @@ _mono_aot_file_info:
 	.long 32,512,0,0,0,0,0,0
 	.long 0,0,0,0,0,0,0,0
 	.long 0,0
-	.byte 149,94,37,92,219,90,29,185,242,109,9,69,251,144,218,65
+	.byte 126,8,194,197,224,56,69,200,174,254,122,250,188,83,42,165
 	.globl _mono_aot_module_Calabash_info
 	.align 3
 _mono_aot_module_Calabash_info:

@@ -29,6 +29,7 @@ namespace Kalect.Demo
                 {
                     //Save
                     DependencyService.Get<IKalectDependencyServices>().SaveImage(bitmap, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), signatureFileName);
+                    lblSuccessMessage.IsVisible = true;
                 }
                 else
                 {
@@ -49,12 +50,26 @@ namespace Kalect.Demo
         SignaturePadView signaturePadView;
         Entry txtFullName;
         Label lblFullNameValidation;
+        Label lblSuccessMessage;
         public Signature()
         {
             //ToolbarItem saveToolbarItem = new ToolbarItem();
             //saveToolbarItem.Text = "Save";
             //saveToolbarItem.Clicked += SaveToolbarItem_Clicked;
             //ToolbarItems.Add(saveToolbarItem);
+
+            Title = "Inspection - " + AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
+
+            //Success Message
+            lblSuccessMessage = new Label();
+            lblSuccessMessage.Text = "Signature Recorded. Please go back to Dashboard and Sync Inspection.";
+            lblSuccessMessage.BackgroundColor = Color.FromHex("#9DC183");
+            lblSuccessMessage.TextColor = Color.White;
+            lblSuccessMessage.HeightRequest = 40;
+            lblSuccessMessage.IsVisible = false;
+            lblSuccessMessage.HorizontalTextAlignment = TextAlignment.Center;
+            lblSuccessMessage.VerticalTextAlignment = TextAlignment.Center;
+            lblSuccessMessage.Margin = new Thickness(0, 0, 0, 0);
 
             //Form Header Label
             Label formTitle = new Label();
@@ -108,7 +123,7 @@ namespace Kalect.Demo
             };
 
             Button btnSubmit = new Button();
-            btnSubmit.Text = "Submit";
+            btnSubmit.Text = "Confirm and Accept";
             btnSubmit.BorderColor = Color.FromHex("#EAEAEA");
             btnSubmit.BorderWidth = 1;
             btnSubmit.HeightRequest = 50;
@@ -120,23 +135,31 @@ namespace Kalect.Demo
 
             Content = new StackLayout
             {
-                Padding = new Thickness(25, 25, 25, 0),
-                Children = {
-                    formTitle,
-                    new StackLayout{
-                        Orientation = StackOrientation.Horizontal,
-                        Children={
-                            lblFullName,
-                            lblFullNameStar
-                        }
-                    },
-                    txtFullName,
-                    lblFullNameValidation,
-                    lineSeparator,
-                    lblSignature,
-                    signatureLayout,
-                    btnSubmit
-                }
+                Children =
+                {
+                    lblSuccessMessage,
+                    new StackLayout
+                    {
+                        Padding = new Thickness(25, 25, 25, 0),
+                        Children = {
+                            
+                            formTitle,
+                            new StackLayout{
+                                Orientation = StackOrientation.Horizontal,
+                                Children={
+                                    lblFullName,
+                                    lblFullNameStar
+                                }
+                            },
+                            txtFullName,
+                            lblFullNameValidation,
+                            lineSeparator,
+                            lblSignature,
+                            signatureLayout,
+                            btnSubmit
+                                }
+                            }
+                    }
             };
         }
     }

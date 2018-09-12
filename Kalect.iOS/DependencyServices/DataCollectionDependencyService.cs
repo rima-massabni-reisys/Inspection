@@ -78,6 +78,20 @@ namespace Kalect.iOS.DependencyServices
 
         }
 
+        public void SaveVoiceMemo(string recordedFilePathOfVoiceMemo, string folderName, string fileName)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = documentsPath + "/" + folderName;
+
+            var filePath = Path.Combine(documentsPath, fileName);
+
+            if (File.Exists(recordedFilePathOfVoiceMemo))
+            {
+                File.Copy(recordedFilePathOfVoiceMemo, filePath, true);
+            }
+
+        }
+
         public List<FormInstanceData> LoadAllFormsFromDevice(string folderName)
         {
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

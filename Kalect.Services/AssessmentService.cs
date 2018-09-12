@@ -7,6 +7,7 @@ using Kalect.Services.Interfaces;
 using Kalect.Services.Utilities;
 using Newtonsoft.Json;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace Kalect.Services
 {
@@ -59,7 +60,7 @@ namespace Kalect.Services
             }
 
 
-            return entities;
+            return entities.OrderByDescending(x=> x.LastUpdatedDate).ToList();
         }
 
 
@@ -113,7 +114,7 @@ namespace Kalect.Services
 
             }
 
-            return metadataEntities;
+            return metadataEntities.OrderByDescending(x => x.LastUpdatedDate).ToList();
 
         }
 

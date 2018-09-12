@@ -34,6 +34,8 @@ namespace Kalect.Demo
 
         public InspectionReview()
         {
+            Title = "Inspection - " + AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString();
+
             //Form Header Label
             Label formTitle = new Label();             formTitle.Text = "Review";             formTitle.FontSize = 30;             formTitle.Margin = new Thickness(0, 0, 0, 15);             formTitle.TextColor = Color.FromHex("#B0B0B0");              ListView validationList = new ListView();             validationList.IsGroupingEnabled = true;
             validationList.GroupHeaderTemplate = new DataTemplate(typeof(CustomReviewGroupCell)); 

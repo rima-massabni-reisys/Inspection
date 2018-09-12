@@ -86,6 +86,8 @@ namespace DataCollection.Repository
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             documentsPath = documentsPath + "/" + trackingNumber;
 
+
+            //Pictures captured by camera
             string[] jpgFileList = Directory.Exists(documentsPath)
                                          ? Directory.GetFiles(documentsPath, "*.jpg")
                                             : null;
@@ -97,11 +99,36 @@ namespace DataCollection.Repository
                 await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
             }
 
-
+            //videos captured by camera
             string[] mp4FileList = Directory.Exists(documentsPath)
                                          ? Directory.GetFiles(documentsPath, "*.mp4")
                                             : null;
             foreach (string filePathAndName in mp4FileList)
+            {
+                FileInfo info = new FileInfo(filePathAndName);
+                string fileName = info.Name;
+                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
+                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
+            }
+
+            //signature captured by scratch pad
+            string[] pngFileList = Directory.Exists(documentsPath)
+                                         ? Directory.GetFiles(documentsPath, "*.png")
+                                            : null;
+            foreach (string filePathAndName in pngFileList)
+            {
+                FileInfo info = new FileInfo(filePathAndName);
+                string fileName = info.Name;
+                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
+                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
+            }
+
+
+            //voice 
+            string[] wavFileList = Directory.Exists(documentsPath)
+                                         ? Directory.GetFiles(documentsPath, "*.wav")
+                                            : null;
+            foreach (string filePathAndName in wavFileList)
             {
                 FileInfo info = new FileInfo(filePathAndName);
                 string fileName = info.Name;

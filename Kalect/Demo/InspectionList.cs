@@ -21,15 +21,17 @@ namespace Kalect.Demo
         private void ShowBusy()
         {
             this.IsBusy = true;
-            activityIndicator.IsRunning = true;
-            activityIndicator.IsVisible = true;
+            //activityIndicator.IsRunning = true;
+            //activityIndicator.IsVisible = true;
+            inspectionList.IsRefreshing = true;
         }
 
         private void StopBusy()
         {
             this.IsBusy = false;
-            activityIndicator.IsRunning = false;
-            activityIndicator.IsVisible = false;
+            //activityIndicator.IsRunning = false;
+            //activityIndicator.IsVisible = false;
+            inspectionList.IsRefreshing = false;
         }
 
         async void CompletedButton_Clicked(object sender, EventArgs e)
@@ -39,7 +41,6 @@ namespace Kalect.Demo
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
             var completeAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 3);
             inspectionList.ItemsSource = completeAssessment;
-            //UpdateInspectionCountCircles(completeAssessment);
             StopBusy();
         }
 
@@ -47,11 +48,12 @@ namespace Kalect.Demo
         async void NewButton_Clicked(object sender, EventArgs e)
         {
             ShowBusy();
+            inspectionList.IsRefreshing = true;
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
             var newAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 1);
             inspectionList.ItemsSource = newAssessment;
-            //UpdateInspectionCountCircles(newAssessment);
+            inspectionList.IsRefreshing = false;
             StopBusy();
         }
 
@@ -123,21 +125,22 @@ namespace Kalect.Demo
 
         protected async override void OnAppearing()
         {
-            //base.OnAppearing();
+            base.OnAppearing();
+
+            ShowBusy();
             if (isFirstLoad)
                 isFirstLoad = false;
             else
             {
-                ShowBusy();
-
                 AssessmentService assessmentService = new AssessmentService();
-                List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer();
+                List<AssessmentMetadataEntity> assessments = await GetListOfAllAssignedAssessmentsFromDevice();// assessmentService.GetListOfAllAssignedAssessmentsFromDevice();
                 inspectionList.ItemsSource = assessments;
                 UpdateInspectionCountCircles(assessments);
 
-                StopBusy();
             }
+            StopBusy();
         }
+
 
 
         async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromDevice()
@@ -288,7 +291,7 @@ namespace Kalect.Demo
             {   //BackgroundColor = Color.FromHex("#F8F9F9"),
                 Orientation = StackOrientation.Vertical,
                 Children = {
-                    activityIndicator,
+                    
                     new StackLayout{
                         HeightRequest = 175,
                         //BackgroundColor = Color.FromHex("#F8F9F9"),
@@ -364,6 +367,7 @@ namespace Kalect.Demo
                             }
                         }
                     },
+                    activityIndicator,
                     new StackLayout{
                         //BackgroundColor = Color.FromHex("#F8F9F9"),
                         Padding = new Thickness(25,10,25,25),
@@ -452,6 +456,7 @@ namespace Kalect.Demo
         async void SyncAction_Clicked(object sender, EventArgs e)
         {
             ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+
 
             var menuItem = (MenuItem)sender;
             var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;

@@ -11,7 +11,7 @@ namespace DataCollection.DependencyServices
         void SaveFormData(string formData, string folderName, string friendlyName, string fileName);
         string LoadFormFromDevice(string folderName, string friendlyName, string filename);
         void SaveImage(Stream bitmap, string folderName, string fileName);
-
+        void SaveVoiceMemo(string recordedFilePathOfVoiceMemo, string folderName, string fileName);
         List<FormInstanceData> LoadAllFormsFromDevice(string folderName);
     }
 }

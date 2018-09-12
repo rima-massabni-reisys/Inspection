@@ -52,7 +52,7 @@ namespace Kalect.Demo
             inspectIcon = new Image();
             inspectIcon.Source = "InspectIcon.png";
             //inspectIcon.HorizontalOptions = LayoutOptions.CenterAndExpand;
-            inspectIcon.Margin = new Thickness(0, 10, 0, 2);
+            inspectIcon.Margin = new Thickness(0, 10, 0, 0);
 
             lblInspect = new Label();
             lblInspect.Text = "Inspect";
@@ -133,7 +133,7 @@ namespace Kalect.Demo
 
             Content = new StackLayout
             {
-                
+
                 Children = {
                     new StackLayout{
                         VerticalOptions = LayoutOptions.Start,
@@ -143,10 +143,12 @@ namespace Kalect.Demo
                         HeightRequest = 60,
                         Children=
                         {
-                            
+
                             new StackLayout{
                                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                                 Orientation = StackOrientation.Horizontal,
+                                VerticalOptions = LayoutOptions.End,
+                                //Margin = new Thickness(20,0,0,0),
                                 Children = {
                                     inspectIcon,
                                     lblInspect,

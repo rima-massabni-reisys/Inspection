@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Plugin.AudioRecorder;
-
+using DataCollection.Entities;
 using Xamarin.Forms;
+using DataCollection.DependencyServices;
 
 namespace DataCollection.Views.Components
 {
@@ -30,14 +31,17 @@ namespace DataCollection.Views.Components
             {
                 PlayButton.Image = "PauseYellow.png";
                 var filePath = recorder.GetAudioFilePath();
-
+                //SaveVoiceMemo();
                 if (filePath != null)
                 {
                     PlayButton.IsEnabled = false;
                     RecordButton.IsEnabled = false;
 
                     player.Play(filePath);
+
                 }
+
+                PlayButton.Image = "PlayGreen.png";
             }
             catch (Exception ex)
             {
@@ -82,6 +86,8 @@ namespace DataCollection.Views.Components
                     await recorder.StopRecording();
 
                     RecordButton.IsEnabled = true;
+
+                    SaveVoiceMemo();
                 }
             }
             catch (Exception ex)
@@ -91,11 +97,27 @@ namespace DataCollection.Views.Components
             }
         }
 
+        void SaveVoiceMemo()
+        {
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath+ ".wav";
+
+            var filePath = recorder.GetAudioFilePath();
+            //Save
+            DependencyService.Get<IDataCollectionDependencyService>().SaveVoiceMemo(filePath, AssessmentTrackingNumber, fileName);
+
+        }
+
         Button RecordButton;
         Button PlayButton;
         Switch TimeoutSwitch;
-        public VoiceMemoView()
+        string ComponentPath;
+        string AssessmentTrackingNumber;
+        public VoiceMemoView(Component c, string formData, string assessentTrackingNumber)
         {
+            ComponentPath = c.path;
+            AssessmentTrackingNumber = assessentTrackingNumber;
+
             recorder = new AudioRecorderService
             {
                 StopRecordingAfterTimeout = true,

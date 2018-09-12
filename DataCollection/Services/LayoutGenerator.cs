@@ -96,7 +96,7 @@ namespace DataCollection.Services
                 else if (c.type.Equals(ComponentTypes.AudioRecorderView))
                 {
                     //AudioRecorderView audioRecorderView = new AudioRecorderView();//CameraView(c, formData);
-                    VoiceMemoView audioRecorderView = new VoiceMemoView();
+                    VoiceMemoView audioRecorderView = new VoiceMemoView(c, formData, assessmentTrackingNumber);
                     formComponentLayout.Children.Add(audioRecorderView);
                 }
 
