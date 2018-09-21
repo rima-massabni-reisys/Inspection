@@ -76,6 +76,7 @@ namespace Kalect.Demo
             */
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveFormData(formData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), SelectedFriendlyName, "FormData");
+            UpdateAssessmentJsonOnDevice();
 
             var answer = DisplayAlert("SAVE", "Form Saved Succesfully", "OK");
 

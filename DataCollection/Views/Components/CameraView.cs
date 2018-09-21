@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using DataCollection.DependencyServices;
 using System.Threading;
+using System.IO;
 
 namespace DataCollection.Views.Components
 {
@@ -214,9 +215,55 @@ namespace DataCollection.Views.Components
                 }
             });
             */
+            BindSavedImage();
+            //BindSavedVideo();
 
         }
 
+        private void BindSavedImage()
+        {
+            //Save
+            Stream imageStream = DependencyService.Get<IDataCollectionDependencyService>().GetImage(AssessmentTrackingNumber, GetPhotFileName());
+
+
+            if (imageStream != null)
+            {
+
+                CameraPhotoImage.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = imageStream;
+                    return stream;
+                });
+
+            }
+           
+        }
+
+        private void BindSavedVideo()
+        {
+            //Save
+            Stream imageStream = DependencyService.Get<IDataCollectionDependencyService>().GetImage(AssessmentTrackingNumber, GetVideoFileName());
+            if (imageStream != null)
+            {
+                byte[] imageStreamByte;
+                using (var memoryStream = new MemoryStream())
+                {
+                    imageStream.CopyTo(memoryStream);
+                    imageStreamByte = memoryStream.ToArray();
+                }
+
+                MemoryStream mem = new MemoryStream(imageStreamByte, 0, 100000);
+
+
+                CameraVideoImage.Source = ImageSource.FromStream(() =>
+                {
+                    var stream = mem;
+                    return stream;
+                });
+
+            }
+
+        }
 
         private async void TakePhotoButton_Clicked(object sender, EventArgs e)
         {
@@ -238,6 +285,14 @@ namespace DataCollection.Views.Components
 
          }
 
+        private string GetPhotFileName()
+        {
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
+
+            return fileName;
+        }
+
         private async void TakePhoto()
         {
             //await _semaphoreSlim.WaitAsync();
@@ -252,13 +307,13 @@ namespace DataCollection.Views.Components
                 return;
             }
 
-            string compPath = ComponentPath.Replace(".", "_");
-            string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
+            //string compPath = ComponentPath.Replace(".", "_");
+            //string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
 
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 Directory = "Sample",
-                Name = fileName,
+                Name = GetPhotFileName(),
                 SaveToAlbum = true,
                 PhotoSize = Plugin.Media.Abstractions.PhotoSize.Full //Plugin.Media.Abstractions.PhotoSize.Small
 
@@ -269,7 +324,7 @@ namespace DataCollection.Views.Components
 
 
             //Save
-            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, GetPhotFileName());
 
 
             //await this.DisplayAlert("File Location", file.Path, "OK");
@@ -303,10 +358,10 @@ namespace DataCollection.Views.Components
                 return stream;
             });
 
-            string compPath = ComponentPath.Replace(".", "_");
-            string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
+            //string compPath = ComponentPath.Replace(".", "_");
+            //string fileName = AssessmentTrackingNumber + "_" + compPath + ".jpg";
             //Save
-            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(test.GetStream(), AssessmentTrackingNumber, fileName);
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(test.GetStream(), AssessmentTrackingNumber, GetPhotFileName());
                 
 
             test.Dispose();
@@ -315,7 +370,13 @@ namespace DataCollection.Views.Components
             MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
         }
 
+        private string GetVideoFileName()
+        {
+            string compPath = ComponentPath.Replace(".", "_");
+            string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
 
+            return fileName;
+        }
         private async void ChooseVideo()
         {
             //await _semaphoreSlim.WaitAsync();
@@ -335,10 +396,10 @@ namespace DataCollection.Views.Components
                 return stream;
             });
 
-            string compPath = ComponentPath.Replace(".", "_");
-            string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
+            //string compPath = ComponentPath.Replace(".", "_");
+            //string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
             //Save
-            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, GetVideoFileName());
             MessageLabel.Text = "Video Saved"; 
 
             file.Dispose();
@@ -366,12 +427,12 @@ namespace DataCollection.Views.Components
                 return;
             }
 
-            string compPath = ComponentPath.Replace(".", "_");
-            string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
+            //string compPath = ComponentPath.Replace(".", "_");
+            //string fileName = AssessmentTrackingNumber + "_" + compPath + ".mp4";
 
             var file = await CrossMedia.Current.TakeVideoAsync(new Plugin.Media.Abstractions.StoreVideoOptions
             {
-                Name = fileName,
+                Name = GetVideoFileName(),
                 Directory = "DefaultVideos",
                 SaveToAlbum=true
             });
@@ -387,7 +448,7 @@ namespace DataCollection.Views.Components
 
 
             //Save
-            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, fileName);
+            DependencyService.Get<IDataCollectionDependencyService>().SaveImage(file.GetStream(), AssessmentTrackingNumber, GetVideoFileName());
             MessageLabel.Text = "Video Saved";
 
             file.Dispose();

@@ -274,6 +274,8 @@
     <BundleResource Include="Resources\AboutIcon%402x.png" />
     <BundleResource Include="Resources\PauseYellow.png" />
     <BundleResource Include="Resources\PlayGreen.png" />
+    <BundleResource Include="Resources\PlayRecording.png" />
+    <BundleResource Include="Resources\AudioRecording.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

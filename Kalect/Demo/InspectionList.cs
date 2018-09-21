@@ -455,8 +455,9 @@ namespace Kalect.Demo
     {
         async void SyncAction_Clicked(object sender, EventArgs e)
         {
-            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
-
+            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            //((ListView)this.Parent).IsRefreshing = true;
 
             var menuItem = (MenuItem)sender;
             var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
@@ -473,7 +474,8 @@ namespace Kalect.Demo
             }
             await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
 
-            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
+            ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
+            //((ListView)this.Parent).IsRefreshing = false;
 
         }
 
@@ -505,19 +507,19 @@ namespace Kalect.Demo
 
             if (CrossConnectivity.Current.IsConnected) 
             {
-                syncAction.Text = "Sync";  
+                syncAction.Text = "   Sync   ";  
                 syncAction.Clicked += SyncAction_Clicked;
             } else {
-                syncAction.Text = "Offline";
+                syncAction.Text = "   Offline   ";
             }  
 
-            var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png"  };
-            lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
+            //var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png"  };
+            //lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
 
 
-            //lastUpdatedAction.SetBinding()
 
-            ContextActions.Add(lastUpdatedAction);
+
+            //ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
 
             StackLayout rowWrapper = new StackLayout();
@@ -557,10 +559,16 @@ namespace Kalect.Demo
             orgAddress.SetBinding(Label.TextProperty, "OrganizationAddress");
             orgAddress.TextColor = Color.FromHex("#B0B0B0");
 
+            Label updateTimeAgo = new Label();
+            updateTimeAgo.SetBinding(Label.TextProperty, "LastUpdatedDateFormatted");
+
+            updateTimeAgo.TextColor = Color.Green;
+
 
             mainContent.Children.Add(inspectiontype);
             mainContent.Children.Add(orgName);
             mainContent.Children.Add(orgAddress);
+            mainContent.Children.Add(updateTimeAgo);
             rowWrapper.Children.Add(mainContent);
 
 

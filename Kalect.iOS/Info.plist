@@ -60,5 +60,7 @@
 	</dict>
 	<key>CFBundleName</key>
 	<string>Inspection</string>
+	<key>Custom Property</key>
+	<string></string>
 </dict>
 </plist>

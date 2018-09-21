@@ -78,6 +78,26 @@ namespace Kalect.iOS.DependencyServices
 
         }
 
+        public Stream GetImage(string folderName, string fileName)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+            documentsPath = documentsPath + "/" + folderName;
+
+            var filePath = Path.Combine(documentsPath, fileName);
+
+            if (File.Exists(filePath))
+            {
+                byte[] savedImageByte = File.ReadAllBytes(filePath);
+                MemoryStream memoryStream = new MemoryStream(savedImageByte);
+                return memoryStream;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
         public void SaveVoiceMemo(string recordedFilePathOfVoiceMemo, string folderName, string fileName)
         {
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);

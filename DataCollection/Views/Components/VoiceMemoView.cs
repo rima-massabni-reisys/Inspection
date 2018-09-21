@@ -115,6 +115,7 @@ namespace DataCollection.Views.Components
         string AssessmentTrackingNumber;
         public VoiceMemoView(Component c, string formData, string assessentTrackingNumber)
         {
+            
             ComponentPath = c.path;
             AssessmentTrackingNumber = assessentTrackingNumber;
 
@@ -140,7 +141,7 @@ namespace DataCollection.Views.Components
             RecordButton.Clicked += RecordButton_Clicked;
 
             PlayButton = new Button();
-            PlayButton.Image = "PlayGreen.png";
+            PlayButton.Image = "Play.png";
             PlayButton.Clicked += PlayButton_Clicked;
 
 

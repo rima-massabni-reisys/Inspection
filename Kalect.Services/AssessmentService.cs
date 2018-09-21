@@ -43,6 +43,7 @@ namespace Kalect.Services
                     entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
                     entity.WeatherIcon = GetWeatherIcon(entity.Weather);
                     entity.LastUpdatedDateFormatted = Convert.ToDateTime(entity.LastUpdatedDate).TimeAgo();
+
                     if (entity.AssessmentCategories != null)
                     {
                         entity.AssessmentCategoriesIcon = GetCategoryIcon(entity.AssessmentCategories);
