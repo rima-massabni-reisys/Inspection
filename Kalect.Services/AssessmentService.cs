@@ -119,6 +119,63 @@ namespace Kalect.Services
 
         }
 
+
+        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromServer(string inspectorType)
+        {
+
+            List<AssessmentEntity> assessmentResponseFromServer = await GetListOfAllAssignedAssessmentsFromServerAPICall(inspectorType);
+
+            List<AssessmentMetadataEntity> metadataEntities = new List<AssessmentMetadataEntity>();
+
+            WeatherService weatherService = new WeatherService();
+            bool isWeatherServiceAvailable = true;
+
+            foreach (AssessmentEntity entity in assessmentResponseFromServer)
+            {
+                AssessmentMetadataEntity metadataEntity = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(entity.AssessmentMetadata);
+
+                //create the map url when data is pulled the first time.
+                metadataEntity.MapUrl = "http://maps.apple.com/?daddr=" + metadataEntity.OrganizationAddress;
+                metadataEntity.LastUpdatedDateFormatted = Convert.ToDateTime(metadataEntity.LastUpdatedDate).TimeAgo();
+                metadataEntity.AssessmentCategoriesIcon = GetCategoryIcon(metadataEntity.AssessmentCategories);
+
+                try
+                {
+                    if (isWeatherServiceAvailable)
+                    {
+                        //send online.offline param to the method
+                        metadataEntity.Weather = weatherService.GetWeather(metadataEntity.OrganizationCityState);
+                        metadataEntity.WeatherIcon = GetWeatherIcon(metadataEntity.Weather);
+
+                    }
+                    else
+                    {
+                        metadataEntity.Weather = "-";
+                        metadataEntity.WeatherIcon = "NoWeather.png";
+                    }
+                }
+                catch
+                {
+                    isWeatherServiceAvailable = false;
+                    metadataEntity.Weather = "-";
+                    metadataEntity.WeatherIcon = "NoWeather.png";
+                }
+
+
+                string updatedAssessmentMetadata = JsonConvert.SerializeObject(metadataEntity);
+
+                //Store assessments metadata on the device
+                StoreAssessmentsOnDevice(updatedAssessmentMetadata, metadataEntity); //entity.AssessmentMetadata, metadataEntity);
+                StoreFormsOnDevice(metadataEntity, entity.Forms);
+                metadataEntities.Add(metadataEntity);
+
+            }
+
+            return metadataEntities.OrderByDescending(x => x.LastUpdatedDate).ToList();
+
+        }
+
+
         private string GetWeatherIcon(string weather)
         {
             string weatherLowerCase = weather.ToLower();
@@ -257,6 +314,33 @@ namespace Kalect.Services
             var response = await client.GetStringAsync("http://fda-client-api2.azurewebsites.net/api/context");
 
             List<AssessmentEntity> assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
+
+            return assessmentResponse;
+        }
+
+
+        private async Task<List<AssessmentEntity>> GetListOfAllAssignedAssessmentsFromServerAPICall(string inspectorType)
+        {
+            var client = new HttpClient();
+            //var response = client.GetStringAsync("http://handbookwebapi.azurewebsites.net/api/assessment").Result;
+            //var response = client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context").Result;
+            string response = string.Empty;
+            List<AssessmentEntity> assessmentResponse = new List<AssessmentEntity>();
+
+            if(inspectorType.Equals("lead"))
+            {
+                response = await client.GetStringAsync("http://fda-client-api-new.azurewebsites.net/api/leadcontext");    
+            }
+            else if(inspectorType.Equals("I1"))
+            {
+                response = await client.GetStringAsync("http://fda-client-api-new.azurewebsites.net/api/I1context");
+            }
+            else if (inspectorType.Equals("I2"))
+            {
+                response = await client.GetStringAsync("http://fda-client-api-new.azurewebsites.net/api/I2context");
+            }    
+
+            assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
 
             return assessmentResponse;
         }

@@ -18,6 +18,32 @@ namespace Kalect.Demo
 {
     public class InspectionList : ContentPage
     {
+        async void I2List_Clicked(object sender, EventArgs e)
+        {
+            ShowBusy();
+            AssessmentService assessmentService = new AssessmentService();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer("I2");
+
+            inspectionList.ItemsSource = assessments;
+            UpdateInspectionCountCircles(assessments);
+
+            StopBusy();
+        }
+
+
+        async void I1List_Clicked(object sender, EventArgs e)
+        {
+            ShowBusy();
+            AssessmentService assessmentService = new AssessmentService();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer("I1");
+
+            inspectionList.ItemsSource = assessments;
+            UpdateInspectionCountCircles(assessments);
+
+            StopBusy();
+        }
+
+
         private void ShowBusy()
         {
             this.IsBusy = true;
@@ -111,14 +137,15 @@ namespace Kalect.Demo
         }
 
 
-        async void RefreshList_Clicked(object sender, EventArgs e)
+        async void leadList_Clicked(object sender, EventArgs e)
         {
             ShowBusy();
             AssessmentService assessmentService = new AssessmentService();
-            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer();
+            List<AssessmentMetadataEntity> assessments = await assessmentService.GetListOfAllAssignedAssessmentsFromServer("lead");
 
             inspectionList.ItemsSource = assessments;
             UpdateInspectionCountCircles(assessments);
+
             StopBusy();
         }
 
@@ -167,7 +194,9 @@ namespace Kalect.Demo
         Button completedButton;
         Button syncButton;
         Button deleteList;
-        Button refreshList;
+        Button leadList;
+        Button I1List;
+        Button I2List;
         bool isFirstLoad;
 
         public InspectionList()
@@ -271,16 +300,36 @@ namespace Kalect.Demo
             //syncButton.FontSize = 20;
             //deleteList.HorizontalOptions = LayoutOptions.Start;
 
-            refreshList = new Button();
-            refreshList.Clicked += RefreshList_Clicked;
-            refreshList.WidthRequest = 100;
-            refreshList.HeightRequest = 40;
-            refreshList.Text = "Get All";
-            refreshList.BorderColor = Color.FromHex("#CBCBCB");
-            refreshList.BorderWidth = 1;
-            refreshList.BackgroundColor = Color.White;
-            refreshList.TextColor = Color.FromHex("#3693FF");
-            //refreshList.Padding = new Thickness(25, 0, 0, 0);
+            leadList = new Button();
+            leadList.Clicked += leadList_Clicked;
+            leadList.WidthRequest = 100;
+            leadList.HeightRequest = 40;
+            leadList.Text = "Lead";
+            leadList.BorderColor = Color.FromHex("#CBCBCB");
+            leadList.BorderWidth = 1;
+            leadList.BackgroundColor = Color.White;
+            leadList.TextColor = Color.FromHex("#3693FF");
+
+
+            I1List = new Button();
+            I1List.Clicked += I1List_Clicked;
+            I1List.WidthRequest = 100;
+            I1List.HeightRequest = 40;
+            I1List.Text = "Lead";
+            I1List.BorderColor = Color.FromHex("#CBCBCB");
+            I1List.BorderWidth = 1;
+            I1List.BackgroundColor = Color.White;
+            I1List.TextColor = Color.FromHex("#3693FF");
+
+            I2List = new Button();
+            I2List.Clicked += I2List_Clicked;
+            I2List.WidthRequest = 100;
+            I2List.HeightRequest = 40;
+            I2List.Text = "Lead";
+            I2List.BorderColor = Color.FromHex("#CBCBCB");
+            I2List.BorderWidth = 1;
+            I2List.BackgroundColor = Color.White;
+            I2List.TextColor = Color.FromHex("#3693FF");
 
 
             inspectionList = new ListView();
@@ -383,8 +432,9 @@ namespace Kalect.Demo
                                 {
                                     syncButton,
                                     deleteList,
-                                    refreshList
-
+                                    leadList,
+                                    I1List,
+                                    I2List
                                 }
                             },
                             new StackLayout
