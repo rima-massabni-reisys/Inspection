@@ -457,7 +457,7 @@ namespace Kalect.Demo
         {
             //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
             ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
-            //((ListView)this.Parent).IsRefreshing = true;
+            ((ListView)this.Parent).IsRefreshing = true;
 
             var menuItem = (MenuItem)sender;
             var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
@@ -475,7 +475,7 @@ namespace Kalect.Demo
             await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
 
             ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
-            //((ListView)this.Parent).IsRefreshing = false;
+            ((ListView)this.Parent).IsRefreshing = false;
 
         }
 
