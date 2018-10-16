@@ -822,7 +822,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "0.10.0-preview",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "compile": {
           "bin/placeholder/Kalect.dll": {}
@@ -2006,11 +2006,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect.Android/Kalect.Android.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Android/Kalect.Android.csproj",
       "projectName": "Kalect.Android",
-      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Android/Kalect.Android.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Android/Kalect.Android.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Android/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Android/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rei/.config/NuGet/NuGet.Config"
@@ -2025,8 +2025,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj"
+            "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Kalect.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Kalect.csproj"
             }
           }
         }
@@ -2062,5 +2062,17 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 3.2.0.839982 to 3.1.0.697729. Reference the package directly from the project to select a different version. \n Kalect.Android (>= 1.0.0) -> Kalect (>= 1.0.0) -> Xamarin.Forms (>= 3.2.0.839982) \n Kalect.Android (>= 1.0.0) -> Xamarin.Forms (>= 3.1.0.697729)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "MonoAndroid,Version=v8.1"
+      ]
+    }
+  ]
 }

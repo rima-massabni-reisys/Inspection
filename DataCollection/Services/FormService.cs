@@ -43,7 +43,7 @@ namespace DataCollection.Services
             formInstance.FormModelView = JsonConvert.DeserializeObject<FormModel>(formInstanceData.FormModel);
             formInstance.FormData = formInstanceData.FormData;
             formInstance.ValidationSchema = formInstanceData.ValidationSchema;
-            //formInstance.FormModelLayout = _layoutGenerator.GenerateLayout(formInstance.FormModelView, formInstance.FormData);
+            //var layout = _layoutGenerator.GenerateLayout(formInstance.FormModelView, formInstance.FormData);
             return formInstance;
         }
 

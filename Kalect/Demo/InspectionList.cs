@@ -315,7 +315,7 @@ namespace Kalect.Demo
             I1List.Clicked += I1List_Clicked;
             I1List.WidthRequest = 100;
             I1List.HeightRequest = 40;
-            I1List.Text = "Lead";
+            I1List.Text = "I1";
             I1List.BorderColor = Color.FromHex("#CBCBCB");
             I1List.BorderWidth = 1;
             I1List.BackgroundColor = Color.White;
@@ -325,7 +325,7 @@ namespace Kalect.Demo
             I2List.Clicked += I2List_Clicked;
             I2List.WidthRequest = 100;
             I2List.HeightRequest = 40;
-            I2List.Text = "Lead";
+            I2List.Text = "I2";
             I2List.BorderColor = Color.FromHex("#CBCBCB");
             I2List.BorderWidth = 1;
             I2List.BackgroundColor = Color.White;
@@ -501,6 +501,7 @@ namespace Kalect.Demo
 
     }
 
+
     public class CustomInspectionCell : ViewCell
     {
         async void SyncAction_Clicked(object sender, EventArgs e)
@@ -529,8 +530,18 @@ namespace Kalect.Demo
 
         }
 
+        async void History_Clicked(object sender, EventArgs e)
+        {
+            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            //((ListView)this.Parent).IsRefreshing = true;
 
-        void phoneButton_Clicked(object sender, EventArgs e)
+            var menuItem = (MenuItem)sender;
+            var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
+
+            await ((Page)this.Parent.Parent.Parent.Parent.Parent).Navigation.PushAsync(new InspectionHistory(selectedAssessment));
+        }
+            void phoneButton_Clicked(object sender, EventArgs e)
         {
             Xamarin.Forms.Button btn = (Button)sender;
             //var url = (string)btn.CommandParameter;
@@ -546,6 +557,7 @@ namespace Kalect.Demo
             Device.OpenUri(new Uri(url));
 
         }
+
 
 
         public CustomInspectionCell()
@@ -571,6 +583,13 @@ namespace Kalect.Demo
 
             //ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
+
+
+            var historyAction = new MenuItem { IsDestructive = false };
+            historyAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            historyAction.Text = "   Recent Assessment   ";
+            historyAction.Clicked += History_Clicked;
+            ContextActions.Add(historyAction);
 
             StackLayout rowWrapper = new StackLayout();
             rowWrapper.Orientation = StackOrientation.Horizontal;
@@ -674,11 +693,27 @@ namespace Kalect.Demo
             locationArrowButton.Image = "location-arrow.png";
             locationArrowButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
             locationArrowButton.Clicked += LocationArrowButton_Clicked;
-            locationArrowButton.HeightRequest = 60;
-            locationArrowButton.WidthRequest = 60;
+            locationArrowButton.HeightRequest = 50;
+            locationArrowButton.WidthRequest = 50;
                                
             mapLayout.Children.Add(locationArrowButton);
             rowWrapper.Children.Add(mapLayout);
+
+
+            //StackLayout historyLayout = new StackLayout();
+            //historyLayout.Orientation = StackOrientation.Vertical;
+            //historyLayout.VerticalOptions = LayoutOptions.Center;
+            //historyLayout.Margin = new Thickness(0, 0, 0, 0);
+
+            //Button historyButton = new Button();
+            //historyButton.Image = "icon_history.png";
+            //historyButton.SetBinding(Button.CommandParameterProperty, "AssessmentTrackingNumber");
+            //historyButton.Clicked += HistoryButton_Clicked;
+            //historyButton.HeightRequest = 50;
+            //historyButton.WidthRequest = 50;
+
+            //historyLayout.Children.Add(historyButton);
+            //rowWrapper.Children.Add(historyLayout);
 
             //View = rowWrapper;
 
@@ -694,6 +729,9 @@ namespace Kalect.Demo
 
             View = cellVerticalLayout; //rowWrapper;// horizontalLayout;//cellWrapper;
         }
+
+   
+
     }
 }
 

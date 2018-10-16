@@ -14,7 +14,7 @@ namespace DataCollection.Views.Components
 
         string path;
 
-        public SwitchView(Component c, string formData)
+        public SwitchView(Component c, string formData, Mode mode = Mode.Edit)
         {
             path = c.path;
             bool switchValue = false;
@@ -25,9 +25,11 @@ namespace DataCollection.Views.Components
                 switchValue = false;
             else
                 switchValue = true;
-            
+
+            if(mode == Mode.Edit){
             sw = new Switch();
-            lblAnswer= new LabelView();
+       
+
             switchViewModel = new SwitchViewModel(switchValue);
             BindingContext = switchViewModel;
 
@@ -42,11 +44,28 @@ namespace DataCollection.Views.Components
                 Content = new StackLayout
                 {
                     Children = {                      
-                        sw,lblAnswer
+                        sw
 
                 }
                 }
             };
+            }
+            else {
+                lblAnswer = new LabelView(switchValueFormData.ToString().ToUpper());
+                Content = new ScrollView
+                {
+                    Content = new StackLayout
+                    {
+                        //Padding = new Thickness(0, 0, 25, 0),
+                        //HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Children = {
+                        lblAnswer
+
+                }
+                    }
+                };
+
+            }
         }
         private void sw_Toggled(object sender, ToggledEventArgs e)
         {

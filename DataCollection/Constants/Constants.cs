@@ -15,4 +15,10 @@ namespace DataCollection
         public static string CameraView = "CameraView";
         public static string AudioRecorderView = "AudioRecorderView";
     }
+
+    public enum Mode
+    {
+        Edit =1,
+        ReadOnly=2
+    }
 }

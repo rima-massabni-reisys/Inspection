@@ -1,39 +1,48 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect/Demo/InspectionList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect.iOS/Main.cs">
     <Files>
-      <File FileName="../../../.nuget/packages/xamarin.forms/3.1.0.697729/build/netstandard2.0/Xamarin.Forms.targets" Line="36" Column="3" />
-      <File FileName="Kalect.Services/Utilities/Extension.cs" Line="37" Column="30" />
-      <File FileName="DataCollection/Services/LayoutGenerator.cs" Line="99" Column="1" />
-      <File FileName="DataCollection/Views/Components/CameraView.cs" Line="218" Column="1" />
-      <File FileName="DataCollection/DependencyServices/IDataCollectionDependencyService.cs" Line="14" Column="60" />
-      <File FileName="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" Line="83" Column="1" />
-      <File FileName="Kalect/Demo/InspectionList.cs" Line="469" Column="12" />
-      <File FileName="Kalect/Demo/CustomInspectionCellPhone.cs" Line="103" Column="1" />
-      <File FileName="DataCollection/Repository/FormRepository.cs" Line="46" Column="1" />
-      <File FileName="Kalect.Services/Entities/AssessmentMetadataEntity.cs" Line="51" Column="51" />
-      <File FileName="Kalect.Services/AssessmentService.cs" Line="46" Column="21" />
-      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="80" Column="13" />
+      <File FileName="DataCollection/Views/Components/LabelEditorView.cs" Line="78" Column="47" />
+      <File FileName="DataCollection/Views/Components/YesNoSwitchView.cs" Line="31" Column="61" />
+      <File FileName="DataCollection/Views/Components/SwitchViewModel.cs" Line="1" Column="1" />
+      <File FileName="DataCollection/Views/Components/SwitchView.cs" Line="54" Column="85" />
+      <File FileName="DataCollection/ListPage.xaml" Line="20" Column="24" />
+      <File FileName="DataCollection/HistoryView.xaml.cs" Line="1" Column="1" />
+      <File FileName="DataCollection/Services/LayoutGenerator.cs" Line="31" Column="11" />
+      <File FileName="DataCollection/Views/Components/CameraView.cs" Line="262" Column="51" />
+      <File FileName="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" Line="99" Column="1" />
+      <File FileName="DataCollection/Views/Components/VoiceMemoView.cs" Line="278" Column="51" />
+      <File FileName="DataCollection/Services/FormService.cs" Line="95" Column="75" />
+      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="246" Column="22" />
+      <File FileName="Kalect/Demo/InspectionHistoryReview.cs" Line="31" Column="32" />
+      <File FileName="Kalect/Demo/InspectionHistory.cs" Line="46" Column="32" />
+      <File FileName="Kalect.iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="443" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="416" column="13" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="16" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="43" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="107" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="81" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="36" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="87" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="47" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" relfile="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" line="103" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="245" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="501" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="474" column="13" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="16" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="43" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="107" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="81" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="36" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="87" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/AudioRecorderView.xaml.cs" relfile="DataCollection/Views/Components/AudioRecorderView.xaml.cs" line="47" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" relfile="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" line="103" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="303" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionMaster.cs" relfile="Kalect/Demo/InspectionMaster.cs" line="172" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/CustomInspectionCellPhone.cs" relfile="Kalect/Demo/CustomInspectionCellPhone.cs" line="55" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="14" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="12" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="36" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="70" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.D7878609-F17E-45C5-9C1D-1E0622BA1AEE" automaticSigning="True">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="4N96495CFH" TeamId="LCXLK73939" />
+  <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3497A7D1-7608-4620-AC16-28D2A2D616A5" automaticSigning="True">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="67U2528PY2" TeamId="LCXLK73939" />
   </MonoDevelop.Ide.ItemProperties.Kalect.iOS>
   <MonoDevelop.Ide.ItemProperties.Kalect.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />
   <MonoDevelop.Ide.ItemProperties.Kalect.Services.Test PreferredExecutionTarget="MonoDevelop.Default" />

@@ -15,19 +15,22 @@ namespace DataCollection.Views.Components
         LabelView question;
         BoxView lineSeparator;
 
-        public YesNoSwitchView(Component c, string formData)
+        public YesNoSwitchView(Component c, string formData, Mode mode = Mode.Edit)
         {
             lineSeparator = new BoxView();
             lineSeparator.HeightRequest = 1;
             lineSeparator.Color = Color.FromHex("#EAEAEA");
-            lineSeparator.Margin = new Thickness(0, 25, 0, 0);
-            switchView = new SwitchView(c, formData);
 
-            question = new LabelView(c.text,20);
+            switchView = new SwitchView(c, formData,mode);
 
-            this.Padding = new Thickness(25, 20, 25, 0);
+            question = new LabelView(c.text);
 
-            Content = new ScrollView
+
+
+            if (mode == Mode.Edit) {
+                this.Padding = new Thickness(25, 20, 25, 0);
+                lineSeparator.Margin = new Thickness(0, 25, 0, 0);
+                Content = new ScrollView
             {
                 Content = new StackLayout
                 {
@@ -39,6 +42,39 @@ namespace DataCollection.Views.Components
                     }
                 }
             };
+            }
+            else {
+                lineSeparator.Margin = new Thickness(0, 15, 0, 0);
+                Content = new ScrollView
+                {
+                    Content = new StackLayout
+                    {
+                        Orientation = StackOrientation.Vertical,
+                        Padding = new Thickness(25, 25, 25, 0),
+                        Children = {
+                             new StackLayout
+                            {
+                                Orientation = StackOrientation.Horizontal,
+                                HorizontalOptions = LayoutOptions.StartAndExpand,
+                                Children =
+                                {
+                                    question,
+                                    switchView
+                                }
+                            },
+                  
+                                            new StackLayout
+                                            {
+                         
+                                                Children =
+                                                {
+                                                    lineSeparator
+                                                }
+                                            }
+                    }
+                    }
+                };
+            }
         }
 
     }

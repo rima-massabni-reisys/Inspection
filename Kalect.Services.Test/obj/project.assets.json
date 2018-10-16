@@ -5729,11 +5729,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/Kalect.Services.Test.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services.Test/Kalect.Services.Test.csproj",
       "projectName": "Kalect.Services.Test",
-      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/Kalect.Services.Test.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services.Test/Kalect.Services.Test.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services.Test/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services.Test/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -5751,8 +5751,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj"
+            "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/Kalect.Services.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/Kalect.Services.csproj"
             }
           }
         }
@@ -5766,12 +5766,6 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.1.0",
-            "autoReferenced": true
-          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "15.7.0"
@@ -5783,6 +5777,12 @@
           "xunit.runner.visualstudio": {
             "target": "Package",
             "version": "2.3.1"
+          },
+          "Microsoft.NETCore.App": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "2.1.0",
+            "autoReferenced": true
           }
         },
         "imports": [

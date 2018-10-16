@@ -46,10 +46,13 @@ namespace DataCollection.Views.Components
 
         private readonly SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(1, 1);
 
-        public  CameraView(Component c, string formData, string assessentTrackingNumber)
+        public  CameraView(Component c, string formData, string assessentTrackingNumber, Mode mode = Mode.Edit)
         {
             AssessmentTrackingNumber = assessentTrackingNumber;
             ComponentPath = c.path;
+
+            StackLayout photoLayout;
+            StackLayout videoLayout;
 
             TakePhotoButton = new Button();
             //TakePhotoButton.Text = c.text;
@@ -65,21 +68,6 @@ namespace DataCollection.Views.Components
             ChoosePhotoButton.Image = "Camera.png";
             //ChoosePhotoButton.Text = "Choose Photo";
             //ChoosePhotoButton.Clicked += ChoosePhotoButton_Clicked;
-
-            TakeVideoButton = new Button();
-            //TakeVideoButton.Text = "Take Video";
-            TakeVideoButton.Image = "Video.png";
-            //TakeVideoButton.Clicked += TakeVideoButton_Clicked;
-            TakeVideoButton.Clicked += TakeVideoButton_Clicked1;
-
-            CameraVideoImage = new Image();
-            //CameraVideoImage.HorizontalOptions = LayoutOptions.EndAndExpand;
-            CameraVideoImage.HeightRequest = 100;
-
-            ChooseVideoButton = new Button();
-            //ChooseVideoButton.Text = "Choose Video";
-            ChooseVideoButton.Image = "Video.png";
-            //ChooseVideoButton.Clicked += ChooseVideoButton_Clicked;
 
             photoLineSeparator = new BoxView();
             photoLineSeparator.HeightRequest = 1;
@@ -97,11 +85,33 @@ namespace DataCollection.Views.Components
             Label lblTakeVideo = new Label();
             lblTakeVideo.Text = "Video";
 
-            StackLayout photoLayout = new StackLayout()
+            BindSavedImage();
+
+            if (mode == Mode.Edit)
             {
-                Orientation = StackOrientation.Horizontal,
-                HeightRequest = 100,
-                Children =
+
+                TakeVideoButton = new Button();
+                //TakeVideoButton.Text = "Take Video";
+                TakeVideoButton.Image = "Video.png";
+                //TakeVideoButton.Clicked += TakeVideoButton_Clicked;
+                TakeVideoButton.Clicked += TakeVideoButton_Clicked1;
+
+                CameraVideoImage = new Image();
+                //CameraVideoImage.HorizontalOptions = LayoutOptions.EndAndExpand;
+                CameraVideoImage.HeightRequest = 100;
+
+                ChooseVideoButton = new Button();
+                //ChooseVideoButton.Text = "Choose Video";
+                ChooseVideoButton.Image = "Video.png";
+                //ChooseVideoButton.Clicked += ChooseVideoButton_Clicked;
+
+            
+
+                photoLayout = new StackLayout()
+                {
+                    Orientation = StackOrientation.Horizontal,
+                    HeightRequest = 100,
+                    Children =
                 {
                     new StackLayout
                     {
@@ -132,18 +142,18 @@ namespace DataCollection.Views.Components
                         }
                     }
                 }
-            };
+                };
 
-            MessageLabel = new Label();
-            MessageLabel.VerticalOptions = LayoutOptions.CenterAndExpand;
-            MessageLabel.TextColor = Color.Green;
+                MessageLabel = new Label();
+                MessageLabel.VerticalOptions = LayoutOptions.CenterAndExpand;
+                MessageLabel.TextColor = Color.Green;
 
-            StackLayout videoLayout = new StackLayout()
-            {
-                Orientation = StackOrientation.Horizontal,
-                HeightRequest = 100,
-                //Padding = new Thickness(0, 10, 0, 10),
-                Children =
+                videoLayout = new StackLayout()
+                {
+                    Orientation = StackOrientation.Horizontal,
+                    HeightRequest = 100,
+                    //Padding = new Thickness(0, 10, 0, 10),
+                    Children =
                 {
                     new StackLayout
                     {
@@ -174,16 +184,13 @@ namespace DataCollection.Views.Components
                         }
                     }
                 }
-            };
+                };
 
+                Content = new StackLayout
+                {
+                    Padding = new Thickness(25, 0, 25, 0),
 
-            //Images = new List<Image>();
-
-            Content = new StackLayout
-            {
-                Padding = new Thickness(25, 0, 25, 0),
-
-                Children =
+                    Children =
                 {
                     photoLayout,
                     photoLineSeparator,
@@ -191,31 +198,82 @@ namespace DataCollection.Views.Components
                     videoLineSeparator
 
                 }
-            };
+                };
 
-            /*
-            MessagingCenter.Subscribe<object, string>(this, "PhotoMessageAnswer", (sender, arg) =>
-            {
-                //System.Diagnostics.Debug.WriteLine("User choose: {0}", arg);
-                if(arg == "Take Photo")
+                //Images = new List<Image>();
+
+
+
+                /*
+                MessagingCenter.Subscribe<object, string>(this, "PhotoMessageAnswer", (sender, arg) =>
                 {
-                    TakePhoto();
-                }
-                else if(arg == "Choose Photo")
+                    //System.Diagnostics.Debug.WriteLine("User choose: {0}", arg);
+                    if(arg == "Take Photo")
+                    {
+                        TakePhoto();
+                    }
+                    else if(arg == "Choose Photo")
+                    {
+                        ChoosePhoto();
+                    }
+                    else if(arg == "Choose Video")
+                    {
+                        ChooseVideo();
+                    }
+                    else if(arg == "Take Video")
+                    {
+                        TakeVideo();
+                    }
+                });
+                */
+            }
+            else {
+                lblTakePhoto.Text += ":";
+                if (CameraPhotoImage.Source == null)
                 {
-                    ChoosePhoto();
+                    LabelView noImage = new LabelView("No image found");
+                    photoLayout = new StackLayout()
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        HorizontalOptions = LayoutOptions.StartAndExpand,
+                        Children =
+                            {
+
+                                lblTakePhoto,
+                                noImage
+                            }
+                    };
                 }
-                else if(arg == "Choose Video")
+                else {
+                 photoLayout = new StackLayout()
                 {
-                    ChooseVideo();
-                }
-                else if(arg == "Take Video")
+                    Orientation = StackOrientation.Horizontal,
+                     HorizontalOptions = LayoutOptions.StartAndExpand,
+                     Children =
+                        {
+                            lblTakePhoto,
+                            CameraPhotoImage
+                        }
+                };
+                
+            }
+                Content = new StackLayout
                 {
-                    TakeVideo();
+                    Padding = new Thickness(25, 25, 25, 0),
+                    Orientation = StackOrientation.Vertical,
+                    Children =
+                {
+                    photoLayout,
+                    photoLineSeparator
+
+
                 }
-            });
-            */
-            BindSavedImage();
+                };  
+            }
+
+           
+
+
             //BindSavedVideo();
 
         }

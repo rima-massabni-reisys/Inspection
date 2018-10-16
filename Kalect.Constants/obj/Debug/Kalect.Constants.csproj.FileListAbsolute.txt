@@ -9,3 +9,8 @@
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.csproj.CoreCompileInputs.cache
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.dll
 /Users/rei/Documents/GitHub/Inspection/Kalect.Constants/obj/Debug/Kalect.Constants.pdb
+/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Constants/bin/Debug/Kalect.Constants.dll
+/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Constants/bin/Debug/Kalect.Constants.pdb
+/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Constants/obj/Debug/Kalect.Constants.csproj.CoreCompileInputs.cache
+/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Constants/obj/Debug/Kalect.Constants.dll
+/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Constants/obj/Debug/Kalect.Constants.pdb

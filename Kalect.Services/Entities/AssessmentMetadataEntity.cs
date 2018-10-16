@@ -56,6 +56,9 @@ namespace Kalect.Services.Entities
 
         [JsonProperty("AssessmentCategoriesIcon")]
         public string AssessmentCategoriesIcon { get; set; }
+
+        [JsonProperty("AssessmentHistory")]
+        public AssessmentHistory[] AssessmentHistory { get; set; }
     }
 
     public class Sections
@@ -72,5 +75,21 @@ namespace Kalect.Services.Entities
         [JsonProperty("SectionStatusCode")]
         public int SectionStatusCode { get; set; }
 
+    }
+
+    public class AssessmentHistory
+    {
+        [JsonProperty("AssessmentTrackingNumber")]
+        public string AssessmentTrackingNumber { get; set; }
+
+        [JsonProperty("AssessmentStartDate")]
+        public string AssessmentStartDate { get; set; }
+
+        [JsonProperty("AssessmentEndDate")]
+        public string AssessmentEndDate { get; set; }
+
+
+         [JsonProperty("AssessmentCategoriesIcon")]
+        public string AssessmentCategoriesIcon { get; set; }
     }
 }

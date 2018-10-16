@@ -64,8 +64,38 @@ namespace Kalect.Services
             return entities.OrderByDescending(x=> x.LastUpdatedDate).ToList();
         }
 
+        public async Task<List<AssessmentHistory>> GetListOfAssessmentsHistoryFromDevice(long TrackingNumber)
+        {
+            List<AssessmentMetadataEntity> entities = new List<AssessmentMetadataEntity>();
+            WeatherService weatherService = new WeatherService();
 
-        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromServer()
+            List<string> assessmentsFromDevice = await LoadAllAssessmentFromDevice();
+
+            //bool isInternetAvailable = true;
+
+            foreach (string assessment in assessmentsFromDevice)
+            {
+                AssessmentMetadataEntity entity = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(assessment);
+                if (entity.AssessmentCategories != null)
+                {
+                    entity.AssessmentCategoriesIcon = GetCategoryIcon(entity.AssessmentCategories);
+                }
+                entities.Add(entity);
+
+            }
+
+
+            entities = entities.Where(x => x.AssessmentTrackingNumber == TrackingNumber).ToList();
+
+            var history = entities.FirstOrDefault().AssessmentHistory.ToList();
+            foreach (AssessmentHistory h in history)
+            {
+                h.AssessmentCategoriesIcon = entities.FirstOrDefault().AssessmentCategoriesIcon;
+            }
+            return history;
+        }
+
+    public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromServer()
         {
             
             List<AssessmentEntity> assessmentResponseFromServer = await GetListOfAllAssignedAssessmentsFromServerAPICall();
@@ -329,15 +359,15 @@ namespace Kalect.Services
 
             if(inspectorType.Equals("lead"))
             {
-                response = await client.GetStringAsync("http://fda-client-api-new.azurewebsites.net/api/leadcontext");    
+                response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/leadcontext");    
             }
             else if(inspectorType.Equals("I1"))
             {
-                response = await client.GetStringAsync("http://fda-client-api-new.azurewebsites.net/api/I1context");
+                response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I1context");
             }
             else if (inspectorType.Equals("I2"))
             {
-                response = await client.GetStringAsync("http://fda-client-api-new.azurewebsites.net/api/I2context");
+                response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I2context");
             }    
 
             assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);

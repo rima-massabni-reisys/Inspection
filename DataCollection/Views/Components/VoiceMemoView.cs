@@ -36,7 +36,6 @@ namespace DataCollection.Views.Components
                 {
                     PlayButton.IsEnabled = false;
                     RecordButton.IsEnabled = false;
-
                     player.Play(filePath);
 
                 }
@@ -113,9 +112,9 @@ namespace DataCollection.Views.Components
         Switch TimeoutSwitch;
         string ComponentPath;
         string AssessmentTrackingNumber;
-        public VoiceMemoView(Component c, string formData, string assessentTrackingNumber)
+        public VoiceMemoView(Component c, string formData, string assessentTrackingNumber, Mode mode = Mode.Edit)
         {
-            
+
             ComponentPath = c.path;
             AssessmentTrackingNumber = assessentTrackingNumber;
 
@@ -150,12 +149,15 @@ namespace DataCollection.Views.Components
             TimeoutSwitch.VerticalOptions = LayoutOptions.Center;
             TimeoutSwitch.HorizontalOptions = LayoutOptions.EndAndExpand;
 
-
-            StackLayout voiceMemoLayout = new StackLayout()
+            StackLayout voiceMemoLayout; 
+            if (mode == Mode.Edit)
             {
-                Orientation = StackOrientation.Vertical,
-                Padding = new Thickness(25, 0, 25, 0),
-                Children = {
+
+                voiceMemoLayout = new StackLayout()
+                {
+                    Orientation = StackOrientation.Vertical,
+                    Padding = new Thickness(25, 0, 25, 0),
+                    Children = {
                     new StackLayout
                     {
                         Orientation = StackOrientation.Horizontal,
@@ -232,8 +234,92 @@ namespace DataCollection.Views.Components
                             boxView
                         }
                     }
-                } 
-            };
+                }
+                };
+            }
+            else {
+
+                var filePath = recorder.GetAudioFilePath();
+                StackLayout playFile;
+                if (filePath == null)
+                {
+                    playFile = new StackLayout
+                    {
+                        Orientation = StackOrientation.Vertical,
+                        VerticalOptions = LayoutOptions.Center,
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Children =
+                                        {
+
+                                            new Label
+                                            {
+                                                Text = "No recorded audio found",
+                                                Margin=new Thickness(5,0,0,0)
+                                            },
+                                        }
+                    };
+                }
+                else{
+                    playFile = new StackLayout
+                    {
+                        Orientation = StackOrientation.Vertical,
+                        VerticalOptions = LayoutOptions.Center,
+                        HorizontalOptions = LayoutOptions.EndAndExpand,
+                        Children =
+                                        {
+
+                                            PlayButton
+                                        }
+                    };
+                }
+                voiceMemoLayout = new StackLayout()
+                {
+                    Orientation = StackOrientation.Vertical,
+                    Padding = new Thickness(25, 25, 25, 0),
+                    Children = {
+                    new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        //HeightRequest = 100,
+                        Children =
+                        {
+                            new StackLayout
+                            {
+                                Orientation = StackOrientation.Horizontal,
+                                HorizontalOptions = LayoutOptions.StartAndExpand,
+                                Children =
+                                {
+                                    new StackLayout
+                                    {
+                                        Orientation= StackOrientation.Vertical,
+                                        VerticalOptions= LayoutOptions.Center,
+                                        HorizontalOptions=LayoutOptions.Center,
+
+                                        Children=
+                                        {
+                                            new Label
+                                            {
+                                                    Text = "Recorded Play:",
+                                                Margin=new Thickness(5,0,0,0)
+                                            },
+                                            //RecordButton
+                                        }
+                                    },
+                                   playFile
+
+                                }
+                            }
+                        }
+                    }, new StackLayout
+                    {
+                        Children=
+                        {
+                            boxView
+                        }
+                    }
+                }
+                };
+            }
 
             Content = voiceMemoLayout;
         }

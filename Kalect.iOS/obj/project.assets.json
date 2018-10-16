@@ -403,7 +403,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xamarin.Forms/3.2.0.839982": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -535,7 +535,7 @@
           "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
         }
       },
-      "Xamarin.TestCloud.Agent/0.21.6": {
+      "Xamarin.TestCloud.Agent/0.21.7": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/Calabash.dll": {}
@@ -577,7 +577,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "0.10.0-preview",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "compile": {
           "bin/placeholder/Kalect.dll": {}
@@ -1017,7 +1017,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xamarin.Forms/3.2.0.839982": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1149,7 +1149,7 @@
           "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
         }
       },
-      "Xamarin.TestCloud.Agent/0.21.6": {
+      "Xamarin.TestCloud.Agent/0.21.7": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/Calabash.dll": {}
@@ -1191,7 +1191,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "0.10.0-preview",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "compile": {
           "bin/placeholder/Kalect.dll": {}
@@ -1631,7 +1631,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xamarin.Forms/3.2.0.839982": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -1763,7 +1763,7 @@
           "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
         }
       },
-      "Xamarin.TestCloud.Agent/0.21.6": {
+      "Xamarin.TestCloud.Agent/0.21.7": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/Calabash.dll": {}
@@ -1805,7 +1805,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "0.10.0-preview",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "compile": {
           "bin/placeholder/Kalect.dll": {}
@@ -2245,7 +2245,7 @@
           "lib/xamarinios10/Xamarin.Essentials.dll": {}
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xamarin.Forms/3.2.0.839982": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS10/Xamarin.Forms.Core.dll": {},
@@ -2377,7 +2377,7 @@
           "lib/XamariniOS10/Xamarin.SimplePing.iOS.dll": {}
         }
       },
-      "Xamarin.TestCloud.Agent/0.21.6": {
+      "Xamarin.TestCloud.Agent/0.21.7": {
         "type": "package",
         "compile": {
           "lib/Xamarin.iOS/Calabash.dll": {}
@@ -2419,7 +2419,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "0.10.0-preview",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "compile": {
           "bin/placeholder/Kalect.dll": {}
@@ -3131,10 +3131,10 @@
         "xamarin.essentials.nuspec"
       ]
     },
-    "Xamarin.Forms/3.1.0.697729": {
-      "sha512": "YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
+    "Xamarin.Forms/3.2.0.839982": {
+      "sha512": "BtiTMpmTqkzPPlGvQEVrO51kC1e/vieOaGHB+bKUULER0ruf2EQ92zVRwuvLop60g0WQQJ0Arj45TNCu6qCINQ==",
       "type": "package",
-      "path": "xamarin.forms/3.1.0.697729",
+      "path": "xamarin.forms/3.2.0.839982",
       "files": [
         ".signature.p7s",
         "build/netstandard1.0/Mono.Cecil.Mdb.dll",
@@ -3276,7 +3276,7 @@
         "lib/uap10.0/Xamarin.Forms.Platform.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.dll",
         "lib/uap10.0/Xamarin.Forms.Xaml.xml",
-        "xamarin.forms.3.1.0.697729.nupkg.sha512",
+        "xamarin.forms.3.2.0.839982.nupkg.sha512",
         "xamarin.forms.nuspec"
       ]
     },
@@ -3292,16 +3292,16 @@
         "xamarin.simpleping.nuspec"
       ]
     },
-    "Xamarin.TestCloud.Agent/0.21.6": {
-      "sha512": "GuZk0wwInOrLrklUNb6Z+AkSsgjSoURGLw+T+leUQuMSMh/cI4JCuIGMvLJHwR8SHWV/mV1yvhvidRs0+stCXg==",
+    "Xamarin.TestCloud.Agent/0.21.7": {
+      "sha512": "+zk34I1237CfeM+AljHoLsSn/5C4gSNUtFkjQBTIHNru8Qvzqukk0WqHpYoqvuwn94D2RczQF2uGiNIuSBl4TA==",
       "type": "package",
-      "path": "xamarin.testcloud.agent/0.21.6",
+      "path": "xamarin.testcloud.agent/0.21.7",
       "files": [
         ".signature.p7s",
         "LICENSE",
         "epl-v10.html",
         "lib/Xamarin.iOS/Calabash.dll",
-        "xamarin.testcloud.agent.0.21.6.nupkg.sha512",
+        "xamarin.testcloud.agent.0.21.7.nupkg.sha512",
         "xamarin.testcloud.agent.nuspec"
       ]
     },
@@ -3336,8 +3336,8 @@
       "DataCollection >= 1.0.0",
       "Kalect >= 1.0.0",
       "Kalect.Services >= 1.0.0",
-      "Xamarin.Forms >= 3.1.0.697729",
-      "Xamarin.TestCloud.Agent >= 0.21.6"
+      "Xamarin.Forms >= 3.2.0.839982",
+      "Xamarin.TestCloud.Agent >= 0.21.7"
     ]
   },
   "packageFolders": {
@@ -3346,11 +3346,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/Kalect.iOS.csproj",
+      "projectUniqueName": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/Kalect.iOS.csproj",
       "projectName": "Kalect.iOS",
-      "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/Kalect.iOS.csproj",
+      "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/Kalect.iOS.csproj",
       "packagesPath": "/Users/rei/.nuget/packages/",
-      "outputPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.iOS/obj",
+      "outputPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/obj",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/rei/.config/NuGet/NuGet.Config"
@@ -3365,14 +3365,14 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect/Kalect.csproj"
+            "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Kalect.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Kalect.csproj"
             },
-            "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Inspection/DataCollection/DataCollection.csproj"
+            "/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/DataCollection.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/DataCollection.csproj"
             },
-            "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj": {
-              "projectPath": "/Users/rei/Documents/GitHub/Inspection/Kalect.Services/Kalect.Services.csproj"
+            "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/Kalect.Services.csproj": {
+              "projectPath": "/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/Kalect.Services.csproj"
             }
           }
         }
@@ -3383,11 +3383,11 @@
         "dependencies": {
           "Xamarin.Forms": {
             "target": "Package",
-            "version": "3.1.0.697729"
+            "version": "3.2.0.839982"
           },
           "Xamarin.TestCloud.Agent": {
             "target": "Package",
-            "version": "0.21.6"
+            "version": "0.21.7"
           }
         }
       }

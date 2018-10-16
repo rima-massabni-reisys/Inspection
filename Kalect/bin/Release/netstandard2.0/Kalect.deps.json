@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "50659f99f0ba2b89938d33b9ee8eb5d3872a78bd"
+    "signature": "bbb04f3976333a7381762d0bcf740eaa71a6061c"
   },
   "compilationOptions": {},
   "targets": {
@@ -21,7 +21,7 @@
           "Xam.Plugin.Media": "4.0.1.5",
           "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "0.10.0-preview",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "runtime": {
           "Kalect.dll": {}
@@ -254,7 +254,7 @@
       },
       "Plugin.Badge/2.0.0": {
         "dependencies": {
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "runtime": {
           "lib/netstandard1.4/Plugin.Badge.Abstractions.dll": {
@@ -782,7 +782,7 @@
       },
       "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
         "dependencies": {
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "runtime": {
           "lib/netstandard1.0/SignaturePad.Forms.dll": {
@@ -802,7 +802,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.1.0.697729": {
+      "Xamarin.Forms/3.2.0.839982": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -825,7 +825,7 @@
           "Plugin.AudioRecorder": "1.0.1",
           "System.Net.Http": "4.3.3",
           "Xam.Plugin.Media": "4.0.1.5",
-          "Xamarin.Forms": "3.1.0.697729"
+          "Xamarin.Forms": "3.2.0.839982"
         },
         "runtime": {
           "DataCollection.dll": {}
@@ -1431,12 +1431,12 @@
       "path": "xamarin.essentials/0.10.0-preview",
       "hashPath": "xamarin.essentials.0.10.0-preview.nupkg.sha512"
     },
-    "Xamarin.Forms/3.1.0.697729": {
+    "Xamarin.Forms/3.2.0.839982": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YlFOM9u8onIRxJwYJ3l+O0wFKqzzrDjDrgnoBr1rct+eaQKU77vFydxvTP+WxYlYzR14hYvyLNC65L84+6ke6w==",
-      "path": "xamarin.forms/3.1.0.697729",
-      "hashPath": "xamarin.forms.3.1.0.697729.nupkg.sha512"
+      "sha512": "sha512-BtiTMpmTqkzPPlGvQEVrO51kC1e/vieOaGHB+bKUULER0ruf2EQ92zVRwuvLop60g0WQQJ0Arj45TNCu6qCINQ==",
+      "path": "xamarin.forms/3.2.0.839982",
+      "hashPath": "xamarin.forms.3.2.0.839982.nupkg.sha512"
     },
     "DataCollection/1.0.0": {
       "type": "project",
