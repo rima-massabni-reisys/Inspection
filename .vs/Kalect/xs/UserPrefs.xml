@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect/Demo/InspectionList.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect.Services/AssessmentService.cs">
     <Files>
-      <File FileName="Kalect.Services/AssessmentService.cs" Line="354" Column="102" />
+      <File FileName="Kalect.Services/AssessmentService.cs" Line="259" Column="63" />
       <File FileName="Kalect/Demo/InspectionList.cs" Line="141" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
@@ -24,7 +24,8 @@
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="36" column="1" />
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="70" column="1" />
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionList.cs" relfile="Kalect/Demo/InspectionList.cs" line="141" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="385" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="364" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="350" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

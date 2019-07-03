@@ -256,7 +256,7 @@ namespace Kalect.Services
             {
                 return "cosmetics.png";
             }
-            else if (assessmentCategoryLowerCase.Contains("drungs"))
+            else if (assessmentCategoryLowerCase.Contains("drugs"))
             {
                 return "drugs.png";
             }
