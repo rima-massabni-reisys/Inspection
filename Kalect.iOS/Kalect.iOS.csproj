@@ -278,6 +278,7 @@
     <BundleResource Include="Resources\AudioRecording.png" />
     <BundleResource Include="Resources\icon_history.png" />
     <BundleResource Include="Resources\icon_history%402x.png" />
+    <BundleResource Include="Resources\product.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

@@ -175,18 +175,21 @@ namespace Kalect.Demo
             Button questionButton;
             foreach (FormGroup fg in formInstance.FormModelView.formgroups)
             {
-                questionButton = new Button();
-                questionButton.WidthRequest = 80;
-                questionButton.HeightRequest = 80;
-                questionButton.CornerRadius = 40;
-                questionButton.Margin = new Thickness(0,0, 20, 0);
-                questionButton.BackgroundColor = Color.FromHex("#EAEAEA");
-                questionButton.Text = fg.text;
-                questionButton.TextColor = Color.Black;
-                questionButton.FontSize = 20;
-                questionButton.Clicked += QuestionButton_Clicked;
-                questionButton.CommandParameter = fg;
-                questionNavigationButtonBarLayout.Children.Add(questionButton);
+                if (!fg.disabled)
+                {
+                    questionButton = new Button();
+                    questionButton.WidthRequest = 80;
+                    questionButton.HeightRequest = 80;
+                    questionButton.CornerRadius = 40;
+                    questionButton.Margin = new Thickness(0, 0, 20, 0);
+                    questionButton.BackgroundColor = Color.FromHex("#EAEAEA");
+                    questionButton.Text = fg.text;
+                    questionButton.TextColor = Color.Black;
+                    questionButton.FontSize = 20;
+                    questionButton.Clicked += QuestionButton_Clicked;
+                    questionButton.CommandParameter = fg;
+                    questionNavigationButtonBarLayout.Children.Add(questionButton);
+                }
 
             }
 

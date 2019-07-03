@@ -31,7 +31,19 @@ namespace Kalect.Demo
             aboutPage.Icon = "AboutIcon.png";
             aboutPage.Title = "About";
 
+
+            var productPage = new NavigationPage(new ProductInformation())
+            {
+                BarBackgroundColor = Color.FromHex("#025085"),
+                BarTextColor = Color.Black
+            };
+
+            productPage.Icon = "product.png";
+            productPage.Title = "Product";
+
+
             Children.Add(inspectionListPage);
+            Children.Add(productPage);
             Children.Add(aboutPage);
         }
 

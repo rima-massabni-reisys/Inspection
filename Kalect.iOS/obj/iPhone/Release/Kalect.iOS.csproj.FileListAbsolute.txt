@@ -211,3 +211,4 @@
 /Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/obj/iPhone/Release/XamlC.stamp
 /Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/obj/iPhone/Release/Kalect.iOS.csproj.CopyComplete
 /Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/obj/iPhone/Release/Kalect.iOS.exe
+/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.iOS/obj/iPhone/Release/optimized/product.png

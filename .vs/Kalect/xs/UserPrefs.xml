@@ -1,24 +1,19 @@
 ﻿<Properties StartupConfiguration="{635EAC9A-7F3C-4B1B-8500-00E200D011C8}|Default" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Kalect.iOS/Main.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Library/Frameworks/Xamarin.Android.framework/Versions/9.0.0-20/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets">
     <Files>
-      <File FileName="DataCollection/Views/Components/LabelEditorView.cs" Line="78" Column="47" />
-      <File FileName="DataCollection/Views/Components/YesNoSwitchView.cs" Line="31" Column="61" />
-      <File FileName="DataCollection/Views/Components/SwitchViewModel.cs" Line="1" Column="1" />
-      <File FileName="DataCollection/Views/Components/SwitchView.cs" Line="54" Column="85" />
-      <File FileName="DataCollection/ListPage.xaml" Line="20" Column="24" />
-      <File FileName="DataCollection/HistoryView.xaml.cs" Line="1" Column="1" />
-      <File FileName="DataCollection/Services/LayoutGenerator.cs" Line="31" Column="11" />
-      <File FileName="DataCollection/Views/Components/CameraView.cs" Line="262" Column="51" />
-      <File FileName="Kalect.iOS/DependencyServices/DataCollectionDependencyService.cs" Line="99" Column="1" />
-      <File FileName="DataCollection/Views/Components/VoiceMemoView.cs" Line="278" Column="51" />
-      <File FileName="DataCollection/Services/FormService.cs" Line="95" Column="75" />
-      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="246" Column="22" />
-      <File FileName="Kalect/Demo/InspectionHistoryReview.cs" Line="31" Column="32" />
-      <File FileName="Kalect/Demo/InspectionHistory.cs" Line="46" Column="32" />
+      <File FileName="../../../.nuget/packages/xamarin.forms/3.1.0.583944/build/netstandard2.0/Xamarin.Forms.targets" Line="44" Column="3" />
+      <File FileName="Kalect/Demo/InspectionList.cs" Line="144" Column="1" />
+      <File FileName="../../../../../Library/Frameworks/Xamarin.Android.framework/Versions/9.0.0-20/lib/xamarin.android/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1830" Column="2" />
+      <File FileName="Kalect.Services/AssessmentService.cs" Line="374" Column="44" />
+      <File FileName="Kalect.Services/Entities/AssessmentMetadataEntity.cs" Line="39" Column="23" />
+      <File FileName="Kalect.Services/WeatherService.cs" Line="31" Column="1" />
+      <File FileName="Kalect.Services/SectionManager.cs" Line="1" Column="1" />
+      <File FileName="Kalect.Services/AssessmentManager.cs" Line="5" Column="32" />
+      <File FileName="Kalect/Demo/InspectionDetail.cs" Line="176" Column="1" />
       <File FileName="Kalect.iOS/Main.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="501" column="1" />
@@ -34,14 +29,16 @@
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/Views/Components/CameraView.cs" relfile="DataCollection/Views/Components/CameraView.cs" line="303" column="1" />
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionMaster.cs" relfile="Kalect/Demo/InspectionMaster.cs" line="172" column="1" />
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/CustomInspectionCellPhone.cs" relfile="Kalect/Demo/CustomInspectionCellPhone.cs" line="55" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="14" column="1" />
-      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="12" column="1" />
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="36" column="1" />
       <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionReview.cs" relfile="Kalect/Demo/InspectionReview.cs" line="70" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect/Demo/InspectionList.cs" relfile="Kalect/Demo/InspectionList.cs" line="141" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="374" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="391" column="1" />
+      <Breakpoint file="/Users/rei/Documents/GitHub/Inspection_new_process/Kalect.Services/AssessmentService.cs" relfile="Kalect.Services/AssessmentService.cs" line="385" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3497A7D1-7608-4620-AC16-28D2A2D616A5" automaticSigning="True">
+  <MonoDevelop.Ide.ItemProperties.Kalect.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8FD7B974-F290-4B46-946D-0B5BF3FAAD99" automaticSigning="True">
     <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="67U2528PY2" TeamId="LCXLK73939" />
   </MonoDevelop.Ide.ItemProperties.Kalect.iOS>
   <MonoDevelop.Ide.ItemProperties.Kalect.Android PreferredExecutionTarget="Android.Android_Accelerated_Oreo" AndroidDesignerPreferredTheme="Theme.DeviceDefault.NoActionBar.Fullscreen" />

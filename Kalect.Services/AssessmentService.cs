@@ -54,7 +54,17 @@ namespace Kalect.Services
                     //set this to false so it does not keep hitting the server again and again
                     //isInternetAvailable = false;
                     entity.Weather = "-";
-                    entity.WeatherIcon = "NoWeather.png";
+                    if (entity.AssessmentTrackingNumber.ToString() == "1200001")
+                        entity.WeatherIcon = "Sunny.png";
+                    else if (entity.AssessmentTrackingNumber.ToString() == "1200003")
+                        entity.WeatherIcon = "Thunderstorm.png";
+                    else if (entity.AssessmentTrackingNumber.ToString() == "1200004")
+                        entity.WeatherIcon = "windy.png";
+                    else if (entity.AssessmentTrackingNumber.ToString() == "1200002")
+                        entity.WeatherIcon = "Rain.png";
+                    else
+                        entity.WeatherIcon = "Sunny.png";
+
                 }
                 entities.Add(entity);
 
@@ -181,7 +191,7 @@ namespace Kalect.Services
                     else
                     {
                         metadataEntity.Weather = "-";
-                        metadataEntity.WeatherIcon = "NoWeather.png";
+                        metadataEntity.WeatherIcon = "Sunny.png";
                     }
                 }
                 catch
@@ -357,21 +367,27 @@ namespace Kalect.Services
             string response = string.Empty;
             List<AssessmentEntity> assessmentResponse = new List<AssessmentEntity>();
 
-            if(inspectorType.Equals("lead"))
+            try
             {
-                response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/leadcontext");    
-            }
-            else if(inspectorType.Equals("I1"))
-            {
-                response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I1context");
-            }
-            else if (inspectorType.Equals("I2"))
-            {
-                response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I2context");
-            }    
+                if (inspectorType.Equals("lead"))
+                {
+                    response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/leadcontext");
+                }
+                else if (inspectorType.Equals("I1"))
+                {
+                    response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I1context");
+                }
+                else if (inspectorType.Equals("I2"))
+                {
+                    response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I2context");
+                }
 
-            assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
+                assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
+            }
+            catch(Exception ex)
+            {
 
+            }
             return assessmentResponse;
         }
 

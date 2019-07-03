@@ -16,6 +16,7 @@ namespace DataCollection.Entities
         public string text { get; set; }
         public string displayorder { get; set; }
         public List<Component> components { get; set; }
+        public bool disabled { get; set; }
     }
 
     public class FormModel

@@ -27,7 +27,6 @@
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/bin/Release/netstandard2.0/DataCollection.deps.json
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/bin/Release/netstandard2.0/DataCollection.dll
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/bin/Release/netstandard2.0/DataCollection.pdb
-/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/DataCollection.csprojAssemblyReference.cache
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/ListPage.xaml.g.cs
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/Views/Components/AudioRecorderView.xaml.g.cs
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/Views/MyPage.xaml.g.cs
@@ -37,3 +36,4 @@
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/XamlC.stamp
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/DataCollection.dll
 /Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/DataCollection.pdb
+/Users/rei/Documents/GitHub/Inspection_new_process/DataCollection/obj/Release/netstandard2.0/DataCollection.csprojAssemblyReference.cache
