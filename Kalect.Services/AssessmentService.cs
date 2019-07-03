@@ -351,7 +351,7 @@ namespace Kalect.Services
             //var response = client.GetStringAsync("http://handbookwebapi.azurewebsites.net/api/assessment").Result;
             //var response = client.GetStringAsync("http://fda-client-api20180827105916.azurewebsites.net/api/context").Result;
 
-            var response = await client.GetStringAsync("http://fda-client-api2.azurewebsites.net/api/context");
+            var response = await client.GetStringAsync("https://fdainsp-ehbs-web.reisys.io/fda-client/api/context");
 
             List<AssessmentEntity> assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
 
@@ -371,15 +371,15 @@ namespace Kalect.Services
             {
                 if (inspectorType.Equals("lead"))
                 {
-                    response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/leadcontext");
+                    response = await client.GetStringAsync("http://fdainsp-ehbs-web.reisys.io/fda-client/api/leadcontext");
                 }
                 else if (inspectorType.Equals("I1"))
                 {
-                    response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I1context");
+                    response = await client.GetStringAsync("http://fdainsp-ehbs-web.reisys.io/fda-client/api/I1context");
                 }
                 else if (inspectorType.Equals("I2"))
                 {
-                    response = await client.GetStringAsync("http://fda-client-api-new2.azurewebsites.net/api/I2context");
+                    response = await client.GetStringAsync("http://fdainsp-ehbs-web.reisys.io/fda-client/api/I2context");
                 }
 
                 assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
