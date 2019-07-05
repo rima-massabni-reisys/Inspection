@@ -144,7 +144,7 @@ namespace DataCollection.Services
             return FormModelLayout;
         }
 
-        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber)
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber, ref Switch KeySwitch, string KeySwitchName = null)
         {
             var FormModelLayout = new StackLayout();
             FormModelLayout.Orientation = StackOrientation.Vertical;
@@ -172,6 +172,10 @@ namespace DataCollection.Services
                     YesNoSwitchView yesNo = new YesNoSwitchView(c, formData);
                     formComponentLayout.Children.Add(yesNo);
                     yesNoSwitch = yesNo.switchView.sw;
+                    if (c.id == KeySwitchName)
+                    {
+                        KeySwitch = yesNoSwitch;
+                    }
                 }
                 else if (c.type.Equals(ComponentTypes.LabelEditorView))
                 {

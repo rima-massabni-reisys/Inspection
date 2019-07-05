@@ -59,7 +59,13 @@ namespace DataCollection.Services
 
         public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber)
         {
-            return _layoutGenerator.GenerateLayoutForSelectedFormGroup(fg, formData, assessmentTrackingNumber);
+            Switch temp = null;
+            return _layoutGenerator.GenerateLayoutForSelectedFormGroup(fg, formData, assessmentTrackingNumber, ref temp);
+        }
+
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber, ref Switch keySwitch, string keySwitchName = null)
+        {
+            return _layoutGenerator.GenerateLayoutForSelectedFormGroup(fg, formData, assessmentTrackingNumber, ref keySwitch, keySwitchName);
         }
 
         /*public Layout GetFormLayout(string FormModelJson)

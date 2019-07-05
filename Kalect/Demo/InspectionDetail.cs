@@ -264,8 +264,10 @@ namespace Kalect.Demo
             //Set static FormData
             FormDataService.FormData = formInstance.FormData;
             StackLayout formGroupLayout = new StackLayout();
+
+            Switch sw = null;
            
-            formGroupLayout.Children.Add(formService.GenerateLayoutForSelectedFormGroup(fg, formInstance.FormData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString()));
+            formGroupLayout.Children.Add(formService.GenerateLayoutForSelectedFormGroup(fg, formInstance.FormData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), ref sw, "CultureGrowth_C_Question1"));
 
             //check if formGroupLayout has been added for previous question. Remove that add new one.
             if (PageLayout.Children.Count == 3)
@@ -274,6 +276,20 @@ namespace Kalect.Demo
             }
             lblErrorMessage.Text = string.Empty;
             PageLayout.Children.Add(formGroupLayout);
+
+            if (sw != null)
+            {
+                if (!sw.IsToggled)
+                {
+                    questionNavigationButtonBarLayout.Children[1].IsEnabled = false;
+                    questionNavigationButtonBarLayout.Children[2].IsEnabled = false;
+                }
+
+                sw.Toggled += (object sender, ToggledEventArgs e) => {
+                    questionNavigationButtonBarLayout.Children[1].IsEnabled = e.Value;
+                    questionNavigationButtonBarLayout.Children[2].IsEnabled = e.Value;
+                };
+            }
 
         }
 
