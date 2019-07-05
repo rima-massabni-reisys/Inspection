@@ -11,7 +11,7 @@ namespace DataCollection.Views.Components
         //public variables accrssible
         public string QuestionText { get; set; }
 
-        SwitchView switchView;
+        public SwitchView switchView;
         LabelView question;
         BoxView lineSeparator;
 

@@ -7,7 +7,7 @@ namespace DataCollection.Views.Components
 {
     public class SwitchView : ContentView
     {
-        Switch sw;
+        public Switch sw;
         public string SelectedAnswerValue { get; set; }
         LabelView lblAnswer;
         SwitchViewModel switchViewModel;
@@ -28,7 +28,6 @@ namespace DataCollection.Views.Components
 
             if(mode == Mode.Edit){
             sw = new Switch();
-       
 
             switchViewModel = new SwitchViewModel(switchValue);
             BindingContext = switchViewModel;

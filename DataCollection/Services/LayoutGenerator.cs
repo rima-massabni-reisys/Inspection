@@ -162,17 +162,22 @@ namespace DataCollection.Services
             //    formGroupLayout.Children.Add(boxView);
 
             //Component Selector. Need to be more robust
+
+            Switch yesNoSwitch = null;
+            Editor textComment = null;
             foreach (Component c in fg.components)
             {
                 if (c.type.Equals(ComponentTypes.YesNoSwitchView))
                 {
                     YesNoSwitchView yesNo = new YesNoSwitchView(c, formData);
                     formComponentLayout.Children.Add(yesNo);
+                    yesNoSwitch = yesNo.switchView.sw;
                 }
                 else if (c.type.Equals(ComponentTypes.LabelEditorView))
                 {
                     LabelEditorView labelEditorView = new LabelEditorView(c, formData);
                     formComponentLayout.Children.Add(labelEditorView);
+                    textComment = labelEditorView.dataEntry;
                 }
                 else if (c.type.Equals(ComponentTypes.CameraView))
                 {
@@ -185,7 +190,26 @@ namespace DataCollection.Services
                     VoiceMemoView audioRecorderView = new VoiceMemoView(c, formData, assessmentTrackingNumber);
                     formComponentLayout.Children.Add(audioRecorderView);
                 }
+            }
 
+            if (fg.text == "A1" && yesNoSwitch != null && textComment != null)
+            {
+                if (!yesNoSwitch.IsToggled)
+                {
+                    textComment.IsEnabled = false;
+                    textComment.Text = "";
+                }
+                yesNoSwitch.Toggled += (object sender, ToggledEventArgs e) => {
+                    if (!e.Value)
+                    {
+                        textComment.IsEnabled = false;
+                        textComment.Text = "";
+                    }
+                    else
+                    {
+                        textComment.IsEnabled = true;
+                    }
+                };
             }
             //}
 
@@ -196,10 +220,6 @@ namespace DataCollection.Services
 
             return FormModelLayout;
         }
-
-
-
-
 
         /// <summary>
         /// This method is obsolete now and should be purged eventually.
@@ -294,5 +314,6 @@ namespace DataCollection.Services
         }
 
     }
+
 
 }

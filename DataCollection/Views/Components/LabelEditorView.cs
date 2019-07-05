@@ -17,7 +17,7 @@ namespace DataCollection.Views.Components
         LabelEditorViewModel lblEditorModel;
 
         LabelView lblText;
-        Editor dataEntry;
+        public Editor dataEntry;
         string editorPath;
         BoxView lineSeparator;
         public LabelEditorView(Component c, string formData, Mode mode = Mode.Edit)
@@ -47,7 +47,6 @@ namespace DataCollection.Views.Components
             dataEntry.Completed += DataEntry_Completed;
             lblText = new LabelView(lblEditorModel.LabelText);
 
-            
 
 
             var editorLayout = new StackLayout
