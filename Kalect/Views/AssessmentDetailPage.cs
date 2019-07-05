@@ -53,7 +53,7 @@ namespace Kalect.Views
         {
             //Update Assessment to inprogress
             AppDataWallet.SelectedAssessmentMetadata.AssessmentStatus = "In Progress";
-            AppDataWallet.SelectedAssessmentMetadata.AssessmentStatusCode = 2;
+            AppDataWallet.SelectedAssessmentMetadata.AssessmentStatusCode = 9;
 
             AssessmentService assessmentService = new AssessmentService();
             assessmentService.UpdateAssessmentOnDevice(JsonConvert.SerializeObject(AppDataWallet.SelectedAssessmentMetadata), AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString());

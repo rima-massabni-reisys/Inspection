@@ -65,7 +65,7 @@ namespace Kalect.Demo
             ShowBusy();
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
-            var completeAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 3);
+            var completeAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 10);
             inspectionList.ItemsSource = completeAssessment;
             StopBusy();
         }
@@ -77,7 +77,7 @@ namespace Kalect.Demo
             inspectionList.IsRefreshing = true;
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
-            var newAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 1);
+            var newAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 8);
             inspectionList.ItemsSource = newAssessment;
             inspectionList.IsRefreshing = false;
             StopBusy();
@@ -89,7 +89,7 @@ namespace Kalect.Demo
             ShowBusy();
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
-            var inProgressAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 2);
+            var inProgressAssessment = assessments.FindAll(X => X.AssessmentStatusCode == 9);
             inspectionList.ItemsSource = inProgressAssessment;
             StopBusy();
         }
@@ -494,9 +494,9 @@ namespace Kalect.Demo
 
         private void UpdateInspectionCountCircles(List<AssessmentMetadataEntity> assessments)
         {
-            newButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 1).Count.ToString();
-            inprogressButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 2).Count.ToString();
-            completedButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 3).Count.ToString();
+            newButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 8).Count.ToString();
+            inprogressButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 9).Count.ToString();
+            completedButton.Text = assessments.FindAll(X => X.AssessmentStatusCode == 10).Count.ToString();
         }
 
     }
