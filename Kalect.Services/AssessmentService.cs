@@ -105,7 +105,7 @@ namespace Kalect.Services
             return history;
         }
 
-    public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromServer()
+        public async Task<List<AssessmentMetadataEntity>> GetListOfAllAssignedAssessmentsFromServer()
         {
             
             List<AssessmentEntity> assessmentResponseFromServer = await GetListOfAllAssignedAssessmentsFromServerAPICall();
@@ -341,8 +341,6 @@ namespace Kalect.Services
 
         #endregion
 
-
-
         #region webAPI calls
 
         private async Task<List<AssessmentEntity>> GetListOfAllAssignedAssessmentsFromServerAPICall()
@@ -357,7 +355,6 @@ namespace Kalect.Services
 
             return assessmentResponse;
         }
-
 
         private async Task<List<AssessmentEntity>> GetListOfAllAssignedAssessmentsFromServerAPICall(string inspectorType)
         {
@@ -391,9 +388,19 @@ namespace Kalect.Services
             return assessmentResponse;
         }
 
-    #endregion
+        /// <summary>
+        /// Update the task status and assessment status on the server
+        /// </summary>
+        /// <param name="AssessmentId">Assessment identifier.</param>
+        public async void CompleteMobileAssessmentTask(Guid AssessmentId)
+        {
+            HttpClient client = new HttpClient();
 
-}
+            await client.PostAsync("http://fdainsp-ehbs-web.reisys.io/fda-client/api/context/CompleteAssessment?AssessmentId=" + AssessmentId.ToString(), null);
+        }
 
+        #endregion
+
+    }
 
 }

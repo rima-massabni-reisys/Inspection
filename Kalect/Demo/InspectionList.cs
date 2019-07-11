@@ -279,6 +279,7 @@ namespace Kalect.Demo
             //syncButton.Margin = new Thickness(25, 0, 0, 0);
             //syncButton.FontSize = 20;
             syncButton.HorizontalOptions = LayoutOptions.Start;
+            syncButton.Clicked += SyncButton_Clicked;
 
             if (CrossConnectivity.Current.IsConnected) 
             {
@@ -485,7 +486,12 @@ namespace Kalect.Demo
 
         }
 
-        private async void BindList()
+        void SyncButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        public async void BindList()
         {
             List<AssessmentMetadataEntity> assessments =await GetListOfAllAssignedAssessmentsFromDevice();
             inspectionList.ItemsSource = assessments;
@@ -524,6 +530,16 @@ namespace Kalect.Demo
                 await formService.SyncFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
             }
             await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
+
+            // If the assessment status is Complete, sync new status to server and remove from device
+            if (selectedAssessment.AssessmentStatusCode == 10)
+            {
+                AssessmentService assessmentService = new AssessmentService();
+                assessmentService.CompleteMobileAssessmentTask(new Guid(selectedAssessment.AssessmentId));
+                DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(selectedAssessment.AssessmentTrackingNumber);
+                ((InspectionList)this.Parent.Parent.Parent.Parent.Parent).BindList();
+            }
+
 
             ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
             //((ListView)this.Parent).IsRefreshing = false;

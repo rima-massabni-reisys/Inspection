@@ -64,25 +64,35 @@ namespace Kalect.iOS.DependencyServices
         public void DeleteAssessmentsFromDevice()
         {
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            //documentsPath = documentsPath + "/" + "1000001";
-            if (Directory.Exists(documentsPath + "/" + "693"))
-                Directory.Delete(documentsPath + "/" + "693",true);
 
-            if(Directory.Exists(documentsPath + "/" + "1000001"))
-                Directory.Delete(documentsPath + "/" + "1000001", true);
+            if(Directory.Exists(documentsPath + "/" + "1200001"))
+                Directory.Delete(documentsPath + "/" + "1200001", true);
 
-            if (Directory.Exists(documentsPath + "/" + "1000003"))
-                Directory.Delete(documentsPath + "/" + "1000002", true);
+            if (Directory.Exists(documentsPath + "/" + "1200002"))
+                Directory.Delete(documentsPath + "/" + "1200002", true);
 
-            if (Directory.Exists(documentsPath + "/" + "1000003"))
-                Directory.Delete(documentsPath + "/" + "1000003", true);
+            if (Directory.Exists(documentsPath + "/" + "1200003"))
+                Directory.Delete(documentsPath + "/" + "1200003", true);
 
-            for (int i =0; i < 10;i++)
+            if (Directory.Exists(documentsPath + "/" + "1200004"))
+                Directory.Delete(documentsPath + "/" + "1200004", true);
+
+            for (int i = 690; i < 710; i++)
             {
                 if (Directory.Exists(documentsPath + "/" + i))
                     Directory.Delete(documentsPath + "/" + i, true);
             }
 
+        }
+
+        public void DeleteAssessmentFromDevice(long AssessmentTrackingNumber)
+        {
+            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+
+            if (Directory.Exists(documentsPath + "/" + AssessmentTrackingNumber))
+            {
+                Directory.Delete(documentsPath + "/" + AssessmentTrackingNumber, true);
+            }
         }
 
         /// <summary>

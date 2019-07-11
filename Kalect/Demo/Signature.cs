@@ -3,6 +3,8 @@ using Xamarin.Forms;
 using SignaturePad.Forms;
 using System.IO;
 using Kalect.Services.Interfaces;
+using Kalect.Services;
+using Newtonsoft.Json;
 
 namespace Kalect.Demo
 {
@@ -29,6 +31,15 @@ namespace Kalect.Demo
                 {
                     //Save
                     DependencyService.Get<IKalectDependencyServices>().SaveImage(bitmap, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), signatureFileName);
+
+                    // update status to "Complete"
+                    AppDataWallet.SelectedAssessmentMetadata.AssessmentStatus = "Complete";
+                    AppDataWallet.SelectedAssessmentMetadata.AssessmentStatusCode = 10;
+                    DateTime now = DateTime.Now;
+                    AppDataWallet.SelectedAssessmentMetadata.LastUpdatedDate = DateTime.Now.ToString();
+                    AssessmentService assessmentService = new AssessmentService();
+                    assessmentService.UpdateAssessmentOnDevice(JsonConvert.SerializeObject(AppDataWallet.SelectedAssessmentMetadata), AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString());
+
                     lblSuccessMessage.IsVisible = true;
                 }
                 else

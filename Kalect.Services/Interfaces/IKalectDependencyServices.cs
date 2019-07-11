@@ -14,6 +14,7 @@ namespace Kalect.Services.Interfaces
         Task<List<string>> LoadAssessmentsMetadataFromDevice();
         bool DoesAssessmentMetadataExistsOnDevice(string folderName, string fileName);
         void DeleteAssessmentsFromDevice();
+        void DeleteAssessmentFromDevice(long AssessmentTrackingNumber);
         void UpdateAssessmentMetadata(string assessmentMetadata, string folderName, string fileName);
         void SaveImage(Stream bitmap, string folderName, string fileName);
     }
