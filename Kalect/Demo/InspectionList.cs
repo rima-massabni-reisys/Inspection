@@ -431,7 +431,7 @@ namespace Kalect.Demo
                                 Padding= new Thickness(0,0,0,0),
                                 Children=
                                 {
-                                    syncButton,
+                                    //syncButton,
                                     deleteList,
                                     leadList,
                                     I1List,
@@ -486,9 +486,36 @@ namespace Kalect.Demo
 
         }
 
-        void SyncButton_Clicked(object sender, EventArgs e)
+        async void SyncButton_Clicked(object sender, EventArgs e)
         {
+            ShowBusy();
+            List<AssessmentMetadataEntity> assessments = await GetListOfAllAssignedAssessmentsFromDevice();
+            FormService formService = new FormService();
 
+            foreach (AssessmentMetadataEntity assessment in assessments)
+            {
+                List<FormInstance> formInstances = formService.GetAllForms(assessment.AssessmentTrackingNumber.ToString());
+
+                foreach (Sections section in assessment.Sections)
+                {
+                    FormInstance formInstance = new FormInstance();
+                    formInstance = formInstances.Find(x => x.FriendlyName == section.SectionFriendlyName);
+
+                    await formService.SyncFormData(new Guid(assessment.AssessmentId), formInstance.FormData);
+                }
+                await formService.SyncMediaToOneDrive(assessment.AssessmentTrackingNumber.ToString());
+
+                // If the assessment status is Complete, sync new status to server and remove from device
+                if (assessment.AssessmentStatusCode == 10)
+                {
+                    AssessmentService assessmentService = new AssessmentService();
+                    assessmentService.CompleteMobileAssessmentTask(new Guid(assessment.AssessmentId));
+                    DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(assessment.AssessmentTrackingNumber);
+                    ((InspectionList)this.Parent.Parent.Parent.Parent.Parent).BindList();
+                }
+            }
+            BindList();
+            StopBusy();
         }
 
         public async void BindList()
@@ -537,10 +564,9 @@ namespace Kalect.Demo
                 AssessmentService assessmentService = new AssessmentService();
                 assessmentService.CompleteMobileAssessmentTask(new Guid(selectedAssessment.AssessmentId));
                 DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(selectedAssessment.AssessmentTrackingNumber);
-                ((InspectionList)this.Parent.Parent.Parent.Parent.Parent).BindList();
             }
 
-
+            ((InspectionList)this.Parent.Parent.Parent.Parent.Parent).BindList();
             ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
             //((ListView)this.Parent).IsRefreshing = false;
 
