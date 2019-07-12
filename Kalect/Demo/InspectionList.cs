@@ -44,7 +44,7 @@ namespace Kalect.Demo
         }
 
 
-        private void ShowBusy()
+        public void ShowBusy()
         {
             this.IsBusy = true;
             //activityIndicator.IsRunning = true;
@@ -52,7 +52,7 @@ namespace Kalect.Demo
             inspectionList.IsRefreshing = true;
         }
 
-        private void StopBusy()
+        public void StopBusy()
         {
             this.IsBusy = false;
             //activityIndicator.IsRunning = false;
@@ -191,7 +191,7 @@ namespace Kalect.Demo
         ListView inspectionList;
         Button newButton;
         Button inprogressButton;
-        Button completedButton;
+        public Button completedButton;
         Button syncButton;
         Button deleteList;
         Button leadList;
@@ -539,9 +539,13 @@ namespace Kalect.Demo
     {
         async void SyncAction_Clicked(object sender, EventArgs e)
         {
-            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
-            ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
-            //((ListView)this.Parent).IsRefreshing = true;
+            InspectionList inspectionList = this.Parent.Parent.Parent.Parent.Parent as InspectionList;
+
+            if (inspectionList != null)
+            {
+                inspectionList.ShowBusy();
+                //((ListView)this.Parent).IsRefreshing = true;
+            }
 
             var menuItem = (MenuItem)sender;
             var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
@@ -564,11 +568,18 @@ namespace Kalect.Demo
                 AssessmentService assessmentService = new AssessmentService();
                 assessmentService.CompleteMobileAssessmentTask(new Guid(selectedAssessment.AssessmentId));
                 DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(selectedAssessment.AssessmentTrackingNumber);
+                if (int.TryParse(inspectionList.completedButton.Text, out int completedCount) && inspectionList != null)
+                {
+                    inspectionList.completedButton.Text = (--completedCount).ToString();
+                }
             }
 
-            ((InspectionList)this.Parent.Parent.Parent.Parent.Parent).BindList();
-            ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
-            //((ListView)this.Parent).IsRefreshing = false;
+            if (inspectionList != null)
+            {
+                inspectionList.BindList();
+                inspectionList.StopBusy();
+                //((ListView)this.Parent).IsRefreshing = false;
+            }
 
         }
 
