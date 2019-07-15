@@ -341,7 +341,7 @@ namespace Kalect.Demo
             {   //BackgroundColor = Color.FromHex("#F8F9F9"),
                 Orientation = StackOrientation.Vertical,
                 Children = {
-                    
+
                     new StackLayout{
                         HeightRequest = 175,
                         //BackgroundColor = Color.FromHex("#F8F9F9"),
@@ -444,7 +444,7 @@ namespace Kalect.Demo
                                 Padding = 1,
                                 Margin = 0,
                                 Children=
-                                {  
+                                {
                                     inspectionList
                                 }
                             }
@@ -478,6 +478,7 @@ namespace Kalect.Demo
             inspectionList.HasUnevenRows = false;
             inspectionList.ItemTapped += InspectionList_ItemTapped;
             inspectionList.SeparatorVisibility = SeparatorVisibility.None;
+            inspectionList.HasUnevenRows = true;
             StopBusy();
             //UpdateInspectionCountCircles(assessments);
 
