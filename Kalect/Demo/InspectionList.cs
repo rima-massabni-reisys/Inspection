@@ -510,7 +510,8 @@ namespace Kalect.Demo
                 if (assessment.AssessmentStatusCode == 10)
                 {
                     AssessmentService assessmentService = new AssessmentService();
-                    assessmentService.CompleteMobileAssessmentTask(new Guid(assessment.AssessmentId));
+                    assessmentService.CompleteMobileAssessmentTask(new Guid(assessment.AssessmentId),
+                                                                   assessment.AssessmentTrackingNumber);
                     DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(assessment.AssessmentTrackingNumber);
                     ((InspectionList)this.Parent.Parent.Parent.Parent.Parent).BindList();
                 }
@@ -567,7 +568,8 @@ namespace Kalect.Demo
             if (selectedAssessment.AssessmentStatusCode == 10)
             {
                 AssessmentService assessmentService = new AssessmentService();
-                assessmentService.CompleteMobileAssessmentTask(new Guid(selectedAssessment.AssessmentId));
+                assessmentService.CompleteMobileAssessmentTask(new Guid(selectedAssessment.AssessmentId),
+                                                               selectedAssessment.AssessmentTrackingNumber);
                 DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(selectedAssessment.AssessmentTrackingNumber);
                 if (int.TryParse(inspectionList.completedButton.Text, out int completedCount) && inspectionList != null)
                 {
