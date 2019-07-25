@@ -29,7 +29,10 @@ namespace DataCollection.Services.OneDrive
             string encodedFileBytes = Convert.ToBase64String(File.ReadAllBytes(filePathAndName));
 
             // append "/direct" to service path
-            Configuration.OneDriveRouteUri += "/direct";
+            if (!Configuration.OneDriveRouteUri.EndsWith("/direct"))
+            {
+                Configuration.OneDriveRouteUri += "/direct";
+            }
 
             // make request
             var response = new OneDriveClient().PostFile(new UploadRequest
