@@ -14,6 +14,7 @@ using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
 using System.Text;
 using DataCollection.Services.OneDrive;
+using System.Linq;
 //using System.Net.Http.Extensions;
 //using System.Net.Http.Formatting;
 
@@ -43,7 +44,7 @@ namespace DataCollection.Repository
 
         public async Task SyncFormData(Guid reportId, string formData)
         {
-            string url = "http://fda-client-api2.azurewebsites.net/api/datacollection/" + reportId; //"http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/164c2015-2ec4-4744-907f-36115a08b1e6";
+            string url = "http://fdainsp-ehbs-web.reisys.io/fda-client/api/datacollection/" + reportId; //"http://fda-client-api20180827105916.azurewebsites.net/api/datacollection/164c2015-2ec4-4744-907f-36115a08b1e6";
 
             var jObject = JObject.Parse(formData);
 
@@ -81,61 +82,37 @@ namespace DataCollection.Repository
         {
             OneDriveClient oneDriveClient = new OneDriveClient();
 
-
-
+            List<string> allFiles = new List<string>();
             var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
             documentsPath = documentsPath + "/" + trackingNumber;
 
+            if (!Directory.Exists(documentsPath))
+            {
+                return;
+            }
 
             //Pictures captured by camera
-            string[] jpgFileList = Directory.Exists(documentsPath)
-                                         ? Directory.GetFiles(documentsPath, "*.jpg")
-                                            : null;
-            foreach(string filePathAndName in jpgFileList)
-            {
-                FileInfo info = new FileInfo(filePathAndName);
-                string fileName = info.Name;
-                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
-                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
-            }
-
+            allFiles.AddRange(Directory.GetFiles(documentsPath, "*.jpg").ToList());
             //videos captured by camera
-            string[] mp4FileList = Directory.Exists(documentsPath)
-                                         ? Directory.GetFiles(documentsPath, "*.mp4")
-                                            : null;
-            foreach (string filePathAndName in mp4FileList)
-            {
-                FileInfo info = new FileInfo(filePathAndName);
-                string fileName = info.Name;
-                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
-                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
-            }
-
+            allFiles.AddRange(Directory.GetFiles(documentsPath, "*.mp4").ToList());
             //signature captured by scratch pad
-            string[] pngFileList = Directory.Exists(documentsPath)
-                                         ? Directory.GetFiles(documentsPath, "*.png")
-                                            : null;
-            foreach (string filePathAndName in pngFileList)
+            allFiles.AddRange(Directory.GetFiles(documentsPath, "*.png").ToList());
+            //voice
+            allFiles.AddRange(Directory.GetFiles(documentsPath, "*.wav").ToList());
+
+            foreach (string filePathAndName in allFiles)
             {
-                FileInfo info = new FileInfo(filePathAndName);
-                string fileName = info.Name;
-                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
-                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
+                try
+                {
+                    FileInfo info = new FileInfo(filePathAndName);
+                    string fileName = info.Name;
+                    await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
+                }
+                catch(Exception)
+                {
+                    // move on to the next file
+                }
             }
-
-
-            //voice 
-            string[] wavFileList = Directory.Exists(documentsPath)
-                                         ? Directory.GetFiles(documentsPath, "*.wav")
-                                            : null;
-            foreach (string filePathAndName in wavFileList)
-            {
-                FileInfo info = new FileInfo(filePathAndName);
-                string fileName = info.Name;
-                //var imagePath = "/Users/rei/Library/" + "693_CellCultureandFermentation_A1_CellCultureandFermentation_A_Question1Camera.jpg"; //documentsPath + "/" + fileName;
-                await oneDriveClient.PostMediaToOneDrive(filePathAndName, fileName, trackingNumber);
-            }
-
         }
 
 
