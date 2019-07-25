@@ -392,11 +392,14 @@ namespace Kalect.Services
         /// Update the task status and assessment status on the server
         /// </summary>
         /// <param name="AssessmentId">Assessment identifier.</param>
-        public async void CompleteMobileAssessmentTask(Guid AssessmentId)
+        public async void CompleteMobileAssessmentTask(Guid AssessmentId, long AssessmentTrackingNumber)
         {
             HttpClient client = new HttpClient();
 
-            await client.PostAsync("http://fdainsp-ehbs-web.reisys.io/fda-client/api/context/CompleteAssessment?AssessmentId=" + AssessmentId.ToString(), null);
+            await client.PostAsync("http://fdainsp-ehbs-web.reisys.io/fda-client/api/context/CompleteAssessment"
+                                       + "?AssessmentId=" + AssessmentId.ToString()
+                                   + "&AssessmentTrackingNumber=" + AssessmentTrackingNumber.ToString()
+                                   , null);
         }
 
         #endregion
