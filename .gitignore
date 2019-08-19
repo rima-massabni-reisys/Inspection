@@ -6,8 +6,11 @@ Kalect.iOS/obj/
 Kalect.Services.Test/bin/
 Kalect.Services.Test/obj/
 Kalect.UITests/bin/
+Kalect/bin/
+Kalect/obj/
 
-
+**/obj/**
+**/bin/**
 
 #OS junk files
 [Tt]humbs.db
