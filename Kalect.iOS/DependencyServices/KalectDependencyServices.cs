@@ -6,6 +6,8 @@ using Xamarin.Forms;
 using Kalect.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Kalect.Services.Entities;
+using System.Net;
 
 [assembly: Dependency(typeof(KalectDependencyServices))]
 namespace Kalect.iOS.DependencyServices
@@ -60,6 +62,32 @@ namespace Kalect.iOS.DependencyServices
 
         }
         */
+
+        private string CreateWebAttachmentsLocalFolder(long trackingNumber, string friendlyName)
+        {
+            string assessmentFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), trackingNumber.ToString(), friendlyName, "webattachments");
+
+            if (!Directory.Exists(assessmentFolderPath))
+            {
+                Directory.CreateDirectory(assessmentFolderPath);
+            }
+
+            return assessmentFolderPath;
+        }
+
+        public void DownloadWebAttachments(long trackingNumber, string friendlyName, List<WebAttachmentEntity> attachmentsInfo)
+        {
+            string localFolderPath = CreateWebAttachmentsLocalFolder(trackingNumber, friendlyName);
+            using (WebClient webClient = new WebClient())
+            {
+                foreach (WebAttachmentEntity attInfo in attachmentsInfo)
+                {
+                    string fileUri = "http://fdainsp-ehbs-web.reisys.io/HVISSubmission/" + attInfo.Path.Replace("\\", "/");
+                    string fileLocalPath = Path.Combine(localFolderPath, attInfo.Name);
+                    webClient.DownloadFile(new Uri(fileUri), fileLocalPath);
+                }
+            }
+        }
 
         public void DeleteAssessmentsFromDevice()
         {

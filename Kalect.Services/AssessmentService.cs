@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Kalect.Services.Entities;
@@ -380,6 +382,19 @@ namespace Kalect.Services
                 }
 
                 assessmentResponse = JsonConvert.DeserializeObject<List<AssessmentEntity>>(response);
+
+                foreach (AssessmentEntity assessment in assessmentResponse)
+                {
+                    AssessmentMetadataEntity metaData = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(assessment.AssessmentMetadata);
+                    foreach (FormEntity form in assessment.Forms)
+                    {
+                        List<WebAttachmentEntity> webAttachments = JsonConvert.DeserializeObject<List<WebAttachmentEntity>>(form.WebAttachments);
+                        if (webAttachments.Count() > 0)
+                        {
+                            DependencyService.Get<IKalectDependencyServices>().DownloadWebAttachments(metaData.AssessmentTrackingNumber, form.FriendlyName, webAttachments);
+                        }
+                    }
+                }
             }
             catch(Exception ex)
             {

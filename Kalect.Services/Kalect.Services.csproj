@@ -44,6 +44,7 @@
     <Compile Include="Interfaces\IDeviceOrientationDependenyServices.cs" />
     <Compile Include="Entities\DeviceOrientation.cs" />
     <Compile Include="Utilities\Extension.cs" />
+    <Compile Include="Entities\WebAttachmentEntity.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Kalect.Constants\Kalect.Constants.csproj">

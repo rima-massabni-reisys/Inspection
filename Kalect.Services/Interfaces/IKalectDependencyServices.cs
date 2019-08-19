@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Kalect.Services.Entities;
 
 namespace Kalect.Services.Interfaces
 {
@@ -13,6 +14,7 @@ namespace Kalect.Services.Interfaces
         void SaveFormsOnDevice(string fileContent, string folderName, string friendlyName, string fileName);
         Task<List<string>> LoadAssessmentsMetadataFromDevice();
         bool DoesAssessmentMetadataExistsOnDevice(string folderName, string fileName);
+        void DownloadWebAttachments(long trackingNumber, string friendlyName, List<WebAttachmentEntity> attachmentsInfo);
         void DeleteAssessmentsFromDevice();
         void DeleteAssessmentFromDevice(long AssessmentTrackingNumber);
         void UpdateAssessmentMetadata(string assessmentMetadata, string folderName, string fileName);

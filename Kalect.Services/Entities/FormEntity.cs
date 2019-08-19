@@ -10,5 +10,7 @@ namespace Kalect.Services.Entities
         public string FormData { get; set; }
 
         public string ValidationSchema { get; set; }
+
+        public string WebAttachments { get; set; }
     }
 }
