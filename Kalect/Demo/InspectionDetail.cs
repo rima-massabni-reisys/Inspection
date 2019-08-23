@@ -39,7 +39,6 @@ namespace Kalect.Demo
 
         }
 
-
         void SaveToolbarItem_Clicked(object sender, EventArgs e)
         {
             SaveAction();
@@ -49,45 +48,12 @@ namespace Kalect.Demo
         {
             //Read formData
             string formData = FormDataService.FormData;
-
-            /*
-            //Validate
-            JObject fd = JObject.Parse(formData);
-            IList<string> messages;
-            JSchema schema = JSchema.Parse(ValidationSchema);
-            bool valid = fd.IsValid(schema, out messages);
-
-            IList<string> errorMessages = messages.ToArray();
-            List<string> errorMessageToDisplay = new List<string>();
-            foreach (string errorMessage in errorMessages)
-            {
-                foreach (Component comp in formGroup.components)
-                {
-                    if (errorMessage.Contains(comp.path))
-                    {
-                        errorMessageToDisplay.Add(errorMessage);
-                    }
-                }
-
-            }
-
-            //Show Error
-            lblErrorMessage.Text = string.Join(Environment.NewLine, errorMessageToDisplay.ToArray());
-            */
+            
             //Save
             DependencyService.Get<IDataCollectionDependencyService>().SaveFormData(formData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), SelectedFriendlyName, "FormData");
             UpdateAssessmentJsonOnDevice();
 
             var answer = DisplayAlert("SAVE", "Form Saved Succesfully", "OK");
-
-            /*if (errorMessageToDisplay.Count == 0)
-            {
-                var answer = DisplayAlert("Saved with No Errors", "Form Saved Succesfully", "OK");
-            }
-            else
-            {
-                var answer = DisplayAlert("Saved With Errors (" + errorMessageToDisplay.Count + ")", "Please check the Error messages for more details.", "OK");
-            }*/
         }
 
         void OrientationSensor_ReadingChanged(object sender, OrientationSensorChangedEventArgs e)
@@ -134,9 +100,6 @@ namespace Kalect.Demo
             formService = new FormService();
 
             CreateToolBar();
-            //NavigationPage.SetHasNavigationBar(this, false);
-
-            //SetNavigationBarOnOrientation();
 
             CreateErrorLabel();
 
@@ -201,36 +164,11 @@ namespace Kalect.Demo
 
             LoadFirstQuestionByDefault(formGroup);
 
-            //ScrollView scrollView = new ScrollView();
-
-            //Subscribe to message to show displayaction sheet on click of camera
-
-            /*MessagingCenter.Subscribe<object, List<string>>(this, "PhotoMessageQuestion", async (sender, arg) =>
-            {
-                var photoAction = await DisplayActionSheet(arg[0], arg[1], arg[2],arg[3]);
-                MessagingCenter.Send<object, string>(this, "PhotoMessageAnswer", photoAction);
-                //unsubscribe
-                //MessagingCenter.Unsubscribe<object, List<string>>(this, "PhotoMessageQuestion");
-            });*/
-
-            //Final Page Content
-            //Content = _pageLayout;
-            //scrollView = new ScrollView();
-            //Content = PageLayout;
             Content = new ScrollView
             {
                 Content = PageLayout
             };
-
         }
-
-        /*protected override void OnDisappearing()
-        {
-            //base.OnDisappearing();
-            MessagingCenter.Unsubscribe<object, List<string>>(this, "PhotoMessageQuestion");
-            MessagingCenter.Unsubscribe<object, string>(this, "PhotoMessageAnswer");
-            //MessagingCenter.Unsubscribe<Application, SocketScanInfo>(this, "OnDecodedData");
-        }*/
 
         private void CreateToolBar()
         {
@@ -253,9 +191,7 @@ namespace Kalect.Demo
             Button frstbtn = (Button)firstButton;
             frstbtn.BackgroundColor  = Color.FromHex("#3693FF");
             frstbtn.TextColor = Color.White;
-            //firstButton.SetBinding(Button.TextColorProperty, "#FFFFFF");
-
-
+            
             LoadQuestions(fg);
         }
 
@@ -267,7 +203,7 @@ namespace Kalect.Demo
 
             Switch sw = null;
            
-            formGroupLayout.Children.Add(formService.GenerateLayoutForSelectedFormGroup(fg, formInstance.FormData, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), ref sw, "CultureGrowth_C_Question1"));
+            formGroupLayout.Children.Add(formService.GenerateLayoutForSelectedFormGroup(fg, formInstance.FormData, formInstance.WebAttachments, AppDataWallet.SelectedAssessmentMetadata.AssessmentTrackingNumber.ToString(), ref sw, "CultureGrowth_C_Question1"));
 
             //check if formGroupLayout has been added for previous question. Remove that add new one.
             if (PageLayout.Children.Count == 3)
@@ -290,7 +226,6 @@ namespace Kalect.Demo
                     questionNavigationButtonBarLayout.Children[2].IsEnabled = e.Value;
                 };
             }
-
         }
 
         private void UpdateAssessmentJsonOnDevice()

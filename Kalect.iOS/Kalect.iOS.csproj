@@ -280,6 +280,10 @@
     <BundleResource Include="Resources\icon_history.png" />
     <BundleResource Include="Resources\icon_history%402x.png" />
     <BundleResource Include="Resources\product.png" />
+    <BundleResource Include="Resources\attachment_doc.png" />
+    <BundleResource Include="Resources\attachment_pdf.png" />
+    <BundleResource Include="Resources\attachment_txt.png" />
+    <BundleResource Include="Resources\attachment_xls.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

@@ -66,24 +66,15 @@ namespace Kalect.Demo
             var inspectionDetailCell = new DataTemplate(typeof(InspectionDetailCell));
             ListView assessmentListView = new ListView
             {
-                ItemsSource = GetLeftMenuItemsList(), //GetLeftMenuItems(),
+                ItemsSource = GetLeftMenuItemsList(),
                 ItemTemplate = inspectionDetailCell,
                 BackgroundColor = Color.FromHex("#F8F9F9")
             };
-
-            //SetSplitModeOnOrientation();
-
-            /*
-            //Bind forms
-            inspectionList.ItemsSource = assessments;
-            inspectionList.ItemTemplate = customAssessmentCell;*/
 
             assessmentListView.SeparatorVisibility = SeparatorVisibility.None;
 
             IsGestureEnabled = false;
             this.WidthRequest = 200;
-
-
 
             this.Master = new ContentPage
             {
@@ -93,8 +84,6 @@ namespace Kalect.Demo
 
                 Content = new StackLayout
                 {
-
-                    //Padding = new Thickness(0, 20, 0, 0),
                     Margin = new Thickness(0, 0, 0, 0),
                     Padding = 0,
                     Children =
@@ -105,7 +94,6 @@ namespace Kalect.Demo
                         },
                         assessmentListView
                     }
-
                 }
             };
 
@@ -113,7 +101,7 @@ namespace Kalect.Demo
             assessmentListView.ItemSelected += (sender, args) =>
             {
                 LeftMenuItem selectedLeftMenuItem = (LeftMenuItem)args.SelectedItem;
-                //((ListView)sender).SelectedItem = Color.FromHex("#3693FF");
+                
                 IsGestureEnabled = false;
                 if (selectedLeftMenuItem.DisplayName.Equals("Submit"))
                 {
@@ -122,8 +110,6 @@ namespace Kalect.Demo
                         BarBackgroundColor = Color.FromHex("#025085"),
                         BarTextColor = Color.White
                     };
-                    
-
                 }
                 else if(selectedLeftMenuItem.DisplayName.Equals("Review"))
                 {
@@ -132,7 +118,6 @@ namespace Kalect.Demo
                         BarBackgroundColor = Color.FromHex("#025085"),
                         BarTextColor = Color.White
                     };
-                        //new NavigationPage(new GroupedList()); //new NavigationPage(new InspectionReview());
                 }
                 else if(selectedLeftMenuItem.DisplayName.Equals(""))
                 {
@@ -140,9 +125,6 @@ namespace Kalect.Demo
                 }
                 else
                 {
-                    //get the friendlyname of the selected left menu item
-                    //string selectedFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName == args.SelectedItem.ToString()).SectionFriendlyName;
-
                     this.Detail = new NavigationPage(new InspectionDetail(AppDataWallet.SelectedAssessmentMetadata.Sections.FirstOrDefault<Sections>(X => X.SectionDisplayName ==  selectedLeftMenuItem.DisplayName)))
                     {
                         BarBackgroundColor = Color.FromHex("#025085"),
@@ -158,13 +140,11 @@ namespace Kalect.Demo
 
             };
 
-            //string defaultFirstFriendlyName = AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>().SectionFriendlyName;
             this.Detail = new NavigationPage(new InspectionDetail(AppDataWallet.SelectedAssessmentMetadata.Sections.First<Sections>()))
             {
                 BarBackgroundColor = Color.FromHex("#025085"),
                 BarTextColor = Color.White
             };
-
         }
 
         private List<string> GetLeftMenuItems()

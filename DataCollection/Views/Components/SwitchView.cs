@@ -27,27 +27,27 @@ namespace DataCollection.Views.Components
                 switchValue = true;
 
             if(mode == Mode.Edit){
-            sw = new Switch();
+                sw = new Switch();
 
-            switchViewModel = new SwitchViewModel(switchValue);
-            BindingContext = switchViewModel;
+                switchViewModel = new SwitchViewModel(switchValue);
+                BindingContext = switchViewModel;
 
-            sw.SetBinding(Switch.IsToggledProperty, "SwitchValue");
-            sw.BindingContext = switchViewModel;
+                sw.SetBinding(Switch.IsToggledProperty, "SwitchValue");
+                sw.BindingContext = switchViewModel;
 
-            //Switch command
-            sw.Toggled += sw_Toggled;
+                //Switch command
+                sw.Toggled += sw_Toggled;
 
-            Content = new ScrollView
-            {
-                Content = new StackLayout
+                Content = new ScrollView
                 {
-                    Children = {                      
-                        sw
+                    Content = new StackLayout
+                    {
+                        Children = {                      
+                            sw
 
-                }
-                }
-            };
+                        }
+                    }
+                };
             }
             else {
                 lblAnswer = new LabelView(switchValueFormData.ToString().ToUpper());

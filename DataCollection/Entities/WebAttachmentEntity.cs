@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Kalect.Services.Entities
+namespace DataCollection.Entities
 {
     public class WebAttachmentEntity
     {

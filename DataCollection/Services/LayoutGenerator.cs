@@ -8,21 +8,16 @@ namespace DataCollection.Services
 {
     public class LayoutGenerator
     {
-        public LayoutGenerator()
+        public Layout GenerateLayout(string trackingNumber)
         {
-        }
-
-
-        public Layout GenerateLayout(string trackingNumber){
-
             var _formService = new FormService();
             var formsInstances = _formService.GetAllForms(trackingNumber);
 
             var FormModelLayout = new StackLayout();
             FormModelLayout.Orientation = StackOrientation.Vertical;
 
-            foreach (FormInstance fi in formsInstances){
-
+            foreach (FormInstance fi in formsInstances)
+            {
                 Label sectionName = new Label();
                 sectionName.Text = fi.FriendlyName;
                 sectionName.FontSize = 26;
@@ -39,8 +34,6 @@ namespace DataCollection.Services
                     Label boxView = new Label();
                     boxView.Text = fg.text;
                     boxView.FontSize = 22;
-                    //boxView.BackgroundColor = Color.Brown;
-                    //formGroupLayout.Children.Add(boxView);
                     FormModelLayout.Children.Add(boxView);
 
                     //Component Selector. Need to be more robust
@@ -74,13 +67,11 @@ namespace DataCollection.Services
                         FormModelLayout.Children.Add(formComponentLayout);
                     }
                 }
-
             }
-          
 
             return FormModelLayout;
-
         }
+
         public Layout GenerateLayout(FormModel formModel, string formData)
         {
             var FormModelLayout = new StackLayout();
@@ -89,19 +80,12 @@ namespace DataCollection.Services
             var formGroupLayout = new StackLayout();
             formGroupLayout.Orientation = StackOrientation.Vertical;
 
-            //BoxView lineSeparator = new BoxView();
-            //lineSeparator.HeightRequest = 5;
-            //lineSeparator.Color = Color.FromHex("#EAEAEA");
-            //lineSeparator.Margin = new Thickness(0, 25, 0, 0);
-
             //get groups
             foreach (FormGroup fg in formModel.formgroups)
             {
                 Label boxView = new Label();
                 boxView.Text = fg.text;
                 boxView.FontSize = 22;
-               //boxView.BackgroundColor = Color.Brown;
-                //formGroupLayout.Children.Add(boxView);
                 FormModelLayout.Children.Add(boxView);
                
                 //Component Selector. Need to be more robust
@@ -136,15 +120,10 @@ namespace DataCollection.Services
                 }
             }
 
-            //FormModelLayout.Children.Add(formTitle);
-
-
-
-
             return FormModelLayout;
         }
 
-        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string assessmentTrackingNumber, ref Switch KeySwitch, string KeySwitchName = null)
+        public Layout GenerateLayoutForSelectedFormGroup(FormGroup fg, string formData, string webAttachments, string assessmentTrackingNumber, ref Switch KeySwitch, string KeySwitchName = null)
         {
             var FormModelLayout = new StackLayout();
             FormModelLayout.Orientation = StackOrientation.Vertical;
@@ -154,14 +133,6 @@ namespace DataCollection.Services
 
             var formComponentLayout = new StackLayout();
             formComponentLayout.Orientation = StackOrientation.Vertical;
-
-            //get groups
-            //foreach (FormGroup fg in formModel.formgroups)
-            //{
-            //    FormGroupBoxView boxView = new FormGroupBoxView(fg.text);
-            //    formGroupLayout.Children.Add(boxView);
-
-            //Component Selector. Need to be more robust
 
             Switch yesNoSwitch = null;
             Editor textComment = null;
@@ -215,12 +186,11 @@ namespace DataCollection.Services
                     }
                 };
             }
-            //}
 
-            //FormModelLayout.Children.Add(formTitle);
+            formComponentLayout.Children.Add(new WebAttachmentsView(webAttachments));
+
             FormModelLayout.Children.Add(formGroupLayout);
             FormModelLayout.Children.Add(formComponentLayout);
-
 
             return FormModelLayout;
         }
@@ -235,12 +205,6 @@ namespace DataCollection.Services
         {
             List<ContentPage> contentPages = new List<ContentPage>();
 
-            //var FormModelLayout = new StackLayout();
-            //FormModelLayout.Orientation = StackOrientation.Vertical;
-
-            //var formGroupBarLayout = new StackLayout();
-            //formGroupBarLayout.Orientation = StackOrientation.Horizontal;
-
             //get groups
             foreach (FormGroup fg in formModel.formgroups)
             {
@@ -248,76 +212,27 @@ namespace DataCollection.Services
                 StackLayout pageStackLayout = new StackLayout();
                 pageStackLayout.Orientation = StackOrientation.Vertical;
 
-                //FormGroupBoxView boxView = new FormGroupBoxView(fg.text);
-                //formGroupBarLayout.Children.Add(boxView);
-
-
                 //Component Selector. Need to be more robust
                 foreach (Component c in fg.components)
                 {
                     if (c.type.Equals(ComponentTypes.YesNoSwitchView))
                     {
                         YesNoSwitchView yesNo = new YesNoSwitchView(c, formData);
-
-                        /*contentPages.Add(
-                            new ContentPage()
-                            {
-                                Content = new StackLayout
-                                {
-                                    Children = { yesNo }
-
-                                }
-                            }
-                        );*/
                         pageStackLayout.Children.Add(yesNo);
 
                     }
                     else if (c.type.Equals(ComponentTypes.LabelEditorView))
                     {
                         LabelEditorView labelEditorView = new LabelEditorView(c, formData);
-                        //formComponentLayout.Children.Add(labelEditorView);
-                        /*contentPages.Add(
-                            new ContentPage()
-                            {
-                                Content = new StackLayout
-                                {
-                                    Children = { labelEditorView }
-
-                                }
-                            }
-                        );*/
                         pageStackLayout.Children.Add(labelEditorView);
                     }
-                    /*else if (c.type.Equals(ComponentTypes.CameraView))
-                    {
-                        CameraView cameraView = new CameraView(c, formData);
-                        //formComponentLayout.Children.Add(cameraView);
-                        /*contentPages.Add(
-                            new ContentPage()
-                            {
-                                Content = new StackLayout
-                                {
-                                    Children = { cameraView }
-                                }
-                            }
-                        );*/
-                        /*pageStackLayout.Children.Add(cameraView);
-                    }*/
 
                     page.Content = pageStackLayout;
                     contentPages.Add(page);
                 }
             }
 
-            //FormModelLayout.Children.Add(formTitle);
-            //FormModelLayout.Children.Add(formGroupLayout);
-            //FormModelLayout.Children.Add(formComponentLayout);
-
-
             return contentPages;
         }
-
     }
-
-
 }

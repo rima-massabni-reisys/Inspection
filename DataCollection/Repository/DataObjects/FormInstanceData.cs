@@ -7,13 +7,15 @@ namespace DataCollection.Repository.DataObjects
         public string FormModel { get; set; }
         public string FormData { get; set; }
         public string ValidationSchema { get; set; }
+        public string WebAttachments { get; set; }
     }
 
     public enum FormFiles
     {
         FormModel,
         FormData,
-        ValidationSchema
+        ValidationSchema,
+        WebAttachments
     }
 
 }

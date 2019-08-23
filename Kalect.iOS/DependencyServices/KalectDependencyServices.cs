@@ -19,50 +19,6 @@ namespace Kalect.iOS.DependencyServices
             throw new NotImplementedException();
         }
 
-        /*
-        /// <summary>
-        /// Saves the assessments.
-        /// </summary>
-        /// <param name="assessment">Assessment JSON</param>
-        /// <param name="folderName">Folder name.</param>
-        /// <param name="fileName">File name.</param>
-        public void SaveAssessments(string assessment, string folderName, string fileName)
-        {
-            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            documentsPath = documentsPath + "/" + folderName;
-            string fileNameJson = fileName + ".json";
-            var filePath = Path.Combine(documentsPath, fileNameJson);
-
-            if (Directory.Exists(documentsPath))
-            {
-                //update assessments
-                if (File.Exists(filePath))
-                {
-                    //read file
-                    string existingAssessment = System.IO.File.ReadAllText(filePath);
-                    if (existingAssessment.Equals(assessment))
-                    {
-                        // no action at the moment
-                    }
-                    else
-                    {
-                        //if different then delete the existing file and create the new updated file.
-                        File.Delete(filePath);
-                        File.WriteAllText(filePath, assessment);
-
-                        //Bubble Notification
-                    }
-                }
-            }
-            else
-            {
-                System.IO.Directory.CreateDirectory(documentsPath);
-                File.WriteAllText(filePath, assessment);
-            }
-
-        }
-        */
-
         private string CreateWebAttachmentsLocalFolder(long trackingNumber, string friendlyName)
         {
             string assessmentFolderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), trackingNumber.ToString(), friendlyName, "webattachments");
@@ -84,6 +40,7 @@ namespace Kalect.iOS.DependencyServices
                 {
                     string fileUri = "http://fdainsp-ehbs-web.reisys.io/HVISSubmission/" + attInfo.Path.Replace("\\", "/");
                     string fileLocalPath = Path.Combine(localFolderPath, attInfo.Name);
+                    attInfo.LocalPath = fileLocalPath;
                     webClient.DownloadFile(new Uri(fileUri), fileLocalPath);
                 }
             }
@@ -136,30 +93,29 @@ namespace Kalect.iOS.DependencyServices
             string fileNameJson = fileName + ".json";
             var filePath = Path.Combine(documentsPath, fileNameJson);
 
-            if (Directory.Exists(documentsPath))
+            if (!Directory.Exists(documentsPath))
             {
-                //update assessments
-                if (File.Exists(filePath))
-                {
-                    //read file
-                    string existingAssessment = System.IO.File.ReadAllText(filePath);
-                    if (existingAssessment.Equals(assessmentMetadata))
-                    {
-                        // no action at the moment
-                    }
-                    else
-                    {
-                        //if different then delete the existing file and create the new updated file.
-                        File.Delete(filePath);
-                        File.WriteAllText(filePath, assessmentMetadata);
+                System.IO.Directory.CreateDirectory(documentsPath);
+            }
 
-                        //Bubble Notification
-                    }
+            //update assessments
+            if (File.Exists(filePath))
+            {
+                //read file
+                string existingAssessment = System.IO.File.ReadAllText(filePath);
+                if (existingAssessment.Equals(assessmentMetadata))
+                {
+                    // no action at the moment
+                }
+                else
+                {
+                    //if different then delete the existing file and create the new updated file.
+                    File.Delete(filePath);
+                    File.WriteAllText(filePath, assessmentMetadata);
                 }
             }
             else
             {
-                System.IO.Directory.CreateDirectory(documentsPath);
                 File.WriteAllText(filePath, assessmentMetadata);
             }
 
@@ -181,24 +137,7 @@ namespace Kalect.iOS.DependencyServices
             if (Directory.Exists(documentsPath))
             {
                 //update assessments
-                if (File.Exists(filePath))
-                {
-                    //read file
-                    //string existingAssessment = System.IO.File.ReadAllText(filePath);
-                    /*if (existingAssessment.Equals(fileContent))
-                    {
-                        // no action at the moment
-                    }
-                    else
-                    {
-                        //if different then delete the existing file and create the new updated file.
-                        File.Delete(filePath);
-                        File.WriteAllText(filePath, fileContent);
-
-                        //Bubble Notification
-                    }*/
-                }
-                else
+                if (!File.Exists(filePath))
                 {
                     File.WriteAllText(filePath, fileContent);
                 }
