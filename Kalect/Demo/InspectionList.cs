@@ -60,8 +60,21 @@ namespace Kalect.Demo
             inspectionList.IsRefreshing = false;
         }
 
+        private void HighlightButton(Button selectedButton)
+        {
+            newButton.BackgroundColor = Color.FromHex("#CBCBCB");
+            inprogressButton.BackgroundColor = Color.FromHex("#CBCBCB");
+            completedButton.BackgroundColor = Color.FromHex("#CBCBCB");
+
+            if (selectedButton != null)
+            {
+                selectedButton.BackgroundColor = Color.FromHex("#C0BF07");
+            }
+        }
+
         async void CompletedButton_Clicked(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             ShowBusy();
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
@@ -73,6 +86,7 @@ namespace Kalect.Demo
 
         async void NewButton_Clicked(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             ShowBusy();
             inspectionList.IsRefreshing = true;
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
@@ -86,6 +100,7 @@ namespace Kalect.Demo
 
         async void InprogressButton_Clicked(object sender, EventArgs e)
         {
+            HighlightButton(sender as Button);
             ShowBusy();
             List<AssessmentMetadataEntity> assessments = new List<AssessmentMetadataEntity>();
             assessments = await GetListOfAllAssignedAssessmentsFromDevice();
