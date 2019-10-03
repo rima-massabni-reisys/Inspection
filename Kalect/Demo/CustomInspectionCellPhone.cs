@@ -60,10 +60,10 @@ namespace Kalect.Demo
 
             if (CrossConnectivity.Current.IsConnected) 
             {
-                syncAction.Text = "Sync";  
+                syncAction.Text = "Push";  
                 syncAction.Clicked += SyncAction_Clicked;
             } else {
-                syncAction.Text = "Sync Not Available";
+                syncAction.Text = "Push Not Available";
             }  
 
             var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, Icon = "sync.png" };

@@ -320,7 +320,7 @@ namespace Kalect.Demo
             leadList.Clicked += leadList_Clicked;
             leadList.WidthRequest = 100;
             leadList.HeightRequest = 40;
-            leadList.Text = "Lead";
+            leadList.Text = "Pull";
             leadList.BorderColor = Color.FromHex("#CBCBCB");
             leadList.BorderWidth = 1;
             leadList.BackgroundColor = Color.White;
@@ -448,9 +448,9 @@ namespace Kalect.Demo
                                 {
                                     //syncButton,
                                     deleteList,
-                                    leadList,
-                                    I1List,
-                                    I2List
+                                    leadList//,
+                                    //I1List,
+                                    //I2List
                                 }
                             },
                             new StackLayout
@@ -640,7 +640,7 @@ namespace Kalect.Demo
 
             if (CrossConnectivity.Current.IsConnected) 
             {
-                syncAction.Text = "   Sync   ";  
+                syncAction.Text = "   Push   ";  
                 syncAction.Clicked += SyncAction_Clicked;
             } else {
                 syncAction.Text = "   Offline   ";
