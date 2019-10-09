@@ -10,6 +10,8 @@ namespace Kalect.Demo
         {
             Image reiImage = new Image();
             reiImage.Source = "reisystems.jpg";
+            reiImage.WidthRequest = 200;
+            reiImage.HeightRequest = 200;
 
             Label appVersion = new Label();
             appVersion.Text = "Inspection v0.0.1";

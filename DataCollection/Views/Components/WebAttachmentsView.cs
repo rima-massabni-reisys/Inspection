@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using System.IO;
 using DataCollection.Entities;
-using Foundation;
+//using Foundation;
 using Newtonsoft.Json;
-using QuickLook;
-using UIKit;
+//using QuickLook;
+//using UIKit;
 using Xamarin.Forms;
 using System.ComponentModel;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using Foundation;
+using Xamarin.Essentials;
+//using Foundation;
 
 namespace DataCollection.Views.Components
 {
@@ -34,11 +35,16 @@ namespace DataCollection.Views.Components
 
             Grid subLayout = new Grid
             {
-                FlowDirection = FlowDirection.LeftToRight
+                FlowDirection = FlowDirection.LeftToRight,
+                Padding = new Thickness(25, 25, 25, 25)
             };
-            
-            int gridMaxColumns = 4;
 
+            int gridMaxColumns = 4;
+            var idiom = DeviceInfo.Idiom;
+            if (idiom.ToString().ToLower().Equals("phone"))
+            {
+                gridMaxColumns = 2;
+            }
             for (int i = 0; i < gridMaxColumns; i++)
             {
                 subLayout.ColumnDefinitions.Add(new ColumnDefinition());
@@ -52,7 +58,7 @@ namespace DataCollection.Views.Components
                 StackLayout attachmentLayout = new StackLayout
                 {
                     Orientation = StackOrientation.Vertical,
-                    Padding = new Thickness(12, 12, 12, 12)
+                    Padding = new Thickness(25, 25, 25, 12)
                 };
 
                 string image;
@@ -74,9 +80,10 @@ namespace DataCollection.Views.Components
 
                 Button btn = new Button
                 {
-                    Image = image,
-                    WidthRequest = 80,
-                    HeightRequest = 80
+                    ImageSource = image,
+                    WidthRequest = 50,
+                    HeightRequest = 50,
+                    BackgroundColor = Color.Transparent
                 };
                 btn.Clicked += ((object sender, EventArgs e) => ShowAttachment(attInfo));
 
@@ -84,7 +91,8 @@ namespace DataCollection.Views.Components
                 {
                     Text = attInfo.Name,
                     FontSize = 14,
-                    HorizontalTextAlignment = TextAlignment.Center
+                    HorizontalTextAlignment = TextAlignment.Center,
+                    Margin=new Thickness(0,20,0,0)
                 };
                 lbl.GestureRecognizers.Add(new TapGestureRecognizer
                 {
@@ -131,12 +139,12 @@ namespace DataCollection.Views.Components
             //    GetVisibleViewController().PresentViewController(previewController, true, null);
             //});
 
-            var PreviewController = UIDocumentInteractionController.FromUrl(NSUrl.FromFilename(attInfo.LocalPath));
+          //  var PreviewController = UIDocumentInteractionController.FromUrl(NSUrl.FromFilename(attInfo.LocalPath));
             //PreviewController.Delegate = new UIDocumentInteractionControllerDelegateClass(UIApplication.SharedApplication.KeyWindow.RootViewController);
-            PreviewController.Delegate = new UIDocumentInteractionControllerDelegateClass(GetVisibleViewController());
+         //   PreviewController.Delegate = new UIDocumentInteractionControllerDelegateClass(GetVisibleViewController());
             Device.BeginInvokeOnMainThread(() =>
             {
-                PreviewController.PresentPreview(true);
+               // PreviewController.PresentPreview(true);
             });
 
             //var viewer = UIDocumentInteractionController.FromUrl(NSUrl.FromFilename(attInfo.LocalPath));
@@ -144,45 +152,45 @@ namespace DataCollection.Views.Components
             //viewer.PresentOpenInMenu(new CoreGraphics.CGRect(100, 100, 100, 25), null, true);
         }
 
-        private UIViewController GetVisibleViewController(UIViewController controller = null)
-        {
-            controller = controller ?? UIApplication.SharedApplication.KeyWindow.RootViewController;
+        //private UIViewController GetVisibleViewController(UIViewController controller = null)
+        //{
+        //    controller = controller ?? UIApplication.SharedApplication.KeyWindow.RootViewController;
 
-            if (controller.PresentedViewController == null)
-                return controller;
+        //    if (controller.PresentedViewController == null)
+        //        return controller;
 
-            if (controller.PresentedViewController is UINavigationController)
-            {
-                return ((UINavigationController)controller.PresentedViewController).VisibleViewController;
-            }
+        //    if (controller.PresentedViewController is UINavigationController)
+        //    {
+        //        return ((UINavigationController)controller.PresentedViewController).VisibleViewController;
+        //    }
 
-            if (controller.PresentedViewController is UITabBarController)
-            {
-                return ((UITabBarController)controller.PresentedViewController).SelectedViewController;
-            }
+        //    if (controller.PresentedViewController is UITabBarController)
+        //    {
+        //        return ((UITabBarController)controller.PresentedViewController).SelectedViewController;
+        //    }
 
-            return GetVisibleViewController(controller.PresentedViewController);
-        }
+        //    return GetVisibleViewController(controller.PresentedViewController);
+        //}
 
-        public class UIDocumentInteractionControllerDelegateClass : UIDocumentInteractionControllerDelegate
-        {
-            UIViewController ownerVC;
+        //public class UIDocumentInteractionControllerDelegateClass : UIDocumentInteractionControllerDelegate
+        //{
+        //    UIViewController ownerVC;
 
-            public UIDocumentInteractionControllerDelegateClass(UIViewController vc)
-            {
-                ownerVC = vc;
-            }
+        //    public UIDocumentInteractionControllerDelegateClass(UIViewController vc)
+        //    {
+        //        ownerVC = vc;
+        //    }
 
-            public override UIViewController ViewControllerForPreview(UIDocumentInteractionController controller)
-            {
-                return ownerVC;
-            }
+        //    public override UIViewController ViewControllerForPreview(UIDocumentInteractionController controller)
+        //    {
+        //        return ownerVC;
+        //    }
 
-            public override UIView ViewForPreview(UIDocumentInteractionController controller)
-            {
-                return ownerVC.View;
-            }
-        }
+        //    public override UIView ViewForPreview(UIDocumentInteractionController controller)
+        //    {
+        //        return ownerVC.View;
+        //    }
+        //}
 
         //public class PreviewControllerDS : QLPreviewControllerDataSource
         //{

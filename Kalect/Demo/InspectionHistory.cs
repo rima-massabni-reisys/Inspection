@@ -50,7 +50,7 @@ namespace Kalect.Demo
         public InspectionHistory(AssessmentMetadataEntity entity)
         {
 
-            this.BackgroundImage = "GrayBackground.png";
+            this.BackgroundImageSource = "GrayBackground.png";
 
             Title ="Assessment History";
             parentTrackingNo = entity.AssessmentTrackingNumber.ToString();
@@ -59,14 +59,14 @@ namespace Kalect.Demo
             Label orgName = new Label();
             orgName.Text = entity.OrganizationName;
             orgName.TextColor = Color.White;
-            orgName.FontSize = 25;
+            orgName.FontSize = 22;
             orgName.FontAttributes = FontAttributes.Bold;
 
             Image rowImage = new Image();
             rowImage.Source = entity.AssessmentCategoriesIcon;
             //rowImage.Source = "Farm.png";
-            rowImage.WidthRequest = 70;
-            rowImage.HeightRequest = 70;
+            rowImage.WidthRequest = 50;
+            rowImage.HeightRequest = 50;
 
             Label address = new Label();
             address.Text = entity.OrganizationAddress;
@@ -74,14 +74,18 @@ namespace Kalect.Demo
             Label numofHistory = new Label();
             numofHistory.Text = "Number of Assessment (" + entity.AssessmentHistory.Length + ")";
 
+
+            Content=new ScrollView { 
             Content = new StackLayout
             {   //BackgroundColor = Color.FromHex("#F8F9F9"),
                 Orientation = StackOrientation.Vertical,
+                FlowDirection = FlowDirection.LeftToRight,
+                Padding = new Thickness(10, 0, 10, 0),
                 Children = {
                         new StackLayout{
                         BackgroundColor = Color.FromHex("#025085"),
-                        Padding= new Thickness(25,10,25,0),
-                        HeightRequest = 100,
+                        Padding= new Thickness(25,7,25,0),
+                       // HeightRequest = 70,
                         //Padding= new Thickness(25,25,25,0),
                         Orientation = StackOrientation.Horizontal,
                         //HorizontalOptions=LayoutOptions.CenterAndExpand,
@@ -89,7 +93,7 @@ namespace Kalect.Demo
                         {
                             rowImage,
                             new StackLayout{
-                                Padding = new Thickness(25,30,0,0),
+                                Padding = new Thickness(20,6,0,0),
                                 Children = {
                                     orgName
                                 }
@@ -98,7 +102,7 @@ namespace Kalect.Demo
                     },
                     new StackLayout{
                         //HeightRequest = 175,
-                        Padding= new Thickness(25,25,25,0),
+                        Padding= new Thickness(10,10,10,0),
                         Orientation = StackOrientation.Horizontal,
                         //HorizontalOptions=LayoutOptions.CenterAndExpand,
                         Children=
@@ -108,24 +112,17 @@ namespace Kalect.Demo
                         }
                     },
                     new StackLayout{
-                        //HeightRequest = 175,
-                        Padding = new Thickness(25,25,25,0),
-                        HorizontalOptions=LayoutOptions.CenterAndExpand,
+                       
+                        Orientation = StackOrientation.Horizontal,
+                        Padding= new Thickness(0,0,0,0),
+                        BackgroundColor = Color.FromHex("#CBCBCB"),
                         Children=
-                        {
-                            new StackLayout
-                           {
-                                BackgroundColor = Color.FromHex("#CBCBCB"),
-                                Padding = 1,
-                                Margin = 0,
-                                Children=
-                                {
-                                    inspectionList
-                                }
-                            }
+                        {                         
+                          inspectionList                              
                         }
                     }
                 }
+            }
             };
 
             var customAssessmentCell = new DataTemplate(typeof(CustomInspectionHistoryCell));
@@ -142,7 +139,7 @@ namespace Kalect.Demo
             inspectionList.ItemTemplate = customAssessmentCell;
             //inspectionList.ItemSelected += InspectionList_ItemSelected;
             //inspectionList.HeightRequest = 1000;
-            inspectionList.RowHeight = 90;
+           // inspectionList.RowHeight = 90;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             //inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
@@ -170,8 +167,8 @@ namespace Kalect.Demo
 
             StackLayout rowWrapper = new StackLayout();
             rowWrapper.Orientation = StackOrientation.Horizontal;
-            rowWrapper.HorizontalOptions = LayoutOptions.FillAndExpand;
-            rowWrapper.Padding = new Thickness(25, 25, 0, 25);
+            rowWrapper.HorizontalOptions = LayoutOptions.StartAndExpand;
+            rowWrapper.Padding = new Thickness(1, 1, 1, 1);
             //rowWrapper.HeightRequest = 50;
 
 
@@ -191,35 +188,39 @@ namespace Kalect.Demo
 
             StackLayout dateContent = new StackLayout();
             dateContent.Orientation = StackOrientation.Horizontal;
-            //dateContent.Padding = new Thickness(200, 0, 0, 0);
 
+           
             Label dotlabel = new Label();
             dotlabel.Text = "Prepared by Michael John";
-            dotlabel.Margin = new Thickness(50, 0, 0, 0);
-            //dotlabel.FontSize = 20;
+            dotlabel.Margin = new Thickness(5, 0, 0, 0);
+            dotlabel.FontSize = 12;
             //dotlabel.FontAttributes = FontAttributes.Bold;
 
             Label assessmentTrackingNumber = new Label();
             assessmentTrackingNumber.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
+            assessmentTrackingNumber.Margin = new Thickness(5, 0, 0, 0);
+            assessmentTrackingNumber.FontSize = 12;
 
-           
+
 
             Label assessStartDate = new Label();
 
             assessStartDate.SetBinding(Label.TextProperty, "AssessmentStartDate");
-            assessStartDate.Margin = new Thickness(50, 0, 0, 0);
-            //orgName.FontSize = 15;
+            assessStartDate.Margin = new Thickness(5, 0, 0, 0);
+            assessStartDate.FontSize = 12;
 
             Label dashed = new Label();
             dashed.Text = " - ";
 
 
             Label assessEndDate = new Label();
-            //orgAddress.FontSize = 15;
+           
             assessEndDate.SetBinding(Label.TextProperty, "AssessmentEndDate");
+            assessStartDate.Margin = new Thickness(5, 0, 0, 0);
+            assessEndDate.FontSize = 12;
             //orgAddress.TextColor = Color.FromHex("#B0B0B0");
 
-           
+
             rowWrapper.Children.Add(assessmentTrackingNumber);
             dateContent.Children.Add(assessStartDate);
             dateContent.Children.Add(dashed);
@@ -231,7 +232,7 @@ namespace Kalect.Demo
             cellVerticalLayout.Orientation = StackOrientation.Vertical;
 
             BoxView lineSeprator = new BoxView();
-            lineSeprator.HeightRequest = 5;
+            lineSeprator.HeightRequest = 2;
             lineSeprator.BackgroundColor = Color.FromHex("#ECF0F1");
             lineSeprator.HorizontalOptions = LayoutOptions.FillAndExpand;
             lineSeprator.Margin = new Thickness(0, 10, 0, 0);

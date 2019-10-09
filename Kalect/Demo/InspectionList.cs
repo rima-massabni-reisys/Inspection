@@ -112,19 +112,21 @@ namespace Kalect.Demo
 
         void Connectivity_ConnectivityChanged(object sender, ConnectivityChangedEventArgs e)
         {
-            if (CrossConnectivity.Current.IsConnected) 
+            if (CrossConnectivity.Current.IsConnected)
             {
                 syncButton.IsEnabled = true;
                 ShowBusy();
                 this.OnAppearing();
                 StopBusy();
 
-            } else {
+            }
+            else
+            {
                 syncButton.IsEnabled = false;
                 ShowBusy();
                 this.OnAppearing();
                 StopBusy();
-            }  
+            }
 
         }
 
@@ -217,7 +219,7 @@ namespace Kalect.Demo
         public InspectionList()
         {
             isFirstLoad = true;
-            this.BackgroundImage = "GrayBackground.png";
+            this.BackgroundImageSource = "GrayBackground.png";
 
             Title = "Inspections";
             NavigationPage.SetHasNavigationBar(this, true);
@@ -226,22 +228,23 @@ namespace Kalect.Demo
             activityIndicator.Color = Color.FromHex("#3693FF");
             activityIndicator.VerticalOptions = LayoutOptions.Center;
             activityIndicator.HorizontalOptions = LayoutOptions.Center;
+            Padding = 5;
             AbsoluteLayout.SetLayoutFlags(activityIndicator, AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(activityIndicator, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 
             ToolbarItem toolbarItem = new ToolbarItem();
-            toolbarItem.Icon = "Contact.png";
+            toolbarItem.IconImageSource = "Contact.png";
             ToolbarItems.Add(toolbarItem);
 
             newButton = new Button();
-            newButton.WidthRequest = 100;
-            newButton.HeightRequest = 100;
-            newButton.CornerRadius = 50;
+            newButton.WidthRequest = 70;
+            newButton.HeightRequest = 70;
+            newButton.CornerRadius = 40;
             newButton.Text = "6";
             newButton.BackgroundColor = Color.FromHex("#C0BF07");
             newButton.HorizontalOptions = LayoutOptions.Start;
             //newButton.Margin = new Thickness(150, 0, 0, 0);
-            newButton.FontSize = 50;
+            newButton.FontSize = 40;
             newButton.TextColor = Color.White;
             newButton.Clicked += NewButton_Clicked;
 
@@ -252,29 +255,29 @@ namespace Kalect.Demo
             //lblNew.Margin = new Thickness(185, 0, 0, 0);
 
             inprogressButton = new Button();
-            inprogressButton.WidthRequest = 100;
-            inprogressButton.HeightRequest = 100;
-            inprogressButton.CornerRadius = 50;
+            inprogressButton.WidthRequest = 70;
+            inprogressButton.HeightRequest = 70;
+            inprogressButton.CornerRadius = 40;
             inprogressButton.Text = "2";
             inprogressButton.BackgroundColor = Color.FromHex("#CBCBCB");
             inprogressButton.HorizontalOptions = LayoutOptions.CenterAndExpand;
-            inprogressButton.FontSize = 50;
+            inprogressButton.FontSize = 40;
             inprogressButton.TextColor = Color.White;
             inprogressButton.Clicked += InprogressButton_Clicked;
 
             Label lblInprogress = new Label();
             lblInprogress.Text = "In Progress";
             lblInprogress.HorizontalOptions = LayoutOptions.CenterAndExpand;
-                
+
             completedButton = new Button();
-            completedButton.WidthRequest = 100;
-            completedButton.HeightRequest = 100;
-            completedButton.CornerRadius = 50;
+            completedButton.WidthRequest = 70;
+            completedButton.HeightRequest = 70;
+            completedButton.CornerRadius = 40;
             completedButton.Text = "12";
             completedButton.BackgroundColor = Color.FromHex("#CBCBCB"); // ("#e9e9e9");
             completedButton.HorizontalOptions = LayoutOptions.End;
             //completedButton.Margin = new Thickness(0, 0, 150, 0);
-            completedButton.FontSize = 50;
+            completedButton.FontSize = 40;
             completedButton.TextColor = Color.White;
             completedButton.Clicked += CompletedButton_Clicked;
 
@@ -284,9 +287,9 @@ namespace Kalect.Demo
             lblCompleted.HorizontalOptions = LayoutOptions.End;
 
             syncButton = new Button();
-            syncButton.WidthRequest = 100;
-            syncButton.HeightRequest = 40;
-            syncButton.Text = "Sync All";
+            // syncButton.WidthRequest = 100;
+            // syncButton.HeightRequest = 40;
+            syncButton.Text = "Download";
             syncButton.BorderColor = Color.FromHex("#CBCBCB");
             syncButton.BorderWidth = 1;
             syncButton.BackgroundColor = Color.White;
@@ -296,12 +299,14 @@ namespace Kalect.Demo
             syncButton.HorizontalOptions = LayoutOptions.Start;
             syncButton.Clicked += SyncButton_Clicked;
 
-            if (CrossConnectivity.Current.IsConnected) 
+            if (CrossConnectivity.Current.IsConnected)
             {
-                syncButton.IsEnabled = true;  
-            } else {
+                syncButton.IsEnabled = true;
+            }
+            else
+            {
                 syncButton.IsEnabled = false;
-            }  
+            }
 
             deleteList = new Button();
             deleteList.Clicked += DeleteList_Clicked;
@@ -313,61 +318,67 @@ namespace Kalect.Demo
             deleteList.BackgroundColor = Color.White;
             deleteList.TextColor = Color.FromHex("#3693FF");
             //deleteList.Padding = new Thickness(25, 0, 0, 0);
-            //syncButton.FontSize = 20;
-            //deleteList.HorizontalOptions = LayoutOptions.Start;
+            deleteList.FontSize = 12;
+            deleteList.HorizontalOptions = LayoutOptions.Start;
 
             leadList = new Button();
             leadList.Clicked += leadList_Clicked;
-            leadList.WidthRequest = 100;
+            leadList.WidthRequest = 90;
             leadList.HeightRequest = 40;
             leadList.Text = "Pull";
             leadList.BorderColor = Color.FromHex("#CBCBCB");
             leadList.BorderWidth = 1;
             leadList.BackgroundColor = Color.White;
             leadList.TextColor = Color.FromHex("#3693FF");
+            leadList.FontSize = 12;
+            leadList.HorizontalOptions = LayoutOptions.Start;
 
 
-            I1List = new Button();
-            I1List.Clicked += I1List_Clicked;
-            I1List.WidthRequest = 100;
-            I1List.HeightRequest = 40;
-            I1List.Text = "I1";
-            I1List.BorderColor = Color.FromHex("#CBCBCB");
-            I1List.BorderWidth = 1;
-            I1List.BackgroundColor = Color.White;
-            I1List.TextColor = Color.FromHex("#3693FF");
+            //I1List = new Button();
+            //I1List.Clicked += I1List_Clicked;
+            //I1List.WidthRequest = 65;deleteList            //I1List.HeightRequest = 40;
+            //I1List.Text = "I1";
+            //I1List.BorderColor = Color.FromHex("#CBCBCB");
+            //I1List.BorderWidth = 1;
+            //I1List.BackgroundColor = Color.White;
+            //I1List.TextColor = Color.FromHex("#3693FF");
+            //I1List.FontSize = 12;
+            //I1List.HorizontalOptions = LayoutOptions.CenterAndExpand;
 
-            I2List = new Button();
-            I2List.Clicked += I2List_Clicked;
-            I2List.WidthRequest = 100;
-            I2List.HeightRequest = 40;
-            I2List.Text = "I2";
-            I2List.BorderColor = Color.FromHex("#CBCBCB");
-            I2List.BorderWidth = 1;
-            I2List.BackgroundColor = Color.White;
-            I2List.TextColor = Color.FromHex("#3693FF");
+            //I2List = new Button();
+            //I2List.Clicked += I2List_Clicked;
+            //I2List.WidthRequest = 65;
+            //I2List.HeightRequest = 40;
+            //I2List.Text = "I2";
+            //I2List.BorderColor = Color.FromHex("#CBCBCB");
+            //I2List.BorderWidth = 1;
+            //I2List.BackgroundColor = Color.White;
+            //I2List.TextColor = Color.FromHex("#3693FF");
+            //I2List.FontSize = 12;
+            //I2List.HorizontalOptions = LayoutOptions.End;
 
 
             inspectionList = new ListView();
-            //inspectionList.HeightRequest = 700;
-            //inspectionList.SeparatorColor = Color.FromHex("#CBCBCB");
-
-            Content = new StackLayout
-            {   //BackgroundColor = Color.FromHex("#F8F9F9"),
-                Orientation = StackOrientation.Vertical,
-                Children = {
+            inspectionList.HeightRequest = 700;
+            inspectionList.SeparatorColor = Color.FromHex("#CBCBCB");
+            Content = new ScrollView
+            {
+                Content = new StackLayout
+                {   //BackgroundColor = Color.FromHex("#F8F9F9"),
+                    Orientation = StackOrientation.Vertical,
+                    Children = {
 
                     new StackLayout{
-                        HeightRequest = 175,
-                        //BackgroundColor = Color.FromHex("#F8F9F9"),
-                        HorizontalOptions=LayoutOptions.CenterAndExpand,
+                        HeightRequest = 40,
+                       //BackgroundColor = Color.FromHex("#F8F9F9"),
+                       HorizontalOptions=LayoutOptions.CenterAndExpand,
                         Children=
                         {
                             new StackLayout
                             {
-                                Padding= new Thickness(0,25,0,0),
+                               // Padding= new Thickness(6,0,0,0),
                                 Orientation = StackOrientation.Horizontal,
-                                //HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                HorizontalOptions = LayoutOptions.CenterAndExpand,
                                 Children=
                                 {
                                     new StackLayout
@@ -390,8 +401,8 @@ namespace Kalect.Demo
                                     new StackLayout
                                     {
                                         Orientation = StackOrientation.Vertical,
-                                        //HorizontalOptions = LayoutOptions.CenterAndExpand,
-                                        Padding = new Thickness(25,0,25,0),
+                                        HorizontalOptions = LayoutOptions.CenterAndExpand,
+                                       // Padding = new Thickness(25,0,25,0),
                                         Children =
                                         {
                                             inprogressButton,
@@ -410,7 +421,7 @@ namespace Kalect.Demo
                                     new StackLayout
                                     {
                                         Orientation = StackOrientation.Vertical,
-                                        //HorizontalOptions = LayoutOptions.End,
+                                        HorizontalOptions = LayoutOptions.End,
                                         //Padding = new Thickness(25,0,0,0),//
                                         Children =
                                         {
@@ -434,30 +445,39 @@ namespace Kalect.Demo
                     },
                     activityIndicator,
                     new StackLayout{
-                        //BackgroundColor = Color.FromHex("#F8F9F9"),
-                        Padding = new Thickness(25,10,25,25),
-                        Margin = 0,
+                         Orientation = StackOrientation.Vertical,
+                         FlowDirection =  FlowDirection.LeftToRight,
+                       // HeightRequest = 500,
+                       //BackgroundColor = Color.FromHex("#F8F9F9"),
+                       // Padding = new Thickness(20,0,20,0),
+                       // Margin = 0,
+                        Padding = new Thickness(8,0,8,0),
                         Children =
                         {
-                            new StackLayout
+                           new StackLayout
                             {
-                                //BackgroundColor = Color.White,
+                               //BackgroundColor = Color.White,
                                 Orientation = StackOrientation.Horizontal,
-                                Padding= new Thickness(0,0,0,0),
+                                Padding= new Thickness(0,0,0,0),//Left Align
+                              // HorizontalOptions=LayoutOptions.CenterAndExpand,
                                 Children=
                                 {
                                     //syncButton,
-                                    deleteList,
-                                    leadList//,
-                                    //I1List,
-                                    //I2List
+                                   deleteList,
+                                    leadList,
+                                   // I1List,
+                                   // I2List
                                 }
                             },
                             new StackLayout
                             {
-                                BackgroundColor = Color.FromHex("#CBCBCB"),
-                                Padding = 1,
-                                Margin = 0,
+                                 BackgroundColor = Color.FromHex("e9e9e8"),
+                                //BackgroundColor = Color.FromHex("#CBCBCB"),
+                                Orientation = StackOrientation.Horizontal,
+                                 Padding= new Thickness(0,0,0,0),
+                               // HorizontalOptions=LayoutOptions.CenterAndExpand,
+                               // Padding = 1,
+                               // Margin = 0,
                                 Children=
                                 {
                                     inspectionList
@@ -466,6 +486,7 @@ namespace Kalect.Demo
                         }
                     }
 
+                }
                 }
             };
 
@@ -487,7 +508,7 @@ namespace Kalect.Demo
             inspectionList.ItemTemplate = customAssessmentCell;
             //inspectionList.ItemSelected += InspectionList_ItemSelected;
             //inspectionList.HeightRequest = 1000;
-            inspectionList.RowHeight = 125;
+            inspectionList.RowHeight = 100;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             //inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
@@ -537,7 +558,7 @@ namespace Kalect.Demo
 
         public async void BindList()
         {
-            List<AssessmentMetadataEntity> assessments =await GetListOfAllAssignedAssessmentsFromDevice();
+            List<AssessmentMetadataEntity> assessments = await GetListOfAllAssignedAssessmentsFromDevice();
             inspectionList.ItemsSource = assessments;
             UpdateInspectionCountCircles(assessments);
         }
@@ -612,7 +633,7 @@ namespace Kalect.Demo
 
             await ((Page)this.Parent.Parent.Parent.Parent.Parent).Navigation.PushAsync(new InspectionHistory(selectedAssessment));
         }
-            void phoneButton_Clicked(object sender, EventArgs e)
+        void phoneButton_Clicked(object sender, EventArgs e)
         {
             Xamarin.Forms.Button btn = (Button)sender;
             //var url = (string)btn.CommandParameter;
@@ -629,30 +650,23 @@ namespace Kalect.Demo
 
         }
 
-
-
         public CustomInspectionCell()
         {
-            var syncAction = new MenuItem {IsDestructive = true, Icon = "sync.png"  };
+           /* var syncAction = new MenuItem { IsDestructive = true, IconImageSource = "sync.png" };
             syncAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
 
-            syncAction.SetBinding(MenuItem.IconProperty, "sync.png");
+            syncAction.SetBinding(MenuItem.IconImageSourceProperty,  "sync.png");
 
-            if (CrossConnectivity.Current.IsConnected) 
+            if (CrossConnectivity.Current.IsConnected)
             {
-                syncAction.Text = "   Push   ";  
+                syncAction.Text = "   Sync   ";
                 syncAction.Clicked += SyncAction_Clicked;
-            } else {
+            }
+            else
+            {
                 syncAction.Text = "   Offline   ";
-            }  
-
-            //var lastUpdatedAction = new MenuItem { Text = "End Date", IsDestructive = false, Icon = "sync.png"  };
-            //lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
-
-
-
-
-            //ContextActions.Add(lastUpdatedAction);
+            }
+     
             ContextActions.Add(syncAction);
 
 
@@ -660,20 +674,17 @@ namespace Kalect.Demo
             historyAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
             historyAction.Text = "   Recent Assessment   ";
             historyAction.Clicked += History_Clicked;
-            ContextActions.Add(historyAction);
+            ContextActions.Add(historyAction);*/
 
             StackLayout rowWrapper = new StackLayout();
             rowWrapper.Orientation = StackOrientation.Horizontal;
-            //rowWrapper.HorizontalOptions = LayoutOptions.CenterAndExpand;
-            //rowWrapper.VerticalOptions = LayoutOptions.CenterAndExpand;
             rowWrapper.HeightRequest = 150;
 
             StackLayout rowImageLayout = new StackLayout();
             rowImageLayout.VerticalOptions = LayoutOptions.Center;
             rowImageLayout.Padding = new Thickness(25, 0, 15, 0);
             Image rowImage = new Image();
-            rowImage.SetBinding(Image.SourceProperty, "AssessmentCategoriesIcon");
-            //rowImage.Source = "Farm.png";
+            rowImage.SetBinding(Image.SourceProperty, "AssessmentCategoriesIcon");         
             rowImage.WidthRequest = 70;
             rowImage.HeightRequest = 70;
             rowImageLayout.Children.Add(rowImage);
@@ -683,28 +694,21 @@ namespace Kalect.Demo
             mainContent.Orientation = StackOrientation.Vertical;
             mainContent.VerticalOptions = LayoutOptions.Center;
             mainContent.WidthRequest = 500;
-            //mainContent.Padding = new Thickness(0, 0, 25, 0);
-
+        
             Label inspectiontype = new Label();
-            //inspectiontype.Text = "Inspection 1200001";
+         
+
             inspectiontype.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
-            //inspectiontype.FontAttributes = FontAttributes.Bold;
+          
 
             Label orgName = new Label();
-            orgName.SetBinding(Label.TextProperty, "OrganizationName");
-            //orgName.FontSize = 15;
-
-            Label orgAddress = new Label();
-            //orgAddress.FontSize = 15;
+            orgName.SetBinding(Label.TextProperty, "OrganizationName");       
+            Label orgAddress = new Label();        
             orgAddress.SetBinding(Label.TextProperty, "OrganizationAddress");
             orgAddress.TextColor = Color.FromHex("#B0B0B0");
-
             Label updateTimeAgo = new Label();
             updateTimeAgo.SetBinding(Label.TextProperty, "LastUpdatedDateFormatted");
-
             updateTimeAgo.TextColor = Color.Green;
-
-
             mainContent.Children.Add(inspectiontype);
             mainContent.Children.Add(orgName);
             mainContent.Children.Add(orgAddress);
@@ -712,42 +716,14 @@ namespace Kalect.Demo
             rowWrapper.Children.Add(mainContent);
 
 
-            /*StackLayout progressLayout = new StackLayout();
-            progressLayout.Orientation = StackOrientation.Vertical;
-            progressLayout.VerticalOptions = LayoutOptions.Center;
-            progressLayout.Margin = new Thickness(25, 0 , 0, 0);
-            progressLayout.WidthRequest = 100;
-
-            Label labelPercentage = new Label();
-            labelPercentage.Text = "0" + "%";
-            labelPercentage.FontSize = 15;
-
-            ProgressBar progressBar = new ProgressBar();
-            progressBar.ProgressTo(0.4, 5, Easing.Linear);
-            progressBar.WidthRequest = 15;
-            //progressBar.HeightRequest = 50;
-
-
-
-            Label assessmentStatus = new Label();
-            assessmentStatus.SetBinding(Label.TextProperty, "AssessmentStatus");
-            assessmentStatus.TextColor = Color.FromHex("#B0B0B0");
-            assessmentStatus.FontSize = 15;
-            progressLayout.Children.Add(labelPercentage);
-            progressLayout.Children.Add(progressBar);
-            progressLayout.Children.Add(assessmentStatus);
-
-            rowWrapper.Children.Add(progressLayout);*/
 
             StackLayout weatherLayout = new StackLayout();
             weatherLayout.Orientation = StackOrientation.Vertical;
             weatherLayout.VerticalOptions = LayoutOptions.Center;
             weatherLayout.Margin = new Thickness(25, 0, 0, 0);
-            //weatherLayout.WidthRequest = 100;
-            //weatherLayout.HeightRequest = 100;
+           
+          
 
-            //Label lblWeather = new Label();
-            //lblWeather.SetBinding(Label.TextProperty, "Weather");
             Image weatherImage = new Image();
             weatherImage.SetBinding(Image.SourceProperty, "WeatherIcon");
             weatherImage.WidthRequest = 50;
@@ -761,32 +737,18 @@ namespace Kalect.Demo
             mapLayout.Margin = new Thickness(50, 0, 25, 0);
 
             Button locationArrowButton = new Button();
-            locationArrowButton.Image = "location-arrow.png";
+            locationArrowButton.ImageSource = "location-arrow.png";
             locationArrowButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
             locationArrowButton.Clicked += LocationArrowButton_Clicked;
             locationArrowButton.HeightRequest = 50;
             locationArrowButton.WidthRequest = 50;
-                               
+
             mapLayout.Children.Add(locationArrowButton);
             rowWrapper.Children.Add(mapLayout);
 
 
-            //StackLayout historyLayout = new StackLayout();
-            //historyLayout.Orientation = StackOrientation.Vertical;
-            //historyLayout.VerticalOptions = LayoutOptions.Center;
-            //historyLayout.Margin = new Thickness(0, 0, 0, 0);
+      
 
-            //Button historyButton = new Button();
-            //historyButton.Image = "icon_history.png";
-            //historyButton.SetBinding(Button.CommandParameterProperty, "AssessmentTrackingNumber");
-            //historyButton.Clicked += HistoryButton_Clicked;
-            //historyButton.HeightRequest = 50;
-            //historyButton.WidthRequest = 50;
-
-            //historyLayout.Children.Add(historyButton);
-            //rowWrapper.Children.Add(historyLayout);
-
-            //View = rowWrapper;
 
             StackLayout cellVerticalLayout = new StackLayout();
             cellVerticalLayout.Orientation = StackOrientation.Vertical;
@@ -801,7 +763,10 @@ namespace Kalect.Demo
             View = cellVerticalLayout; //rowWrapper;// horizontalLayout;//cellWrapper;
         }
 
-   
+
+
+
+
 
     }
 }

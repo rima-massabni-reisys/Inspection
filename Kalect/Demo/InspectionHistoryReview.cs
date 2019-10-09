@@ -15,14 +15,14 @@ namespace Kalect.Demo
 
         public InspectionHistoryReview(string trackingNumber)
         {
-            this.BackgroundImage = "GrayBackground.png";
+            this.BackgroundImageSource = "GrayBackground.png";
 
             Title = "Assessment History Review Page";
 
             //Form Header Label
             Label formTitle = new Label();
             formTitle.Text = "Review";
-            formTitle.FontSize = 36;
+            formTitle.FontSize = 16;
             formTitle.Margin = new Thickness(0, 0, 0, 15);
             formTitle.TextColor = Color.FromHex("#B0B0B0");
 
@@ -35,7 +35,7 @@ namespace Kalect.Demo
                 Content = new StackLayout
                 {
                     HorizontalOptions = LayoutOptions.StartAndExpand,
-                    Padding = new Thickness(25, 25, 25, 0),
+                    Padding = new Thickness(18, 25, 25, 0),
                     Children = {
                     formTitle,
                     formHistory

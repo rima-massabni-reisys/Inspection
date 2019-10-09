@@ -14,7 +14,7 @@ namespace Kalect.Demo
         {
             ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
 
-            var menuItem = (MenuItem)sender;
+            var menuItem = (Button)sender;
             var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
 
             FormService formService = new FormService();
@@ -28,56 +28,107 @@ namespace Kalect.Demo
                 await formService.SyncFormData(new Guid(selectedAssessment.AssessmentId), formInstance.FormData);
             }
             await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
-
+            
 
             ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
         }
 
 
-        void phoneButton_Clicked(object sender, EventArgs e)
+        //void phoneButton_Clicked(object sender, EventArgs e)
+        //{
+        //    Xamarin.Forms.Button btn = (Button)sender;
+        //    //var url = (string)btn.CommandParameter;
+        //    //url = url.Replace(' ', '+');
+        //    Device.OpenUri(new Uri("tel: 1234567890"));
+        //}
+        async void History_Clicked(object sender, EventArgs e)
         {
-            Xamarin.Forms.Button btn = (Button)sender;
-            //var url = (string)btn.CommandParameter;
-            //url = url.Replace(' ', '+');
-            Device.OpenUri(new Uri("tel: 1234567890"));
-        }
+            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            //((ListView)this.Parent).IsRefreshing = true;
 
-        void LocationArrowButton_Clicked(object sender, EventArgs e)
+            var menuItem = (Button)sender;
+            var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
+
+            await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).Navigation.PushAsync(new InspectionHistory(selectedAssessment));
+        }
+       void LocationArrowButton_Clicked(object sender, EventArgs e)
         {
             Xamarin.Forms.Button btn = (Button)sender;
-            var url = (string)btn.CommandParameter;
-            url = url.Replace(' ', '+');
+        var url = (string)btn.CommandParameter;
+        url = url.Replace(' ', '+');
             Device.OpenUri(new Uri(url));
 
         }
 
-        public CustomInspectionCellPhone()
+    public CustomInspectionCellPhone()
         {
-            var syncAction = new MenuItem {IsDestructive = true, Icon = "sync.png"  };
-            syncAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            //var syncAction = new MenuItem {IsDestructive = true, IconImageSource = "sync.png"  };
+            //syncAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
 
-            syncAction.SetBinding(MenuItem.IconProperty, "sync.png");
+            //syncAction.SetBinding(MenuItem.IconImageSourceProperty, "sync.png");
 
-            if (CrossConnectivity.Current.IsConnected) 
-            {
-                syncAction.Text = "Push";  
-                syncAction.Clicked += SyncAction_Clicked;
-            } else {
-                syncAction.Text = "Push Not Available";
-            }  
+            //if (CrossConnectivity.Current.IsConnected) 
+            //{
+            //    syncAction.Text = "Upload";  
+            //    syncAction.Clicked += SyncAction_Clicked;
+            //} else {
+            //    syncAction.Text = "Sync Not Available";
+            //}  
 
-            var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, Icon = "sync.png" };
+            var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, IconImageSource = "sync.png" };
             lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
 
-            ContextActions.Add(lastUpdatedAction);
-            ContextActions.Add(syncAction);
+           // ContextActions.Add(lastUpdatedAction);
+           // ContextActions.Add(syncAction);
 
+            var historyAction = new MenuItem { IsDestructive = false };
+            historyAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            historyAction.Text = "   Recent Assessment   ";
+            historyAction.Clicked += History_Clicked;
+            //  ContextActions.Add(historyAction);
+
+            Button syncActionButton = new Button();
+            //syncActionButton.ImageSource = "sync.png";
+            syncActionButton.Text = "Push";
+            syncActionButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
+
+            if (CrossConnectivity.Current.IsConnected)
+            {
+                syncActionButton.Text = "Push";
+                syncActionButton.Clicked += SyncAction_Clicked;
+            }
+            else
+            {
+                syncActionButton.Text = "Sync Not Available";
+            }
+
+
+
+       
+
+            syncActionButton.BackgroundColor = Color.Transparent;
+            syncActionButton.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            syncActionButton.FontSize = 13;
+            syncActionButton.TextColor = Color.FromHex("#3693FF");
+            syncActionButton.BorderColor = Color.FromHex("#CBCBCB");
+            syncActionButton.BorderWidth = 1;
+
+            Button historyActionButton = new Button();  
+            historyActionButton.FontSize = 13;
+            historyActionButton.Text = "Recent Assessment";
+            historyActionButton.SetBinding(Button.CommandParameterProperty, new Binding("."));       
+            historyActionButton.Clicked += History_Clicked;
+            historyActionButton.BackgroundColor = Color.Transparent;        
+            historyActionButton.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            historyActionButton.TextColor = Color.FromHex("#3693FF");
+            historyActionButton.BorderColor = Color.FromHex("#CBCBCB");
+            historyActionButton.BorderWidth = 1;
             StackLayout rowWrapper = new StackLayout();
-            rowWrapper.Orientation = StackOrientation.Horizontal;
-            //rowWrapper.HorizontalOptions = LayoutOptions.CenterAndExpand;
-            //rowWrapper.VerticalOptions = LayoutOptions.CenterAndExpand;
+            rowWrapper.Orientation = StackOrientation.Horizontal;        
             rowWrapper.HeightRequest = 150;
-            //rowWrapper.Padding = new Thickness(5, 0, 5, 0);
+        
+
 
             StackLayout rowImageLayout = new StackLayout();
             rowImageLayout.VerticalOptions = LayoutOptions.Center;
@@ -85,21 +136,21 @@ namespace Kalect.Demo
             Image rowImage = new Image();
             rowImage.SetBinding(Image.SourceProperty, "AssessmentCategoriesIcon");
             //rowImage.Source = "Farm.png";
-            rowImage.WidthRequest = 70;
-            rowImage.HeightRequest = 70;
+            rowImage.WidthRequest = 60;
+            rowImage.HeightRequest = 60;
             rowImageLayout.Children.Add(rowImage);
             rowWrapper.Children.Add(rowImageLayout);
 
             StackLayout mainContent = new StackLayout();
             mainContent.Orientation = StackOrientation.Vertical;
             mainContent.VerticalOptions = LayoutOptions.Center;
-            //mainContent.WidthRequest = 250;
-            //mainContent.Padding = new Thickness(0, 0, 25, 0);
+          
 
             Label inspectiontype = new Label();
             //inspectiontype.Text = "Inspection 1200001";
             inspectiontype.SetBinding(Label.TextProperty, "AssessmentTrackingNumber");
-            //inspectiontype.FontAttributes = FontAttributes.Bold;
+         
+
 
             Label orgName = new Label();
             orgName.SetBinding(Label.TextProperty, "OrganizationName");
@@ -112,110 +163,95 @@ namespace Kalect.Demo
             Label orgAddress = new Label();
             orgAddress.FontSize = 10;
             orgAddress.SetBinding(Label.TextProperty, "OrganizationAddress");
-            orgAddress.TextColor = Color.FromHex("#B0B0B0");
+           // orgAddress.WidthRequest = 10;
+            //orgAddress.TextColor = Color.FromHex("#B0B0B0");
 
+            orgAddress.TextColor = Color.FromHex("#9e9e9e");
+            StackLayout actionLayout = new StackLayout
+            {
+                HorizontalOptions = LayoutOptions.Start,
+                Orientation = StackOrientation.Horizontal,
+                VerticalOptions = LayoutOptions.End,
+
+                Children = {
+                                   // inspectIcon,
+                                    syncActionButton,
+                                    historyActionButton
+                                }
+
+
+            };
+                         
 
             mainContent.Children.Add(inspectiontype);
             mainContent.Children.Add(orgName);
             mainContent.Children.Add(orgAddress);
+        //   mainContent.Children.Add(actionLayout);
             rowWrapper.Children.Add(mainContent);
 
 
-            /*StackLayout progressLayout = new StackLayout();
-            progressLayout.Orientation = StackOrientation.Vertical;
-            progressLayout.VerticalOptions = LayoutOptions.Center;
-            progressLayout.Margin = new Thickness(25, 0, 0, 0);
-            progressLayout.WidthRequest = 100;
+          
 
-            Label labelPercentage = new Label();
-            labelPercentage.Text = "0" + "%";
-            labelPercentage.FontSize = 15;
-
-            ProgressBar progressBar = new ProgressBar();
-            progressBar.ProgressTo(0.4, 5, Easing.Linear);
-            progressBar.WidthRequest = 15;
-            //progressBar.HeightRequest = 50;
-
-            Label assessmentStatus = new Label();
-            assessmentStatus.SetBinding(Label.TextProperty, "AssessmentStatus");
-            assessmentStatus.TextColor = Color.FromHex("#B0B0B0");
-            assessmentStatus.FontSize = 15;
-            progressLayout.Children.Add(labelPercentage);
-            progressLayout.Children.Add(progressBar);
-            progressLayout.Children.Add(assessmentStatus);
-
-            rowWrapper.Children.Add(progressLayout);*/
-
-            StackLayout phoneLayout = new StackLayout();
-            phoneLayout.Orientation = StackOrientation.Vertical;
-            phoneLayout.VerticalOptions = LayoutOptions.Center;
-            phoneLayout.Padding = new Thickness(10, 0, 5, 0);
-            //phoneLayout.WidthRequest = 50;
+            /*StackLayout phoneLayout = new StackLayout();
+            phoneLayout.Orientation = StackOrientation.Horizontal;
+            phoneLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
+            phoneLayout.Padding = new Thickness(5, 0, 5, 0);
+       
 
             Button phoneButton = new Button();
-            phoneButton.Image = "phone.png";
-            //phoneButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
+            phoneButton.ImageSource = "phone.png";
+           
             phoneButton.Clicked += phoneButton_Clicked;
 
             phoneLayout.Children.Add(phoneButton);
-
-            //only add phone icon for phone
-
             rowWrapper.Children.Add(phoneLayout);
-
+            phoneButton.BackgroundColor = Color.Transparent;
+            phoneButton.WidthRequest = 30;*/
 
             StackLayout weatherMapLayout = new StackLayout();
-            weatherMapLayout.Orientation = StackOrientation.Vertical;
-            weatherMapLayout.VerticalOptions = LayoutOptions.Center;
+            weatherMapLayout.Orientation = StackOrientation.Horizontal;
+            weatherMapLayout.HorizontalOptions = LayoutOptions.CenterAndExpand;
             weatherMapLayout.Padding = new Thickness(5, 0, 5, 0);
-
+           
             StackLayout weatherLayout = new StackLayout();
-            weatherLayout.Orientation = StackOrientation.Vertical;
-            weatherLayout.VerticalOptions = LayoutOptions.Center;
-            //weatherLayout.Margin = new Thickness(5, 0, 0, 0);
-            //weatherLayout.WidthRequest = 50;
+            weatherLayout.Orientation = StackOrientation.Horizontal;
+            weatherLayout.VerticalOptions = LayoutOptions.CenterAndExpand;
+          
 
-            //Label lblWeather = new Label();
-            //lblWeather.SetBinding(Label.TextProperty, "Weather");
             Image weatherImage = new Image();
             weatherImage.SetBinding(Image.SourceProperty, "WeatherIcon");
-            //weatherImage.HeightRequest = 20;
-            //weatherImage.WidthRequest = 20;
+          
+
 
             weatherLayout.Children.Add(weatherImage);
 
-            StackLayout mapLayout = new StackLayout();
-            mapLayout.Orientation = StackOrientation.Vertical;
-            mapLayout.VerticalOptions = LayoutOptions.Center;
-            //mapLayout.Margin = new Thickness(5, 0, 0, 0);
-
             Button locationArrowButton = new Button();
-            locationArrowButton.Image = "location-arrow.png";
+            locationArrowButton.ImageSource = "location_arrow.png";
             locationArrowButton.SetBinding(Button.CommandParameterProperty, "MapUrl");
             locationArrowButton.Clicked += LocationArrowButton_Clicked;
-            //locationArrowButton.HeightRequest = 15;
-            //locationArrowButton.WidthRequest = 15;
+            locationArrowButton.BackgroundColor = Color.Transparent;
+            locationArrowButton.WidthRequest= 30;
 
+            weatherLayout.Children.Add(locationArrowButton);
 
-            mapLayout.Children.Add(locationArrowButton);
-
+      
             weatherMapLayout.Children.Add(weatherLayout);
-            weatherMapLayout.Children.Add(mapLayout);
-
+        
             rowWrapper.Children.Add(weatherMapLayout);
 
-
-
-            //View = rowWrapper;
+         
+          //  rowWrapper.Children.Add(actionLayout);
+            View = rowWrapper;
 
             StackLayout cellVerticalLayout = new StackLayout();
             cellVerticalLayout.Orientation = StackOrientation.Vertical;
 
             BoxView lineSeprator = new BoxView();
-            lineSeprator.HeightRequest = 5;
+            lineSeprator.HeightRequest = 3;
             lineSeprator.BackgroundColor = Color.FromHex("#ECF0F1");
 
             cellVerticalLayout.Children.Add(rowWrapper);
+            cellVerticalLayout.Children.Add(actionLayout);
             cellVerticalLayout.Children.Add(lineSeprator);
 
             View = cellVerticalLayout; //rowWrapper;// horizontalLayout;//cellWrapper;

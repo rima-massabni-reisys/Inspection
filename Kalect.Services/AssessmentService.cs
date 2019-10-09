@@ -35,17 +35,27 @@ namespace Kalect.Services
             List<string> assessmentsFromDevice = await LoadAllAssessmentFromDevice();
 
             //bool isInternetAvailable = true;
-
+            bool isWeatherServiceAvailable = false;
             foreach (string assessment in assessmentsFromDevice)
             {
                 AssessmentMetadataEntity entity = JsonConvert.DeserializeObject<AssessmentMetadataEntity>(assessment);
 
                 try
                 {
-                    entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
-                    entity.WeatherIcon = GetWeatherIcon(entity.Weather);
-                    entity.LastUpdatedDateFormatted = Convert.ToDateTime(entity.LastUpdatedDate).TimeAgo();
+                    if (isWeatherServiceAvailable)
+                    {
 
+                        entity.Weather = weatherService.GetWeather(entity.OrganizationCityState);
+                        entity.WeatherIcon = GetWeatherIcon(entity.Weather);                      
+                    }
+
+                    else
+                    {
+                        entity.Weather = "-";
+                        entity.WeatherIcon = "Cloudy.png";                    
+                    }
+
+                    entity.LastUpdatedDateFormatted = Convert.ToDateTime(entity.LastUpdatedDate).TimeAgo();
                     if (entity.AssessmentCategories != null)
                     {
                         entity.AssessmentCategoriesIcon = GetCategoryIcon(entity.AssessmentCategories);
@@ -115,7 +125,7 @@ namespace Kalect.Services
             List<AssessmentMetadataEntity> metadataEntities = new List<AssessmentMetadataEntity>();
 
             WeatherService weatherService = new WeatherService();
-            bool isWeatherServiceAvailable = true;
+            bool isWeatherServiceAvailable = false; //true;
 
             foreach (AssessmentEntity entity in assessmentResponseFromServer)
             {
@@ -170,7 +180,7 @@ namespace Kalect.Services
             List<AssessmentMetadataEntity> metadataEntities = new List<AssessmentMetadataEntity>();
 
             WeatherService weatherService = new WeatherService();
-            bool isWeatherServiceAvailable = true;
+            bool isWeatherServiceAvailable = false;// true; //Set to false, as weather api have some issue
 
             foreach (AssessmentEntity entity in assessmentResponseFromServer)
             {
@@ -248,7 +258,7 @@ namespace Kalect.Services
             string assessmentCategoryLowerCase = assessmentCategory.ToLower();
             if (assessmentCategoryLowerCase.Contains("farm"))
             {
-                return "farmnew.png";
+              return "farmnew.png";
             }
             else if (assessmentCategoryLowerCase.Contains("bio"))
             {
@@ -260,7 +270,7 @@ namespace Kalect.Services
             }
             else if (assessmentCategoryLowerCase.Contains("drugs"))
             {
-                return "drugs.png";
+                return "solutionflask.png";   // return "drugs.png";
             }
             else if (assessmentCategoryLowerCase.Contains("electronics"))
             {

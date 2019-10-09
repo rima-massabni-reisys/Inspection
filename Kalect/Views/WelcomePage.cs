@@ -12,11 +12,11 @@ namespace Kalect.Views
         public WelcomePage()
         {
             var navigationPage = new NavigationPage(new DefaultScreen());
-            navigationPage.Icon = "Home_25.png";
+            navigationPage.IconImageSource = "Home_25.png";
             navigationPage.Title = "Home";
 
             var assessmenPage = new NavigationPage(new AvailableAssessmentList());
-            assessmenPage.Icon = "IconList_25.png";
+            assessmenPage.IconImageSource = "IconList_25.png";
             assessmenPage.Title = "Assessments";
 
             Children.Add(navigationPage);

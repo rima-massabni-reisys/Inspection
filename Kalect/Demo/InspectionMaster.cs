@@ -73,13 +73,15 @@ namespace Kalect.Demo
 
             assessmentListView.SeparatorVisibility = SeparatorVisibility.None;
 
-            IsGestureEnabled = false;
+           IsGestureEnabled = true;
+ 
+            
             this.WidthRequest = 200;
 
             this.Master = new ContentPage
             {
                 Title = "Inspection",
-                Icon = "Hamburger_icon_25.png",
+                IconImageSource = "Hamburger_icon_25.png",
                 WidthRequest = 200,
 
                 Content = new StackLayout
@@ -101,8 +103,8 @@ namespace Kalect.Demo
             assessmentListView.ItemSelected += (sender, args) =>
             {
                 LeftMenuItem selectedLeftMenuItem = (LeftMenuItem)args.SelectedItem;
-                
-                IsGestureEnabled = false;
+                 
+                 IsGestureEnabled = true;
                 if (selectedLeftMenuItem.DisplayName.Equals("Submit"))
                 {
                     this.Detail = new NavigationPage(new Signature())
@@ -193,7 +195,7 @@ namespace Kalect.Demo
         bool IsPhone()
         {
             var idiom = DeviceInfo.Idiom;
-            if (idiom.ToLower().Equals("phone"))
+            if (idiom.ToString().ToLower().Equals("phone"))
             {
                 return true;
             }

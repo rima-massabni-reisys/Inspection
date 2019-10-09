@@ -26,7 +26,7 @@ namespace Kalect.Views
             {
                 
                 Title = "Assessment",
-                Icon = "Hamburger_icon_25.png",
+                IconImageSource = "Hamburger_icon_25.png",
                 Content = new StackLayout
                 {
                     Children =

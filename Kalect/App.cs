@@ -14,6 +14,7 @@ namespace Kalect
             //InitializeComponent();
 
             MainPage = new Login(); //WelcomePage(); //MainPage();
+           // MainPage = new InspectionHome();//for testing only
         }
 
         protected override void OnStart()

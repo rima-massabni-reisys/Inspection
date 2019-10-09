@@ -1,11 +1,12 @@
-﻿using System;
-
+﻿
+using Android;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
+using Android.Support.V4.App;
+using Android.Support.V4.Content;
+using Plugin.CurrentActivity;
+using System;
 
 namespace Kalect.Droid
 {
@@ -20,8 +21,21 @@ namespace Kalect.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            CrossCurrentActivity.Current.Init(this, bundle);
+
+            if (ContextCompat.CheckSelfPermission(this, Manifest.Permission.RecordAudio) != Permission.Granted)
+            {
+                ActivityCompat.RequestPermissions(this, new String[] { Manifest.Permission.RecordAudio }, 1);
+            }
             LoadApplication(new App());
         }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions,Permission[] grantResults)
+        {
+            Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+
     }
 }
 

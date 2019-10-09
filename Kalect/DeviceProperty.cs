@@ -9,7 +9,7 @@ namespace Kalect
         public static bool IsPhone()
         {
             var idiom = DeviceInfo.Idiom;
-            if (idiom.ToLower().Equals("phone"))
+            if (idiom.ToString().ToLower().Equals("phone"))
             {
                 return true;
             }

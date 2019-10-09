@@ -16,9 +16,9 @@ namespace DataCollection.Views.Components
         {
             /*var questions = new List<string> { "Photo", "Cancel", "Take Video", "Choose Video" };
             MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);*/
-
+          
             //Find parent page 
-            var response = await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).DisplayActionSheet("Video", "Cancel", "Take Video", "Choose Video");
+            var response = await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).DisplayActionSheet("Video", "Cancel",null, "Take Video", "Choose Video");
 
             if (response == "Take Video")
             {
@@ -56,7 +56,7 @@ namespace DataCollection.Views.Components
 
             TakePhotoButton = new Button();
             //TakePhotoButton.Text = c.text;
-            TakePhotoButton.Image = "Camera.png";
+            TakePhotoButton.ImageSource = "Camera.png";
             TakePhotoButton.Clicked += TakePhotoButton_Clicked;
 
             CameraPhotoImage = new Image();
@@ -65,7 +65,7 @@ namespace DataCollection.Views.Components
 
 
             ChoosePhotoButton = new Button();
-            ChoosePhotoButton.Image = "Camera.png";
+            ChoosePhotoButton.ImageSource = "Camera.png";
             //ChoosePhotoButton.Text = "Choose Photo";
             //ChoosePhotoButton.Clicked += ChoosePhotoButton_Clicked;
 
@@ -92,7 +92,7 @@ namespace DataCollection.Views.Components
 
                 TakeVideoButton = new Button();
                 //TakeVideoButton.Text = "Take Video";
-                TakeVideoButton.Image = "Video.png";
+                TakeVideoButton.ImageSource = "Video.png";
                 //TakeVideoButton.Clicked += TakeVideoButton_Clicked;
                 TakeVideoButton.Clicked += TakeVideoButton_Clicked1;
 
@@ -102,7 +102,7 @@ namespace DataCollection.Views.Components
 
                 ChooseVideoButton = new Button();
                 //ChooseVideoButton.Text = "Choose Video";
-                ChooseVideoButton.Image = "Video.png";
+                ChooseVideoButton.ImageSource = "Video.png";
                 //ChooseVideoButton.Clicked += ChooseVideoButton_Clicked;
 
             
@@ -325,12 +325,10 @@ namespace DataCollection.Views.Components
 
         private async void TakePhotoButton_Clicked(object sender, EventArgs e)
         {
-            //create messagecenter to DisplayMessageSheet on the screen
-            //var questions = new List<string> { "Photo", "Cancel", "Take Photo", "Choose Photo" };
-            //MessagingCenter.Send<object, List<string>>(this, "PhotoMessageQuestion", questions);
-
+            
+           string[] buttonsshow = { "Take Photo", "Choose Photo" };
             //Find parent page 
-            var response = await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).DisplayActionSheet("Photo", "Cancel", "Take Photo", "Choose Photo");
+            var response = await ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).DisplayActionSheet("Photo", "Cancel",null, buttonsshow);
 
             if (response == "Take Photo")
             {

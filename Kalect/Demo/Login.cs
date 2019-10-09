@@ -12,7 +12,7 @@ namespace Kalect.Demo
             activityIndicator.IsVisible = true;
             activityIndicator.IsRunning = true;
             var agree = await DisplayAlert("Terms and Conditions", "I agree to the FDA.gov, gsa.gov and whitehouse.gov terms and conditions and the FDA privacy policy.", "Agree", "Cancel");
-            if(Convert.ToBoolean(agree))
+            if (Convert.ToBoolean(agree))
             {
                 await Navigation.PushModalAsync(new InspectionHome());
             }
@@ -37,7 +37,7 @@ namespace Kalect.Demo
         ActivityIndicator activityIndicator;
         public Login()
         {
-         
+
             activityIndicator = new ActivityIndicator();
             activityIndicator.Color = Color.FromHex("#3693FF");
             activityIndicator.VerticalOptions = LayoutOptions.Center;
@@ -45,21 +45,21 @@ namespace Kalect.Demo
             AbsoluteLayout.SetLayoutFlags(activityIndicator, AbsoluteLayoutFlags.PositionProportional);
             AbsoluteLayout.SetLayoutBounds(activityIndicator, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
 
-            this.BackgroundImage = "Background.png";
+            this.BackgroundImageSource = "Background1x.png";
 
             BackgroundColor = Color.FromHex("#3F51B5");
 
             inspectIcon = new Image();
             inspectIcon.Source = "InspectIcon.png";
             //inspectIcon.HorizontalOptions = LayoutOptions.CenterAndExpand;
-            inspectIcon.Margin = new Thickness(0, 10, 0, 0);
+            inspectIcon.Margin = new Thickness(0, 5, 0, 0);
 
             lblInspect = new Label();
             lblInspect.Text = "Inspect";
             lblInspect.TextColor = Color.White;
             lblInspect.FontSize = 30;
             //lblInspect.HorizontalOptions = LayoutOptions.CenterAndExpand;
-            lblInspect.Margin = new Thickness(0, 15, 0, 0);
+            lblInspect.Margin = new Thickness(0, 10, 0, 0);
 
             lblRedDot = new Label();
             lblRedDot.Text = ".";
@@ -81,7 +81,7 @@ namespace Kalect.Demo
             txtUserName.Text = "tford@fda.gov";
             txtUserName.WidthRequest = 470;
             txtUserName.HeightRequest = 50;
-            txtUserName.Margin = new Thickness(5, 0, 5, 0);
+            txtUserName.Margin = new Thickness(7, 0, 7, 0);
 
             txtPassword = new Entry();
             txtPassword.Placeholder = "Password";
@@ -89,7 +89,7 @@ namespace Kalect.Demo
             txtPassword.Text = "password";
             txtPassword.WidthRequest = 350;
             txtPassword.HeightRequest = 50;
-            txtPassword.Margin = new Thickness(5, 0, 5, 0);
+            txtPassword.Margin = new Thickness(7, 0, 7, 0);
 
             cmdLogin = new Button();
             cmdLogin.WidthRequest = 470;
@@ -100,47 +100,57 @@ namespace Kalect.Demo
             cmdLogin.CornerRadius = 5;
             cmdLogin.FontSize = 20;
             cmdLogin.FontAttributes = FontAttributes.Bold;
-            cmdLogin.Margin = new Thickness(5, 0, 5, 0);
+            cmdLogin.Margin = new Thickness(7, 0, 7, 0);
             cmdLogin.Clicked += CmdLogin_Clicked;
 
             swtchRememberMe = new Switch();
-            swtchRememberMe.Margin = new Thickness(5, 0, 5, 0);
+            swtchRememberMe.Margin = new Thickness(5, 0, 2, 0);
+            swtchRememberMe.BackgroundColor = Color.Transparent;
 
             lblRememebrMe = new Label();
             lblRememebrMe.Text = "Remember me";
             lblRememebrMe.TextColor = Color.White;
-            //lblRememebrMe.FontSize = 20;
+            lblRememebrMe.BackgroundColor = Color.Transparent;
+            lblRememebrMe.FontSize = 15;
 
             cmdForgotPassword = new Button();
             cmdForgotPassword.Text = "Forgot Password";
             cmdForgotPassword.TextColor = Color.White;
             cmdForgotPassword.HorizontalOptions = LayoutOptions.EndAndExpand;
-            //cmdForgotPassword.FontSize = 20;
+            cmdForgotPassword.FontSize = 12;
+            cmdForgotPassword.BackgroundColor = Color.Transparent;
 
             touchImage = new Image();
+            touchImage.Margin = new Thickness(5, 0, 2, 0);
             touchImage.Source = "fingerprint.png";
+            touchImage.HorizontalOptions = LayoutOptions.Start;
 
             cmdEnableTouch = new Button();
             cmdEnableTouch.Text = "Enable Login with Touch ID";
             cmdEnableTouch.TextColor = Color.White;
-            //cmdEnableTouch.FontSize = 20;
+            cmdEnableTouch.FontSize = 12;
+            cmdEnableTouch.BackgroundColor = Color.Transparent;
 
             cmdRegistration = new Button();
             cmdRegistration.Text = "Registration";
             cmdRegistration.TextColor = Color.White;
-            //cmdRegistration.FontSize = 20;
+            cmdRegistration.FontSize = 12;
             cmdRegistration.HorizontalOptions = LayoutOptions.EndAndExpand;
+            cmdRegistration.BackgroundColor = Color.Transparent;
 
-            Content = new StackLayout
+            StackLayout PageLayout = new StackLayout();
+
+            PageLayout = new StackLayout
             {
 
-                Children = {
+                Children =
+                {
                     new StackLayout{
                         VerticalOptions = LayoutOptions.Start,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         Orientation = StackOrientation.Horizontal,
                         BackgroundColor = Color.FromHex("#025085"),
-                        HeightRequest = 60,
+                        HeightRequest = 50,
                         Children=
                         {
 
@@ -168,9 +178,9 @@ namespace Kalect.Demo
                 Children = {
                 new StackLayout
                     {
-                        Padding = 50,
+                        Padding = 40,
                         Children={
-                            fdaLogo,
+                                    fdaLogo,
                                     activityIndicator
                         }
                     },
@@ -194,26 +204,26 @@ namespace Kalect.Demo
                                 }
 
                     },
-                    new StackLayout
+                            new StackLayout
                     {
 
                         Orientation = StackOrientation.Vertical,
-                                Padding = new Thickness(0,20,0,5),
+                                Padding = new Thickness(0,15,0,4),
                         Children = {
                             cmdLogin
 
                         }
                     },
-                    new StackLayout{
-                         Orientation = StackOrientation.Horizontal,
-                         FlowDirection =  FlowDirection.LeftToRight,
-                                Padding = new Thickness(0,0,5,0),
-                         Children = {
+                            new StackLayout{
+                               Orientation = StackOrientation.Horizontal,
+                               FlowDirection =  FlowDirection.LeftToRight,
+                                Padding = new Thickness(8,0,8,0),
+                               Children = {
 
                                     swtchRememberMe,
                                     new StackLayout
                                     {
-                                        Padding=new Thickness(0,10,0,0),
+                                        Padding=new Thickness(5,10,8,0),
                                         Children={
                                             lblRememebrMe
 
@@ -229,22 +239,51 @@ namespace Kalect.Demo
                                     }*/
                          }
                     },
-                            new StackLayout
-                            {
-                                Padding = 20,
-                                Orientation = StackOrientation.Horizontal,
-                                FlowDirection = FlowDirection.LeftToRight,
-                                Children = {
+                            new StackLayout{
+                               Orientation = StackOrientation.Horizontal,
+                               FlowDirection =  FlowDirection.LeftToRight,
+                               Padding = new Thickness(8,0,8,0),
+                               Children =
+                                {
+
                                     touchImage,
-                                    cmdEnableTouch,
-                                    cmdRegistration
+                                    new StackLayout
+                                    {
+                                        //Padding=new Thickness(5,5,8,0),
+                                        Children=
+                                        {
+                                            cmdEnableTouch
+
+                                        }
+                                    }
+                                    ,cmdRegistration
+
                                 }
-                            }
+                            },
+                            
+                            //new StackLayout
+                           // {
+                               // Padding = new Thickness(5,0,10,0),
+                               // Orientation = StackOrientation.Horizontal,
+                               // FlowDirection = FlowDirection.LeftToRight,
+                               // Children = {
+                                //    touchImage,
+                                 //   cmdEnableTouch,
+                                //    cmdRegistration
+                               // }
+                            //}
                 }
                 }
                 }
                     }
                 }
+            };
+
+
+
+            Content = new ScrollView
+            {
+                Content = PageLayout
             };
         }
     }

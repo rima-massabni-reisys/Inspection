@@ -137,13 +137,16 @@ namespace Kalect.Demo
             btnSubmit.Text = "Confirm and Accept";
             btnSubmit.BorderColor = Color.FromHex("#EAEAEA");
             btnSubmit.BorderWidth = 1;
-            btnSubmit.HeightRequest = 50;
-            btnSubmit.WidthRequest = 150;
+            btnSubmit.HeightRequest = 40;
+            btnSubmit.WidthRequest = 200;
             btnSubmit.HorizontalOptions = LayoutOptions.EndAndExpand;
-            btnSubmit.Margin = new Thickness(0, 25, 0, 0);
+            btnSubmit.Margin = new Thickness(0, 25, 0, 10);
             btnSubmit.Clicked += BtnSubmit_Clicked;
+            btnSubmit.FontSize = 13;
+            btnSubmit.TextColor = Color.FromHex("#3693FF");
+            btnSubmit.BackgroundColor = Color.Transparent;
 
-
+            Content=new ScrollView { 
             Content = new StackLayout
             {
                 Children =
@@ -153,7 +156,7 @@ namespace Kalect.Demo
                     {
                         Padding = new Thickness(25, 25, 25, 0),
                         Children = {
-                            
+
                             formTitle,
                             new StackLayout{
                                 Orientation = StackOrientation.Horizontal,
@@ -171,6 +174,7 @@ namespace Kalect.Demo
                                 }
                             }
                     }
+            }
             };
         }
     }

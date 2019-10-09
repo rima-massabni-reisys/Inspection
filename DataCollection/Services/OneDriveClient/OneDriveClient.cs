@@ -46,7 +46,8 @@ namespace DataCollection.Services.OneDrive
                         Content = encodedFileBytes
                     },
                 },
-                TargetUsers = new[] { "rima.massabni@reisystems.com" },
+                // TargetUsers = new[] { "rima.massabni@reisystems.com" },
+                TargetUsers = new[] { "tejashri.bhosale@reisystems.in" },
                 Additional = new JObject()
             });
 

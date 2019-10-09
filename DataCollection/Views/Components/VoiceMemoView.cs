@@ -11,7 +11,7 @@ namespace DataCollection.Views.Components
     {
         void Player_FinishedPlaying(object sender, EventArgs e)
         {
-            PlayButton.Image = "PlayGreen.png";
+            PlayButton.ImageSource = "PlayGreen.png";
             PlayButton.IsEnabled = true;
             RecordButton.IsEnabled = true;
         }
@@ -29,7 +29,7 @@ namespace DataCollection.Views.Components
         {
             try
             {
-                PlayButton.Image = "PauseYellow.png";
+                PlayButton.ImageSource = "PauseYellow.png";
                 var filePath = recorder.GetAudioFilePath();
                 //SaveVoiceMemo();
                 if (filePath != null)
@@ -40,7 +40,7 @@ namespace DataCollection.Views.Components
 
                 }
 
-                PlayButton.Image = "PlayGreen.png";
+                PlayButton.ImageSource = "PlayGreen.png";
             }
             catch (Exception ex)
             {
@@ -69,7 +69,7 @@ namespace DataCollection.Views.Components
                     var audioRecordTask = await recorder.StartRecording();
 
                     //RecordButton.Text = "Stop Recording";
-                    RecordButton.Image = "StopRecording.png";
+                    RecordButton.ImageSource = "StopRecording.png";
                     RecordButton.IsEnabled = true;
 
                     await audioRecordTask;
@@ -80,7 +80,7 @@ namespace DataCollection.Views.Components
                 else //Stop button clicked
                 {
                     RecordButton.IsEnabled = false;
-                    RecordButton.Image = "Audio.png";
+                    RecordButton.ImageSource = "Audio.png";
                     //stop the recording...
                     await recorder.StopRecording();
 
@@ -136,11 +136,11 @@ namespace DataCollection.Views.Components
 
 
             RecordButton = new Button();
-            RecordButton.Image = "Audio.png";
+            RecordButton.ImageSource = "Audio.png";
             RecordButton.Clicked += RecordButton_Clicked;
 
             PlayButton = new Button();
-            PlayButton.Image = "Play.png";
+            PlayButton.ImageSource = "Play.png";
             PlayButton.Clicked += PlayButton_Clicked;
 
 

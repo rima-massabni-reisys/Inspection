@@ -110,7 +110,7 @@ namespace Kalect.Demo
             //create a new collection of groups
             ProductGrouped = new ObservableCollection<Grouping<string, Products>>(sorted);
 
-            this.BackgroundImage = "GrayBackground.png";
+            this.BackgroundImageSource = "GrayBackground.png";
 
             Title = "Product Information";
             NavigationPage.SetHasNavigationBar(this, true);

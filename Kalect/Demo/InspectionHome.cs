@@ -19,7 +19,7 @@ namespace Kalect.Demo
                 BarTextColor = Color.White
             };
 
-            inspectionListPage.Icon = "dashboard.png";
+            inspectionListPage.IconImageSource = "dashboard.png";
             inspectionListPage.Title = "Dashboard";
 
             var aboutPage = new NavigationPage(new AboutPage())
@@ -28,7 +28,7 @@ namespace Kalect.Demo
                 BarTextColor = Color.White
             };
 
-            aboutPage.Icon = "AboutIcon.png";
+            aboutPage.IconImageSource = "AboutIcon.png";
             aboutPage.Title = "About";
 
 
@@ -38,7 +38,7 @@ namespace Kalect.Demo
                 BarTextColor = Color.Black
             };
 
-            productPage.Icon = "product.png";
+            productPage.IconImageSource = "product.png";
             productPage.Title = "Product";
 
 
