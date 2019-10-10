@@ -120,8 +120,8 @@ namespace Kalect.Demo
             signaturePadView.StrokeWidth = 10;
             signaturePadView.StrokeColor = Color.Black;
             signaturePadView.BackgroundColor = Color.White;
-            signaturePadView.WidthRequest = 280;
-            signaturePadView.HeightRequest = 360;
+            signaturePadView.WidthRequest = 200;
+            signaturePadView.HeightRequest = 260;
 
 
             var signatureLayout = new StackLayout
@@ -140,7 +140,7 @@ namespace Kalect.Demo
             btnSubmit.HeightRequest = 50;
             btnSubmit.WidthRequest = 150;
             btnSubmit.HorizontalOptions = LayoutOptions.EndAndExpand;
-            btnSubmit.Margin = new Thickness(0, 25, 0, 0);
+            btnSubmit.Margin = new Thickness(0, 15, 0, 0);
             btnSubmit.Clicked += BtnSubmit_Clicked;
 
 

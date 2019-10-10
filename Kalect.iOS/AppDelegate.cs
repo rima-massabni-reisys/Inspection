@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Plugin.AudioRecorder;
 
 using Foundation;
 using UIKit;
@@ -25,6 +26,9 @@ namespace Kalect.iOS
             Xamarin.Calabash.Start();
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+
+            // this controls whether the library will attempt to force the shared AVAudioSession into recording mode, and then reset it after recording completes
+            AudioRecorderService.ConfigureAVAudioSession = true;
 
             return base.FinishedLaunching(app, options);
         }

@@ -81,9 +81,11 @@ namespace DataCollection.Views.Components
 
             Label lblTakePhoto = new Label();
             lblTakePhoto.Text = "Photo";
+            lblTakePhoto.Margin = new Thickness(10, 0, 0, 0);
 
             Label lblTakeVideo = new Label();
             lblTakeVideo.Text = "Video";
+            lblTakeVideo.Margin = new Thickness(10, 0, 0, 0);
 
             BindSavedImage();
 

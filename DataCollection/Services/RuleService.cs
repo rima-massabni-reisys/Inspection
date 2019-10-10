@@ -35,7 +35,11 @@ namespace DataCollection.Services
                 List<string> descriptiveErrorMessages = new List<string>();
                 foreach(string message in messages)
                 {
-                    descriptiveErrorMessages.Add(GetDescriptiveErrorMessage(formInstance.ValidationSchema, message));
+                    string msg = GetDescriptiveErrorMessage(formInstance.ValidationSchema, message);
+                    if (msg != null)
+                    {
+                        descriptiveErrorMessages.Add(msg);
+                    }
                 }
 
                 IList<string> errorMessages = descriptiveErrorMessages.ToArray();
@@ -53,14 +57,18 @@ namespace DataCollection.Services
         {
             if(message.Contains("length"))
             {
-                return "Comments Minimum Length must be 50.";
+                return "Comments Minimum Length must be 10.";
             }
-            else if(message.Contains("required"))
+            /*else if(message.Contains("required"))
             {
                 return "Field is Required.";
             }
             else{
                 return "Field is Required.";
+            }*/
+            else
+            {
+                return null;
             }
                 
         }

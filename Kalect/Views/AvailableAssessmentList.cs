@@ -56,7 +56,7 @@ namespace Kalect.Views
                 ItemsSource = assessments,
                 ItemTemplate = customAssessmentCell
             };*/
-
+           
             ListView listView = new ListView();
             BindList();
             listView.ItemTemplate = customAssessmentCell;

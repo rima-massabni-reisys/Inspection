@@ -9,6 +9,10 @@ namespace DataCollection.Views.Components
 {
     public class VoiceMemoView : ContentView
     {
+
+        Label RecordText = new Label();
+        Label PlayText = new Label();
+
         void Player_FinishedPlaying(object sender, EventArgs e)
         {
             PlayButton.Image = "PlayGreen.png";
@@ -34,6 +38,7 @@ namespace DataCollection.Views.Components
                 //SaveVoiceMemo();
                 if (filePath != null)
                 {
+                    //PlayText.Text = "Found audio file";
                     PlayButton.IsEnabled = false;
                     RecordButton.IsEnabled = false;
                     player.Play(filePath);
@@ -56,11 +61,14 @@ namespace DataCollection.Views.Components
 
         async Task RecordAudio()
         {
+            RecordText.Text = string.Empty;
+         
             try
             {
                 if (!recorder.IsRecording) //Record button clicked
                 {
-                    recorder.StopRecordingOnSilence = TimeoutSwitch.IsToggled;
+                    recorder.StopRecordingOnSilence = false;
+                    //RecordText.Text += "REcord started           ";
 
                     RecordButton.IsEnabled = false;
                     PlayButton.IsEnabled = false;
@@ -85,7 +93,7 @@ namespace DataCollection.Views.Components
                     await recorder.StopRecording();
 
                     RecordButton.IsEnabled = true;
-
+                    //RecordText.Text += "Record FINISHED";
                     SaveVoiceMemo();
                 }
             }
@@ -102,14 +110,33 @@ namespace DataCollection.Views.Components
             string fileName = AssessmentTrackingNumber + "_" + compPath+ ".wav";
 
             var filePath = recorder.GetAudioFilePath();
-            //Save
-            DependencyService.Get<IDataCollectionDependencyService>().SaveVoiceMemo(filePath, AssessmentTrackingNumber, fileName);
-
+            if(filePath != null)
+            {
+                if (filePath.Equals("") || filePath.Equals(string.Empty))
+                {
+                    RecordText.Text = "Something went wrong during recording. Please try again.";
+                    RecordText.TextColor = Color.Red;
+                }
+                else
+                {
+                    //RecordText.Text += "Recording at" + filePath;
+                    RecordText.Text = "Recording Saved Successfully";
+                    RecordText.TextColor = Color.Green;
+                    //Save
+                    DependencyService.Get<IDataCollectionDependencyService>().SaveVoiceMemo(filePath, AssessmentTrackingNumber, fileName);
+                }
+            }
+            else
+            {
+                RecordText.Text = "Something went wrong during recording. Please try again.";
+                RecordText.TextColor = Color.Red;
+            }
+            
         }
 
         Button RecordButton;
         Button PlayButton;
-        Switch TimeoutSwitch;
+        //Switch TimeoutSwitch;
         string ComponentPath;
         string AssessmentTrackingNumber;
         public VoiceMemoView(Component c, string formData, string assessentTrackingNumber, Mode mode = Mode.Edit)
@@ -122,7 +149,8 @@ namespace DataCollection.Views.Components
             {
                 StopRecordingAfterTimeout = true,
                 TotalAudioTimeout = TimeSpan.FromSeconds(15),
-                AudioSilenceTimeout = TimeSpan.FromSeconds(2)
+                StopRecordingOnSilence = false
+               
             };
 
             player = new AudioPlayer();
@@ -136,18 +164,26 @@ namespace DataCollection.Views.Components
 
 
             RecordButton = new Button();
+
+            //RecordButton.CornerRadius = 200;
+            //RecordButton.WidthRequest=
+            //RecordButton.BorderColor = Color.Black;
+            //RecordButton.Text = "Recorded Text";
+            //RecordButton.FontSize = 24;
             RecordButton.Image = "Audio.png";
             RecordButton.Clicked += RecordButton_Clicked;
 
             PlayButton = new Button();
             PlayButton.Image = "Play.png";
+            //PlayButton.Text = "Play";
+            //PlayButton.FontSize = 24;
             PlayButton.Clicked += PlayButton_Clicked;
 
 
-            TimeoutSwitch = new Switch();
+            /*TimeoutSwitch = new Switch();
             TimeoutSwitch.IsToggled = true;
             TimeoutSwitch.VerticalOptions = LayoutOptions.Center;
-            TimeoutSwitch.HorizontalOptions = LayoutOptions.EndAndExpand;
+            TimeoutSwitch.HorizontalOptions = LayoutOptions.EndAndExpand;*/
 
             StackLayout voiceMemoLayout; 
             if (mode == Mode.Edit)
@@ -183,6 +219,7 @@ namespace DataCollection.Views.Components
                                                 Margin=new Thickness(5,0,0,0)
                                             },
                                             RecordButton
+                                            
                                         }
                                     },
                                     new StackLayout
@@ -195,14 +232,27 @@ namespace DataCollection.Views.Components
                                             new Label
                                             {
                                                 Text = "Play",
-                                                Margin=new Thickness(5,0,0,0)
+                                                Margin=new Thickness(5,5,0,0)
                                             },
-                                            PlayButton
+                                            PlayButton,
+                                            PlayText
+                                        }
+                                    }
+                                    ,
+                                    new StackLayout
+                                    {
+                                        Orientation= StackOrientation.Vertical,
+                                        VerticalOptions= LayoutOptions.Center,
+                                        HorizontalOptions=LayoutOptions.Center,
+                                        Children=
+                                        {
+                                            RecordText
                                         }
                                     }
 
                                 }
-                            },
+                                
+                            }/*,
                             new StackLayout
                             {
                                 HorizontalOptions = LayoutOptions.EndAndExpand,
@@ -225,7 +275,7 @@ namespace DataCollection.Views.Components
                                         }
                                     }
                                 }
-                            }
+                            }*/
                         }
                     }, new StackLayout
                     {

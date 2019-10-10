@@ -216,7 +216,6 @@
     <BundleResource Include="Resources\Play.png" />
     <BundleResource Include="Resources\windy.png" />
     <BundleResource Include="Resources\windy%402x.png" />
-    <BundleResource Include="Resources\StopRecording.png" />
     <BundleResource Include="Resources\Cloudy.png" />
     <BundleResource Include="Resources\Cloudy%402x.png" />
     <BundleResource Include="Resources\Thunderstorm.png" />
@@ -274,7 +273,6 @@
     <BundleResource Include="Resources\AboutIcon.png" />
     <BundleResource Include="Resources\AboutIcon%402x.png" />
     <BundleResource Include="Resources\PauseYellow.png" />
-    <BundleResource Include="Resources\PlayGreen.png" />
     <BundleResource Include="Resources\PlayRecording.png" />
     <BundleResource Include="Resources\AudioRecording.png" />
     <BundleResource Include="Resources\icon_history.png" />
@@ -284,6 +282,11 @@
     <BundleResource Include="Resources\attachment_pdf.png" />
     <BundleResource Include="Resources\attachment_txt.png" />
     <BundleResource Include="Resources\attachment_xls.png" />
+    <BundleResource Include="Resources\myaudio.png" />
+    <BundleResource Include="Resources\myVideo.png" />
+    <BundleResource Include="Resources\myCamera.png" />
+    <BundleResource Include="Resources\PlayGreen.png" />
+    <BundleResource Include="Resources\StopRecording.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork.png" />

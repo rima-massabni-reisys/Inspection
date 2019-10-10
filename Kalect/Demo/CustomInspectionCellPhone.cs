@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using DataCollection.Entities;
 using DataCollection.Services;
+using Kalect.Services;
 using Kalect.Services.Entities;
+using Kalect.Services.Interfaces;
 using Plugin.Connectivity;
 using Xamarin.Forms;
 
@@ -10,9 +12,11 @@ namespace Kalect.Demo
 {
     public class CustomInspectionCellPhone : ViewCell
     {
+
         async void SyncAction_Clicked(object sender, EventArgs e)
         {
-            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            InspectionList inspectionList = this.Parent.Parent.Parent.Parent.Parent as InspectionList;
 
             var menuItem = (MenuItem)sender;
             var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
@@ -29,8 +33,27 @@ namespace Kalect.Demo
             }
             await formService.SyncMediaToOneDrive(selectedAssessment.AssessmentTrackingNumber.ToString());
 
+            // If the assessment status is Complete, sync new status to server and remove from device
+            if (selectedAssessment.AssessmentStatusCode == 10)
+            {
+                AssessmentService assessmentService = new AssessmentService();
+                assessmentService.CompleteMobileAssessmentTask(new Guid(selectedAssessment.AssessmentId),
+                                                               selectedAssessment.AssessmentTrackingNumber);
+                DependencyService.Get<IKalectDependencyServices>().DeleteAssessmentFromDevice(selectedAssessment.AssessmentTrackingNumber);
+                if (int.TryParse(inspectionList.completedButton.Text, out int completedCount) && inspectionList != null)
+                {
+                    inspectionList.completedButton.Text = (--completedCount).ToString();
+                }
+            }
 
-            ((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
+            if (inspectionList != null)
+            {
+                inspectionList.BindList();
+                inspectionList.StopBusy();
+                //((ListView)this.Parent).IsRefreshing = false;
+            }
+
+            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = false;
         }
 
 
@@ -51,6 +74,18 @@ namespace Kalect.Demo
 
         }
 
+        async void History_Clicked(object sender, EventArgs e)
+        {
+            //((Page)this.Parent.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            ((Page)this.Parent.Parent.Parent.Parent.Parent).IsBusy = true;
+            //((ListView)this.Parent).IsRefreshing = true;
+
+            var menuItem = (MenuItem)sender;
+            var selectedAssessment = (AssessmentMetadataEntity)menuItem.CommandParameter;
+
+            await ((Page)this.Parent.Parent.Parent.Parent.Parent).Navigation.PushAsync(new InspectionHistory(selectedAssessment));
+        }
+
         public CustomInspectionCellPhone()
         {
             var syncAction = new MenuItem {IsDestructive = true, Icon = "sync.png"  };
@@ -64,13 +99,20 @@ namespace Kalect.Demo
                 syncAction.Clicked += SyncAction_Clicked;
             } else {
                 syncAction.Text = "Push Not Available";
-            }  
+            }
+
+            var historyAction = new MenuItem { IsDestructive = false };
+            historyAction.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            historyAction.Text = "   Recent Assessment   ";
+            historyAction.Clicked += History_Clicked;
+           
 
             var lastUpdatedAction = new MenuItem { Text = "Last Updated", IsDestructive = false, Icon = "sync.png" };
             lastUpdatedAction.SetBinding(MenuItem.TextProperty, "LastUpdatedDateFormatted");
 
             ContextActions.Add(lastUpdatedAction);
             ContextActions.Add(syncAction);
+             ContextActions.Add(historyAction);
 
             StackLayout rowWrapper = new StackLayout();
             rowWrapper.Orientation = StackOrientation.Horizontal;
