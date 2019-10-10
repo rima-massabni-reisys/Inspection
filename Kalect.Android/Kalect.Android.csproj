@@ -92,6 +92,7 @@
     <Compile Include="DependencyServices\DeviceOrientationDependencyServices.cs" />
     <Compile Include="DependencyServices\KalectDependencyServices.cs" />
     <Compile Include="DependencyServices\SaveAndLoad.cs" />
+    <Compile Include="Helper.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
