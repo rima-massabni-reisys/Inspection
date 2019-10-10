@@ -52,7 +52,7 @@ namespace Kalect.Demo
 
             this.BackgroundImageSource = "GrayBackground.png";
 
-            Title ="Assessment History";
+            Title = "Assessment History";
             parentTrackingNo = entity.AssessmentTrackingNumber.ToString();
             inspectionList = new ListView();
 
@@ -75,13 +75,12 @@ namespace Kalect.Demo
             numofHistory.Text = "Number of Assessment (" + entity.AssessmentHistory.Length + ")";
 
 
-            Content=new ScrollView { 
-            Content = new StackLayout
-            {   //BackgroundColor = Color.FromHex("#F8F9F9"),
-                Orientation = StackOrientation.Vertical,
-                FlowDirection = FlowDirection.LeftToRight,
-                Padding = new Thickness(10, 0, 10, 0),
-                Children = {
+            Content = new ScrollView
+            {
+                Content = new StackLayout
+                {   //BackgroundColor = Color.FromHex("#F8F9F9"),
+                    Orientation = StackOrientation.Vertical,
+                    Children = {
                         new StackLayout{
                         BackgroundColor = Color.FromHex("#025085"),
                         Padding= new Thickness(25,7,25,0),
@@ -112,17 +111,25 @@ namespace Kalect.Demo
                         }
                     },
                     new StackLayout{
-                       
-                        Orientation = StackOrientation.Horizontal,
-                        Padding= new Thickness(0,0,0,0),
-                        BackgroundColor = Color.FromHex("#CBCBCB"),
+                        //HeightRequest = 175,
+                       // Padding = new Thickness(10,10,10,0),
+                        HorizontalOptions=LayoutOptions.CenterAndExpand,
                         Children=
-                        {                         
-                          inspectionList                              
+                        {
+                            new StackLayout
+                           {
+                                BackgroundColor = Color.FromHex("#CBCBCB"),
+                                Padding = 1,
+                                Margin = 0,
+                                Children=
+                                {
+                                    inspectionList
+                                }
+                            }
                         }
                     }
                 }
-            }
+                }
             };
 
             var customAssessmentCell = new DataTemplate(typeof(CustomInspectionHistoryCell));
@@ -139,7 +146,7 @@ namespace Kalect.Demo
             inspectionList.ItemTemplate = customAssessmentCell;
             //inspectionList.ItemSelected += InspectionList_ItemSelected;
             //inspectionList.HeightRequest = 1000;
-           // inspectionList.RowHeight = 90;
+            // inspectionList.RowHeight = 90;
             inspectionList.SelectionMode = ListViewSelectionMode.Single;
             //inspectionList.SeparatorColor = Color.Gray;
             inspectionList.HasUnevenRows = false;
@@ -177,7 +184,7 @@ namespace Kalect.Demo
             ////rowImage.Source = "Farm.png";
             //rowImage.WidthRequest = 70;
             //rowImage.HeightRequest = 70;
-         
+
             //rowWrapper.Children.Add(rowImage);
 
 
@@ -189,7 +196,7 @@ namespace Kalect.Demo
             StackLayout dateContent = new StackLayout();
             dateContent.Orientation = StackOrientation.Horizontal;
 
-           
+
             Label dotlabel = new Label();
             dotlabel.Text = "Prepared by Michael John";
             dotlabel.Margin = new Thickness(5, 0, 0, 0);
@@ -214,7 +221,7 @@ namespace Kalect.Demo
 
 
             Label assessEndDate = new Label();
-           
+
             assessEndDate.SetBinding(Label.TextProperty, "AssessmentEndDate");
             assessStartDate.Margin = new Thickness(5, 0, 0, 0);
             assessEndDate.FontSize = 12;
